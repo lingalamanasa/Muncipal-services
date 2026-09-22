@@ -109,7 +109,7 @@
             </div>
           </div>
           <div class="hero-banner-actions">
-            <button type="button" class="btn-portal-action" onclick="window.location.href='404error.html';">
+            <button type="button" class="btn-portal-action" onclick="openGrievanceModal();">
               <i class="fa-solid fa-plus"></i> File New Grievance
             </button>
           </div>
@@ -165,7 +165,7 @@
                 <div class="chart-card-title"><i class="fa-solid fa-chart-line" style="color: var(--brand-orange);"></i> Grievance Filing vs Resolution Velocity</div>
                 <div class="chart-card-subtitle">Monthly comparison of tickets reported vs resolved within statutory SLA</div>
               </div>
-              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">Past 6 Months</span>
+              <span class="chart-card-meta">Past 6 Months</span>
             </div>
             <div class="chart-canvas-wrapper">
               <canvas id="grievanceLineChart"></canvas>
@@ -178,7 +178,7 @@
                 <div class="chart-card-title"><i class="fa-solid fa-chart-column" style="color: var(--brand-orange);"></i> Reported Defects by Category</div>
                 <div class="chart-card-subtitle">Volume of community complaints segmented by municipal division</div>
               </div>
-              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">Division Split</span>
+              <span class="chart-card-meta">Division Split</span>
             </div>
             <div class="chart-canvas-wrapper">
               <canvas id="grievanceBarChart"></canvas>
@@ -196,7 +196,7 @@
                 <div class="chart-card-title"><i class="fa-solid fa-chart-pie" style="color: var(--brand-orange);"></i> Grievance Status & SLA Distribution</div>
                 <div class="chart-card-subtitle">Breakdown of resolution status and compliance verification</div>
               </div>
-              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">All-Time Status</span>
+              <span class="chart-card-meta">All-Time Status</span>
             </div>
             <div class="chart-canvas-wrapper">
               <canvas id="grievancePieChart"></canvas>
@@ -223,7 +223,7 @@
               </div>
               <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-medium); padding-top: 10px;">
                 <span style="font-size: 0.76rem; color: var(--text-muted);"><i class="fa-solid fa-clock"></i> ETA Clearance: 3h 48m</span>
-                <span class="status-pill warning" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-truck-fast"></i> En Route</span>
+                <span class="status-pill warning" onclick="alert('Field Crew Status:\nEng. Rajesh Varma & Asphalt Squad Alpha-3 are currently on-site at 4th Main Road, Sector 3.');" style="cursor: pointer;"><i class="fa-solid fa-truck-fast"></i> En Route</span>
               </div>
             </div>
           </div>
@@ -269,7 +269,7 @@
                   <td><span style="color: #d97706; font-weight: 700;"><i class="fa-solid fa-hourglass-half"></i> 3h 48m left</span></td>
                   <td>Eng. Rajesh Varma</td>
                   <td>
-                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';">
+                    <button type="button" class="table-action-btn" onclick="alert('Live Tracking for #STK-8492:\nAssigned Crew: Asphalt Squad Alpha-3\nStatus: En Route to 4th Main Road, Sector 3\nEstimated SLA Remaining: 3h 48m');">
                       <i class="fa-solid fa-location-crosshairs"></i> Track Live
                     </button>
                   </td>
@@ -285,7 +285,7 @@
                   <td>Resolved in 3h 12m</td>
                   <td>Electrical Crew 1</td>
                   <td>
-                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';">
+                    <button type="button" class="table-action-btn" onclick="alert('Inspection Report #IR-8114:\nStreetlight illuminance verified at 45 Lux.\nSign-off: Electrical Inspector Ramesh.');">
                       <i class="fa-solid fa-file-invoice"></i> Inspection Report
                     </button>
                   </td>
@@ -301,7 +301,7 @@
                   <td>Resolved in 4h 05m</td>
                   <td>Drainage Wing Team</td>
                   <td>
-                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';">
+                    <button type="button" class="table-action-btn" onclick="alert('Inspection Report #IR-7920:\nStormwater culvert desilted. 2.4 tons debris cleared.');">
                       <i class="fa-solid fa-file-invoice"></i> Inspection Report
                     </button>
                   </td>
@@ -317,7 +317,7 @@
                   <td>Resolved in 2h 45m</td>
                   <td>Solid Waste Rapid Van</td>
                   <td>
-                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';">
+                    <button type="button" class="table-action-btn" onclick="alert('Inspection Report #IR-7561:\nGreen waste collected and transported to Ward 04 compost unit.');">
                       <i class="fa-solid fa-file-invoice"></i> Inspection Report
                     </button>
                   </td>
