@@ -5539,3 +5539,60 @@ img, video, svg, canvas {
     font-size: 2.5rem !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   8. MOBILE — Dashboard Card Grids & Property Card Flex Rows
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  /* Collapse any auto-fit minmax grid to single column on very small phones */
+  [style*="minmax(360px"],
+  [style*="minmax(340px"],
+  [style*="minmax(320px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* mini-visual-body: let flex rows wrap */
+  .mini-visual-body [style*="justify-content: space-between"],
+  .mini-visual-body [style*="justify-content:space-between"] {
+    flex-wrap: wrap !important;
+    gap: 4px !important;
+  }
+
+  /* dash-panel-header: allow wrapping */
+  .dash-panel-header {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  /* DigiLocker vault rows: wrap download button below text on very small screens */
+  [style*="display: flex"][style*="justify-content: space-between"][style*="padding: 12px 14px"] {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  /* hero-banner-actions: stack buttons vertically */
+  .hero-banner-actions {
+    flex-direction: column !important;
+    width: 100%;
+  }
+  .hero-banner-actions .btn-portal-action,
+  .hero-banner-actions .btn-emergency {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  /* user-welcome-strip: stack on very small */
+  .user-welcome-strip {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Collapse minmax grids that are too wide on standard mobile */
+  [style*="minmax(360px"],
+  [style*="minmax(340px"] {
+    grid-template-columns: 1fr !important;
+  }
+}
