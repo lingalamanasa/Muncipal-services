@@ -109,7 +109,7 @@
             </div>
           </div>
           <div class="hero-banner-actions">
-            <button type="button" class="btn-portal-action" onclick="document.querySelector('.dashboard-table-card').scrollIntoView({ behavior: 'smooth' });">
+            <button type="button" class="btn-portal-action" onclick="window.location.href='404error.html';" style="cursor: pointer;">
               <i class="fa-solid fa-check-to-slot"></i> Cast Active Vote
             </button>
           </div>
@@ -121,7 +121,7 @@
           <div class="counter-hud-card">
             <div class="counter-hud-top">
               <div class="counter-hud-icon purple"><i class="fa-solid fa-person-booth"></i></div>
-              <span class="counter-hud-delta positive"><i class="fa-solid fa-fire"></i> Live Ballot</span>
+              <span class="counter-hud-delta positive" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-fire"></i> Live Ballot</span>
             </div>
             <div class="counter-hud-number" data-counter="1" data-duration="1000">0</div>
             <div class="counter-hud-label">Active Referendums</div>
@@ -130,7 +130,7 @@
           <div class="counter-hud-card">
             <div class="counter-hud-top">
               <div class="counter-hud-icon emerald"><i class="fa-solid fa-chart-simple"></i></div>
-              <span class="counter-hud-delta positive"><i class="fa-solid fa-arrow-trend-up"></i> +4.2%</span>
+              <span class="counter-hud-delta positive" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-arrow-trend-up"></i> +4.2%</span>
             </div>
             <div class="counter-hud-number" data-counter="74.8" data-decimals="1" data-suffix="%" data-duration="1200">0.0%</div>
             <div class="counter-hud-label">Ward Voter Turnout</div>
@@ -139,7 +139,7 @@
           <div class="counter-hud-card">
             <div class="counter-hud-top">
               <div class="counter-hud-icon orange"><i class="fa-solid fa-coins"></i></div>
-              <span class="counter-hud-delta neutral"><i class="fa-solid fa-wallet"></i> Participatory</span>
+              <span class="counter-hud-delta neutral" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-wallet"></i> Participatory</span>
             </div>
             <div class="counter-hud-number" data-counter="2.5" data-decimals="1" data-prefix="₹" data-suffix=" Cr" data-duration="1200">₹0.0 Cr</div>
             <div class="counter-hud-label">Budget Allocated to Public Vote</div>
@@ -148,7 +148,7 @@
           <div class="counter-hud-card">
             <div class="counter-hud-top">
               <div class="counter-hud-icon sky"><i class="fa-solid fa-users"></i></div>
-              <span class="counter-hud-delta positive"><i class="fa-solid fa-check"></i> Verified</span>
+              <span class="counter-hud-delta positive" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-check"></i> Verified</span>
             </div>
             <div class="counter-hud-number" data-counter="1840" data-duration="1400">0</div>
             <div class="counter-hud-label">Verified Citizens Voted</div>
@@ -165,7 +165,7 @@
                 <div class="chart-card-title"><i class="fa-solid fa-chart-line" style="color: var(--brand-orange);"></i> Citizen Turnout Progression</div>
                 <div class="chart-card-subtitle">Turnout percentage growth across past 5 participatory ward polls</div>
               </div>
-              <span class="chart-card-meta">2022 - 2026</span>
+              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">2022 - 2026</span>
             </div>
             <div class="chart-canvas-wrapper">
               <canvas id="votingLineChart"></canvas>
@@ -178,7 +178,7 @@
                 <div class="chart-card-title"><i class="fa-solid fa-chart-column" style="color: var(--brand-orange);"></i> Current Ballot Vote Distribution</div>
                 <div class="chart-card-subtitle">Number of verified resident votes per proposed initiative</div>
               </div>
-              <span class="chart-card-meta">Ballot #W4-2026</span>
+              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">Ballot #W4-2026</span>
             </div>
             <div class="chart-canvas-wrapper">
               <canvas id="votingBarChart"></canvas>
@@ -196,7 +196,7 @@
                 <div class="chart-card-title"><i class="fa-solid fa-chart-pie" style="color: var(--brand-orange);"></i> Resident Budget Priority Preferences</div>
                 <div class="chart-card-subtitle">How citizens want participatory funds apportioned</div>
               </div>
-              <span class="chart-card-meta">Community Survey</span>
+              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">Community Survey</span>
             </div>
             <div class="chart-canvas-wrapper">
               <canvas id="votingDoughnutChart"></canvas>
@@ -218,10 +218,10 @@
                 Choose the primary civic upgrade for Sector 3 & 4. Leading option: <strong>Smart Solar Streetlight Corridor (840 votes)</strong>.
               </div>
               <div style="display: flex; gap: 8px;">
-                <button type="button" class="table-action-btn" style="flex: 1; justify-content: center; background: var(--brand-orange); color: #fff; border-color: var(--brand-orange);" onclick="alert('Vote Recorded: Solar Streetlight Expansion. Receipt #VOTE-8840-92.');">
+                <button type="button" class="table-action-btn" style="flex: 1; justify-content: center; background: var(--brand-orange); color: #fff; border-color: var(--brand-orange); cursor: pointer;" onclick="window.location.href='404error.html';">
                   <i class="fa-solid fa-check"></i> Vote Option B
                 </button>
-                <button type="button" class="table-action-btn" style="flex: 1; justify-content: center;" onclick="alert('Viewing Full Participatory Budget Proposal Document.');">
+                <button type="button" class="table-action-btn" style="flex: 1; justify-content: center; cursor: pointer;" onclick="window.location.href='404error.html';">
                   <i class="fa-solid fa-file-lines"></i> View Details
                 </button>
               </div>
@@ -269,7 +269,7 @@
                   <td>Solar Lighting (Leading)</td>
                   <td><span class="status-pill warning"><i class="fa-solid fa-fire"></i> Live Voting</span></td>
                   <td>
-                    <button type="button" class="table-action-btn" onclick="alert('Ballot #BAL-2026-04:\nVoting is open until September 30, 2026.\nYour vote is registered.');">
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';" style="cursor: pointer;">
                       <i class="fa-solid fa-check-to-slot"></i> Vote Ballot
                     </button>
                   </td>
@@ -285,7 +285,7 @@
                   <td>Approved (88% Yes)</td>
                   <td><span class="status-pill success"><i class="fa-solid fa-check-double"></i> Executed</span></td>
                   <td>
-                    <button type="button" class="table-action-btn" onclick="alert('Execution Audit Report:\nCulverts commissioned in March 2026. Zero waterlogging recorded.');">
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';" style="cursor: pointer;">
                       <i class="fa-solid fa-file-signature"></i> Audit Report
                     </button>
                   </td>
@@ -301,7 +301,7 @@
                   <td>Approved (91% Yes)</td>
                   <td><span class="status-pill success"><i class="fa-solid fa-check-double"></i> Executed</span></td>
                   <td>
-                    <button type="button" class="table-action-btn" onclick="alert('Execution Audit Report:\n12 charging stations operational across Ward 04.');">
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';" style="cursor: pointer;">
                       <i class="fa-solid fa-file-signature"></i> Audit Report
                     </button>
                   </td>

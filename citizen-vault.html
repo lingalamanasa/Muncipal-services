@@ -109,10 +109,10 @@
             </div>
           </div>
           <div class="hero-banner-actions">
-            <button type="button" class="btn-portal-action" onclick="alert('Upload Document to Digital Vault:\nSelect a certified civic document (PDF/JPG, max 10MB) for 256-bit cryptographic timestamping and DigiLocker sync.');">
+            <button type="button" class="btn-portal-action" onclick="window.location.href='404error.html';" style="cursor: pointer;">
               <i class="fa-solid fa-cloud-arrow-up"></i> Upload Document
             </button>
-            <button type="button" class="btn-emergency" onclick="alert('DigiLocker Master Sync:\nSuccessfully refreshed 4 certificates with Central Civic Registry.\nAll cryptographic hashes valid.');">
+            <button type="button" class="btn-emergency" onclick="window.location.href='404error.html';" style="cursor: pointer;">
               <i class="fa-solid fa-arrows-rotate"></i> Sync DigiLocker
             </button>
           </div>
@@ -124,7 +124,7 @@
           <div class="counter-hud-card">
             <div class="counter-hud-top">
               <div class="counter-hud-icon emerald"><i class="fa-solid fa-certificate"></i></div>
-              <span class="counter-hud-delta positive"><i class="fa-solid fa-check-double"></i> Verified</span>
+              <span class="counter-hud-delta positive" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-check-double"></i> Verified</span>
             </div>
             <div class="counter-hud-number" data-counter="4" data-duration="1000">0</div>
             <div class="counter-hud-label">Authenticated Certificates</div>
@@ -133,7 +133,7 @@
           <div class="counter-hud-card">
             <div class="counter-hud-top">
               <div class="counter-hud-icon sky"><i class="fa-solid fa-cloud"></i></div>
-              <span class="counter-hud-delta positive"><i class="fa-solid fa-signal"></i> 100% Sync</span>
+              <span class="counter-hud-delta positive" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-signal"></i> 100% Sync</span>
             </div>
             <div class="counter-hud-number" data-counter="100" data-suffix="%" data-duration="1200">0%</div>
             <div class="counter-hud-label">DigiLocker Cloud Integration</div>
@@ -142,7 +142,7 @@
           <div class="counter-hud-card">
             <div class="counter-hud-top">
               <div class="counter-hud-icon orange"><i class="fa-solid fa-hard-drive"></i></div>
-              <span class="counter-hud-delta neutral"><i class="fa-solid fa-server"></i> Cloud Storage</span>
+              <span class="counter-hud-delta neutral" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-server"></i> Cloud Storage</span>
             </div>
             <div class="counter-hud-number" data-counter="14.8" data-decimals="1" data-suffix=" MB" data-duration="1200">0.0 MB</div>
             <div class="counter-hud-label">Vault Storage Utilized</div>
@@ -151,7 +151,7 @@
           <div class="counter-hud-card">
             <div class="counter-hud-top">
               <div class="counter-hud-icon purple"><i class="fa-solid fa-qrcode"></i></div>
-              <span class="counter-hud-delta positive"><i class="fa-solid fa-eye"></i> Active</span>
+              <span class="counter-hud-delta positive" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-eye"></i> Active</span>
             </div>
             <div class="counter-hud-number" data-counter="32" data-duration="1200">0</div>
             <div class="counter-hud-label">QR Authentications Passed</div>
@@ -168,7 +168,7 @@
                 <div class="chart-card-title"><i class="fa-solid fa-chart-line" style="color: var(--brand-orange);"></i> Document Verification & Access Activity</div>
                 <div class="chart-card-subtitle">Monthly verification inquiries from banks, utilities & municipal inspections</div>
               </div>
-              <span class="chart-card-meta">Past 6 Months</span>
+              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">Past 6 Months</span>
             </div>
             <div class="chart-canvas-wrapper">
               <canvas id="vaultLineChart"></canvas>
@@ -181,7 +181,7 @@
                 <div class="chart-card-title"><i class="fa-solid fa-chart-column" style="color: var(--brand-orange);"></i> Vault Certificates by Category</div>
                 <div class="chart-card-subtitle">Number of verified documents held per regulatory wing</div>
               </div>
-              <span class="chart-card-meta">Wing Split</span>
+              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">Wing Split</span>
             </div>
             <div class="chart-canvas-wrapper">
               <canvas id="vaultBarChart"></canvas>
@@ -199,7 +199,7 @@
                 <div class="chart-card-title"><i class="fa-solid fa-chart-pie" style="color: var(--brand-orange);"></i> Issuing Authority Distribution</div>
                 <div class="chart-card-subtitle">Accredited issuers of your digital certificates</div>
               </div>
-              <span class="chart-card-meta">Authority Share</span>
+              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">Authority Share</span>
             </div>
             <div class="chart-canvas-wrapper">
               <canvas id="vaultDoughnutChart"></canvas>
@@ -220,7 +220,7 @@
               </div>
               <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.84rem;">
                 <span style="color: var(--text-muted);">DigiLocker Status:</span>
-                <span class="status-pill success"><i class="fa-solid fa-shield-check"></i> Connected</span>
+                <span class="status-pill success" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-shield-check"></i> Connected</span>
               </div>
               <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.84rem;">
                 <span style="color: var(--text-muted);">Ledger Timestamp:</span>
@@ -228,7 +228,7 @@
               </div>
               <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border-medium); padding-top: 10px; font-size: 0.84rem;">
                 <span style="color: var(--text-muted);">Audit Log Integrity:</span>
-                <strong style="color: #10b981;"><i class="fa-solid fa-check"></i> 100% Untampered</strong>
+                <strong style="color: #10b981; cursor: pointer;" onclick="window.location.href='404error.html';"><i class="fa-solid fa-check"></i> 100% Untampered</strong>
               </div>
             </div>
           </div>
@@ -275,7 +275,7 @@
                   <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Valid FY 26-27</span></td>
                   <td><code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">sha256:7f9a...c4e1</code></td>
                   <td>
-                    <button type="button" class="table-action-btn" onclick="alert('Downloading authenticated Property Tax Clearance (Khata Extract) PDF...');">
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';" style="cursor: pointer;">
                       <i class="fa-solid fa-download"></i> Download PDF
                     </button>
                   </td>
@@ -291,7 +291,7 @@
                   <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Permanent</span></td>
                   <td><code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">sha256:3b88...19f2</code></td>
                   <td>
-                    <button type="button" class="table-action-btn" onclick="alert('Downloading verified Digital Birth Certificate PDF (DigiLocker Validated)...');">
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';" style="cursor: pointer;">
                       <i class="fa-solid fa-download"></i> Download PDF
                     </button>
                   </td>
@@ -307,7 +307,7 @@
                   <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Approved</span></td>
                   <td><code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">sha256:9a41...88ec</code></td>
                   <td>
-                    <button type="button" class="table-action-btn" onclick="alert('Downloading Sanctioned Building Plan NOC Blueprint Document...');">
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';" style="cursor: pointer;">
                       <i class="fa-solid fa-download"></i> Download PDF
                     </button>
                   </td>
@@ -323,7 +323,7 @@
                   <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Active</span></td>
                   <td><code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">sha256:2e4f...55aa</code></td>
                   <td>
-                    <button type="button" class="table-action-btn" onclick="alert('Downloading verified Smart Water Meter Installation NOC Certificate...');">
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';" style="cursor: pointer;">
                       <i class="fa-solid fa-download"></i> Download PDF
                     </button>
                   </td>
