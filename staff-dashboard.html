@@ -86,24 +86,52 @@
     <main class="dashboard-main">
       
       <!-- Topbar Header -->
-      <header class="dashboard-topbar dashboard-topbar-minimal">
+      <header class="dashboard-topbar">
         <div class="topbar-left">
           <button type="button" id="sidebarToggleBtn" class="topbar-icon-btn" aria-label="Toggle Sidebar" style="display: none;">
             <i class="fa-solid fa-bars"></i>
           </button>
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: #1e293b; font-weight: 600;">
+            <i class="fa-solid fa-circle-user" style="color: var(--brand-orange);"></i>
+            <span>Welcome back, <strong id="topbarUserEmail" style="color: var(--brand-orange);">officer.varma@stacklycivic.org</strong></span>
+          </div>
         </div>
       </header>
-      <style>
-        @media (min-width: 993px) {
-          .dashboard-topbar-minimal {
-            display: none !important;
-          }
-        }
-      </style>
 
       <!-- Dashboard Body Content -->
       <div class="dashboard-content">
         
+        <!-- Welcome User Email Banner Strip -->
+        <div class="user-welcome-strip" style="display: flex; align-items: center; justify-content: space-between; background: linear-gradient(135deg, #fff7ed 0%, #ffffff 100%); border: 1px solid #fed7aa; border-radius: 12px; padding: 12px 20px; margin-bottom: 22px; box-shadow: 0 2px 8px rgba(255, 102, 0, 0.06);">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--brand-orange); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.95rem;">
+              <i class="fa-solid fa-envelope-circle-check"></i>
+            </div>
+            <div>
+              <div style="font-size: 0.76rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Officer Account Verification</div>
+              <div style="font-size: 0.95rem; font-weight: 600; color: #0f172a;">
+                Welcome back, <strong id="particularUserEmail" style="color: var(--brand-orange); font-weight: 800;">officer.varma@stacklycivic.org</strong>
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span class="status-pill success" style="font-size: 0.78rem;"><i class="fa-solid fa-circle-check"></i> Verified Session</span>
+          </div>
+        </div>
+        <script>
+          (function() {
+            try {
+              const savedEmail = sessionStorage.getItem('stackly_user_email') || localStorage.getItem('stackly_user_email');
+              if (savedEmail) {
+                const el1 = document.getElementById('particularUserEmail');
+                if (el1) el1.textContent = savedEmail;
+                const el2 = document.getElementById('topbarUserEmail');
+                if (el2) el2.textContent = savedEmail;
+              }
+            } catch (e) {}
+          })();
+        </script>
+
         <!-- Welcome Executive Banner -->
         <div class="dashboard-hero-banner" id="ops-overview">
           <div>
