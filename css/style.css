@@ -2421,6 +2421,31 @@ button, input, select, textarea {
   background: #ffffff;
 }
 
+.sidebar-logout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 11px 16px;
+  border-radius: var(--radius-sm);
+  background: #fff5f0;
+  color: var(--brand-orange);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 102, 0, 0.28);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.sidebar-logout-btn:hover {
+  background: var(--brand-orange);
+  color: #ffffff;
+  border-color: var(--brand-orange);
+  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.25);
+}
+
 .sidebar-profile-card {
   display: flex;
   align-items: center;
