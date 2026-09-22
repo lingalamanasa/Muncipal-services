@@ -73,64 +73,27 @@
         </nav>
       </div>
 
-      <!-- Sidebar User Profile Footer -->
-      <div class="sidebar-footer">
-        <div class="sidebar-profile-card">
-          <img src="images/officer-avatar.webp" alt="Eng. Rajesh Varma - Senior Executive" class="sidebar-avatar">
-          <div class="sidebar-profile-info">
-            <div class="sidebar-profile-name">Eng. Rajesh Varma</div>
-            <div class="sidebar-profile-desc">Sr. Ward Executive • ID: 4491</div>
-          </div>
-          <a href="login.html" title="Sign Out" style="color: var(--text-muted); font-size: 1.1rem; padding: 4px;" onclick="return confirm('Confirm departure from Officer Command Station?');">
-            <i class="fa-solid fa-right-from-bracket"></i>
-          </a>
-        </div>
-      </div>
+
     </aside>
 
     <!-- Main Dashboard Area -->
     <main class="dashboard-main">
       
       <!-- Topbar Header -->
-      <header class="dashboard-topbar">
+      <header class="dashboard-topbar dashboard-topbar-minimal">
         <div class="topbar-left">
           <button type="button" id="sidebarToggleBtn" class="topbar-icon-btn" aria-label="Toggle Sidebar" style="display: none;">
             <i class="fa-solid fa-bars"></i>
           </button>
-          
-          <!-- Ward Selector Dropdown -->
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted);"><i class="fa-solid fa-filter" style="color: var(--brand-orange);"></i> Jurisdiction:</span>
-            <select id="officerWardSelect" class="calc-control" style="padding: 6px 12px; font-size: 0.82rem; width: auto; font-weight: 700;">
-              <option value="all">All 48 Municipal Wards</option>
-              <option value="w04" selected>Ward 04 - Downtown Civic (Primary)</option>
-              <option value="w01">Ward 01 - Metro Central</option>
-              <option value="w02">Ward 02 - North Harbor Logistics</option>
-              <option value="w03">Ward 03 - Tech Innovation Corridor</option>
-              <option value="w05">Ward 05 - Riverside Historic</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="topbar-right">
-          <!-- Switch to Citizen Portal -->
-          <a href="citizen-dashboard.html" class="btn-portal-switch" title="View Citizen Experience Portal">
-            <i class="fa-solid fa-user" style="color: var(--brand-orange);"></i>
-            <span>Switch to Citizen Portal</span>
-          </a>
-
-          <!-- Duty Shift Status -->
-          <div style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; background: #ecfdf5; color: #065f46; font-size: 0.78rem; font-weight: 700; border: 1px solid #a7f3d0;">
-            <span class="pulse-dot"></span> Shift 01 (08:00 - 16:00) Active
-          </div>
-
-          <!-- Rapid Dispatch Notification -->
-          <button type="button" class="topbar-icon-btn" title="Pending Incident Dispatches" onclick="alert('Officer Priority Alerts:\n1. Critical water pressure drop in Sector 2 culvert.\n2. Streetlight feeder #04 outage auto-assigned to Electrical Crew 2.\n3. Pothole defect #STK-8492 SLA clock at 3h 48m.');">
-            <i class="fa-solid fa-bell"></i>
-            <span class="badge-count" style="background: #ef4444;">5</span>
-          </button>
         </div>
       </header>
+      <style>
+        @media (min-width: 993px) {
+          .dashboard-topbar-minimal {
+            display: none !important;
+          }
+        }
+      </style>
 
       <!-- Dashboard Body Content -->
       <div class="dashboard-content">
