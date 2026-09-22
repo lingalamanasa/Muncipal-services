@@ -4467,8 +4467,17 @@ button, input, select, textarea {
   gap: 6px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
   white-space: nowrap;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 25;
+  text-decoration: none;
+  transition: opacity 0.3s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.char-click-hint:hover {
+  background: var(--brand-orange);
+  color: #ffffff;
+  transform: translateX(-50%) scale(1.05);
 }
 
 .char-click-hint i {
