@@ -293,8 +293,8 @@
             </div>
           </div>
 
-          <div class="dash-table-wrap">
-            <table class="dash-table">
+          <div class="dash-table-wrap dashboard-table-wrapper">
+            <table class="dash-table dashboard-data-table">
               <thead>
                 <tr>
                   <th>Incident #</th>
@@ -308,18 +308,18 @@
               </thead>
               <tbody id="officerQueueTableBody">
                 <tr data-level="emergency">
-                  <td><strong>#STK-8495</strong></td>
-                  <td>
+                  <td data-label="Incident #"><strong>#STK-8495</strong></td>
+                  <td data-label="Defect Classification">
                     <div>
                       <strong style="color: #b91c1c;"><i class="fa-solid fa-burst"></i> Main Water Line Pipe Rupture</strong>
                       <div style="font-size: 0.76rem; color: var(--text-muted);">Acoustic IoT telemetry detected 38 PSI pressure drop</div>
                     </div>
                   </td>
-                  <td>Ward 02 • Harbor Pier 3</td>
-                  <td><span class="status-pill emergency"><i class="fa-solid fa-triangle-exclamation"></i> Critical P1</span></td>
-                  <td>Hydrology Rapid Squad 4</td>
-                  <td><strong style="color: #b91c1c;"><i class="fa-solid fa-stopwatch"></i> 48 min remaining</strong></td>
-                  <td>
+                  <td data-label="Ward Sector">Ward 02 • Harbor Pier 3</td>
+                  <td data-label="Severity"><span class="status-pill emergency"><i class="fa-solid fa-triangle-exclamation"></i> Critical P1</span></td>
+                  <td data-label="Assigned Crew">Hydrology Rapid Squad 4</td>
+                  <td data-label="SLA Countdown"><strong style="color: #b91c1c;"><i class="fa-solid fa-stopwatch"></i> 48 min remaining</strong></td>
+                  <td data-label="Action">
                     <button type="button" class="btn-portal-action" style="padding: 6px 12px; font-size: 0.78rem; cursor: pointer;" onclick="window.location.href='404error.html';">
                       Manage Crew
                     </button>
@@ -327,18 +327,18 @@
                 </tr>
 
                 <tr data-level="progress">
-                  <td><strong>#STK-8492</strong></td>
-                  <td>
+                  <td data-label="Incident #"><strong>#STK-8492</strong></td>
+                  <td data-label="Defect Classification">
                     <div>
                       <strong>Asphalt Pothole & Road Edge Hazard</strong>
                       <div style="font-size: 0.76rem; color: var(--text-muted);">Citizen uploaded photo evidence verified via AI</div>
                     </div>
                   </td>
-                  <td>Ward 04 • 4th Main Road</td>
-                  <td><span class="status-pill progress">High P2</span></td>
-                  <td>Asphalt Crew Alpha-3</td>
-                  <td><strong style="color: #ea580c;"><i class="fa-regular fa-clock"></i> 3h 48m remaining</strong></td>
-                  <td>
+                  <td data-label="Ward Sector">Ward 04 • 4th Main Road</td>
+                  <td data-label="Severity"><span class="status-pill progress">High P2</span></td>
+                  <td data-label="Assigned Crew">Asphalt Crew Alpha-3</td>
+                  <td data-label="SLA Countdown"><strong style="color: #ea580c;"><i class="fa-regular fa-clock"></i> 3h 48m remaining</strong></td>
+                  <td data-label="Action">
                     <button type="button" class="btn-emergency" style="padding: 6px 12px; font-size: 0.78rem; cursor: pointer;" onclick="window.location.href='404error.html';">
                       Mark Resolved
                     </button>
@@ -346,18 +346,18 @@
                 </tr>
 
                 <tr data-level="progress">
-                  <td><strong>#STK-8488</strong></td>
-                  <td>
+                  <td data-label="Incident #"><strong>#STK-8488</strong></td>
+                  <td data-label="Defect Classification">
                     <div>
                       <strong>Solid Waste Overflow & Blockage</strong>
                       <div style="font-size: 0.76rem; color: var(--text-muted);">Commercial market dumpster reached 100% capacity</div>
                     </div>
                   </td>
-                  <td>Ward 01 • Metro Plaza Gate 2</td>
-                  <td><span class="status-pill progress">Normal P3</span></td>
-                  <td>Sanitation Unit 12</td>
-                  <td><span><i class="fa-regular fa-clock"></i> 5h 10m remaining</span></td>
-                  <td>
+                  <td data-label="Ward Sector">Ward 01 • Metro Plaza Gate 2</td>
+                  <td data-label="Severity"><span class="status-pill progress">Normal P3</span></td>
+                  <td data-label="Assigned Crew">Sanitation Unit 12</td>
+                  <td data-label="SLA Countdown"><span><i class="fa-regular fa-clock"></i> 5h 10m remaining</span></td>
+                  <td data-label="Action">
                     <button type="button" class="btn-emergency" style="padding: 6px 12px; font-size: 0.78rem; cursor: pointer;" onclick="window.location.href='404error.html';">
                       Mark Resolved
                     </button>
@@ -365,18 +365,18 @@
                 </tr>
 
                 <tr data-level="pending">
-                  <td><strong>#STK-8501</strong></td>
-                  <td>
+                  <td data-label="Incident #"><strong>#STK-8501</strong></td>
+                  <td data-label="Defect Classification">
                     <div>
                       <strong>Streetlight Circuit Blackout</strong>
                       <div style="font-size: 0.76rem; color: var(--text-muted);">6 LED luminaires unlit along pedestrian corridor</div>
                     </div>
                   </td>
-                  <td>Ward 05 • Riverside Walk</td>
-                  <td><span class="status-pill pending">Unassigned</span></td>
-                  <td><em style="color: #ef4444;">Unassigned</em></td>
-                  <td><span><i class="fa-regular fa-clock"></i> 7h 20m remaining</span></td>
-                  <td>
+                  <td data-label="Ward Sector">Ward 05 • Riverside Walk</td>
+                  <td data-label="Severity"><span class="status-pill pending">Unassigned</span></td>
+                  <td data-label="Assigned Crew"><em style="color: #ef4444;">Unassigned</em></td>
+                  <td data-label="SLA Countdown"><span><i class="fa-regular fa-clock"></i> 7h 20m remaining</span></td>
+                  <td data-label="Action">
                     <button type="button" class="btn-portal-action" style="padding: 6px 12px; font-size: 0.78rem; cursor: pointer;" onclick="window.location.href='404error.html';">
                       Assign Crew
                     </button>
