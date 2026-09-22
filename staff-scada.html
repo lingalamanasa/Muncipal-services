@@ -123,7 +123,7 @@
             </div>
           </div>
           <div class="hero-banner-actions">
-            <button type="button" class="btn-portal-action" onclick="alert('Emergency Pressure Actuator Triggered: Solenoid valve V-04 isolated.');">
+            <button type="button" class="btn-portal-action" onclick="window.location.href='404error.html';" style="cursor: pointer;">
               <i class="fa-solid fa-power-off"></i> Emergency Valve Cutoff
             </button>
           </div>
@@ -135,7 +135,7 @@
           <div class="counter-hud-card">
             <div class="counter-hud-top">
               <div class="counter-hud-icon emerald"><i class="fa-solid fa-microchip"></i></div>
-              <span class="counter-hud-delta positive"><i class="fa-solid fa-signal"></i> Online</span>
+              <span class="counter-hud-delta positive" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-signal"></i> Online</span>
             </div>
             <div class="counter-hud-number" data-counter="1420" data-duration="1200">0</div>
             <div class="counter-hud-label">Connected Telemetry Nodes</div>
@@ -144,7 +144,7 @@
           <div class="counter-hud-card">
             <div class="counter-hud-top">
               <div class="counter-hud-icon sky"><i class="fa-solid fa-server"></i></div>
-              <span class="counter-hud-delta positive"><i class="fa-solid fa-check-double"></i> 99.98%</span>
+              <span class="counter-hud-delta positive" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-check-double"></i> 99.98%</span>
             </div>
             <div class="counter-hud-number" data-counter="99.98" data-decimals="2" data-suffix="%" data-duration="1200">0.00%</div>
             <div class="counter-hud-label">SCADA Bus Uptime</div>
@@ -153,7 +153,7 @@
           <div class="counter-hud-card">
             <div class="counter-hud-top">
               <div class="counter-hud-icon purple"><i class="fa-solid fa-bolt-lightning"></i></div>
-              <span class="counter-hud-delta negative"><i class="fa-solid fa-circle-exclamation"></i> 3 Warnings</span>
+              <span class="counter-hud-delta negative" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-circle-exclamation"></i> 3 Warnings</span>
             </div>
             <div class="counter-hud-number" data-counter="3" data-duration="800">0</div>
             <div class="counter-hud-label">Hydraulic Anomaly Alerts</div>
@@ -162,7 +162,7 @@
           <div class="counter-hud-card">
             <div class="counter-hud-top">
               <div class="counter-hud-icon orange"><i class="fa-solid fa-solar-panel"></i></div>
-              <span class="counter-hud-delta positive"><i class="fa-solid fa-leaf"></i> Clean Grid</span>
+              <span class="counter-hud-delta positive" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-leaf"></i> Clean Grid</span>
             </div>
             <div class="counter-hud-number" data-counter="18.4" data-decimals="1" data-suffix=" MWh" data-duration="1400">0.0 MWh</div>
             <div class="counter-hud-label">Grid Energy Optimized</div>
@@ -179,7 +179,7 @@
                 <div class="chart-card-title"><i class="fa-solid fa-chart-line" style="color: var(--brand-orange);"></i> Hydraulic Pipeline Pressure & Flow (PSI)</div>
                 <div class="chart-card-subtitle">Real-time pressure readings across primary water transmission trunks</div>
               </div>
-              <span class="chart-card-meta">24-Hour Telemetry</span>
+              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">24-Hour Telemetry</span>
             </div>
             <div class="chart-canvas-wrapper">
               <canvas id="scadaLineChart"></canvas>
@@ -192,7 +192,7 @@
                 <div class="chart-card-title"><i class="fa-solid fa-chart-column" style="color: var(--brand-orange);"></i> Grid Power Consumption by Sector (MWh)</div>
                 <div class="chart-card-subtitle">Civic streetlighting & water pumping energy usage by ward</div>
               </div>
-              <span class="chart-card-meta">Energy Grid</span>
+              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">Energy Grid</span>
             </div>
             <div class="chart-canvas-wrapper">
               <canvas id="scadaBarChart"></canvas>
@@ -210,7 +210,7 @@
                 <div class="chart-card-title"><i class="fa-solid fa-chart-pie" style="color: var(--brand-orange);"></i> Sensor Health Matrix</div>
                 <div class="chart-card-subtitle">Diagnostic status across 1,420 underground sensing probes</div>
               </div>
-              <span class="chart-card-meta">Diagnostics</span>
+              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">Diagnostics</span>
             </div>
             <div class="chart-canvas-wrapper">
               <canvas id="scadaDoughnutChart"></canvas>
@@ -239,7 +239,7 @@
               </div>
               <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border-medium); padding-top: 10px; font-size: 0.84rem;">
                 <span style="color: var(--text-muted);">Action Status:</span>
-                <span class="status-pill warning"><i class="fa-solid fa-truck-fast"></i> Crew 3 En Route</span>
+                <span class="status-pill warning" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-truck-fast"></i> Crew 3 En Route</span>
               </div>
             </div>
           </div>
@@ -282,7 +282,7 @@
                   <td>4.0 - 4.5 Bar</td>
                   <td><span class="status-pill danger"><i class="fa-solid fa-fire"></i> Pressure Critical</span></td>
                   <td>
-                    <button type="button" class="table-action-btn" onclick="alert('Isolating motorized butterfly valve BFV-22 via SCADA command.');">
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';" style="cursor: pointer;">
                       <i class="fa-solid fa-lock"></i> Isolate Valve
                     </button>
                   </td>
@@ -295,7 +295,7 @@
                   <td>&lt; 65% Capacity</td>
                   <td><span class="status-pill warning"><i class="fa-solid fa-water"></i> High Tide Alert</span></td>
                   <td>
-                    <button type="button" class="table-action-btn" onclick="alert('Activating storm pump #3 at Harbor Sluice Gate.');">
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';" style="cursor: pointer;">
                       <i class="fa-solid fa-gears"></i> Start Pump
                     </button>
                   </td>
@@ -308,7 +308,7 @@
                   <td>220 - 240V</td>
                   <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Balanced Grid</span></td>
                   <td>
-                    <button type="button" class="table-action-btn" onclick="alert('Power Feeder telemetry normal.');">
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';" style="cursor: pointer;">
                       <i class="fa-solid fa-circle-info"></i> Details
                     </button>
                   </td>
@@ -321,7 +321,7 @@
                   <td>AQI &lt; 100</td>
                   <td><span class="status-pill success"><i class="fa-solid fa-leaf"></i> Optimal</span></td>
                   <td>
-                    <button type="button" class="table-action-btn" onclick="alert('Air quality index broadcasted to municipal public signage.');">
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';" style="cursor: pointer;">
                       <i class="fa-solid fa-bullhorn"></i> Broadcast AQI
                     </button>
                   </td>
