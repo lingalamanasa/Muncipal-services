@@ -72,18 +72,12 @@
         </nav>
       </div>
 
-      <!-- Sidebar User Profile Footer -->
+      <!-- Sidebar Logout Footer -->
       <div class="sidebar-footer">
-        <div class="sidebar-profile-card">
-          <img src="images/officer-avatar.webp" alt="Eng. Rajesh Varma - Senior Executive" class="sidebar-avatar">
-          <div class="sidebar-profile-info">
-            <div class="sidebar-profile-name">Eng. Rajesh Varma</div>
-            <div class="sidebar-profile-desc">Sr. Ward Executive • ID: 4491</div>
-          </div>
-          <a href="login.html" title="Sign Out" style="color: var(--text-muted); font-size: 1.1rem; padding: 4px;" onclick="return confirm('Confirm departure from Officer Command Station?');">
-            <i class="fa-solid fa-right-from-bracket"></i>
-          </a>
-        </div>
+        <a href="login.html" class="sidebar-logout-btn" title="Sign Out" onclick="return confirm('Confirm departure from Officer Command Station?');">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Logout</span>
+        </a>
       </div>
     </aside>
 
@@ -115,6 +109,34 @@
 
       <!-- Dashboard Content -->
       <div class="dashboard-content">
+        
+        <!-- Welcome User Email Banner Strip -->
+        <div class="user-welcome-strip" style="display: flex; align-items: center; justify-content: space-between; background: linear-gradient(135deg, #fff7ed 0%, #ffffff 100%); border: 1px solid #fed7aa; border-radius: 12px; padding: 12px 20px; margin-bottom: 22px; box-shadow: 0 2px 8px rgba(255, 102, 0, 0.06);">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--brand-orange); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.95rem;">
+              <i class="fa-solid fa-envelope-circle-check"></i>
+            </div>
+            <div>
+              <div style="font-size: 0.76rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Officer Account Verification</div>
+              <div style="font-size: 0.95rem; font-weight: 600; color: #0f172a;">
+                Welcome back, <strong class="particularUserEmail" style="color: var(--brand-orange); font-weight: 800;">officer.varma@stacklycivic.org</strong>
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span class="status-pill success" style="font-size: 0.78rem;"><i class="fa-solid fa-circle-check"></i> Verified Session</span>
+          </div>
+        </div>
+        <script>
+          (function() {
+            try {
+              const savedEmail = sessionStorage.getItem('stackly_user_email') || localStorage.getItem('stackly_user_email');
+              if (savedEmail) {
+                document.querySelectorAll('.particularUserEmail').forEach(el => el.textContent = savedEmail);
+              }
+            } catch (e) {}
+          })();
+        </script>
         
         <!-- Welcome Hero Banner -->
         <div class="dashboard-hero-banner">
