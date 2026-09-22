@@ -95,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
      -------------------------------------------------------------------------- */
   const tiltCards = document.querySelectorAll('.card-tilt-inner, .hero-visual-card, .tilt-on-hover');
   tiltCards.forEach((card) => {
+    if (window.innerWidth <= 768) return;
     card.style.transformStyle = 'preserve-3d';
     card.style.transition = 'transform 0.15s ease-out, box-shadow 0.2s ease';
 
@@ -150,7 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
       // Slide In Hero Visual Frame
       .from('.hero-visual-card, .hero-split-right', {
         opacity: 0,
-        x: 45,
+        x: window.innerWidth <= 768 ? 0 : 45,
+        y: window.innerWidth <= 768 ? 20 : 0,
         scale: 0.95,
         duration: 1,
         ease: 'power2.out'
