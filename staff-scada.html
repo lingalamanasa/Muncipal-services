@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -287,52 +287,52 @@
               </thead>
               <tbody id="scadaTableBody">
                 <tr data-status="alert">
-                  <td><strong>#HYD-W4-02</strong></td>
-                  <td>Hydrology Water Main</td>
-                  <td>Ward 04, Sector 2 (-3.4m)</td>
-                  <td><strong style="color: #ef4444;">1.4 Bar (Severe Drop)</strong></td>
-                  <td>4.0 - 4.5 Bar</td>
-                  <td><span class="status-pill danger"><i class="fa-solid fa-fire"></i> Pressure Critical</span></td>
-                  <td>
+                  <td data-label="Sensor ID"><strong>#HYD-W4-02</strong></td>
+                  <td data-label="Sub-System">Hydrology Water Main</td>
+                  <td data-label="Location / Depth">Ward 04, Sector 2 (-3.4m)</td>
+                  <td data-label="Telemetry Metric"><strong style="color: #ef4444;">1.4 Bar (Severe Drop)</strong></td>
+                  <td data-label="Threshold">4.0 - 4.5 Bar</td>
+                  <td data-label="Status"><span class="status-pill danger"><i class="fa-solid fa-fire"></i> Pressure Critical</span></td>
+                  <td data-label="Action">
                     <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';" style="cursor: pointer;">
                       <i class="fa-solid fa-lock"></i> Isolate Valve
                     </button>
                   </td>
                 </tr>
                 <tr data-status="alert">
-                  <td><strong>#DRN-W2-09</strong></td>
-                  <td>Stormwater Ultrasonic Level</td>
-                  <td>Ward 02, Harbor Culvert (-2.1m)</td>
-                  <td><strong style="color: #d97706;">88% Surcharge Depth</strong></td>
-                  <td>&lt; 65% Capacity</td>
-                  <td><span class="status-pill warning"><i class="fa-solid fa-water"></i> High Tide Alert</span></td>
-                  <td>
+                  <td data-label="Sensor ID"><strong>#DRN-W2-09</strong></td>
+                  <td data-label="Sub-System">Stormwater Ultrasonic Level</td>
+                  <td data-label="Location / Depth">Ward 02, Harbor Culvert (-2.1m)</td>
+                  <td data-label="Telemetry Metric"><strong style="color: #d97706;">88% Surcharge Depth</strong></td>
+                  <td data-label="Threshold">&lt; 65% Capacity</td>
+                  <td data-label="Status"><span class="status-pill warning"><i class="fa-solid fa-water"></i> High Tide Alert</span></td>
+                  <td data-label="Action">
                     <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';" style="cursor: pointer;">
                       <i class="fa-solid fa-gears"></i> Start Pump
                     </button>
                   </td>
                 </tr>
                 <tr data-status="normal">
-                  <td><strong>#PWR-W4-04</strong></td>
-                  <td>Feeder Smart Power Meter</td>
-                  <td>Ward 04, 8th Cross Substation</td>
-                  <td><strong style="color: #10b981;">231V • 50.1 Hz</strong></td>
-                  <td>220 - 240V</td>
-                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Balanced Grid</span></td>
-                  <td>
+                  <td data-label="Sensor ID"><strong>#PWR-W4-04</strong></td>
+                  <td data-label="Sub-System">Feeder Smart Power Meter</td>
+                  <td data-label="Location / Depth">Ward 04, 8th Cross Substation</td>
+                  <td data-label="Telemetry Metric"><strong style="color: #10b981;">231V â€¢ 50.1 Hz</strong></td>
+                  <td data-label="Threshold">220 - 240V</td>
+                  <td data-label="Status"><span class="status-pill success"><i class="fa-solid fa-check"></i> Balanced Grid</span></td>
+                  <td data-label="Action">
                     <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';" style="cursor: pointer;">
                       <i class="fa-solid fa-circle-info"></i> Details
                     </button>
                   </td>
                 </tr>
                 <tr data-status="normal">
-                  <td><strong>#AQI-W4-01</strong></td>
-                  <td>Civic Environmental Monitor</td>
-                  <td>Ward 04 Town Hall Tower (+15m)</td>
-                  <td><strong style="color: #10b981;">AQI 42 (Good) • PM2.5: 11</strong></td>
-                  <td>AQI &lt; 100</td>
-                  <td><span class="status-pill success"><i class="fa-solid fa-leaf"></i> Optimal</span></td>
-                  <td>
+                  <td data-label="Sensor ID"><strong>#AQI-W4-01</strong></td>
+                  <td data-label="Sub-System">Civic Environmental Monitor</td>
+                  <td data-label="Location / Depth">Ward 04 Town Hall Tower (+15m)</td>
+                  <td data-label="Telemetry Metric"><strong style="color: #10b981;">AQI 42 (Good) â€¢ PM2.5: 11</strong></td>
+                  <td data-label="Threshold">AQI &lt; 100</td>
+                  <td data-label="Status"><span class="status-pill success"><i class="fa-solid fa-leaf"></i> Optimal</span></td>
+                  <td data-label="Action">
                     <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';" style="cursor: pointer;">
                       <i class="fa-solid fa-bullhorn"></i> Broadcast AQI
                     </button>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -176,7 +176,7 @@
               <div class="counter-hud-icon emerald"><i class="fa-solid fa-receipt"></i></div>
               <span class="counter-hud-delta positive" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-circle-check"></i> Zero Dues</span>
             </div>
-            <div class="counter-hud-number" data-counter="0" data-prefix="₹" data-decimals="2" data-duration="1000">₹0.00</div>
+            <div class="counter-hud-number" data-counter="0" data-prefix="â‚¹" data-decimals="2" data-duration="1000">â‚¹0.00</div>
             <div class="counter-hud-label">Municipal Tax Balance</div>
           </div>
 
@@ -311,20 +311,20 @@
               </thead>
               <tbody id="citizenTicketTableBody">
                 <tr data-status="progress">
-                  <td><strong>#STK-8492</strong></td>
-                  <td>
+                  <td data-label="Ticket ID"><strong>#STK-8492</strong></td>
+                  <td data-label="Category & Description">
                     <div style="display: flex; align-items: center; gap: 12px;">
                       <img src="images/citizen-grievance-proof.webp" alt="Pothole Photo Proof" style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover; border: 1px solid var(--border-subtle);">
                       <div>
                         <div style="font-weight: 700; color: #0a0a0a;">Road Surface Pothole Hazard</div>
-                        <div style="font-size: 0.78rem; color: var(--text-muted);">Photo verified • Assigned to Ward Eng. Rajesh V.</div>
+                        <div style="font-size: 0.78rem; color: var(--text-muted);">Photo verified â€¢ Assigned to Ward Eng. Rajesh V.</div>
                       </div>
                     </div>
                   </td>
-                  <td>4th Main Road, Sector 3</td>
-                  <td><span class="status-pill progress"><span class="pulse-dot"></span> In Progress</span></td>
-                  <td><span style="font-weight: 700; color: #ea580c;"><i class="fa-regular fa-clock"></i> 3h 48m left</span></td>
-                  <td>
+                  <td data-label="Location">4th Main Road, Sector 3</td>
+                  <td data-label="Status"><span class="status-pill progress"><span class="pulse-dot"></span> In Progress</span></td>
+                  <td data-label="SLA / Resolution"><span style="font-weight: 700; color: #ea580c;"><i class="fa-regular fa-clock"></i> 3h 48m left</span></td>
+                  <td data-label="Action">
                     <button type="button" class="btn-emergency" style="padding: 6px 12px; font-size: 0.78rem; cursor: pointer;" onclick="window.location.href='404error.html';">
                       Track Live
                     </button>
@@ -332,17 +332,17 @@
                 </tr>
 
                 <tr data-status="resolved">
-                  <td><strong>#APP-1029</strong></td>
-                  <td>
+                  <td data-label="Ticket ID"><strong>#APP-1029</strong></td>
+                  <td data-label="Category & Description">
                     <div>
                       <div style="font-weight: 700; color: #0a0a0a;">Rooftop Solar Rebate Subsidy</div>
                       <div style="font-size: 0.78rem; color: var(--text-muted);">Capacity: 3.5 kW Grid-Tied Inverter</div>
                     </div>
                   </td>
-                  <td>42 Maple Crescent</td>
-                  <td><span class="status-pill resolved"><i class="fa-solid fa-check"></i> Approved</span></td>
-                  <td>Completed Sep 12, 2026</td>
-                  <td>
+                  <td data-label="Location">42 Maple Crescent</td>
+                  <td data-label="Status"><span class="status-pill resolved"><i class="fa-solid fa-check"></i> Approved</span></td>
+                  <td data-label="SLA / Resolution">Completed Sep 12, 2026</td>
+                  <td data-label="Action">
                     <button type="button" class="btn-emergency" style="padding: 6px 12px; font-size: 0.78rem; cursor: pointer;" onclick="window.location.href='404error.html';">
                       View Sanction
                     </button>
@@ -350,17 +350,17 @@
                 </tr>
 
                 <tr data-status="resolved">
-                  <td><strong>#NOC-5501</strong></td>
-                  <td>
+                  <td data-label="Ticket ID"><strong>#NOC-5501</strong></td>
+                  <td data-label="Category & Description">
                     <div>
                       <div style="font-weight: 700; color: #0a0a0a;">Smart IoT Water Meter NOC</div>
                       <div style="font-size: 0.78rem; color: var(--text-muted);">Meter SN: WTR-9941-BLR</div>
                     </div>
                   </td>
-                  <td>42 Maple Crescent</td>
-                  <td><span class="status-pill resolved"><i class="fa-solid fa-check"></i> Activated</span></td>
-                  <td>Completed Aug 28, 2026</td>
-                  <td>
+                  <td data-label="Location">42 Maple Crescent</td>
+                  <td data-label="Status"><span class="status-pill resolved"><i class="fa-solid fa-check"></i> Activated</span></td>
+                  <td data-label="SLA / Resolution">Completed Aug 28, 2026</td>
+                  <td data-label="Action">
                     <button type="button" class="btn-emergency" style="padding: 6px 12px; font-size: 0.78rem; cursor: pointer;" onclick="window.location.href='404error.html';">
                       View NOC
                     </button>
@@ -398,7 +398,7 @@
                 </div>
                 <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 10px;">
                   <span>Property Tax FY 26-27:</span>
-                  <strong style="color: #10b981;">PAID (₹12,450)</strong>
+                  <strong style="color: #10b981;">PAID (â‚¹12,450)</strong>
                 </div>
               </div>
             </div>
@@ -429,7 +429,7 @@
                   <i class="fa-solid fa-file-lines" style="color: var(--brand-orange); font-size: 1.2rem;"></i>
                   <div>
                     <div style="font-weight: 700; font-size: 0.88rem; color: #0a0a0a;">Birth Certificate (DigiLocker Verified)</div>
-                    <div style="font-size: 0.74rem; color: var(--text-muted);">Doc ID: REG-2018-0924 • Issued by Registrar</div>
+                    <div style="font-size: 0.74rem; color: var(--text-muted);">Doc ID: REG-2018-0924 â€¢ Issued by Registrar</div>
                   </div>
                 </div>
                 <button type="button" class="btn-emergency" style="padding: 5px 10px; font-size: 0.75rem; cursor: pointer;" onclick="window.location.href='citizen-vault.html';">
@@ -442,7 +442,7 @@
                   <i class="fa-solid fa-stamp" style="color: var(--brand-orange); font-size: 1.2rem;"></i>
                   <div>
                     <div style="font-weight: 700; font-size: 0.88rem; color: #0a0a0a;">Municipal Khata / Title Extract</div>
-                    <div style="font-size: 0.74rem; color: var(--text-muted);">Doc ID: KHT-2024-8840 • e-Signed Certificate</div>
+                    <div style="font-size: 0.74rem; color: var(--text-muted);">Doc ID: KHT-2024-8840 â€¢ e-Signed Certificate</div>
                   </div>
                 </div>
                 <button type="button" class="btn-emergency" style="padding: 5px 10px; font-size: 0.75rem; cursor: pointer;" onclick="window.location.href='citizen-vault.html';">
@@ -455,7 +455,7 @@
                   <i class="fa-solid fa-faucet-drip" style="color: var(--brand-orange); font-size: 1.2rem;"></i>
                   <div>
                     <div style="font-weight: 700; font-size: 0.88rem; color: #0a0a0a;">Water & Sewerage NOC</div>
-                    <div style="font-size: 0.74rem; color: var(--text-muted);">Doc ID: NOC-WTR-5501 • Hydrology Division</div>
+                    <div style="font-size: 0.74rem; color: var(--text-muted);">Doc ID: NOC-WTR-5501 â€¢ Hydrology Division</div>
                   </div>
                 </div>
                 <button type="button" class="btn-emergency" style="padding: 5px 10px; font-size: 0.75rem; cursor: pointer;" onclick="window.location.href='citizen-vault.html';">
@@ -506,7 +506,7 @@
                 Official Municipal Ballot #Q3-W04
               </div>
               <h4 style="font-family: var(--font-display); font-size: 1.15rem; color: #0a0a0a; margin-bottom: 14px;">
-                Which priority should the Ward 04 ₹4.5 Crore surplus fund execute first?
+                Which priority should the Ward 04 â‚¹4.5 Crore surplus fund execute first?
               </h4>
 
               <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px;">

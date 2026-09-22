@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -242,7 +242,7 @@
                 <img src="images/officer-avatar.webp" alt="Controller" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--brand-orange);">
                 <div>
                   <div style="font-weight: 800; color: #0f172a;">Eng. Rajesh Varma</div>
-                  <div style="font-size: 0.78rem; color: var(--text-muted);">Senior Ward Dispatch Officer • Shift 01</div>
+                  <div style="font-size: 0.78rem; color: var(--text-muted);">Senior Ward Dispatch Officer â€¢ Shift 01</div>
                 </div>
               </div>
               <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 8px;">
@@ -288,64 +288,64 @@
               </thead>
               <tbody id="dispatchTableBody">
                 <tr data-status="emergency">
-                  <td><strong>#INC-9912</strong></td>
-                  <td>
+                  <td data-label="Incident ID"><strong>#INC-9912</strong></td>
+                  <td data-label="Defect Description">
                     <div style="font-weight: 700;">Subterranean Water Main Rupture</div>
                     <div style="font-size: 0.76rem; color: var(--text-muted);">3.2 Bar drop detected by IoT Hydrology Sensor #HYD-44</div>
                   </td>
-                  <td>Ward 04, Sector 2 Culvert</td>
-                  <td><span class="status-pill danger"><i class="fa-solid fa-fire"></i> P1 Urgent</span></td>
-                  <td><span style="color: #dc2626; font-weight: 700;"><i class="fa-solid fa-hourglass-start"></i> 1h 14m remaining</span></td>
-                  <td>Hydrology Rapid Squad 3</td>
-                  <td>
+                  <td data-label="Ward / Location">Ward 04, Sector 2 Culvert</td>
+                  <td data-label="Priority"><span class="status-pill danger"><i class="fa-solid fa-fire"></i> P1 Urgent</span></td>
+                  <td data-label="SLA Clock"><span style="color: #dc2626; font-weight: 700;"><i class="fa-solid fa-hourglass-start"></i> 1h 14m remaining</span></td>
+                  <td data-label="Assigned Squad">Hydrology Rapid Squad 3</td>
+                  <td data-label="Action">
                     <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';" style="cursor: pointer;">
                       <i class="fa-solid fa-truck-medical"></i> Expedite Crew
                     </button>
                   </td>
                 </tr>
                 <tr data-status="progress">
-                  <td><strong>#INC-9884</strong></td>
-                  <td>
+                  <td data-label="Incident ID"><strong>#INC-9884</strong></td>
+                  <td data-label="Defect Description">
                     <div style="font-weight: 700;">Road Surface Pothole Hazard (#STK-8492)</div>
                     <div style="font-size: 0.76rem; color: var(--text-muted);">Citizen verified complaint with photo proof</div>
                   </td>
-                  <td>Ward 04, 4th Main Road</td>
-                  <td><span class="status-pill warning"><i class="fa-solid fa-wrench"></i> In Progress</span></td>
-                  <td><span style="color: #d97706; font-weight: 700;"><i class="fa-solid fa-clock"></i> 3h 48m remaining</span></td>
-                  <td>Asphalt Repair Unit 2</td>
-                  <td>
+                  <td data-label="Ward / Location">Ward 04, 4th Main Road</td>
+                  <td data-label="Priority"><span class="status-pill warning"><i class="fa-solid fa-wrench"></i> In Progress</span></td>
+                  <td data-label="SLA Clock"><span style="color: #d97706; font-weight: 700;"><i class="fa-solid fa-clock"></i> 3h 48m remaining</span></td>
+                  <td data-label="Assigned Squad">Asphalt Repair Unit 2</td>
+                  <td data-label="Action">
                     <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';" style="cursor: pointer;">
                       <i class="fa-solid fa-location-arrow"></i> View Telemetry
                     </button>
                   </td>
                 </tr>
                 <tr data-status="progress">
-                  <td><strong>#INC-9820</strong></td>
-                  <td>
+                  <td data-label="Incident ID"><strong>#INC-9820</strong></td>
+                  <td data-label="Defect Description">
                     <div style="font-weight: 700;">Streetlight Feeder Pillar Blackout</div>
                     <div style="font-size: 0.76rem; color: var(--text-muted);">Feeder pillar #04 tripped during monsoon squall</div>
                   </td>
-                  <td>Ward 04, 8th Cross Boulevard</td>
-                  <td><span class="status-pill warning"><i class="fa-solid fa-bolt"></i> In Progress</span></td>
-                  <td><span style="color: #d97706; font-weight: 700;"><i class="fa-solid fa-clock"></i> 5h 22m remaining</span></td>
-                  <td>Electrical Maintenance Squad 1</td>
-                  <td>
+                  <td data-label="Ward / Location">Ward 04, 8th Cross Boulevard</td>
+                  <td data-label="Priority"><span class="status-pill warning"><i class="fa-solid fa-bolt"></i> In Progress</span></td>
+                  <td data-label="SLA Clock"><span style="color: #d97706; font-weight: 700;"><i class="fa-solid fa-clock"></i> 5h 22m remaining</span></td>
+                  <td data-label="Assigned Squad">Electrical Maintenance Squad 1</td>
+                  <td data-label="Action">
                     <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';" style="cursor: pointer;">
                       <i class="fa-solid fa-wrench"></i> Inspect Status
                     </button>
                   </td>
                 </tr>
                 <tr data-status="pending">
-                  <td><strong>#INC-9791</strong></td>
-                  <td>
+                  <td data-label="Incident ID"><strong>#INC-9791</strong></td>
+                  <td data-label="Defect Description">
                     <div style="font-weight: 700;">Stormwater Culvert Sludge Clearance</div>
                     <div style="font-size: 0.76rem; color: var(--text-muted);">Citizen report: drain overflow during high tide</div>
                   </td>
-                  <td>Ward 02, Harbor Gate 3</td>
-                  <td><span class="status-pill info"><i class="fa-solid fa-clock"></i> Unassigned</span></td>
-                  <td><span style="color: var(--text-muted); font-weight: 700;">8h 30m remaining</span></td>
-                  <td><span style="color: #dc2626; font-weight: 700;">Unassigned</span></td>
-                  <td>
+                  <td data-label="Ward / Location">Ward 02, Harbor Gate 3</td>
+                  <td data-label="Priority"><span class="status-pill info"><i class="fa-solid fa-clock"></i> Unassigned</span></td>
+                  <td data-label="SLA Clock"><span style="color: var(--text-muted); font-weight: 700;">8h 30m remaining</span></td>
+                  <td data-label="Assigned Squad"><span style="color: #dc2626; font-weight: 700;">Unassigned</span></td>
+                  <td data-label="Action">
                     <button type="button" class="table-action-btn" style="background: var(--brand-orange); color: #fff; border-color: var(--brand-orange); cursor: pointer;" onclick="window.location.href='404error.html';">
                       <i class="fa-solid fa-user-plus"></i> Assign Squad
                     </button>
