@@ -1459,19 +1459,37 @@ body.mobile-nav-active {
   border-color: var(--brand-orange-border);
 }
 
+.mobile-nav-link.btn-cta-login,
 .mobile-nav-link.btn-cta-signup {
   margin-top: 8px;
-  background: var(--brand-orange);
+  background: linear-gradient(135deg, #ff6600 0%, #ff8533 100%) !important;
   color: #ffffff !important;
-  justify-content: center;
-  border-radius: var(--radius-full);
-  border-bottom: none;
-  box-shadow: var(--shadow-orange);
+  justify-content: center !important;
+  text-align: center !important;
+  border-radius: var(--radius-full) !important;
+  border-bottom: none !important;
+  border: 1.5px solid transparent !important;
+  box-shadow: 0 4px 14px rgba(255, 102, 0, 0.38) !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  padding: 14px 22px !important;
+  min-height: 50px !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
 }
 
-.mobile-nav-link.btn-cta-signup:hover {
-  background: var(--brand-orange-hover);
+.mobile-nav-link.btn-cta-login i,
+.mobile-nav-link.btn-cta-signup i {
   color: #ffffff !important;
+}
+
+.mobile-nav-link.btn-cta-login:hover,
+.mobile-nav-link.btn-cta-signup:hover {
+  background: linear-gradient(135deg, #ea580c 0%, #ff6600 100%) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(255, 102, 0, 0.5) !important;
 }
 
 /* ==========================================================================
@@ -4754,13 +4772,32 @@ img, video, svg, canvas {
     cursor: pointer;
   }
   .hero-split-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: left;
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    text-align: center;
+  }
+  .hero-split-left {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .hero-split-left .hero-action-row {
+    justify-content: center !important;
+  }
+  .hero-split-right,
+  .hero-split-right.card-tilt-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
   }
   .hero-visual-card {
-    max-width: 580px;
-    margin: 0 auto;
+    max-width: 580px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
   }
   .services-grid-8 {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -4868,14 +4905,55 @@ img, video, svg, canvas {
     font-size: 0.78rem !important;
     padding: 5px 10px !important;
   }
+  .hero-split-grid {
+    text-align: center !important;
+  }
+  .hero-split-left {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .hero-split-left .hero-action-row {
+    justify-content: center !important;
+  }
+  .hero-split-right,
+  .hero-split-right.card-tilt-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
   .hero-visual-card {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    padding: 10px;
+    width: 100% !important;
+    max-width: 440px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+    padding: 10px !important;
+    transform: none !important;
+  }
+  .hero-visual-card::after {
+    inset: -3px !important;
+  }
+  .hero-visual-card .image-reveal-frame {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    overflow: hidden !important;
   }
   .hero-visual-card .image-reveal-frame img {
-    height: clamp(230px, 55vw, 340px) !important;
+    height: clamp(210px, 52vw, 320px) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    margin: 0 auto !important;
   }
   .hero-stat-floating-tag {
     position: relative !important;
@@ -4883,10 +4961,14 @@ img, video, svg, canvas {
     bottom: auto !important;
     left: auto !important;
     right: auto !important;
-    margin: 10px 0 0 0 !important;
+    margin: 10px auto 0 auto !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: left !important;
   }
   .civic-search-bar {
     width: 100%;
