@@ -237,31 +237,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* 7. Citizen Grievance Tracker Lookup Simulator */
   const trackBtn = document.getElementById('trackTicketBtn');
-  const ticketInput = document.getElementById('ticketNumberInput');
-  const trackingResultBox = document.getElementById('trackingResultContainer');
-
-  trackBtn?.addEventListener('click', () => {
-    const query = ticketInput?.value.trim() || 'MUNI-84920';
-    if (!trackingResultBox) return;
-
-    // Show loading state
-    trackBtn.disabled = true;
-    trackBtn.innerHTML = '<span>Searching...</span>';
-
-    setTimeout(() => {
-      trackBtn.disabled = false;
-      trackBtn.innerHTML = '<span>Track Status</span>';
-      trackingResultBox.style.display = 'block';
-
-      // Animate the result appearance
-      if (typeof gsap !== 'undefined') {
-        gsap.fromTo(trackingResultBox, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' });
-        gsap.fromTo('.timeline-progress-bar', { width: '0%' }, { width: '68%', duration: 1.2, ease: 'power2.out', delay: 0.2 });
-      }
-
-      const displayTicket = document.getElementById('currentSearchedTicket');
-      if (displayTicket) displayTicket.innerText = query.toUpperCase();
-    }, 600);
+  trackBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = '404error.html';
   });
 
   /* 8. Citizen Grievance Submission Form Simulator */
