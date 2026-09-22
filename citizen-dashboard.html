@@ -103,7 +103,17 @@
         <!-- Welcome Hero Banner -->
         <div class="dashboard-hero-banner" id="overview">
           <div>
-            <div class="hero-banner-title">Welcome back, Jane Doe</div>
+            <div class="hero-banner-title">Welcome back, <span id="citizenWelcomeName">Jane Doe</span></div>
+            <script>
+              (function() {
+                try {
+                  const saved = sessionStorage.getItem('stackly_user_name') || localStorage.getItem('stackly_user_name');
+                  if (saved && saved.trim()) {
+                    document.getElementById('citizenWelcomeName').textContent = saved.trim();
+                  }
+                } catch(e) {}
+              })();
+            </script>
             <div class="hero-banner-meta">
               <span><i class="fa-solid fa-id-card" style="color: var(--brand-orange);"></i> Citizen ID: <strong>STK-8840-721</strong></span>
               <span><i class="fa-solid fa-location-dot" style="color: var(--brand-orange);"></i> Sector: <strong>Downtown Civic (Ward 04)</strong></span>

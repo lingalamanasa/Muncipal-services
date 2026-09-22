@@ -208,13 +208,54 @@
       }
     }
 
+    function extractNameFromInput(inputVal) {
+      if (!inputVal) return 'Jane Doe';
+      let raw = inputVal.trim();
+      
+      // If user registered earlier with this email or name, prefer the registered full name
+      try {
+        const storedEmail = localStorage.getItem('stackly_user_email');
+        const storedName = localStorage.getItem('stackly_user_name');
+        if (storedEmail && storedEmail.toLowerCase() === raw.toLowerCase() && storedName) {
+          return storedName;
+        }
+      } catch(e) {}
+
+      // If an email address was entered, extract username from the portion before '@'
+      if (raw.includes('@')) {
+        raw = raw.split('@')[0];
+      }
+      
+      // Clean symbols, dots, underscores, hyphens into spaces, and remove trailing digits
+      let cleaned = raw.replace(/[._\-]+/g, ' ').replace(/\d+$/, '').trim();
+      if (!cleaned) cleaned = raw; // fallback if only digits existed
+      
+      // Capitalize each word nicely
+      let formatted = cleaned.split(' ')
+        .filter(Boolean)
+        .map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+        .join(' ');
+      
+      return formatted || 'Jane Doe';
+    }
+
     function handleLoginSubmit(event) {
       event.preventDefault();
+      const loginVal = (document.getElementById('loginIdInput')?.value || '').trim();
+      const userName = extractNameFromInput(loginVal);
+
+      try {
+        sessionStorage.setItem('stackly_user_name', userName);
+        localStorage.setItem('stackly_user_name', userName);
+        sessionStorage.setItem('stackly_user_email', loginVal);
+        localStorage.setItem('stackly_user_email', loginVal);
+      } catch (e) {}
+
       if (currentPortal === 'staff') {
-        alert('Authentication Verified! Welcome, Officer Rajesh Varma.');
+        alert('Authentication Verified! Welcome, Officer ' + userName + '.');
         window.location.href = 'staff-dashboard.html';
       } else {
-        alert('Authentication Verified! Welcome, Jane Doe.');
+        alert('Authentication Verified! Welcome, ' + userName + '.');
         window.location.href = 'citizen-dashboard.html';
       }
     }

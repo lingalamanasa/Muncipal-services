@@ -242,6 +242,18 @@
 
     function handleSignupSubmit(event) {
       event.preventDefault();
+      const fullName = (document.getElementById('regFullName')?.value || '').trim();
+      const email = (document.getElementById('regEmail')?.value || '').trim();
+      try {
+        if (fullName) {
+          sessionStorage.setItem('stackly_user_name', fullName);
+          localStorage.setItem('stackly_user_name', fullName);
+        }
+        if (email) {
+          sessionStorage.setItem('stackly_user_email', email);
+          localStorage.setItem('stackly_user_email', email);
+        }
+      } catch(e) {}
       window.location.href = 'login.html';
     }
 
