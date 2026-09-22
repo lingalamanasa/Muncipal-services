@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Civic Support | Stackly Municipal</title>
+  <meta name="description" content="Reach City Hall, find your ward councillor, access 24/7 emergency helplines, locate zonal facilitation centers, and submit citizen inquiries.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom CSS (Black, White, Orange) -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/page-tracker.js"></script>
+</head>
+<body>
+
+  <!-- Top Alert Marquee -->
+  <div class="civic-alert-ticker">
+    <div class="civic-container-wide">
+      <div class="ticker-content-track">
+        <div class="ticker-item">
+          <span class="ticker-badge"><i class="fa-solid fa-phone"></i> 24/7 HELPLINE</span>
+          <span>Call 1916 (Toll-Free) anytime for emergency civic response and immediate dispatch.</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-badge outline"><i class="fa-solid fa-door-open"></i> COUNTER TIMINGS</span>
+          <span>Zonal Citizen Facilitation Centers open Monday through Saturday: 8:30 AM – 5:00 PM.</span>
+        </div>
+        <!-- Loop duplicate -->
+        <div class="ticker-item">
+          <span class="ticker-badge"><i class="fa-solid fa-phone"></i> 24/7 HELPLINE</span>
+          <span>Call 1916 (Toll-Free) anytime for emergency civic response and immediate dispatch.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER WITH STACKLY LOGO -->
+  <header class="civic-navbar">
+    <div class="civic-container nav-container">
+      <a href="index.html" class="brand-logo"><img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="brand-logo-img"></a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="about.html" class="nav-item">About</a>
+        <a href="services.html" class="nav-item">Services</a>
+        <a href="blog.html" class="nav-item">Blog</a>
+        <a href="contact.html" class="nav-item active">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="nav-btn-login">Login</a>
+        <a href="signup.html" class="nav-btn-signup">Sign Up</a>
+        <button class="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <span style="font-weight: 800; color: #0a0a0a; font-size: 1.2rem;">STACKLY MENU</span>
+      <button class="close-drawer-btn" style="background: none; border: none; color: #0a0a0a; font-size: 1.5rem; cursor: pointer;">&times;</button>
+    </div>
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="about.html" class="mobile-nav-link">About City</a>
+    <a href="services.html" class="mobile-nav-link">Citizen Services</a>
+    <a href="blog.html" class="mobile-nav-link">News & Blog</a>
+    <a href="contact.html" class="mobile-nav-link active">Contact & Help</a>
+    <a href="login.html" class="mobile-nav-link"><i class="fa-solid fa-arrow-right-to-bracket" style="color: var(--brand-orange);"></i> Citizen Login</a>
+    <a href="signup.html" class="mobile-nav-link" style="color: var(--brand-orange);"><i class="fa-solid fa-user-plus"></i> Create Account</a>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         SECTION 01: CONTACT HERO (Split Screen with Stackly Visual & Badges)
+         ========================================================================== -->
+    <section id="section-01-hero" class="section-wrapper" style="padding-top: 60px; padding-bottom: 75px; overflow: hidden; background: #ffffff; position: relative;">
+      <!-- Animated Background Image Slider Reel -->
+      <div class="hero-animated-bg-wrap">
+        <div class="hero-bg-slide-item active" style="background-image: url('images/contact-slide-1.webp');"></div>
+        <div class="hero-bg-slide-item" style="background-image: url('images/contact-slide-2.webp');"></div>
+        <div class="hero-bg-slide-item" style="background-image: url('images/contact-slide-3.webp');"></div>
+        <div class="hero-bg-slide-overlay"></div>
+      </div>
+      <div class="hero-slide-indicators">
+        <span class="hero-slide-dot active"></span>
+        <span class="hero-slide-dot"></span>
+        <span class="hero-slide-dot"></span>
+      </div>
+
+      <div class="civic-container hero-content">
+        <div class="hero-split-grid">
+          
+          <!-- Left Column: Tag, Typewriter Title, Description & CTAs -->
+          <div class="hero-split-left">
+            <div class="hero-badge-tag" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 102, 0, 0.08); border: 1px solid var(--brand-orange-border); padding: 6px 16px; border-radius: 999px; margin-bottom: 20px;">
+              <span class="section-number">Section 01/10</span>
+              <span class="section-tag" style="color: var(--brand-orange);"><i class="fa-solid fa-headset"></i> Citizen Care & Helpdesk</span>
+            </div>
+
+            <h1 class="hero-main-title" style="font-family: var(--font-display); font-size: clamp(2.3rem, 4.2vw, 3.6rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 20px; color: #0a0a0a;">
+              24/7 Citizen Support & <br>
+              <span class="highlight typewriter-text" data-words='["Ward Helpdesks", "Emergency Hotlines", "Council Appointments", "Direct Mayor Helpdesk"]'>Ward Helpdesks</span><span class="typewriter-cursor">|</span>
+            </h1>
+
+            <p class="hero-description" style="color: var(--text-muted); font-size: 1.12rem; line-height: 1.65; margin-bottom: 28px;">
+              We are committed to round-the-clock accessibility. Reach our central secretariat, find your local ward councillor, schedule commissioner hearings, or report civic emergencies with zero hold time.
+            </p>
+
+            <div class="hero-action-row" style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <a href="404error.html" onclick="window.location.href='404error.html';" class="btn-portal-action btn-magnetic">
+                <i class="fa-solid fa-phone-volume"></i> 24/7 Helplines
+              </a>
+              <a href="404error.html" onclick="window.location.href='404error.html';" class="btn-portal-secondary anim-spring">
+                <i class="fa-solid fa-map-location-dot"></i> Stackly Map
+              </a>
+              <a href="404error.html" onclick="window.location.href='404error.html';" class="btn-emergency anim-spring">
+                <i class="fa-solid fa-paper-plane"></i> Send Direct Inquiry
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: 3D Tilt Visual Card with WebP Image -->
+          <div class="hero-split-right card-tilt-wrap">
+            <div class="hero-visual-card card-tilt-inner">
+              <div class="image-reveal-frame">
+                <img src="images/hero-contact.webp" alt="Municipal Central Emergency & Citizen Operations Center" style="width: 100%; height: 400px; object-fit: cover; border-radius: var(--radius-md);">
+              </div>
+
+              <!-- Top Floating Stat Tag -->
+              <div class="hero-stat-floating-tag anim-floating" style="top: -14px; right: -14px;">
+                <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--brand-orange-subtle); display: flex; align-items: center; justify-content: center; color: var(--brand-orange);">
+                  <i class="fa-solid fa-phone-flip"></i>
+                </div>
+                <div>
+                  <div style="font-weight: 800; font-size: 0.88rem; color: #0a0a0a;">Toll-Free 1800-CIVIC</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted);">Instant Call Connect</div>
+                </div>
+              </div>
+
+              <!-- Bottom Floating Stat Tag -->
+              <div class="hero-stat-floating-tag anim-floating-reverse" style="bottom: -18px; left: -14px;">
+                <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--brand-orange-subtle); display: flex; align-items: center; justify-content: center; color: var(--brand-orange);">
+                  <i class="fa-solid fa-shield-cat"></i>
+                </div>
+                <div>
+                  <div style="font-weight: 800; font-size: 0.88rem; color: #0a0a0a;">48 Wards Active</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted);">Dedicated Field Officers</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 02: 24/7 EMERGENCY HELPLINES GRID
+         ========================================================================== -->
+    <section id="section-02-helplines" class="section-wrapper" style="background: #f8fafc;">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 02/10</span>
+            <span class="section-tag" style="color: var(--brand-orange);">Priority Channels</span>
+          </div>
+          <h2 class="section-title">Emergency Hotlines & <span class="highlight">Rapid Response</span></h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+          <a href="tel:911" class="civic-card" style="text-align: center; border-color: var(--brand-orange-border);">
+            <div class="civic-card-img-wrap" style="height: 120px; margin-bottom: 12px;">
+              <img src="images/contact-ambulance.webp" alt="City Ambulance Emergency Dispatch">
+            </div>
+            <h4 style="color: #0a0a0a; font-size: 1.15rem; margin-bottom: 4px;">City Ambulance</h4>
+            <div style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--brand-orange);">102 / 911</div>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Avg. 7 Min Dispatch</span>
+          </a>
+
+          <a href="tel:101" class="civic-card" style="text-align: center; border-color: var(--brand-orange-border);">
+            <div class="civic-card-img-wrap" style="height: 120px; margin-bottom: 12px;">
+              <img src="images/contact-fire.webp" alt="Fire and Urban Rescue Stations">
+            </div>
+            <h4 style="color: #0a0a0a; font-size: 1.15rem; margin-bottom: 4px;">Fire & Rescue</h4>
+            <div style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--brand-orange);">101</div>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">18 Stations Citywide</span>
+          </a>
+
+          <a href="tel:100" class="civic-card" style="text-align: center; border-color: var(--brand-orange-border);">
+            <div class="civic-card-img-wrap" style="height: 120px; margin-bottom: 12px;">
+              <img src="images/contact-police.webp" alt="Municipal Police Patrol Control">
+            </div>
+            <h4 style="color: #0a0a0a; font-size: 1.15rem; margin-bottom: 4px;">Police Control</h4>
+            <div style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--brand-orange);">100</div>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Smart Patrol Fleet</span>
+          </a>
+
+          <a href="tel:104" class="civic-card" style="text-align: center; border-color: var(--brand-orange-border);">
+            <div class="civic-card-img-wrap" style="height: 120px; margin-bottom: 12px;">
+              <img src="images/contact-water-helpline.webp" alt="Water Supply and Pipeline Emergency Repair">
+            </div>
+            <h4 style="color: #0a0a0a; font-size: 1.15rem; margin-bottom: 4px;">Water Emergency</h4>
+            <div style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--brand-orange);">104</div>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Burst Pipe Rapid Unit</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 03: CENTRAL CITY HALL LOCATION & HEADQUARTERS
+         ========================================================================== -->
+    <section id="section-03-headquarters" class="section-wrapper">
+      <div class="civic-container">
+        <div class="civic-card" style="padding: 44px; border-color: var(--brand-orange-border);">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+            <div>
+              <div class="section-meta">
+                <span class="section-number">Section 03/10</span>
+                <span class="section-tag">Municipal Headquarters</span>
+              </div>
+              <h2 class="section-title" style="font-size: 2.2rem; margin-bottom: 16px;">
+                Central City Hall <br><span class="highlight">& Secretariat Plaza</span>
+              </h2>
+              <p style="color: var(--text-muted); font-size: 0.98rem; line-height: 1.6; margin-bottom: 24px;">
+                Located at the historic civic quadrant. Housing the Council Chambers, Mayor's Office, Revenue Counters, and the Central Operations Dispatch Command.
+              </p>
+
+              <div style="display: flex; flex-direction: column; gap: 12px; font-size: 0.95rem; color: var(--text-muted);">
+                <div><i class="fa-solid fa-location-dot" style="color: var(--brand-orange); width: 24px;"></i> MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, TN 636008</div>
+                <div><i class="fa-solid fa-clock" style="color: var(--brand-orange); width: 24px;"></i> Public Service Counters: Mon – Fri (8:30 AM – 5:00 PM)</div>
+                <div><i class="fa-solid fa-train-subway" style="color: var(--brand-orange); width: 24px;"></i> Transit Access: Chinna Thirupathi Bus Stop / Salem Feeder</div>
+              </div>
+
+              <div style="margin-top: 20px;">
+                <a href="404error.html" onclick="window.location.href='404error.html';" class="btn-emergency" style="font-size: 0.88rem;">
+                  <i class="fa-solid fa-map-location-dot"></i> View on Stackly Map <i class="fa-solid fa-arrow-down" style="font-size: 0.75rem;"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Graphic Card -->
+            <div style="background: #f8fafc; border: 1px solid var(--border-medium); border-radius: var(--radius-lg); padding: 36px; text-align: center;">
+              <div style="font-size: 3.5rem; color: var(--brand-orange); margin-bottom: 12px;"><i class="fa-solid fa-building-columns"></i></div>
+              <h3 style="color: #0a0a0a; font-size: 1.4rem; margin-bottom: 6px;">Stackly Headquarters & Hub</h3>
+              <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 20px;">Dedicated facilitation desks, digital kiosk hubs, and commissioner hearing chambers.</p>
+              <span class="badge-status solid" style="color: #ffffff; cursor: pointer;" onclick="window.location.href='404error.html';"><i class="fa-solid fa-circle-check"></i> Open To Public</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 04: UNIFIED CITIZEN INQUIRY & APPOINTMENT FORM
+         ========================================================================== -->
+    <section id="section-04-form" class="section-wrapper" style="background: #f8fafc;">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 04/10</span>
+            <span class="section-tag">Direct Communications</span>
+          </div>
+          <h2 class="section-title">Send An Official <span class="highlight">Civic Inquiry</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Transmitted directly to the respective directorate. Guaranteed formal response within 24 business hours.</p>
+        </div>
+
+        <div class="civic-card" style="max-width: 820px; margin: 0 auto; padding: 40px;">
+          <form onsubmit="event.preventDefault(); alert('Inquiry logged with Stackly Secretariat! Response reference: INQ-2026-' + Math.floor(1000 + Math.random()*9000)); this.reset();">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <div class="calc-input-group">
+                <label><i class="fa-solid fa-user"></i> Citizen Name</label>
+                <input type="text" class="calc-control" placeholder="Jane Doe" required>
+              </div>
+              <div class="calc-input-group">
+                <label><i class="fa-solid fa-envelope"></i> Email Address</label>
+                <input type="email" class="calc-control" placeholder="jane@example.com" required>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <div class="calc-input-group">
+                <label><i class="fa-solid fa-phone"></i> Mobile Phone</label>
+                <input type="tel" class="calc-control" placeholder="+1 (555) 019-2831" required>
+              </div>
+              <div class="calc-input-group">
+                <label><i class="fa-solid fa-tag"></i> Inquiry Category</label>
+                <select class="calc-control">
+                  <option>General Council Inquiry</option>
+                  <option>Mayor / Councillor Appointment Request</option>
+                  <option>Town Planning & Zoning Clarification</option>
+                  <option>Taxation & Assessment Assessment Dispute</option>
+                  <option>Vendor Procurement & Billing</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="calc-input-group">
+              <label><i class="fa-solid fa-align-left"></i> Message Content</label>
+              <textarea class="calc-control" rows="4" placeholder="Detail your inquiry or request..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-portal-action" style="width: 100%; justify-content: center; padding: 14px; font-size: 1rem;">
+              <i class="fa-solid fa-paper-plane"></i> Send Official Inquiry
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 05: INTERACTIVE WARD COUNCILLOR DIRECTORY
+         ========================================================================== -->
+    <section id="section-05-wards" class="section-wrapper">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 05/10</span>
+            <span class="section-tag">Ward Representation</span>
+          </div>
+          <h2 class="section-title">Ward Councillor <span class="highlight">Directory & Surgeries</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Select your ward to locate your designated councillor’s office and weekly in-person consultation hours.</p>
+        </div>
+
+        <div style="max-width: 500px; margin: 0 auto 36px;">
+          <select id="wardFilterSelect" class="calc-control" style="font-size: 1.05rem; padding: 14px;">
+            <option value="all">Display All Wards</option>
+            <option value="W01">Ward 01 - Downtown Civic Financial Zone</option>
+            <option value="W02">Ward 02 - North Harbor & Maritime District</option>
+            <option value="W03">Ward 03 - Green Park Ridge & Arboretum</option>
+            <option value="W04">Ward 04 - Tech City & Innovation Corridor</option>
+            <option value="W05">Ward 05 - South Riverside & Historic Quarter</option>
+          </select>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;" class="directory-grid">
+          <div class="civic-card councillor-card" data-ward="W01">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <span class="badge-status solid" style="color: #ffffff;">Ward 01</span>
+              <span style="color: var(--brand-orange); font-family: var(--font-mono); font-size: 0.82rem;">Downtown</span>
+            </div>
+            <h4 style="color: #0a0a0a; font-size: 1.25rem; margin-bottom: 4px;">Councillor Sarah Jenkins</h4>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">Committee on Finance & Commercial Zoning</div>
+            <div style="font-size: 0.85rem; color: var(--text-dim); display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+              <span><i class="fa-solid fa-building" style="color: var(--brand-orange); width: 20px;"></i> Office: Room 102, City Hall Plaza</span>
+              <span><i class="fa-solid fa-phone" style="color: var(--brand-orange); width: 20px;"></i> +1 (555) 012-3401</span>
+              <span><i class="fa-solid fa-clock" style="color: var(--brand-orange); width: 20px;"></i> Surgeries: Sat 9:00 AM – 12:00 PM</span>
+            </div>
+            <a href="404error.html" onclick="window.location.href='404error.html';" class="btn-outline-white" style="width: 100%; justify-content: center; cursor: pointer;">
+              <i class="fa-solid fa-paper-plane"></i> Book Appointment
+            </a>
+          </div>
+
+          <div class="civic-card councillor-card" data-ward="W02">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <span class="badge-status solid" style="color: #ffffff;">Ward 02</span>
+              <span style="color: var(--brand-orange); font-family: var(--font-mono); font-size: 0.82rem;">North Harbor</span>
+            </div>
+            <h4 style="color: #0a0a0a; font-size: 1.25rem; margin-bottom: 4px;">Councillor Tariq Mansoor</h4>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">Committee on Waterfront & Maritime</div>
+            <div style="font-size: 0.85rem; color: var(--text-dim); display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+              <span><i class="fa-solid fa-building" style="color: var(--brand-orange); width: 20px;"></i> Office: 44 Maritime Blvd, Pier 4</span>
+              <span><i class="fa-solid fa-phone" style="color: var(--brand-orange); width: 20px;"></i> +1 (555) 012-3402</span>
+              <span><i class="fa-solid fa-clock" style="color: var(--brand-orange); width: 20px;"></i> Surgeries: Sat 10:00 AM – 1:00 PM</span>
+            </div>
+            <a href="404error.html" onclick="window.location.href='404error.html';" class="btn-outline-white" style="width: 100%; justify-content: center; cursor: pointer;">
+              <i class="fa-solid fa-paper-plane"></i> Book Appointment
+            </a>
+          </div>
+
+          <div class="civic-card councillor-card" data-ward="W03">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <span class="badge-status solid" style="color: #ffffff;">Ward 03</span>
+              <span style="color: var(--brand-orange); font-family: var(--font-mono); font-size: 0.82rem;">Green Ridge</span>
+            </div>
+            <h4 style="color: #0a0a0a; font-size: 1.25rem; margin-bottom: 4px;">Councillor Maya Lin</h4>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">Committee on Environment & Biodiversity</div>
+            <div style="font-size: 0.85rem; color: var(--text-dim); display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+              <span><i class="fa-solid fa-building" style="color: var(--brand-orange); width: 20px;"></i> Office: 12 Botanical Way Community Ctr</span>
+              <span><i class="fa-solid fa-phone" style="color: var(--brand-orange); width: 20px;"></i> +1 (555) 012-3403</span>
+              <span><i class="fa-solid fa-clock" style="color: var(--brand-orange); width: 20px;"></i> Surgeries: Fri 3:00 PM – 6:00 PM</span>
+            </div>
+            <a href="404error.html" onclick="window.location.href='404error.html';" class="btn-outline-white" style="width: 100%; justify-content: center; cursor: pointer;">
+              <i class="fa-solid fa-paper-plane"></i> Book Appointment
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 06: ZONAL FACILITATION CENTERS (SUVIDHA KENDRAS)
+         ========================================================================== -->
+    <section id="section-06-centers" class="section-wrapper" style="background: #f8fafc;">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 06/10</span>
+            <span class="section-tag">Physical Counters</span>
+          </div>
+          <h2 class="section-title">Zonal Citizen <span class="highlight">Facilitation Centers</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Full-service civic centers offering biometric digital Aadhaar/National ID authentication, bill payments, and document verification.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+          <div class="civic-card">
+            <div class="civic-card-img-wrap" style="height: 140px; margin-bottom: 12px;">
+              <img src="images/contact-ward-north.webp" alt="North Zone Suvidha Kendra">
+            </div>
+            <h4 style="color: #0a0a0a; font-size: 1.15rem; margin-bottom: 8px;">North Zone Suvidha Kendra</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 12px;">Sector 14 Civic Plaza, North District. 8 service counters.</p>
+            <div style="font-size: 0.82rem; color: var(--brand-orange); font-weight: 700;">Mon – Sat: 8:30 AM – 5:00 PM</div>
+          </div>
+
+          <div class="civic-card">
+            <div class="civic-card-img-wrap" style="height: 140px; margin-bottom: 12px;">
+              <img src="images/contact-ward-central.webp" alt="Central Civic Complex">
+            </div>
+            <h4 style="color: #0a0a0a; font-size: 1.15rem; margin-bottom: 8px;">South Zone Suvidha Kendra</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 12px;">Heritage Complex, Old City Gates. 6 service counters.</p>
+            <div style="font-size: 0.82rem; color: var(--brand-orange); font-weight: 700;">Mon – Sat: 8:30 AM – 5:00 PM</div>
+          </div>
+
+          <div class="civic-card">
+            <div class="civic-card-img-wrap" style="height: 140px; margin-bottom: 12px;">
+              <img src="images/contact-ward-south.webp" alt="Tech Zone Suvidha Kendra">
+            </div>
+            <h4 style="color: #0a0a0a; font-size: 1.15rem; margin-bottom: 8px;">Tech Zone Suvidha Kendra</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 12px;">Silicon Corridor Metro Atrium, Level 1. 10 service counters.</p>
+            <div style="font-size: 0.82rem; color: var(--brand-orange); font-weight: 700;">Mon – Sat: 8:30 AM – 7:00 PM</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 07: DEPARTMENTAL DIRECT EXTENSIONS
+         ========================================================================== -->
+    <section id="section-07-extensions" class="section-wrapper">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 07/10</span>
+            <span class="section-tag">Direct Extensions</span>
+          </div>
+          <h2 class="section-title">Departmental <span class="highlight">Phone Extensions</span></h2>
+        </div>
+
+        <div class="civic-card" style="padding: 24px; overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.92rem; text-align: left;">
+            <thead>
+              <tr style="border-bottom: 1px solid var(--border-subtle); color: var(--brand-orange);">
+                <th style="padding: 12px 16px;">Directorate</th>
+                <th style="padding: 12px 16px;">Designated Officer</th>
+                <th style="padding: 12px 16px;">Direct Telephone</th>
+                <th style="padding: 12px 16px;">Direct Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <td style="padding: 14px 16px; color: #0a0a0a; font-weight: 600;">Public Works & Roads</td>
+                <td style="padding: 14px 16px; color: var(--text-muted);">Er. S. Nambiar (Chief Engineer)</td>
+                <td style="padding: 14px 16px; color: var(--brand-orange); font-family: var(--font-mono);">+1 (800) 555-0110</td>
+                <td style="padding: 14px 16px; color: var(--text-muted);">works@stackly.gov</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <td style="padding: 14px 16px; color: #0a0a0a; font-weight: 600;">Health & Sanitation</td>
+                <td style="padding: 14px 16px; color: var(--text-muted);">Dr. Rebecca Gomez (CHO)</td>
+                <td style="padding: 14px 16px; color: var(--brand-orange); font-family: var(--font-mono);">+1 (800) 555-0112</td>
+                <td style="padding: 14px 16px; color: var(--text-muted);">health@stackly.gov</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <td style="padding: 14px 16px; color: #0a0a0a; font-weight: 600;">Town Planning & Sanction</td>
+                <td style="padding: 14px 16px; color: var(--text-muted);">Ar. Victor Sterling (CTP)</td>
+                <td style="padding: 14px 16px; color: var(--brand-orange); font-family: var(--font-mono);">+1 (800) 555-0114</td>
+                <td style="padding: 14px 16px; color: var(--text-muted);">planning@stackly.gov</td>
+              </tr>
+              <tr>
+                <td style="padding: 14px 16px; color: #0a0a0a; font-weight: 600;">Revenue & Property Tax</td>
+                <td style="padding: 14px 16px; color: var(--text-muted);">Ronald Hastings (Deputy Comm)</td>
+                <td style="padding: 14px 16px; color: var(--brand-orange); font-family: var(--font-mono);">+1 (800) 555-0116</td>
+                <td style="padding: 14px 16px; color: var(--text-muted);">revenue@stackly.gov</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 08: RIGHT TO INFORMATION (RTI) CONTACTS
+         ========================================================================== -->
+    <section id="section-08-rti" class="section-wrapper" style="background: #f8fafc;">
+      <div class="civic-container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+          <div>
+            <div class="section-meta">
+              <span class="section-number">Section 08/10</span>
+              <span class="section-tag">Statutory Freedom of Information</span>
+            </div>
+            <h2 class="section-title">Right to Information <span class="highlight">(RTI Cell)</span></h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+              Citizens may file formal inquiries under the statutory Right to Information Act. Certified copies of tenders, payment vouchers, and resolutions are provided within 30 days.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem; color: var(--text-muted);">
+              <div><strong style="color: #0a0a0a;">Public Information Officer (PIO):</strong> Adv. Deepa Mehta</div>
+              <div><strong style="color: #0a0a0a;">First Appellate Authority:</strong> Additional Municipal Commissioner (Admin)</div>
+              <div><strong style="color: #0a0a0a;">RTI Cell Email:</strong> rti@stackly.gov</div>
+            </div>
+          </div>
+
+          <div class="civic-card" style="padding: 32px; text-align: center;">
+            <div style="font-size: 3rem; color: var(--brand-orange); margin-bottom: 12px;"><i class="fa-solid fa-gavel"></i></div>
+            <h4 style="color: #0a0a0a; font-size: 1.2rem; margin-bottom: 8px;">File RTI Online</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 20px;">Submit statutory requests with automated digital acknowledgment number.</p>
+            <button class="btn-portal-action" style="cursor: pointer;" onclick="window.location.href='404error.html';">
+              <i class="fa-solid fa-file-pen"></i> Submit RTI Query
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 09: CITIZEN SERVICE QUALITY FEEDBACK WIDGET
+         ========================================================================== -->
+    <section id="section-09-feedback" class="section-wrapper">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 09/10</span>
+            <span class="section-tag">Quality of Governance</span>
+          </div>
+          <h2 class="section-title">Rate Your Municipal <span class="highlight">Service Experience</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Your ratings directly influence our departmental performance reviews and quarterly bonuses.</p>
+        </div>
+
+        <div class="civic-card" style="max-width: 600px; margin: 0 auto; padding: 36px; text-align: center;">
+          <div style="font-size: 1.1rem; color: #0a0a0a; font-weight: 700; margin-bottom: 16px;">
+            How satisfied were you with your recent municipal interaction?
+          </div>
+          <div style="display: flex; justify-content: center; gap: 14px; font-size: 1.6rem; margin-bottom: 24px;">
+            <button type="button" style="background: none; border: none; cursor: pointer; color: var(--brand-orange);" onclick="alert('Thank you for rating: Excellent (5 Stars)!');" aria-label="5 Stars"><i class="fa-solid fa-star"></i></button>
+            <button type="button" style="background: none; border: none; cursor: pointer; color: var(--brand-orange);" onclick="alert('Thank you for rating: Good (4 Stars)!');" aria-label="4 Stars"><i class="fa-solid fa-star"></i></button>
+            <button type="button" style="background: none; border: none; cursor: pointer; color: var(--brand-orange);" onclick="alert('Thank you for rating: Average (3 Stars)!');" aria-label="3 Stars"><i class="fa-solid fa-star"></i></button>
+            <button type="button" style="background: none; border: none; cursor: pointer; color: #cbd5e1;" onclick="alert('Thank you for rating: Needs Improvement (2 Stars). Our team will inspect.');" aria-label="2 Stars"><i class="fa-solid fa-star"></i></button>
+            <button type="button" style="background: none; border: none; cursor: pointer; color: #cbd5e1;" onclick="alert('Thank you for rating: Poor (1 Star). Incident escalated.');" aria-label="1 Star"><i class="fa-solid fa-star"></i></button>
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-dim);">Over 94.2% citizen approval across 68,000 verified surveys.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 10: STACKLY MAP & TRANSIT DIRECTIONS
+         ========================================================================== -->
+    <section id="section-10-directions" class="section-wrapper stackly-map-section">
+      <div class="civic-container">
+        
+        <!-- Section Header with Stackly Map Title matching design -->
+        <div class="stackly-map-header">
+          <div class="section-meta" style="justify-content: center; margin-bottom: 12px;">
+            <span class="section-number">Section 10/10</span>
+            <span class="section-tag" style="color: var(--brand-orange);"><i class="fa-solid fa-map-pin"></i> Salem Headquarters</span>
+          </div>
+          <h2 class="stackly-map-title">Stackly Map</h2>
+          <p class="stackly-map-subtitle">
+            Visit our central civic operations command center & administrative headquarters in Salem, Tamil Nadu.
+          </p>
+        </div>
+
+        <!-- Interactive Map Container with Floating Card -->
+        <div class="stackly-map-container anim-spring">
+          <!-- Floating Info Card (Identical to reference screenshot) -->
+          <div class="stackly-map-info-card">
+            <div class="map-card-header">
+              <div class="map-card-title-wrap">
+                <h3 class="map-card-title">Stackly</h3>
+                <span class="map-card-category"><i class="fa-solid fa-circle-check"></i> Verified Civic HQ</span>
+              </div>
+              <div class="map-card-actions">
+                <a href="https://www.google.com/maps/search/?api=1&query=Stackly,+MMR+Complex,+Periyakollappatty,+Chinna+Thirupathi,+Salem,+Tamil+Nadu+636008" target="_blank" rel="noopener noreferrer" class="map-action-icon-btn" title="Open in Google Maps" aria-label="Open in Google Maps">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Stackly,+MMR+Complex,+Periyakollappatty,+Chinna+Thirupathi,+Salem,+Tamil+Nadu+636008" target="_blank" rel="noopener noreferrer" class="map-action-icon-btn" title="Get Directions" aria-label="Get Directions">
+                  <i class="fa-solid fa-diamond-turn-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <p class="map-card-address">
+              MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, Tamil Nadu 636008, India
+            </p>
+
+            <div class="map-card-rating">
+              <span class="rating-score">4.7</span>
+              <span class="rating-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </span>
+              <span class="rating-count">(58)</span>
+            </div>
+
+            <div class="map-card-footer">
+              <button type="button" class="btn-copy-address" onclick="copyMapAddress(this)" aria-label="Copy Address">
+                <i class="fa-regular fa-copy"></i> <span>Copy Address</span>
+              </button>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Stackly,+MMR+Complex,+Periyakollappatty,+Chinna+Thirupathi,+Salem,+Tamil+Nadu+636008" target="_blank" rel="noopener noreferrer" class="btn-navigate-map">
+                <i class="fa-solid fa-location-arrow"></i> Directions
+              </a>
+            </div>
+          </div>
+
+          <!-- Embedded Live Google Map Centered on Stackly in Salem -->
+          <iframe 
+            src="https://maps.google.com/maps?q=Stackly%2C%20MMR%20Complex%2C%20Periyakollappatty%2C%20Chinna%20Thirupathi%2C%20Salem%2C%20Tamil%20Nadu%20636008&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+            title="Stackly Salem Headquarters Location Map"
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <!-- Transit Connections Details -->
+        <div class="map-transit-grid">
+          <div class="map-transit-card">
+            <div class="map-transit-icon"><i class="fa-solid fa-train-subway"></i></div>
+            <h4 class="map-transit-title">By Train / Rail</h4>
+            <p class="map-transit-desc">
+              Salem Town & Salem Junction stations connect directly via Metro feeder buses to Chinna Thirupathi (15 min travel).
+            </p>
+          </div>
+
+          <div class="map-transit-card">
+            <div class="map-transit-icon"><i class="fa-solid fa-bus"></i></div>
+            <h4 class="map-transit-title">By City Bus</h4>
+            <p class="map-transit-desc">
+              Regular civic buses stop directly at Chinna Thirupathi Bus Stop opposite MMR Complex on Mannarpalayam Main Road.
+            </p>
+          </div>
+
+          <div class="map-transit-card">
+            <div class="map-transit-icon"><i class="fa-solid fa-charging-station"></i></div>
+            <h4 class="map-transit-title">Parking & EV Stations</h4>
+            <p class="map-transit-desc">
+              Dedicated citizen visitor parking inside MMR Complex featuring Level-2 Fast EV charging hubs. Free for visitors.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER (Black, White, Orange) -->
+  <footer class="civic-footer">
+    <div class="civic-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 16px;"><img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="brand-logo-img"></div>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+            Open, transparent, and responsive municipal services. Powered by the Stackly civic operating standard.
+          </p>
+          <div style="display: flex; gap: 14px; font-size: 1.2rem; color: var(--text-muted);">
+            <a href="404.html" style="color: var(--brand-orange);" title="Stackly on X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" style="color: var(--brand-orange);" title="Stackly on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" style="color: var(--brand-orange);" title="Stackly on YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="404.html" style="color: var(--brand-orange);" title="Stackly on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Citizen Portals</h4>
+          <ul class="footer-links">
+            <li><a href="404.html">Property Tax Portal</a></li>
+            <li><a href="404.html">File a Grievance</a></li>
+            <li><a href="404.html">Track Complaint</a></li>
+            <li><a href="404.html">Citizen Login</a></li>
+            <li><a href="404.html">Create Account</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Secretariat Desk</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">
+            <a href="#section-10-directions" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(255,255,255,0.2);">
+              MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, TN 636008
+            </a>
+          </p>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">
+            24/7 Helpline: 1916 (Toll-Free)
+          </p>
+          <span class="badge-status solid" style="color: #ffffff;"><i class="fa-solid fa-shield-halved"></i> Official Portal</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Stackly Municipal Corporation. All Rights Reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="javascript:void(0)" onclick="showCivicToast('Privacy Policy: Strict Citizen Data Security and Privacy Protocol 2026', 'fa-shield-halved')">Privacy Policy</a>
+          <a href="blog.html" onclick="showCivicToast('Directing to Official Public Notices in City Gazette', 'fa-bullhorn')">Public Notices</a>
+          <a href="javascript:void(0)" onclick="showCivicToast('Accessibility: WCAG 2.1 AA Standard Enabled Across All Portals', 'fa-universal-access')">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Custom Scripts -->
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function copyMapAddress(btn) {
+      const address = "MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, Tamil Nadu 636008, India";
+      navigator.clipboard.writeText(address).then(() => {
+        const span = btn.querySelector('span');
+        const icon = btn.querySelector('i');
+        const originalText = span.textContent;
+        span.textContent = "Copied!";
+        icon.className = "fa-solid fa-check";
+        btn.style.background = "#dcfce7";
+        btn.style.color = "#15803d";
+        btn.style.borderColor = "#86efac";
+        setTimeout(() => {
+          span.textContent = originalText;
+          icon.className = "fa-regular fa-copy";
+          btn.style.background = "";
+          btn.style.color = "";
+          btn.style.borderColor = "";
+        }, 2500);
+      }).catch(err => {
+        console.error("Clipboard copy failed:", err);
+      });
+    }
+  </script>
+</body>
+</html>
+

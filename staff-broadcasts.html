@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Civic Broadcasts - Officer Portal | Stackly Municipal Services</title>
+  <meta name="description" content="Issue emergency municipal announcements, weather advisories, traffic diversions, and public health alerts to millions of citizens simultaneously.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 (Strictly FA icons, zero emojis) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/page-tracker.js"></script>
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <div>
+        <div class="sidebar-brand">
+          <a href="index.html" class="brand-logo" title="Back to Stackly Homepage">
+            <img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="brand-logo-img" style="height: 32px;">
+          </a>
+          <div>
+            <span class="sidebar-role-badge" style="background: #000; color: #fff; border-color: #000;">
+              <i class="fa-solid fa-user-shield" style="color: var(--brand-orange);"></i> Officer Portal (Tier 2)
+            </span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="sidebar-nav">
+          <a href="staff-dashboard.html" class="sidebar-link">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span>Operations Console</span>
+          </a>
+          <a href="staff-dispatch.html" class="sidebar-link">
+            <i class="fa-solid fa-list-check"></i>
+            <span>Grievance Dispatch</span>
+            <span class="sidebar-link-badge" style="background: var(--brand-orange); color: #000;">24 New</span>
+          </a>
+          <a href="staff-fleet.html" class="sidebar-link">
+            <i class="fa-solid fa-truck-fast"></i>
+            <span>Field Crew Tracker</span>
+            <span class="sidebar-link-badge">18</span>
+          </a>
+          <a href="staff-scada.html" class="sidebar-link">
+            <i class="fa-solid fa-tower-broadcast"></i>
+            <span>IoT SCADA Network</span>
+            <span class="sidebar-link-badge" style="background: #ef4444; color: #fff;">3 Alerts</span>
+          </a>
+          <a href="staff-broadcasts.html" class="sidebar-link active">
+            <i class="fa-solid fa-bullhorn"></i>
+            <span>Civic Broadcasts</span>
+          </a>
+          <a href="staff-sla.html" class="sidebar-link">
+            <i class="fa-solid fa-clipboard-check"></i>
+            <span>SLA Audit Logs</span>
+          </a>
+          <a href="staff-departments.html" class="sidebar-link">
+            <i class="fa-solid fa-sitemap"></i>
+            <span>Departments Hierarchy</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Sidebar User Profile Footer -->
+      <div class="sidebar-footer">
+        <div class="sidebar-profile-card">
+          <img src="images/officer-avatar.webp" alt="Eng. Rajesh Varma - Senior Executive" class="sidebar-avatar">
+          <div class="sidebar-profile-info">
+            <div class="sidebar-profile-name">Eng. Rajesh Varma</div>
+            <div class="sidebar-profile-desc">Sr. Ward Executive • ID: 4491</div>
+          </div>
+          <a href="login.html" title="Sign Out" style="color: var(--text-muted); font-size: 1.1rem; padding: 4px;" onclick="return confirm('Confirm departure from Officer Command Station?');">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Dashboard Area -->
+    <main class="dashboard-main">
+      
+      <!-- Topbar Header -->
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button type="button" id="sidebarToggleBtn" class="topbar-icon-btn" aria-label="Toggle Sidebar" style="display: none;">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted);"><i class="fa-solid fa-tower-cell" style="color: var(--brand-orange);"></i> Transmitter Hub:</span>
+            <span class="status-pill success"><i class="fa-solid fa-circle-check"></i> All Gateways Online</span>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button type="button" class="btn-portal-action" onclick="composeNewBroadcast()">
+            <i class="fa-solid fa-paper-plane"></i> + Compose Broadcast
+          </button>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="dashboard-content">
+        
+        <!-- Welcome Hero Banner -->
+        <div class="dashboard-hero-banner">
+          <div>
+            <div class="hero-banner-title">Emergency Civic Broadcast & Public Notification Desk</div>
+            <div class="hero-banner-meta">
+              <span><i class="fa-solid fa-bullhorn" style="color: var(--brand-orange);"></i> Multi-Channel Civic Mass Alert Infrastructure</span>
+              <span><i class="fa-solid fa-shield-halved" style="color: #10b981;"></i> NDMA Protocol Compliance: <strong>Certified</strong></span>
+            </div>
+          </div>
+          <div class="hero-banner-actions">
+            <button type="button" class="btn-emergency" onclick="composeNewBroadcast()">
+              <i class="fa-solid fa-triangle-exclamation"></i> Trigger Ward Alert
+            </button>
+          </div>
+        </div>
+
+        <!-- Section 1: Animated Metric Counters HUD -->
+        <div class="counter-hud-grid">
+          
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon orange"><i class="fa-solid fa-paper-plane"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-check"></i> Dispatched</span>
+            </div>
+            <div class="counter-hud-number" data-counter="84" data-duration="1000">0</div>
+            <div class="counter-hud-label">Broadcasts Dispatched (YTD)</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon emerald"><i class="fa-solid fa-users"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-signal"></i> Mass Reach</span>
+            </div>
+            <div class="counter-hud-number" data-counter="240000" data-suffix="+" data-duration="1400">0+</div>
+            <div class="counter-hud-label">Citizens Reached in Ward 04</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon sky"><i class="fa-solid fa-envelope-open-text"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-arrow-trend-up"></i> 94.6%</span>
+            </div>
+            <div class="counter-hud-number" data-counter="94.6" data-decimals="1" data-suffix="%" data-duration="1200">0.0%</div>
+            <div class="counter-hud-label">Read / Acknowledgement Rate</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon purple"><i class="fa-solid fa-tower-cell"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-satellite"></i> Redundant</span>
+            </div>
+            <div class="counter-hud-number" data-counter="5" data-duration="800">0</div>
+            <div class="counter-hud-label">Active Transmit Channels</div>
+          </div>
+
+        </div>
+
+        <!-- Section 2 & 3: Interactive Line Chart & Bar Chart -->
+        <div class="dashboard-charts-grid-duo">
+          
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-line" style="color: var(--brand-orange);"></i> Alert Delivery Velocity Curve</div>
+                <div class="chart-card-subtitle">Cumulative recipients reached vs elapsed broadcast time (Seconds)</div>
+              </div>
+              <span class="chart-card-meta">Throughput Test</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="broadcastLineChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-column" style="color: var(--brand-orange);"></i> Broadcasts by Department Domain</div>
+                <div class="chart-card-subtitle">Categorical breakdown of municipal announcements</div>
+              </div>
+              <span class="chart-card-meta">Department Share</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="broadcastBarChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section 4: Interactive Doughnut Chart -->
+        <div class="dashboard-charts-grid-split">
+          
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-pie" style="color: var(--brand-orange);"></i> Delivery Channel Distribution</div>
+                <div class="chart-card-subtitle">Notification routing across citizen communication endpoints</div>
+              </div>
+              <span class="chart-card-meta">Channel Mix</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="broadcastDoughnutChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card" style="justify-content: space-between;">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-radio" style="color: #10b981;"></i> Transmission Gateway Status</div>
+                <div class="chart-card-subtitle">Sub-second emergency gateway telemetry</div>
+              </div>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid var(--border-medium); border-radius: 12px; padding: 18px; margin: auto 0;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);">SMS Priority Gateway:</span>
+                <span class="status-pill success"><i class="fa-solid fa-circle-check"></i> 14,000 SMS/sec</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);">Push Notification Cluster:</span>
+                <span class="status-pill success"><i class="fa-solid fa-circle-check"></i> 48,000 Push/sec</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);">Civic Sirens & Outdoor LED:</span>
+                <span class="status-pill info"><i class="fa-solid fa-signal"></i> 18 Nodes Synced</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border-medium); padding-top: 10px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);">Average Propagation Lag:</span>
+                <strong style="color: #10b981;">1.8 Seconds</strong>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section 5: Filterable Broadcast History Table -->
+        <div class="dashboard-table-card">
+          <div class="dashboard-table-toolbar">
+            <div class="dashboard-section-title">
+              <i class="fa-solid fa-clock-rotate-left"></i>
+              Official Broadcast Dispatch Ledger
+            </div>
+            <div class="dashboard-table-filters">
+              <button type="button" class="dashboard-filter-chip active" data-filter="all">All Dispatches (4)</button>
+              <button type="button" class="dashboard-filter-chip" data-filter="emergency">Emergency / Alert (2)</button>
+              <button type="button" class="dashboard-filter-chip" data-filter="advisory">Advisory (2)</button>
+            </div>
+          </div>
+
+          <div class="dashboard-table-wrapper">
+            <table class="dashboard-data-table">
+              <thead>
+                <tr>
+                  <th>Broadcast ID</th>
+                  <th>Alert Title & Content Summary</th>
+                  <th>Target Ward</th>
+                  <th>Channels</th>
+                  <th>Dispatched At</th>
+                  <th>Citizen Reach</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="broadcastTableBody">
+                <tr data-status="emergency">
+                  <td><strong>#BC-2026-92</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Monsoon Flash Flooding Warning: Sector 2 Culvert</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Caution to motorists on 4th Main Road due to water overflow</div>
+                  </td>
+                  <td>Ward 04</td>
+                  <td>SMS, App Push, Sirens</td>
+                  <td>Today, 11:30 AM</td>
+                  <td><span style="color: #10b981; font-weight: 700;">42,400 Reached (98%)</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Viewing Telemetry Analytics for Broadcast #BC-2026-92.');">
+                      <i class="fa-solid fa-chart-simple"></i> Analytics
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="emergency">
+                  <td><strong>#BC-2026-88</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Emergency Drinking Water Pipeline Maintenance</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Scheduled 3-hour shutdown for valve replacement in Sector 3</div>
+                  </td>
+                  <td>Ward 04 & 03</td>
+                  <td>SMS, WhatsApp</td>
+                  <td>Yesterday, 04:15 PM</td>
+                  <td><span style="color: #10b981; font-weight: 700;">38,900 Reached (96%)</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Viewing Telemetry Analytics for Broadcast #BC-2026-88.');">
+                      <i class="fa-solid fa-chart-simple"></i> Analytics
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="advisory">
+                  <td><strong>#BC-2026-74</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Ward 04 Town Hall Meeting & Budget Poll Notice</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Invitation to attend participatory budgeting referendum this Saturday</div>
+                  </td>
+                  <td>Ward 04 Residents</td>
+                  <td>App Push, Email</td>
+                  <td>Sep 16, 2026</td>
+                  <td><span style="color: #10b981; font-weight: 700;">41,200 Reached (92%)</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Viewing Telemetry Analytics for Broadcast #BC-2026-74.');">
+                      <i class="fa-solid fa-chart-simple"></i> Analytics
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="advisory">
+                  <td><strong>#BC-2026-61</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Property Tax Early Rebate Reminder (FY 2026-27)</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Final week to avail 10% rebate for online advance tax payments</div>
+                  </td>
+                  <td>All Wards</td>
+                  <td>SMS, Portal Banner</td>
+                  <td>Apr 10, 2026</td>
+                  <td><span style="color: #10b981; font-weight: 700;">184,000 Reached (95%)</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Viewing Telemetry Analytics for Broadcast #BC-2026-61.');">
+                      <i class="fa-solid fa-chart-simple"></i> Analytics
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <footer class="dashboard-footer" style="padding: 24px 32px; border-top: 1px solid var(--border-medium); font-size: 0.8rem; color: var(--text-muted); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; background: #ffffff;">
+        <div>&copy; 2026-2027 Stackly Municipal Corporation. Emergency Civic Broadcast Station.</div>
+        <div style="display: flex; gap: 16px;">
+          <a href="staff-dashboard.html" style="color: var(--brand-orange); text-decoration: none;"><i class="fa-solid fa-gauge-high"></i> Ops Console</a>
+          <a href="staff-dispatch.html" style="color: var(--text-muted); text-decoration: none;"><i class="fa-solid fa-list-check"></i> Dispatch</a>
+        </div>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    function composeNewBroadcast() {
+      const msg = prompt("Enter Emergency Broadcast Message to be sent across Ward 04:", "Ward 04 Advisory: Heavy rainfall forecast. Municipal emergency crews deployed.");
+      if (msg) {
+        alert(`Broadcast Queued Successfully!\nMessage: "${msg}"\nChannels: SMS, Push, WhatsApp, Outdoor LED\nEstimated reach: 42,000 citizens.`);
+      }
+    }
+
+    // Sidebar Mobile Toggle
+    const toggleBtn = document.getElementById('sidebarToggleBtn');
+    const sidebar = document.getElementById('dashboardSidebar');
+    if (window.innerWidth <= 992 && toggleBtn) {
+      toggleBtn.style.display = 'inline-flex';
+      toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+      });
+    }
+  </script>
+
+  <!-- Chart.js & Dashboard Charts Engine -->
+  <script src="js/chart.min.js"></script>
+  <script src="js/dashboard-charts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Line Chart: Alert Delivery Velocity
+      buildLineChart(
+        'broadcastLineChart',
+        ['0s', '5s', '10s', '15s', '20s', '30s', '45s', '60s'],
+        [
+          { label: 'Recipients Reached (Thousands)', data: [0, 8, 22, 35, 40, 41.5, 42.2, 42.4], color: '#ff6600', bgColor: 'rgba(255, 102, 0, 0.08)' }
+        ],
+        'Recipients (k)'
+      );
+
+      // 2. Bar Chart: Broadcasts by Department Domain
+      buildBarChart(
+        'broadcastBarChart',
+        ['Public Safety & Traffic', 'Hydrology & Water', 'Civic Town Halls', 'Public Health & Sanitation', 'Power & Streetlights'],
+        [
+          {
+            label: 'Total Broadcasts',
+            data: [28, 22, 14, 12, 8],
+            colors: ['#ef4444', '#0284c7', '#10b981', '#f59e0b', '#8b5cf6']
+          }
+        ]
+      );
+
+      // 3. Doughnut Chart: Delivery Channel Distribution
+      buildPieChart(
+        'broadcastDoughnutChart',
+        ['SMS Direct Push (45%)', 'Stackly App Notification (35%)', 'WhatsApp Civic Bot (15%)', 'Outdoor LED Panels (5%)'],
+        [45, 35, 15, 5],
+        ['#ff6600', '#0284c7', '#10b981', '#f59e0b']
+      );
+    });
+  </script>
+
+  <!-- GSAP & Global Unique Effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

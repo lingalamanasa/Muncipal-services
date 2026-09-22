@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SLA Audit Logs - Officer Portal | Stackly Municipal Services</title>
+  <meta name="description" content="Audit municipal turnaround times, monitor statutory SLA compliance, review departmental efficiency scores, and download certified audit reports.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 (Strictly FA icons, zero emojis) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/page-tracker.js"></script>
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <div>
+        <div class="sidebar-brand">
+          <a href="index.html" class="brand-logo" title="Back to Stackly Homepage">
+            <img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="brand-logo-img" style="height: 32px;">
+          </a>
+          <div>
+            <span class="sidebar-role-badge" style="background: #000; color: #fff; border-color: #000;">
+              <i class="fa-solid fa-user-shield" style="color: var(--brand-orange);"></i> Officer Portal (Tier 2)
+            </span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="sidebar-nav">
+          <a href="staff-dashboard.html" class="sidebar-link">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span>Operations Console</span>
+          </a>
+          <a href="staff-dispatch.html" class="sidebar-link">
+            <i class="fa-solid fa-list-check"></i>
+            <span>Grievance Dispatch</span>
+            <span class="sidebar-link-badge" style="background: var(--brand-orange); color: #000;">24 New</span>
+          </a>
+          <a href="staff-fleet.html" class="sidebar-link">
+            <i class="fa-solid fa-truck-fast"></i>
+            <span>Field Crew Tracker</span>
+            <span class="sidebar-link-badge">18</span>
+          </a>
+          <a href="staff-scada.html" class="sidebar-link">
+            <i class="fa-solid fa-tower-broadcast"></i>
+            <span>IoT SCADA Network</span>
+            <span class="sidebar-link-badge" style="background: #ef4444; color: #fff;">3 Alerts</span>
+          </a>
+          <a href="staff-broadcasts.html" class="sidebar-link">
+            <i class="fa-solid fa-bullhorn"></i>
+            <span>Civic Broadcasts</span>
+          </a>
+          <a href="staff-sla.html" class="sidebar-link active">
+            <i class="fa-solid fa-clipboard-check"></i>
+            <span>SLA Audit Logs</span>
+          </a>
+          <a href="staff-departments.html" class="sidebar-link">
+            <i class="fa-solid fa-sitemap"></i>
+            <span>Departments Hierarchy</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Sidebar User Profile Footer -->
+      <div class="sidebar-footer">
+        <div class="sidebar-profile-card">
+          <img src="images/officer-avatar.webp" alt="Eng. Rajesh Varma - Senior Executive" class="sidebar-avatar">
+          <div class="sidebar-profile-info">
+            <div class="sidebar-profile-name">Eng. Rajesh Varma</div>
+            <div class="sidebar-profile-desc">Sr. Ward Executive • ID: 4491</div>
+          </div>
+          <a href="login.html" title="Sign Out" style="color: var(--text-muted); font-size: 1.1rem; padding: 4px;" onclick="return confirm('Confirm departure from Officer Command Station?');">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Dashboard Area -->
+    <main class="dashboard-main">
+      
+      <!-- Topbar Header -->
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button type="button" id="sidebarToggleBtn" class="topbar-icon-btn" aria-label="Toggle Sidebar" style="display: none;">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted);"><i class="fa-solid fa-scale-balanced" style="color: var(--brand-orange);"></i> Audit Window:</span>
+            <span class="status-pill success"><i class="fa-solid fa-check"></i> FY 2026-27 Compliant</span>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button type="button" class="table-action-btn" onclick="alert('Downloading Certified Municipal SLA Compliance Audit Report [PDF].');">
+            <i class="fa-solid fa-file-pdf"></i> Export Audit PDF
+          </button>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="dashboard-content">
+        
+        <!-- Welcome Hero Banner -->
+        <div class="dashboard-hero-banner">
+          <div>
+            <div class="hero-banner-title">Statutory SLA Compliance & Operational Audit Console</div>
+            <div class="hero-banner-meta">
+              <span><i class="fa-solid fa-gavel" style="color: var(--brand-orange);"></i> Public Service Guarantee Act Registry</span>
+              <span><i class="fa-solid fa-award" style="color: #10b981;"></i> Current Municipal Score: <strong>AAA (98/100)</strong></span>
+            </div>
+          </div>
+          <div class="hero-banner-actions">
+            <button type="button" class="btn-portal-action" onclick="alert('Running real-time SLA verification on 3,490 logged incidents. Zero statutory breaches detected.');">
+              <i class="fa-solid fa-magnifying-glass-chart"></i> Run Audit Check
+            </button>
+          </div>
+        </div>
+
+        <!-- Section 1: Animated Metric Counters HUD -->
+        <div class="counter-hud-grid">
+          
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon emerald"><i class="fa-solid fa-clipboard-check"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-check-double"></i> Verified</span>
+            </div>
+            <div class="counter-hud-number" data-counter="97.2" data-decimals="1" data-suffix="%" data-duration="1200">0.0%</div>
+            <div class="counter-hud-label">Statutory SLA Compliance</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon sky"><i class="fa-solid fa-database"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-server"></i> Audited</span>
+            </div>
+            <div class="counter-hud-number" data-counter="3490" data-duration="1400">0</div>
+            <div class="counter-hud-label">Audited Civic Incidents</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon orange"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-shield"></i> Retained</span>
+            </div>
+            <div class="counter-hud-number" data-counter="14.2" data-decimals="1" data-prefix="₹" data-suffix=" L" data-duration="1200">₹0.0 L</div>
+            <div class="counter-hud-label">Penalty Defaults Prevented</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon purple"><i class="fa-solid fa-award"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-star"></i> AAA Rating</span>
+            </div>
+            <div class="counter-hud-number" data-counter="98" data-suffix="/100" data-duration="1000">0/100</div>
+            <div class="counter-hud-label">Municipal Audit Index</div>
+          </div>
+
+        </div>
+
+        <!-- Section 2 & 3: Interactive Line Chart & Bar Chart -->
+        <div class="dashboard-charts-grid-duo">
+          
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-line" style="color: var(--brand-orange);"></i> 12-Month SLA Compliance Progression (%)</div>
+                <div class="chart-card-subtitle">Monthly percentage of citizen grievances resolved within statutory SLA</div>
+              </div>
+              <span class="chart-card-meta">Past 12 Months</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="slaLineChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-column" style="color: var(--brand-orange);"></i> Average Turnaround vs SLA Cap (Hours)</div>
+                <div class="chart-card-subtitle">Actual clearance speed (solid) against maximum legal deadline (dashed)</div>
+              </div>
+              <span class="chart-card-meta">Department Benchmark</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="slaBarChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section 4: Interactive Doughnut Chart -->
+        <div class="dashboard-charts-grid-split">
+          
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-pie" style="color: var(--brand-orange);"></i> Root-Cause of Delays in Breached Cases</div>
+                <div class="chart-card-subtitle">Detailed categorization for the 2.8% of incidents exceeding deadline</div>
+              </div>
+              <span class="chart-card-meta">Root Causes</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="slaDoughnutChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card" style="justify-content: space-between;">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-scale-balanced" style="color: #10b981;"></i> Statutory Accountability Rating</div>
+                <div class="chart-card-subtitle">Citizen Charter performance index</div>
+              </div>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid var(--border-medium); border-radius: 12px; padding: 18px; margin: auto 0;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);">Inspection Body:</span>
+                <strong>State E-Governance Directorate</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);">Audit Cycle:</span>
+                <strong>Quarter 2 (Jul - Sep 2026)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);">Citizen Compensation Triggered:</span>
+                <strong style="color: #10b981;">0 Claims (Zero Default)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border-medium); padding-top: 10px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);">Statutory Clearance Grade:</span>
+                <span class="status-pill success"><i class="fa-solid fa-medal"></i> Grade A+ (Excellent)</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section 5: Filterable SLA Registry Table -->
+        <div class="dashboard-table-card">
+          <div class="dashboard-table-toolbar">
+            <div class="dashboard-section-title">
+              <i class="fa-solid fa-file-shield"></i>
+              Official SLA Incident Audit Trail
+            </div>
+            <div class="dashboard-table-filters">
+              <button type="button" class="dashboard-filter-chip active" data-filter="all">All Audited (4)</button>
+              <button type="button" class="dashboard-filter-chip" data-filter="compliant">Compliant (3)</button>
+              <button type="button" class="dashboard-filter-chip" data-filter="extended">Weather Extended (1)</button>
+            </div>
+          </div>
+
+          <div class="dashboard-table-wrapper">
+            <table class="dashboard-data-table">
+              <thead>
+                <tr>
+                  <th>Audit Ref</th>
+                  <th>Service Category</th>
+                  <th>Statutory Cap</th>
+                  <th>Actual Time</th>
+                  <th>Variance</th>
+                  <th>Compliance Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="slaTableBody">
+                <tr data-status="compliant">
+                  <td><strong>#AUD-8912</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Streetlight Outage Replacement</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Ticket #STK-8114 • 12th Cross Park Ave</div>
+                  </td>
+                  <td>6 Hours</td>
+                  <td><strong>3h 12m</strong></td>
+                  <td><span style="color: #10b981; font-weight: 700;">-2h 48m (Fast)</span></td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> 100% Compliant</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Viewing Audit Certificate #AUD-8912.');">
+                      <i class="fa-solid fa-file-certificate"></i> Audit Cert
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="compliant">
+                  <td><strong>#AUD-8840</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Drinking Water Main Burst Repair</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Ticket #STK-7208 • 42 Maple Crescent</div>
+                  </td>
+                  <td>8 Hours</td>
+                  <td><strong>5h 10m</strong></td>
+                  <td><span style="color: #10b981; font-weight: 700;">-2h 50m (Fast)</span></td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> 100% Compliant</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Viewing Audit Certificate #AUD-8840.');">
+                      <i class="fa-solid fa-file-certificate"></i> Audit Cert
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="compliant">
+                  <td><strong>#AUD-8704</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Culvert Jetting & Surcharge Clean</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Ticket #STK-7920 • 5th Ave & 2nd St</div>
+                  </td>
+                  <td>6 Hours</td>
+                  <td><strong>4h 05m</strong></td>
+                  <td><span style="color: #10b981; font-weight: 700;">-1h 55m (Fast)</span></td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> 100% Compliant</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Viewing Audit Certificate #AUD-8704.');">
+                      <i class="fa-solid fa-file-certificate"></i> Audit Cert
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="extended">
+                  <td><strong>#AUD-8622</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Road Surface Pothole Deep Patching</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Ticket #STK-7410 • Sector 1 Overpass</div>
+                  </td>
+                  <td>24 Hours</td>
+                  <td><strong>26h 15m</strong></td>
+                  <td><span style="color: #d97706; font-weight: 700;">+2h 15m (Rain Delay)</span></td>
+                  <td><span class="status-pill warning"><i class="fa-solid fa-cloud-showers-heavy"></i> Force Majeure</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Audit Exemption Justification:\nHeavy rainfall of 68mm prevented hot-mix bitumen application. Meteorological certificate attached.');">
+                      <i class="fa-solid fa-file-lines"></i> View Waiver
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <footer class="dashboard-footer" style="padding: 24px 32px; border-top: 1px solid var(--border-medium); font-size: 0.8rem; color: var(--text-muted); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; background: #ffffff;">
+        <div>&copy; 2026-2027 Stackly Municipal Corporation. Statutory Citizen Charter Audit Registry.</div>
+        <div style="display: flex; gap: 16px;">
+          <a href="staff-dashboard.html" style="color: var(--brand-orange); text-decoration: none;"><i class="fa-solid fa-gauge-high"></i> Ops Console</a>
+          <a href="staff-departments.html" style="color: var(--text-muted); text-decoration: none;"><i class="fa-solid fa-sitemap"></i> Departments</a>
+        </div>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // Sidebar Mobile Toggle
+    const toggleBtn = document.getElementById('sidebarToggleBtn');
+    const sidebar = document.getElementById('dashboardSidebar');
+    if (window.innerWidth <= 992 && toggleBtn) {
+      toggleBtn.style.display = 'inline-flex';
+      toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+      });
+    }
+  </script>
+
+  <!-- Chart.js & Dashboard Charts Engine -->
+  <script src="js/chart.min.js"></script>
+  <script src="js/dashboard-charts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Line Chart: 12-Month SLA Compliance Trend
+      buildLineChart(
+        'slaLineChart',
+        ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'],
+        [
+          { label: 'SLA Compliance (%)', data: [94.5, 95.2, 93.8, 96.1, 95.8, 97.2, 97.5, 96.8, 98.1, 98.4, 97.9, 98.6], color: '#10b981', bgColor: 'rgba(16, 185, 129, 0.08)' }
+        ],
+        'Compliance %'
+      );
+
+      // 2. Bar Chart: Average Turnaround vs SLA Cap
+      buildBarChart(
+        'slaBarChart',
+        ['Streetlights (6h Cap)', 'Water Bursts (8h Cap)', 'Drain Culverts (6h Cap)', 'Pothole Patch (24h Cap)', 'Waste Clearance (12h Cap)'],
+        [
+          {
+            label: 'Actual Turnaround (Hours)',
+            data: [3.2, 5.1, 4.1, 14.8, 4.5],
+            colors: ['#10b981', '#0284c7', '#10b981', '#ff6600', '#10b981']
+          }
+        ]
+      );
+
+      // 3. Doughnut Chart: Root-Cause of Delays
+      buildPieChart(
+        'slaDoughnutChart',
+        ['Extreme Weather & Monsoon Rain (45%)', 'Supply Chain & Material Transit (30%)', 'Underground Utility Clash (25%)'],
+        [45, 30, 25],
+        ['#0284c7', '#ff6600', '#f59e0b']
+      );
+    });
+  </script>
+
+  <!-- GSAP & Global Unique Effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

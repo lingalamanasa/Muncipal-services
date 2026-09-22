@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Field Crew Tracker - Officer Portal | Stackly Municipal Services</title>
+  <meta name="description" content="Track municipal emergency response vehicles, asphalt repair squads, and suction jetting units via live GPS telemetry and geofencing.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 (Strictly FA icons, zero emojis) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/page-tracker.js"></script>
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <div>
+        <div class="sidebar-brand">
+          <a href="index.html" class="brand-logo" title="Back to Stackly Homepage">
+            <img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="brand-logo-img" style="height: 32px;">
+          </a>
+          <div>
+            <span class="sidebar-role-badge" style="background: #000; color: #fff; border-color: #000;">
+              <i class="fa-solid fa-user-shield" style="color: var(--brand-orange);"></i> Officer Portal (Tier 2)
+            </span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="sidebar-nav">
+          <a href="staff-dashboard.html" class="sidebar-link">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span>Operations Console</span>
+          </a>
+          <a href="staff-dispatch.html" class="sidebar-link">
+            <i class="fa-solid fa-list-check"></i>
+            <span>Grievance Dispatch</span>
+            <span class="sidebar-link-badge" style="background: var(--brand-orange); color: #000;">24 New</span>
+          </a>
+          <a href="staff-fleet.html" class="sidebar-link active">
+            <i class="fa-solid fa-truck-fast"></i>
+            <span>Field Crew Tracker</span>
+            <span class="sidebar-link-badge">18</span>
+          </a>
+          <a href="staff-scada.html" class="sidebar-link">
+            <i class="fa-solid fa-tower-broadcast"></i>
+            <span>IoT SCADA Network</span>
+            <span class="sidebar-link-badge" style="background: #ef4444; color: #fff;">3 Alerts</span>
+          </a>
+          <a href="staff-broadcasts.html" class="sidebar-link">
+            <i class="fa-solid fa-bullhorn"></i>
+            <span>Civic Broadcasts</span>
+          </a>
+          <a href="staff-sla.html" class="sidebar-link">
+            <i class="fa-solid fa-clipboard-check"></i>
+            <span>SLA Audit Logs</span>
+          </a>
+          <a href="staff-departments.html" class="sidebar-link">
+            <i class="fa-solid fa-sitemap"></i>
+            <span>Departments Hierarchy</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Sidebar User Profile Footer -->
+      <div class="sidebar-footer">
+        <div class="sidebar-profile-card">
+          <img src="images/officer-avatar.webp" alt="Eng. Rajesh Varma - Senior Executive" class="sidebar-avatar">
+          <div class="sidebar-profile-info">
+            <div class="sidebar-profile-name">Eng. Rajesh Varma</div>
+            <div class="sidebar-profile-desc">Sr. Ward Executive • ID: 4491</div>
+          </div>
+          <a href="login.html" title="Sign Out" style="color: var(--text-muted); font-size: 1.1rem; padding: 4px;" onclick="return confirm('Confirm departure from Officer Command Station?');">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Dashboard Area -->
+    <main class="dashboard-main">
+      
+      <!-- Topbar Header -->
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button type="button" id="sidebarToggleBtn" class="topbar-icon-btn" aria-label="Toggle Sidebar" style="display: none;">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted);"><i class="fa-solid fa-satellite-dish" style="color: var(--brand-orange);"></i> Fleet GIS:</span>
+            <span class="status-pill success"><i class="fa-solid fa-signal"></i> 38 Units Connected</span>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button type="button" class="table-action-btn" onclick="alert('GPS Refresh: Polling 38 active units via SatCom telemetry.');">
+            <i class="fa-solid fa-arrows-rotate"></i> Refresh GPS
+          </button>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="dashboard-content">
+        
+        <!-- Welcome Hero Banner -->
+        <div class="dashboard-hero-banner">
+          <div>
+            <div class="hero-banner-title">Municipal Fleet & Field Crew Telematics</div>
+            <div class="hero-banner-meta">
+              <span><i class="fa-solid fa-location-crosshairs" style="color: var(--brand-orange);"></i> High-Precision GPS Geofence Grid</span>
+              <span><i class="fa-solid fa-truck-ramp-box" style="color: #10b981;"></i> Automatic Dispatch Routing: <strong>Enabled</strong></span>
+            </div>
+          </div>
+          <div class="hero-banner-actions">
+            <button type="button" class="btn-portal-action" onclick="alert('Opening Fullscreen Municipal GIS Geofence Radar.');">
+              <i class="fa-solid fa-map-location-dot"></i> Open Fullscreen GIS Map
+            </button>
+          </div>
+        </div>
+
+        <!-- Section 1: Animated Metric Counters HUD -->
+        <div class="counter-hud-grid">
+          
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon orange"><i class="fa-solid fa-truck"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-circle-check"></i> Fleet Total</span>
+            </div>
+            <div class="counter-hud-number" data-counter="38" data-duration="1000">0</div>
+            <div class="counter-hud-label">GPS-Monitored Vehicles</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon sky"><i class="fa-solid fa-people-group"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-signal"></i> Active Field</span>
+            </div>
+            <div class="counter-hud-number" data-counter="18" data-duration="1000">0</div>
+            <div class="counter-hud-label">Field Crews Dispatched</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon emerald"><i class="fa-solid fa-gas-pump"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-leaf"></i> Eco-Routing</span>
+            </div>
+            <div class="counter-hud-number" data-counter="94.2" data-decimals="1" data-suffix="%" data-duration="1200">0.0%</div>
+            <div class="counter-hud-label">Fuel & Route Efficiency</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon purple"><i class="fa-solid fa-draw-polygon"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-shield"></i> Zero Breaches</span>
+            </div>
+            <div class="counter-hud-number" data-counter="100" data-suffix="%" data-duration="1000">0%</div>
+            <div class="counter-hud-label">Ward Geofence Compliance</div>
+          </div>
+
+        </div>
+
+        <!-- Section 2 & 3: Interactive Line Chart & Bar Chart -->
+        <div class="dashboard-charts-grid-duo">
+          
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-line" style="color: var(--brand-orange);"></i> Daily Fleet Kilometers Traversed</div>
+                <div class="chart-card-subtitle">Aggregated route distances across all municipal response divisions</div>
+              </div>
+              <span class="chart-card-meta">Weekly Mileage</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="fleetLineChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-column" style="color: var(--brand-orange);"></i> Fleet Allocation by Department</div>
+                <div class="chart-card-subtitle">Active vehicles apportioned to specialized public works tasks</div>
+              </div>
+              <span class="chart-card-meta">Wing Allocation</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="fleetBarChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section 4: Interactive Doughnut Chart -->
+        <div class="dashboard-charts-grid-split">
+          
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-pie" style="color: var(--brand-orange);"></i> Fleet Operational Readiness</div>
+                <div class="chart-card-subtitle">Current status across 38 registered municipal vehicles</div>
+              </div>
+              <span class="chart-card-meta">Readiness Index</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="fleetDoughnutChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card" style="justify-content: space-between;">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-charging-station" style="color: #10b981;"></i> Green Fleet Transition</div>
+                <div class="chart-card-subtitle">EV adoption in municipal fleet</div>
+              </div>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid var(--border-medium); border-radius: 12px; padding: 18px; margin: auto 0;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);">Electric Garbage Compactors:</span>
+                <strong>16 Units (100% EV)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);">Hybrid Asphalt Patchers:</span>
+                <strong>6 Units (Low Emission)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border-medium); padding-top: 10px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);">Carbon Abatement Score:</span>
+                <strong style="color: #10b981;">34.2 Tons CO2 / Mo</strong>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section 5: Filterable Fleet GIS Table -->
+        <div class="dashboard-table-card">
+          <div class="dashboard-table-toolbar">
+            <div class="dashboard-section-title">
+              <i class="fa-solid fa-truck-moving"></i>
+              Live Municipal Fleet Telematics Roster
+            </div>
+            <div class="dashboard-table-filters">
+              <button type="button" class="dashboard-filter-chip active" data-filter="all">All Vehicles (4)</button>
+              <button type="button" class="dashboard-filter-chip" data-filter="active">On Duty (3)</button>
+              <button type="button" class="dashboard-filter-chip" data-filter="standby">Standby (1)</button>
+            </div>
+          </div>
+
+          <div class="dashboard-table-wrapper">
+            <table class="dashboard-data-table">
+              <thead>
+                <tr>
+                  <th>Vehicle ID</th>
+                  <th>Unit Type & Spec</th>
+                  <th>Crew Lead</th>
+                  <th>Current Sector</th>
+                  <th>Speed / Telemetry</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="fleetTableBody">
+                <tr data-status="active">
+                  <td><strong>#FLT-ASPH-02</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Hot-Mix Asphalt Patcher</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Equipped with vibratory roller & thermal hopper</div>
+                  </td>
+                  <td>Eng. Rajesh Varma</td>
+                  <td>Ward 04, 4th Main Road</td>
+                  <td><span style="color: #10b981; font-weight: 700;">Stationary (On-Site)</span></td>
+                  <td><span class="status-pill warning"><i class="fa-solid fa-wrench"></i> Active Repair</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Patcher #FLT-ASPH-02:\nHopper Temp: 165°C (Optimal)\nCrew on site repairing pothole #STK-8492.');">
+                      <i class="fa-solid fa-location-crosshairs"></i> Telemetry
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="active">
+                  <td><strong>#FLT-ELEC-01</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Sky-Lift Hydraulic Boom Truck</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">18-meter insulated boom for high-voltage lamps</div>
+                  </td>
+                  <td>Crew Chief S. Patil</td>
+                  <td>Ward 04, 8th Cross Blvd</td>
+                  <td><span style="color: #0284c7; font-weight: 700;">22 km/h (En Route)</span></td>
+                  <td><span class="status-pill info"><i class="fa-solid fa-bolt"></i> Dispatched</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Sky-Lift #FLT-ELEC-01:\nETA to Feeder Pillar: 4 mins.\nTraffic clearance signal given.');">
+                      <i class="fa-solid fa-location-crosshairs"></i> Telemetry
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="active">
+                  <td><strong>#FLT-DRAIN-04</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">High-Pressure Suction Jetting Van</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">4,000L sludge tank with recycling filtration</div>
+                  </td>
+                  <td>Operator Mohan K.</td>
+                  <td>Ward 02, Harbor Gate 3</td>
+                  <td><span style="color: #0284c7; font-weight: 700;">18 km/h (In Transit)</span></td>
+                  <td><span class="status-pill info"><i class="fa-solid fa-water"></i> En Route</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Jetting Unit #FLT-DRAIN-04:\nWater tank full at 100% capacity. Ready for culvert desilting.');">
+                      <i class="fa-solid fa-location-crosshairs"></i> Telemetry
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="standby">
+                  <td><strong>#FLT-EV-SANI-09</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Heavy Electric Waste Compactor</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Zero-emission 12-ton automated bin lifter</div>
+                  </td>
+                  <td>Driver Ramesh T.</td>
+                  <td>Ward 04 Central Depot</td>
+                  <td><span style="color: var(--text-muted); font-weight: 700;">0 km/h (Charging)</span></td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-charging-station"></i> Standby (98% SoC)</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Compactor #FLT-EV-SANI-09 is fully charged and ready for evening collection run at 17:00.');">
+                      <i class="fa-solid fa-battery-full"></i> Battery Status
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <footer class="dashboard-footer" style="padding: 24px 32px; border-top: 1px solid var(--border-medium); font-size: 0.8rem; color: var(--text-muted); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; background: #ffffff;">
+        <div>&copy; 2026-2027 Stackly Municipal Corporation. Central Fleet Telematics Center.</div>
+        <div style="display: flex; gap: 16px;">
+          <a href="staff-dispatch.html" style="color: var(--brand-orange); text-decoration: none;"><i class="fa-solid fa-paper-plane"></i> Dispatch Queue</a>
+          <a href="staff-scada.html" style="color: var(--text-muted); text-decoration: none;"><i class="fa-solid fa-tower-broadcast"></i> IoT SCADA</a>
+        </div>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // Sidebar Mobile Toggle
+    const toggleBtn = document.getElementById('sidebarToggleBtn');
+    const sidebar = document.getElementById('dashboardSidebar');
+    if (window.innerWidth <= 992 && toggleBtn) {
+      toggleBtn.style.display = 'inline-flex';
+      toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+      });
+    }
+  </script>
+
+  <!-- Chart.js & Dashboard Charts Engine -->
+  <script src="js/chart.min.js"></script>
+  <script src="js/dashboard-charts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Line Chart: Daily Fleet Mileage
+      buildLineChart(
+        'fleetLineChart',
+        ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        [
+          { label: 'Total Fleet Distance (km)', data: [1120, 1280, 1190, 1340, 1420, 940, 810], color: '#ff6600', bgColor: 'rgba(255, 102, 0, 0.08)' }
+        ],
+        'Kilometers'
+      );
+
+      // 2. Bar Chart: Fleet by Division
+      buildBarChart(
+        'fleetBarChart',
+        ['Solid Waste & Sweeping', 'Electrical & Boom Lifts', 'Roads & Asphalt Patching', 'Storm Drainage Jetting', 'Hydrology Tankers'],
+        [
+          {
+            label: 'Assigned Vehicles',
+            data: [16, 6, 6, 6, 4],
+            colors: ['#10b981', '#f59e0b', '#ff6600', '#0284c7', '#8b5cf6']
+          }
+        ]
+      );
+
+      // 3. Doughnut Chart: Readiness Status
+      buildPieChart(
+        'fleetDoughnutChart',
+        ['Active On Duty (75%)', 'Standby Ready (18%)', 'Scheduled Service (7%)'],
+        [75, 18, 7],
+        ['#10b981', '#0284c7', '#f59e0b']
+      );
+    });
+  </script>
+
+  <!-- GSAP & Global Unique Effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

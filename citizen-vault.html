@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Vault - Citizen Portal | Stackly Municipal Services</title>
+  <meta name="description" content="Access DigiLocker-synced municipal certificates, building plan approvals, birth and death registries, and verifiable cryptographic credentials.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 (Strictly FA icons, zero emojis) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/page-tracker.js"></script>
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <div>
+        <div class="sidebar-brand">
+          <a href="index.html" class="brand-logo" title="Back to Stackly Homepage">
+            <img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="brand-logo-img" style="height: 32px;">
+          </a>
+          <div>
+            <span class="sidebar-role-badge">
+              <i class="fa-solid fa-id-badge" style="color: var(--brand-orange);"></i> Citizen Portal
+            </span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="sidebar-nav">
+          <a href="citizen-dashboard.html" class="sidebar-link">
+            <i class="fa-solid fa-gauge-high"></i>
+            <span>Overview</span>
+          </a>
+          <a href="citizen-grievances.html" class="sidebar-link">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>My Grievances</span>
+            <span class="sidebar-link-badge">1</span>
+          </a>
+          <a href="citizen-taxes.html" class="sidebar-link">
+            <i class="fa-solid fa-receipt"></i>
+            <span>Taxes & Utilities</span>
+          </a>
+          <a href="citizen-vault.html" class="sidebar-link active">
+            <i class="fa-solid fa-folder-closed"></i>
+            <span>Digital Vault</span>
+            <span class="sidebar-link-badge" style="background: #10b981;">4</span>
+          </a>
+          <a href="citizen-voting.html" class="sidebar-link">
+            <i class="fa-solid fa-check-to-slot"></i>
+            <span>Ward Voting</span>
+          </a>
+          <a href="citizen-services.html" class="sidebar-link">
+            <i class="fa-solid fa-compass"></i>
+            <span>Services Directory</span>
+          </a>
+          <a href="citizen-helpdesk.html" class="sidebar-link">
+            <i class="fa-solid fa-headset"></i>
+            <span>Helpdesk & Support</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Sidebar User Profile Footer -->
+      <div class="sidebar-footer">
+        <div class="sidebar-profile-card">
+          <img src="images/citizen-avatar.webp" alt="Jane Doe - Verified Citizen" class="sidebar-avatar">
+          <div class="sidebar-profile-info">
+            <div class="sidebar-profile-name">Jane Doe</div>
+            <div class="sidebar-profile-desc">Ward 04 • STK-8840-721</div>
+          </div>
+          <a href="login.html" title="Sign Out" style="color: var(--text-muted); font-size: 1.1rem; padding: 4px;" onclick="return confirm('Do you want to log out of your Citizen Account?');">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Dashboard Area -->
+    <main class="dashboard-main">
+      
+      <!-- Topbar Header -->
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button type="button" id="sidebarToggleBtn" class="topbar-icon-btn" aria-label="Toggle Sidebar" style="display: none;">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="topbar-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search certificate name, hash, issue date..." id="vaultSearchInput">
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="dashboard-content">
+        
+        <!-- Welcome Hero Banner -->
+        <div class="dashboard-hero-banner">
+          <div>
+            <div class="hero-banner-title">Citizen Digital Vault & Verified Documents</div>
+            <div class="hero-banner-meta">
+              <span><i class="fa-solid fa-shield-check" style="color: #10b981;"></i> 256-Bit Cryptographic Timestamp Validated</span>
+              <span><i class="fa-solid fa-cloud-check" style="color: var(--brand-orange);"></i> DigiLocker Master Sync: <strong>Active</strong></span>
+            </div>
+          </div>
+          <div class="hero-banner-actions">
+            <button type="button" class="btn-portal-action" onclick="window.location.href='404error.html';">
+              <i class="fa-solid fa-cloud-arrow-up"></i> Upload Document
+            </button>
+            <button type="button" class="btn-emergency" onclick="window.location.href='404error.html';">
+              <i class="fa-solid fa-arrows-rotate"></i> Sync DigiLocker
+            </button>
+          </div>
+        </div>
+
+        <!-- Section 1: Animated Metric Counters HUD -->
+        <div class="counter-hud-grid">
+          
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon emerald"><i class="fa-solid fa-certificate"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-check-double"></i> Verified</span>
+            </div>
+            <div class="counter-hud-number" data-counter="4" data-duration="1000">0</div>
+            <div class="counter-hud-label">Authenticated Certificates</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon sky"><i class="fa-solid fa-cloud"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-signal"></i> 100% Sync</span>
+            </div>
+            <div class="counter-hud-number" data-counter="100" data-suffix="%" data-duration="1200">0%</div>
+            <div class="counter-hud-label">DigiLocker Cloud Integration</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon orange"><i class="fa-solid fa-hard-drive"></i></div>
+              <span class="counter-hud-delta neutral"><i class="fa-solid fa-server"></i> Cloud Storage</span>
+            </div>
+            <div class="counter-hud-number" data-counter="14.8" data-decimals="1" data-suffix=" MB" data-duration="1200">0.0 MB</div>
+            <div class="counter-hud-label">Vault Storage Utilized</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon purple"><i class="fa-solid fa-qrcode"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-eye"></i> Active</span>
+            </div>
+            <div class="counter-hud-number" data-counter="32" data-duration="1200">0</div>
+            <div class="counter-hud-label">QR Authentications Passed</div>
+          </div>
+
+        </div>
+
+        <!-- Section 2 & 3: Interactive Line Chart & Bar Chart -->
+        <div class="dashboard-charts-grid-duo">
+          
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-line" style="color: var(--brand-orange);"></i> Document Verification & Access Activity</div>
+                <div class="chart-card-subtitle">Monthly verification inquiries from banks, utilities & municipal inspections</div>
+              </div>
+              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">Past 6 Months</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="vaultLineChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-column" style="color: var(--brand-orange);"></i> Vault Certificates by Category</div>
+                <div class="chart-card-subtitle">Number of verified documents held per regulatory wing</div>
+              </div>
+              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">Wing Split</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="vaultBarChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section 4: Interactive Doughnut Chart -->
+        <div class="dashboard-charts-grid-split">
+          
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-pie" style="color: var(--brand-orange);"></i> Issuing Authority Distribution</div>
+                <div class="chart-card-subtitle">Accredited issuers of your digital certificates</div>
+              </div>
+              <span class="chart-card-meta">Authority Share</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="vaultDoughnutChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card" style="justify-content: space-between;">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-lock" style="color: #10b981;"></i> Cryptographic Security Summary</div>
+                <div class="chart-card-subtitle">Tamper-evident audit credentials</div>
+              </div>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid var(--border-medium); border-radius: 12px; padding: 18px; margin: auto 0;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);">Encryption Standard:</span>
+                <strong>AES-256 + RSA-4096 Keypair</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);">DigiLocker Status:</span>
+                <span class="status-pill success"><i class="fa-solid fa-shield-check"></i> Connected</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);">Ledger Timestamp:</span>
+                <strong>UTC 2026-09-20 16:30</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border-medium); padding-top: 10px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);">Audit Log Integrity:</span>
+                <strong style="color: #10b981;"><i class="fa-solid fa-check"></i> 100% Untampered</strong>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section 5: Filterable Certificates Registry Table -->
+        <div class="dashboard-table-card">
+          <div class="dashboard-table-toolbar">
+            <div class="dashboard-section-title">
+              <i class="fa-solid fa-file-shield"></i>
+              Official Municipal Document Registry
+            </div>
+            <div class="dashboard-table-filters">
+              <button type="button" class="dashboard-filter-chip active" data-filter="all">All Documents (4)</button>
+              <button type="button" class="dashboard-filter-chip" data-filter="property">Property</button>
+              <button type="button" class="dashboard-filter-chip" data-filter="vital">Vital Records</button>
+              <button type="button" class="dashboard-filter-chip" data-filter="utility">Utilities</button>
+            </div>
+          </div>
+
+          <div class="dashboard-table-wrapper">
+            <table class="dashboard-data-table">
+              <thead>
+                <tr>
+                  <th>Certificate ID</th>
+                  <th>Document Title</th>
+                  <th>Issuing Body</th>
+                  <th>Issue Date</th>
+                  <th>Validity</th>
+                  <th>Verification Hash</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="vaultTableBody">
+                <tr data-status="property">
+                  <td><strong>#CERT-PT-8842</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Property Tax Clearance (Khata Extract)</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">42 Maple Crescent • Residential Assessment</div>
+                  </td>
+                  <td>Revenue Department</td>
+                  <td>Apr 14, 2026</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Valid FY 26-27</span></td>
+                  <td><code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">sha256:7f9a...c4e1</code></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';">
+                      <i class="fa-solid fa-download"></i> Download PDF
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="vital">
+                  <td><strong>#CERT-BC-1109</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Digital Birth Certificate</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Registrar of Vital Statistics • Form 5</div>
+                  </td>
+                  <td>Public Health Wing</td>
+                  <td>Jan 20, 2024</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Permanent</span></td>
+                  <td><code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">sha256:3b88...19f2</code></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';">
+                      <i class="fa-solid fa-download"></i> Download PDF
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="property">
+                  <td><strong>#CERT-BP-4921</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Sanctioned Building Plan NOC</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">G+2 Structural Blueprint Approval</div>
+                  </td>
+                  <td>Town Planning Dept</td>
+                  <td>Nov 08, 2023</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Approved</span></td>
+                  <td><code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">sha256:9a41...88ec</code></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';">
+                      <i class="fa-solid fa-download"></i> Download PDF
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="utility">
+                  <td><strong>#CERT-WM-9941</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Smart Water Meter Installation NOC</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Telemetry Linkage & Pressure Certification</div>
+                  </td>
+                  <td>Hydrology Department</td>
+                  <td>Aug 28, 2026</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Active</span></td>
+                  <td><code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">sha256:2e4f...55aa</code></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';">
+                      <i class="fa-solid fa-download"></i> Download PDF
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <footer class="dashboard-footer" style="padding: 24px 32px; border-top: 1px solid var(--border-medium); font-size: 0.8rem; color: var(--text-muted); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; background: #ffffff;">
+        <div>&copy; 2026-2027 Stackly Municipal Corporation. Digital Document & Credentials Vault.</div>
+        <div style="display: flex; gap: 16px;">
+          <a href="services.html" style="color: var(--brand-orange); text-decoration: none;"><i class="fa-solid fa-fingerprint"></i> DigiLocker Policy</a>
+          <a href="contact.html" style="color: var(--text-muted); text-decoration: none;"><i class="fa-solid fa-headset"></i> Vault Support</a>
+        </div>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // Sidebar Mobile Toggle
+    const toggleBtn = document.getElementById('sidebarToggleBtn');
+    const sidebar = document.getElementById('dashboardSidebar');
+    if (window.innerWidth <= 992 && toggleBtn) {
+      toggleBtn.style.display = 'inline-flex';
+      toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+      });
+    }
+
+    // Search filter
+    document.getElementById('vaultSearchInput')?.addEventListener('input', function(e) {
+      const q = e.target.value.toLowerCase();
+      document.querySelectorAll('#vaultTableBody tr').forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+  </script>
+
+  <!-- Chart.js & Dashboard Charts Engine -->
+  <script src="js/chart.min.js"></script>
+  <script src="js/dashboard-charts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Line Chart: Verification Access Activity
+      buildLineChart(
+        'vaultLineChart',
+        ['Oct 2026', 'Nov 2026', 'Dec 2026', 'Jan 2027', 'Feb 2027', 'Mar 2027'],
+        [
+          { label: 'Authorized Inquiries', data: [3, 5, 4, 8, 6, 6], color: '#ff6600', bgColor: 'rgba(255, 102, 0, 0.08)' },
+          { label: 'QR Scan Authentications', data: [2, 4, 3, 7, 8, 8], color: '#10b981', bgColor: 'rgba(16, 185, 129, 0.05)' }
+        ],
+        'Access Queries'
+      );
+
+      // 2. Bar Chart: Documents by Wing
+      buildBarChart(
+        'vaultBarChart',
+        ['Revenue (Property)', 'Town Planning', 'Vital Statistics', 'Hydrology & Utilities'],
+        [
+          {
+            label: 'Stored Documents',
+            data: [1, 1, 1, 1],
+            colors: ['#ff6600', '#0284c7', '#10b981', '#f59e0b']
+          }
+        ]
+      );
+
+      // 3. Doughnut Chart: Issuing Authority
+      buildPieChart(
+        'vaultDoughnutChart',
+        ['Municipal Corporation (50%)', 'State Revenue Board (25%)', 'Town Planning Authority (25%)'],
+        [50, 25, 25],
+        ['#ff6600', '#10b981', '#0284c7']
+      );
+    });
+  </script>
+
+  <!-- GSAP & Global Unique Effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

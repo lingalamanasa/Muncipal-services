@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Citizen & Staff Login | Stackly Municipal</title>
+  <meta name="description" content="Secure authentication portal for citizens, property owners, and municipal administrative staff.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom CSS (Black, White, Orange) -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/page-tracker.js"></script>
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between;">
+
+  <!-- Minimal Header with Stackly Logo -->
+  <header style="padding: 24px 0; border-bottom: 1px solid var(--border-subtle); background: var(--bg-main);">
+    <div class="civic-container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" class="brand-logo"><img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="brand-logo-img"></a>
+      <a href="index.html" class="btn-emergency" style="font-size: 0.85rem;">
+        <i class="fa-solid fa-arrow-left"></i> Return Home
+      </a>
+    </div>
+  </header>
+
+  <!-- Login Main Container -->
+  <main class="auth-container-wrapper" style="position: relative; overflow: hidden;">
+    <!-- Animated Background Image Slider Reel -->
+    <div class="hero-animated-bg-wrap">
+      <div class="hero-bg-slide-item active" style="background-image: url('images/auth-slide-1.webp');"></div>
+      <div class="hero-bg-slide-item" style="background-image: url('images/auth-slide-2.webp');"></div>
+      <div class="hero-bg-slide-item" style="background-image: url('images/auth-slide-3.webp');"></div>
+      <div class="hero-bg-slide-overlay"></div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); max-width: 1040px; width: 100%; background: #ffffff; border: 1px solid var(--border-medium); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); overflow: hidden; align-items: stretch; position: relative; z-index: 2;">
+      
+      <!-- Left Column: Login Form -->
+      <div style="padding: 44px; position: relative;">
+        <!-- Orange Accent Stripe -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--brand-orange);"></div>
+
+        <!-- Icon & Title -->
+        <div style="text-align: left; margin-bottom: 24px;">
+          <div style="width: 50px; height: 50px; border-radius: 12px; background: var(--brand-orange-subtle); color: var(--brand-orange); display: inline-flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 12px; border: 1px solid var(--brand-orange-border);">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h2 id="portalHeading" style="font-family: var(--font-display); font-size: 1.8rem; color: #0a0a0a; margin-bottom: 4px;">
+            Stackly <span class="highlight">Sign In</span>
+          </h2>
+          <p id="portalSubtext" style="color: var(--text-muted); font-size: 0.88rem;">Secure Citizen & Administrative Staff Gateway</p>
+        </div>
+
+        <!-- Portal Type Toggle (Both Buttons Link to Separate Dashboards) -->
+        <div style="display: flex; background: #f8fafc; border: 1px solid var(--border-medium); border-radius: var(--radius-full); padding: 4px; margin-bottom: 22px;">
+          <button type="button" id="tabCitizenBtn" style="flex: 1; padding: 8px; border-radius: var(--radius-full); border: none; background: var(--brand-orange); color: #000; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.2s ease;" onclick="selectPortal('citizen')">
+            <i class="fa-solid fa-house-chimney-user"></i> Citizen Portal
+          </button>
+          <button type="button" id="tabStaffBtn" style="flex: 1; padding: 8px; border-radius: var(--radius-full); border: none; background: transparent; color: #475569; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.2s ease;" onclick="selectPortal('staff')">
+            <i class="fa-solid fa-user-shield"></i> Staff / Officer
+          </button>
+        </div>
+
+        <!-- Login Form -->
+        <form onsubmit="handleLoginSubmit(event)">
+          <div class="calc-input-group">
+            <label id="loginIdLabel"><i class="fa-solid fa-envelope" style="color: var(--brand-orange); margin-right: 6px;"></i> Email id</label>
+            <input type="text" id="loginIdInput" class="calc-control" placeholder="citizen@example.gov or 8840-XXXX" required>
+          </div>
+
+          <div class="calc-input-group">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <label style="margin-bottom: 0;"><i class="fa-solid fa-lock" style="color: var(--brand-orange); margin-right: 6px;"></i> Password</label>
+              <a href="#" style="font-size: 0.78rem; color: var(--brand-orange);" onclick="alert('Password reset link sent to your registered email or phone.');">Forgot Password?</a>
+            </div>
+            <input type="password" class="calc-control" placeholder="••••••••••••" value="password123" required>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; font-size: 0.85rem; color: var(--text-muted);">
+            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+              <input type="checkbox" style="accent-color: var(--brand-orange);" checked> Remember device
+            </label>
+            <span style="color: var(--brand-orange);"><i class="fa-solid fa-shield"></i> 256-Bit SSL</span>
+          </div>
+
+          <button type="submit" id="submitLoginBtn" class="btn-portal-action" style="width: 100%; justify-content: center; padding: 13px; font-size: 1rem;">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In
+          </button>
+
+          </form>
+      </div>
+
+      <!-- Right Column: Visual WebP Showcase Card with 3D Tilt & Certification Badges -->
+      <div style="background: #f8fafc; border-left: 1px solid var(--border-medium); padding: 32px; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+        <div>
+          <div class="hero-badge-tag" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 102, 0, 0.08); border: 1px solid var(--brand-orange-border); padding: 4px 12px; border-radius: 999px; margin-bottom: 12px;">
+            <span style="color: var(--brand-orange); font-size: 0.78rem; font-weight: 800;"><i class="fa-solid fa-fingerprint"></i> Smart Civic ID</span>
+          </div>
+          <h3 style="font-family: var(--font-display); font-size: 1.3rem; color: #0a0a0a; margin-bottom: 6px;">
+            One Identity. <span class="highlight">All Services.</span>
+          </h3>
+          <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px;">
+            Your unified credentials unlock digital land titling, water meters, trade certificates, and direct civic voting.
+          </p>
+        </div>
+
+        <!-- Main Auth Visual -->
+        <div class="image-reveal-frame card-tilt-inner" style="height: 180px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-subtle); position: relative; margin-bottom: 16px;">
+          <img src="images/hero-auth.webp" alt="Stackly Citizen Digital ID & Security" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.75); color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 0.72rem; font-weight: 700;">
+            <i class="fa-solid fa-lock" style="color: var(--brand-orange);"></i> DigiLocker Encrypted
+          </div>
+        </div>
+
+        <!-- Row 1 of Security Certification Badge Images (WebP, < 100KB) -->
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 10px;">
+          <div class="civic-card-img-wrap" style="height: 60px; margin-bottom: 0;">
+            <img src="images/login-badge-ssl.webp" alt="256-Bit SSL Encryption" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="civic-card-img-wrap" style="height: 60px; margin-bottom: 0;">
+            <img src="images/login-badge-cloud.webp" alt="DigiLocker Certified Sync" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="civic-card-img-wrap" style="height: 60px; margin-bottom: 0;">
+            <img src="images/login-badge-iso.webp" alt="ISO 27001 Data Privacy Standard" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="civic-card-img-wrap" style="height: 60px; margin-bottom: 0;">
+            <img src="images/login-badge-sso.webp" alt="Single Sign-On Gateway" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+        </div>
+
+        <!-- Row 2 of Badges & Step Verifications -->
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;">
+          <div class="civic-card-img-wrap" style="height: 60px; margin-bottom: 0;">
+            <img src="images/login-badge-pass.webp" alt="Smart Citizen Pass" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="civic-card-img-wrap" style="height: 60px; margin-bottom: 0;">
+            <img src="images/login-badge-ward.webp" alt="Ward Verified Seal" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="civic-card-img-wrap" style="height: 60px; margin-bottom: 0;">
+            <img src="images/login-badge-verify1.webp" alt="Citizen Step 1 Seal" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="civic-card-img-wrap" style="height: 60px; margin-bottom: 0;">
+            <img src="images/login-badge-verify2.webp" alt="Citizen Step 2 Seal" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer style="padding: 20px 0; border-top: 1px solid var(--border-subtle); text-align: center; font-size: 0.82rem; color: var(--text-dim); background: var(--color-black);">
+    <div class="civic-container" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px;">
+      <span>&copy; 2026 Stackly Municipal Corporation. Authorized civic access only.</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/animations.js"></script>
+  <script>
+    try {
+      sessionStorage.setItem('stackly_last_page', window.location.href);
+      localStorage.setItem('stackly_last_page', window.location.href);
+    } catch(e) {}
+
+    let currentPortal = 'citizen';
+
+    function selectPortal(portal) {
+      currentPortal = portal;
+      const citizenBtn = document.getElementById('tabCitizenBtn');
+      const staffBtn = document.getElementById('tabStaffBtn');
+      const idLabel = document.getElementById('loginIdLabel');
+      const idInput = document.getElementById('loginIdInput');
+      const heading = document.getElementById('portalHeading');
+      const subtext = document.getElementById('portalSubtext');
+      const submitBtn = document.getElementById('submitLoginBtn');
+
+      if (portal === 'staff') {
+        staffBtn.style.background = 'var(--brand-orange)';
+        staffBtn.style.color = '#000000';
+        citizenBtn.style.background = 'transparent';
+        citizenBtn.style.color = '#475569';
+
+        idLabel.innerHTML = '<i class="fa-solid fa-user-shield" style="color: var(--brand-orange); margin-right: 6px;"></i> Staff Employee ID (Gov Domain)';
+        idInput.placeholder = 'rajesh.varma@stackly.gov or GOV-4491';
+        heading.innerHTML = 'Staff <span class="highlight">Command Login</span>';
+        subtext.innerText = 'Restricted Officer Operations & Executive Dispatch Hub';
+        submitBtn.innerHTML = '<i class="fa-solid fa-lock-open"></i> Sign In as Officer';
+      } else {
+        citizenBtn.style.background = 'var(--brand-orange)';
+        citizenBtn.style.color = '#000000';
+        staffBtn.style.background = 'transparent';
+        staffBtn.style.color = '#475569';
+
+        idLabel.innerHTML = '<i class="fa-solid fa-envelope" style="color: var(--brand-orange); margin-right: 6px;"></i> Email id';
+        idInput.placeholder = 'citizen@example.gov or 8840-XXXX';
+        heading.innerHTML = 'Stackly <span class="highlight">Sign In</span>';
+        subtext.innerText = 'Secure Citizen & Administrative Staff Gateway';
+        submitBtn.innerHTML = '<i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In';
+      }
+    }
+
+    function handleLoginSubmit(event) {
+      event.preventDefault();
+      if (currentPortal === 'staff') {
+        alert('Authentication Verified! Welcome, Officer Rajesh Varma.');
+        window.location.href = 'staff-dashboard.html';
+      } else {
+        alert('Authentication Verified! Welcome, Jane Doe.');
+        window.location.href = 'citizen-dashboard.html';
+      }
+    }
+
+    // Auto-detect ?portal=staff URL query
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('portal') === 'staff') {
+      selectPortal('staff');
+    }
+  </script>
+</body>
+</html>

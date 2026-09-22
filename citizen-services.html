@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services Directory - Citizen Portal | Stackly Municipal Services</title>
+  <meta name="description" content="Explore and apply for 64 municipal digital services with transparent SLAs, real-time tracking, and automated digital NOC generation.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 (Strictly FA icons, zero emojis) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/page-tracker.js"></script>
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <div>
+        <div class="sidebar-brand">
+          <a href="index.html" class="brand-logo" title="Back to Stackly Homepage">
+            <img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="brand-logo-img" style="height: 32px;">
+          </a>
+          <div>
+            <span class="sidebar-role-badge">
+              <i class="fa-solid fa-id-badge" style="color: var(--brand-orange);"></i> Citizen Portal
+            </span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="sidebar-nav">
+          <a href="citizen-dashboard.html" class="sidebar-link">
+            <i class="fa-solid fa-gauge-high"></i>
+            <span>Overview</span>
+          </a>
+          <a href="citizen-grievances.html" class="sidebar-link">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>My Grievances</span>
+            <span class="sidebar-link-badge">1</span>
+          </a>
+          <a href="citizen-taxes.html" class="sidebar-link">
+            <i class="fa-solid fa-receipt"></i>
+            <span>Taxes & Utilities</span>
+          </a>
+          <a href="citizen-vault.html" class="sidebar-link">
+            <i class="fa-solid fa-folder-closed"></i>
+            <span>Digital Vault</span>
+            <span class="sidebar-link-badge" style="background: #10b981;">4</span>
+          </a>
+          <a href="citizen-voting.html" class="sidebar-link">
+            <i class="fa-solid fa-check-to-slot"></i>
+            <span>Ward Voting</span>
+          </a>
+          <a href="citizen-services.html" class="sidebar-link active">
+            <i class="fa-solid fa-compass"></i>
+            <span>Services Directory</span>
+          </a>
+          <a href="citizen-helpdesk.html" class="sidebar-link">
+            <i class="fa-solid fa-headset"></i>
+            <span>Helpdesk & Support</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Sidebar User Profile Footer -->
+      <div class="sidebar-footer">
+        <div class="sidebar-profile-card">
+          <img src="images/citizen-avatar.webp" alt="Jane Doe - Verified Citizen" class="sidebar-avatar">
+          <div class="sidebar-profile-info">
+            <div class="sidebar-profile-name">Jane Doe</div>
+            <div class="sidebar-profile-desc">Ward 04 • STK-8840-721</div>
+          </div>
+          <a href="login.html" title="Sign Out" style="color: var(--text-muted); font-size: 1.1rem; padding: 4px;" onclick="return confirm('Do you want to log out of your Citizen Account?');">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Dashboard Area -->
+    <main class="dashboard-main">
+      
+      <!-- Topbar Header -->
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button type="button" id="sidebarToggleBtn" class="topbar-icon-btn" aria-label="Toggle Sidebar" style="display: none;">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="topbar-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search municipal e-service, permit, license..." id="serviceSearchInput">
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="dashboard-content">
+        
+        <!-- Welcome Hero Banner -->
+        <div class="dashboard-hero-banner">
+          <div>
+            <div class="hero-banner-title">Municipal Digital Services Catalog</div>
+            <div class="hero-banner-meta">
+              <span><i class="fa-solid fa-bolt" style="color: var(--brand-orange);"></i> 100% Paperless Application Workflow</span>
+              <span><i class="fa-solid fa-shield-halved" style="color: #10b981;"></i> Statutory Right-to-Service Protection</span>
+            </div>
+          </div>
+          <div class="hero-banner-actions">
+            <a href="services.html" class="btn-portal-action">
+              <i class="fa-solid fa-globe"></i> Public Services Portal
+            </a>
+          </div>
+        </div>
+
+        <!-- Section 1: Animated Metric Counters HUD -->
+        <div class="counter-hud-grid">
+          
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon orange"><i class="fa-solid fa-cubes"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-circle-check"></i> Active</span>
+            </div>
+            <div class="counter-hud-number" data-counter="64" data-duration="1000">0</div>
+            <div class="counter-hud-label">Available E-Services</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon emerald"><i class="fa-solid fa-stopwatch"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-check"></i> Standard</span>
+            </div>
+            <div class="counter-hud-number" data-counter="48" data-suffix=" hrs" data-duration="1200">0 hrs</div>
+            <div class="counter-hud-label">Average SLA Turnaround</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon sky"><i class="fa-solid fa-server"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-cloud"></i> High SLA</span>
+            </div>
+            <div class="counter-hud-number" data-counter="99.9" data-decimals="1" data-suffix="%" data-duration="1200">0.0%</div>
+            <div class="counter-hud-label">Portal Service Uptime</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon purple"><i class="fa-solid fa-file-circle-check"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-arrow-trend-up"></i> +18%</span>
+            </div>
+            <div class="counter-hud-number" data-counter="14280" data-duration="1400">0</div>
+            <div class="counter-hud-label">Paperless Grants Issued</div>
+          </div>
+
+        </div>
+
+        <!-- Section 2 & 3: Interactive Line Chart & Bar Chart -->
+        <div class="dashboard-charts-grid-duo">
+          
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-line" style="color: var(--brand-orange);"></i> Citizen Service Application Demand</div>
+                <div class="chart-card-subtitle">Monthly count of digital service requests submitted across city</div>
+              </div>
+              <span class="chart-card-meta">Past 6 Months</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="servicesLineChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-column" style="color: var(--brand-orange);"></i> Average Clearance Turnaround (Hours)</div>
+                <div class="chart-card-subtitle">Processing speed against statutory SLA threshold across wings</div>
+              </div>
+              <span class="chart-card-meta">Department Benchmarks</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="servicesBarChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section 4: Interactive Doughnut Chart -->
+        <div class="dashboard-charts-grid-split">
+          
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-pie" style="color: var(--brand-orange);"></i> Application Volume by Municipal Wing</div>
+                <div class="chart-card-subtitle">Categorical demand distribution for public services</div>
+              </div>
+              <span class="chart-card-meta">Sector Breakdown</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="servicesDoughnutChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card" style="justify-content: space-between;">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-medal" style="color: #10b981;"></i> Citizen Service Guarantee</div>
+                <div class="chart-card-subtitle">Under Karnataka Sakala & Civic Services Acts</div>
+              </div>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid var(--border-medium); border-radius: 12px; padding: 18px; margin: auto 0;">
+              <div style="font-size: 0.84rem; color: #0f172a; line-height: 1.6; margin-bottom: 12px;">
+                Every online application is assigned a strict <strong>SLA Timer</strong>. If unfulfilled within the statutory deadline, compensatory civic credits are credited automatically to your account.
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-medium); padding-top: 10px;">
+                <span style="font-size: 0.78rem; color: var(--text-muted);"><i class="fa-solid fa-clock"></i> Max SLA: 48 Hours</span>
+                <span class="status-pill success"><i class="fa-solid fa-shield"></i> Guaranteed</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section 5: Filterable Services Catalog Table -->
+        <div class="dashboard-table-card">
+          <div class="dashboard-table-toolbar">
+            <div class="dashboard-section-title">
+              <i class="fa-solid fa-list"></i>
+              Popular Digital Municipal Services Catalog
+            </div>
+            <div class="dashboard-table-filters">
+              <button type="button" class="dashboard-filter-chip active" data-filter="all">All Services (5)</button>
+              <button type="button" class="dashboard-filter-chip" data-filter="vital">Vital Records</button>
+              <button type="button" class="dashboard-filter-chip" data-filter="property">Property & Khata</button>
+              <button type="button" class="dashboard-filter-chip" data-filter="utilities">Utilities & NOC</button>
+            </div>
+          </div>
+
+          <div class="dashboard-table-wrapper">
+            <table class="dashboard-data-table">
+              <thead>
+                <tr>
+                  <th>Service ID</th>
+                  <th>Service Title & Description</th>
+                  <th>Department</th>
+                  <th>Statutory SLA</th>
+                  <th>Govt Fee</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="servicesTableBody">
+                <tr data-status="property">
+                  <td><strong>#SRV-KHATA-01</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">E-Khata Transfer & Mutation</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Ownership name transfer upon property sale or inheritance</div>
+                  </td>
+                  <td>Revenue Department</td>
+                  <td>7 Days</td>
+                  <td>₹500.00</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Available Online</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Initiating Application #SRV-KHATA-01:\nPlease prepare your sale deed PDF and tax clearance receipt.');">
+                      <i class="fa-solid fa-arrow-right"></i> Apply Now
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="vital">
+                  <td><strong>#SRV-BIRTH-02</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Birth Certificate Issuance</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Digitally signed birth certificate with verifiable QR code</div>
+                  </td>
+                  <td>Public Health Wing</td>
+                  <td>24 Hours</td>
+                  <td>₹50.00</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Instant DigiLocker</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Initiating Application #SRV-BIRTH-02:\nEnter hospital discharge reference or registration number.');">
+                      <i class="fa-solid fa-arrow-right"></i> Apply Now
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="utilities">
+                  <td><strong>#SRV-WATER-03</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">New Smart Water & Sewerage Connection</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Pipeline tapping sanction and IoT telemetry meter provisioning</div>
+                  </td>
+                  <td>Hydrology Department</td>
+                  <td>48 Hours</td>
+                  <td>₹1,200.00</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Available Online</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Initiating Application #SRV-WATER-03:\nWard engineer inspection will be auto-scheduled.');">
+                      <i class="fa-solid fa-arrow-right"></i> Apply Now
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="property">
+                  <td><strong>#SRV-BUILD-04</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Residential Building Plan Sanction (Auto-DCR)</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Automated CAD architectural compliance and structural permit</div>
+                  </td>
+                  <td>Town Planning Dept</td>
+                  <td>14 Days</td>
+                  <td>₹2,500.00</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Auto-DCR Enabled</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Initiating Application #SRV-BUILD-04:\nUpload your CAD DWG architectural drawing for automated rule check.');">
+                      <i class="fa-solid fa-arrow-right"></i> Apply Now
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="utilities">
+                  <td><strong>#SRV-TRADE-05</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Commercial Trade License Renewal</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Annual health, fire NOC, and commercial establishment permit</div>
+                  </td>
+                  <td>Health & Licensing</td>
+                  <td>48 Hours</td>
+                  <td>₹1,000.00</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Available Online</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Initiating Trade License Renewal #SRV-TRADE-05:\nEnter existing trade license number.');">
+                      <i class="fa-solid fa-arrow-right"></i> Apply Now
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <footer class="dashboard-footer" style="padding: 24px 32px; border-top: 1px solid var(--border-medium); font-size: 0.8rem; color: var(--text-muted); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; background: #ffffff;">
+        <div>&copy; 2026-2027 Stackly Municipal Corporation. E-Governance Services Portal.</div>
+        <div style="display: flex; gap: 16px;">
+          <a href="services.html" style="color: var(--brand-orange); text-decoration: none;"><i class="fa-solid fa-scroll"></i> Service Charters</a>
+          <a href="contact.html" style="color: var(--text-muted); text-decoration: none;"><i class="fa-solid fa-headset"></i> Support Desk</a>
+        </div>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // Sidebar Mobile Toggle
+    const toggleBtn = document.getElementById('sidebarToggleBtn');
+    const sidebar = document.getElementById('dashboardSidebar');
+    if (window.innerWidth <= 992 && toggleBtn) {
+      toggleBtn.style.display = 'inline-flex';
+      toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+      });
+    }
+
+    // Search filter
+    document.getElementById('serviceSearchInput')?.addEventListener('input', function(e) {
+      const q = e.target.value.toLowerCase();
+      document.querySelectorAll('#servicesTableBody tr').forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+  </script>
+
+  <!-- Chart.js & Dashboard Charts Engine -->
+  <script src="js/chart.min.js"></script>
+  <script src="js/dashboard-charts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Line Chart: Application Volume Trends
+      buildLineChart(
+        'servicesLineChart',
+        ['Oct 2026', 'Nov 2026', 'Dec 2026', 'Jan 2027', 'Feb 2027', 'Mar 2027'],
+        [
+          { label: 'Citizen Applications Filed', data: [1840, 2120, 1980, 2450, 2710, 3180], color: '#ff6600', bgColor: 'rgba(255, 102, 0, 0.08)' }
+        ],
+        'Applications'
+      );
+
+      // 2. Bar Chart: Average Turnaround Hours
+      buildBarChart(
+        'servicesBarChart',
+        ['Vital Records', 'Utility Connections', 'Trade Licenses', 'Khata Mutation', 'Building Sanction'],
+        [
+          {
+            label: 'Avg Turnaround (Hours)',
+            data: [18, 36, 42, 110, 190],
+            colors: ['#10b981', '#0284c7', '#f59e0b', '#8b5cf6', '#ff6600']
+          }
+        ]
+      );
+
+      // 3. Doughnut Chart: Application Demand by Wing
+      buildPieChart(
+        'servicesDoughnutChart',
+        ['Revenue & Property (38%)', 'Public Health (26%)', 'Hydrology & Utilities (20%)', 'Town Planning (16%)'],
+        [38, 26, 20, 16],
+        ['#ff6600', '#10b981', '#0284c7', '#8b5cf6']
+      );
+    });
+  </script>
+
+  <!-- GSAP & Global Unique Effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

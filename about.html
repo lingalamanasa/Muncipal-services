@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Stackly | Municipal Governance & City Council</title>
+  <meta name="description" content="Learn about the City Municipal Corporation, council leadership, city history, administrative hierarchy, and sustainable urban mission.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom CSS (Black, White, Orange) -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/page-tracker.js"></script>
+</head>
+<body>
+
+  <!-- Top Alert Marquee -->
+  <div class="civic-alert-ticker">
+    <div class="civic-container-wide">
+      <div class="ticker-content-track">
+        <div class="ticker-item">
+          <span class="ticker-badge"><i class="fa-solid fa-award"></i> CITY MILESTONE</span>
+          <span>Ranked #1 in National Smart Governance & Urban Cleanliness Index 2026.</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-badge outline"><i class="fa-solid fa-users"></i> CIVIC COUNCIL</span>
+          <span>Next General Assembly Meeting scheduled for Thursday 10:00 AM in Council Chambers.</span>
+        </div>
+        <!-- Loop duplicate -->
+        <div class="ticker-item">
+          <span class="ticker-badge"><i class="fa-solid fa-award"></i> CITY MILESTONE</span>
+          <span>Ranked #1 in National Smart Governance & Urban Cleanliness Index 2026.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER WITH STACKLY LOGO -->
+  <header class="civic-navbar">
+    <div class="civic-container nav-container">
+      <a href="index.html" class="brand-logo"><img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="brand-logo-img"></a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="about.html" class="nav-item active">About</a>
+        <a href="services.html" class="nav-item">Services</a>
+        <a href="blog.html" class="nav-item">Blog</a>
+        <a href="contact.html" class="nav-item">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="nav-btn-login">Login</a>
+        <a href="signup.html" class="nav-btn-signup">Sign Up</a>
+        <button class="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <span style="font-weight: 800; color: #0a0a0a; font-size: 1.2rem;">STACKLY MENU</span>
+      <button class="close-drawer-btn" style="background: none; border: none; color: #0a0a0a; font-size: 1.5rem; cursor: pointer;">&times;</button>
+    </div>
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="about.html" class="mobile-nav-link active">About City</a>
+    <a href="services.html" class="mobile-nav-link">Citizen Services</a>
+    <a href="blog.html" class="mobile-nav-link">News & Blog</a>
+    <a href="contact.html" class="mobile-nav-link">Contact & Help</a>
+    <a href="login.html" class="mobile-nav-link"><i class="fa-solid fa-arrow-right-to-bracket" style="color: var(--brand-orange);"></i> Citizen Login</a>
+    <a href="signup.html" class="mobile-nav-link" style="color: var(--brand-orange);"><i class="fa-solid fa-user-plus"></i> Create Account</a>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         SECTION 01: ABOUT HERO (Split Screen with Stackly Visual & Badges)
+         ========================================================================== -->
+    <section id="section-01-hero" class="section-wrapper" style="padding-top: 60px; padding-bottom: 80px; overflow: hidden; background: #ffffff; position: relative;">
+      <!-- Animated Background Image Slider Reel -->
+      <div class="hero-animated-bg-wrap">
+        <div class="hero-bg-slide-item active" style="background-image: url('images/about-slide-1.webp');"></div>
+        <div class="hero-bg-slide-item" style="background-image: url('images/about-slide-2.webp');"></div>
+        <div class="hero-bg-slide-item" style="background-image: url('images/about-slide-3.webp');"></div>
+        <div class="hero-bg-slide-overlay"></div>
+      </div>
+      <div class="hero-slide-indicators">
+        <span class="hero-slide-dot active"></span>
+        <span class="hero-slide-dot"></span>
+        <span class="hero-slide-dot"></span>
+      </div>
+
+      <div class="civic-container hero-content">
+        <div class="hero-split-grid">
+          
+          <!-- Left Column: Title, Typewriter, Description & CTAs -->
+          <div class="hero-split-left">
+            <div class="hero-badge-tag" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 102, 0, 0.08); border: 1px solid var(--brand-orange-border); padding: 6px 16px; border-radius: 999px; margin-bottom: 20px;">
+              <span class="section-number">Section 01/10</span>
+              <span class="section-tag" style="color: var(--brand-orange);"><i class="fa-solid fa-landmark"></i> Governance & Civic Heritage</span>
+            </div>
+
+            <h1 class="hero-main-title" style="font-family: var(--font-display); font-size: clamp(2.3rem, 4.2vw, 3.6rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 20px; color: #0a0a0a;">
+              Governing 2.4 Million Citizens With <br>
+              <span class="highlight typewriter-text" data-words='["Civic Integrity", "Modern Speed", "Open Democracy", "Sustainable Vision"]'>Civic Integrity</span><span class="typewriter-cursor">|</span>
+            </h1>
+
+            <p class="hero-description" style="color: var(--text-muted); font-size: 1.12rem; line-height: 1.65; margin-bottom: 28px;">
+              Established in 1888 and digitally transformed under the Stackly civic operating standard, the City Municipal Corporation delivers essential public infrastructure, transparent budgets, emergency dispatch, and participatory municipal elections.
+            </p>
+
+            <div class="hero-action-row" style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <a href="404error.html" onclick="window.location.href='404error.html';" class="btn-portal-action btn-magnetic">
+                <i class="fa-solid fa-users"></i> Executive Council
+              </a>
+              <a href="404error.html" onclick="window.location.href='404error.html';" class="btn-portal-secondary anim-spring">
+                <i class="fa-solid fa-sitemap"></i> Department Hierarchy
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: 3D Tilt Visual Card with WebP Image -->
+          <div class="hero-split-right card-tilt-wrap">
+            <div class="hero-visual-card card-tilt-inner">
+              <div class="image-reveal-frame">
+                <img src="images/hero-about.webp" alt="Historic City Hall & Municipal Executive Headquarters" style="width: 100%; height: 420px; object-fit: cover; border-radius: var(--radius-md);">
+              </div>
+
+              <!-- Top Floating Stat Tag -->
+              <div class="hero-stat-floating-tag anim-floating" style="top: -14px; right: -14px;">
+                <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--brand-orange-subtle); display: flex; align-items: center; justify-content: center; color: var(--brand-orange);">
+                  <i class="fa-solid fa-building-columns"></i>
+                </div>
+                <div>
+                  <div style="font-weight: 800; font-size: 0.88rem; color: #0a0a0a;">Est. 1888</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted);">138 Years of Heritage</div>
+                </div>
+              </div>
+
+              <!-- Bottom Floating Stat Tag -->
+              <div class="hero-stat-floating-tag anim-floating-reverse" style="bottom: -18px; left: -14px;">
+                <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--brand-orange-subtle); display: flex; align-items: center; justify-content: center; color: var(--brand-orange);">
+                  <i class="fa-solid fa-check-double"></i>
+                </div>
+                <div>
+                  <div style="font-weight: 800; font-size: 0.88rem; color: #0a0a0a;">48 Civic Wards</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted);">100% Digital Representation</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 02: CITY HERITAGE & HISTORIC EVOLUTION
+         ========================================================================== -->
+    <section id="section-02-heritage" class="section-wrapper" style="background: #f8fafc;">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 02/10</span>
+            <span class="section-tag">Historical Legacy</span>
+          </div>
+          <h2 class="section-title">A Century of <span class="highlight">Civic Evolution</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Trace the milestones that transformed our historic settlement into an internationally celebrated smart metropolis.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+          <div class="civic-card">
+            <div class="civic-card-img-wrap" style="height: 140px; margin-bottom: 12px;">
+              <img src="images/heritage-1888.webp" alt="1888 Town Charter">
+            </div>
+            <div style="font-family: var(--font-mono); color: var(--brand-orange); font-size: 1.4rem; font-weight: 800; margin-bottom: 8px;">1888</div>
+            <h4 style="color: #0a0a0a; font-size: 1.2rem; margin-bottom: 8px;">First Municipal Charter</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Foundation of the Town Board to construct the first clean gravitational aqueduct and paved commerce quarter.</p>
+          </div>
+
+          <div class="civic-card">
+            <div class="civic-card-img-wrap" style="height: 140px; margin-bottom: 12px;">
+              <img src="images/heritage-1964.webp" alt="1964 Metropolitan Consolidation">
+            </div>
+            <div style="font-family: var(--font-mono); color: var(--brand-orange); font-size: 1.4rem; font-weight: 800; margin-bottom: 8px;">1964</div>
+            <h4 style="color: #0a0a0a; font-size: 1.2rem; margin-bottom: 8px;">Metropolitan Expansion</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Consolidation of 5 peripheral boroughs into a single unified Municipal Corporation with 48 administrative wards.</p>
+          </div>
+
+          <div class="civic-card">
+            <div class="civic-card-img-wrap" style="height: 140px; margin-bottom: 12px;">
+              <img src="images/heritage-2012.webp" alt="2012 Green Solar Initiative">
+            </div>
+            <div style="font-family: var(--font-mono); color: var(--brand-orange); font-size: 1.4rem; font-weight: 800; margin-bottom: 8px;">2012</div>
+            <h4 style="color: #0a0a0a; font-size: 1.2rem; margin-bottom: 8px;">Pioneering Green Energy</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Launch of mandatory rainwater harvesting bylaws and building the country's first 50MW municipal solar field.</p>
+          </div>
+
+          <div class="civic-card">
+            <div class="civic-card-img-wrap" style="height: 140px; margin-bottom: 12px;">
+              <img src="images/heritage-2026.webp" alt="2026 Stackly Digital OS">
+            </div>
+            <div style="font-family: var(--font-mono); color: var(--brand-orange); font-size: 1.4rem; font-weight: 800; margin-bottom: 8px;">2026</div>
+            <h4 style="color: #0a0a0a; font-size: 1.2rem; margin-bottom: 8px;">Stackly Digital OS</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">100% paperless e-governance with guaranteed 48-hour SLA resolution and AI municipal dispatch.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 03: MISSION, VISION & CORE VALUES
+         ========================================================================== -->
+    <section id="section-03-values" class="section-wrapper">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 03/10</span>
+            <span class="section-tag">Core Principles</span>
+          </div>
+          <h2 class="section-title">Our Guiding <span class="highlight">Civic Pillars</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Every resolution passed and public dollar spent adheres strictly to four fundamental institutional values.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+          <div class="civic-card" style="text-align: center; padding: 36px 24px;">
+            <div style="width: 64px; height: 64px; border-radius: 14px; background: var(--brand-orange-subtle); color: var(--brand-orange); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 18px;">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 10px;">Absolute Transparency</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Real-time public tracking of municipal budgets, contract awards, audit accounts, and SLA performance.</p>
+          </div>
+
+          <div class="civic-card" style="text-align: center; padding: 36px 24px;">
+            <div style="width: 64px; height: 64px; border-radius: 14px; background: var(--brand-orange-subtle); color: var(--brand-orange); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 18px;">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 10px;">Environmental Stewardship</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Aggressive decarbonization, zero-waste to landfill programs, and safeguarding 18 urban wetland ecosystems.</p>
+          </div>
+
+          <div class="civic-card" style="text-align: center; padding: 36px 24px;">
+            <div style="width: 64px; height: 64px; border-radius: 14px; background: var(--brand-orange-subtle); color: var(--brand-orange); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 18px;">
+              <i class="fa-solid fa-hand-holding-heart"></i>
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 10px;">Citizen Inclusivity</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Universal accessibility for all abilities, multilingual assistance, and participatory community budgeting.</p>
+          </div>
+
+          <div class="civic-card" style="text-align: center; padding: 36px 24px;">
+            <div style="width: 64px; height: 64px; border-radius: 14px; background: var(--brand-orange-subtle); color: var(--brand-orange); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 18px;">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 10px;">Continuous Innovation</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Leveraging AI dispatch, IoT sensors, and open data to predict urban bottlenecks and optimize routes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 04: EXECUTIVE LEADERSHIP BOARD
+         ========================================================================== -->
+    <section id="section-04-council" class="section-wrapper" style="background: #f8fafc;">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 04/10</span>
+            <span class="section-tag">Executive Council</span>
+          </div>
+          <h2 class="section-title">City Executive <span class="highlight">Leadership</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Duly elected and statutory leaders steering policy enactments, public budgets, and civic administration.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px;">
+          <div class="civic-card" style="text-align: center; padding: 32px;">
+            <div style="width: 100px; height: 100px; border-radius: 50%; background: var(--brand-orange); padding: 3px; margin: 0 auto 16px; overflow: hidden;">
+              <img src="images/council-mayor.webp" alt="Hon. Elena Rostova" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; border-radius: 50%;">
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: 1.3rem; color: #0a0a0a; margin-bottom: 4px;">Hon. Elena Rostova</h3>
+            <div style="font-size: 0.88rem; color: var(--brand-orange); font-weight: 700; margin-bottom: 12px;">City Mayor & Council President</div>
+            <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px;">
+              Presides over Council General Sessions, international partnerships, and the 2035 Master Plan.
+            </p>
+            <span class="badge-status active" onclick="window.location.href='404error.html';" style="cursor: pointer;">Term: 2024 — 2028</span>
+          </div>
+
+          <div class="civic-card" style="text-align: center; padding: 32px;">
+            <div style="width: 100px; height: 100px; border-radius: 50%; background: var(--brand-orange); padding: 3px; margin: 0 auto 16px; overflow: hidden;">
+              <img src="images/council-commissioner.webp" alt="Marcus Vance, IAS" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: 1.3rem; color: #0a0a0a; margin-bottom: 4px;">Marcus Vance, IAS</h3>
+            <div style="font-size: 0.88rem; color: var(--brand-orange); font-weight: 700; margin-bottom: 12px;">Municipal Commissioner & CEO</div>
+            <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px;">
+              Executive administrative authority responsible for 14,000 municipal staff and service execution.
+            </p>
+            <span class="badge-status white" onclick="window.location.href='404error.html';" style="cursor: pointer;">Chief of Civil Services</span>
+          </div>
+
+          <div class="civic-card" style="text-align: center; padding: 32px;">
+            <div style="width: 100px; height: 100px; border-radius: 50%; background: var(--brand-orange); padding: 3px; margin: 0 auto 16px; overflow: hidden;">
+              <img src="images/council-engineer.webp" alt="Dr. Aris Thorne" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: 1.3rem; color: #0a0a0a; margin-bottom: 4px;">Dr. Aris Thorne</h3>
+            <div style="font-size: 0.88rem; color: var(--brand-orange); font-weight: 700; margin-bottom: 12px;">Standing Committee on Works Chair</div>
+            <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px;">
+              Directs capital infrastructure procurement, bridge engineering, and storm drainage appropriations.
+            </p>
+            <span class="badge-status active" onclick="window.location.href='404error.html';" style="cursor: pointer;">Public Works Lead</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 05: ADMINISTRATIVE STRUCTURE & HIERARCHY
+         ========================================================================== -->
+    <section id="section-05-hierarchy" class="section-wrapper">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 05/10</span>
+            <span class="section-tag">Governance Organogram</span>
+          </div>
+          <h2 class="section-title">Administrative <span class="highlight">Hierarchy</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Clear separation of legislative policymaking and executive field operations across all 5 municipal zones.</p>
+        </div>
+
+        <div class="civic-card" style="padding: 36px;">
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <!-- Level 1 -->
+            <div style="background: #fff7ed; border: 1px solid var(--brand-orange); border-radius: var(--radius-md); padding: 18px; text-align: center;">
+              <span class="badge-status solid" style="color: #ffffff; margin-bottom: 6px; cursor: pointer;" onclick="window.location.href='404error.html';">Supreme Legislative Tier</span>
+              <h4 style="color: #0a0a0a; font-size: 1.25rem;">The Municipal Corporation Council (48 Ward Councillors + Mayor)</h4>
+              <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;">Passes statutory bylaws, sanctions annual fiscal appropriations, and reviews policy.</p>
+            </div>
+
+            <!-- Down Arrow -->
+            <div style="text-align: center; color: var(--brand-orange); font-size: 1.4rem;"><i class="fa-solid fa-arrow-down"></i></div>
+
+            <!-- Level 2 -->
+            <div style="background: #ffffff; border: 1px solid var(--border-medium); border-radius: var(--radius-md); padding: 18px; text-align: center;">
+              <span class="badge-status active" style="margin-bottom: 6px; cursor: pointer;" onclick="window.location.href='404error.html';">Executive Secretariat</span>
+              <h4 style="color: #0a0a0a; font-size: 1.15rem;">Office of the Municipal Commissioner & Additional Commissioners</h4>
+              <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;">Enforces statutes, manages public finances, personnel administration, and legal compliance.</p>
+            </div>
+
+            <!-- Down Arrow -->
+            <div style="text-align: center; color: var(--brand-orange); font-size: 1.4rem;"><i class="fa-solid fa-arrow-down"></i></div>
+
+            <!-- Level 3: 5 Zonal Heads -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px;">
+              <div style="background: #ffffff; border: 1px solid var(--border-subtle); padding: 14px; border-radius: var(--radius-sm); text-align: center;">
+                <div style="font-weight: 700; color: #0a0a0a; font-size: 0.95rem;">North Zone</div>
+                <div style="font-size: 0.78rem; color: var(--brand-orange);">Zonal Joint Commissioner</div>
+              </div>
+              <div style="background: #ffffff; border: 1px solid var(--border-subtle); padding: 14px; border-radius: var(--radius-sm); text-align: center;">
+                <div style="font-weight: 700; color: #0a0a0a; font-size: 0.95rem;">South Zone</div>
+                <div style="font-size: 0.78rem; color: var(--brand-orange);">Zonal Joint Commissioner</div>
+              </div>
+              <div style="background: #ffffff; border: 1px solid var(--border-subtle); padding: 14px; border-radius: var(--radius-sm); text-align: center;">
+                <div style="font-weight: 700; color: #0a0a0a; font-size: 0.95rem;">East Zone</div>
+                <div style="font-size: 0.78rem; color: var(--brand-orange);">Zonal Joint Commissioner</div>
+              </div>
+              <div style="background: #ffffff; border: 1px solid var(--border-subtle); padding: 14px; border-radius: var(--radius-sm); text-align: center;">
+                <div style="font-weight: 700; color: #0a0a0a; font-size: 0.95rem;">West Zone</div>
+                <div style="font-size: 0.78rem; color: var(--brand-orange);">Zonal Joint Commissioner</div>
+              </div>
+              <div style="background: #ffffff; border: 1px solid var(--border-subtle); padding: 14px; border-radius: var(--radius-sm); text-align: center;">
+                <div style="font-weight: 700; color: #0a0a0a; font-size: 0.95rem;">Central Zone</div>
+                <div style="font-size: 0.78rem; color: var(--brand-orange);">Zonal Joint Commissioner</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 06: URBAN GEOGRAPHY & WARD DEMOGRAPHICS
+         ========================================================================== -->
+    <section id="section-06-demographics" class="section-wrapper" style="background: #f8fafc;">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 06/10</span>
+            <span class="section-tag">Urban Geography</span>
+          </div>
+          <h2 class="section-title">City Demographics & <span class="highlight">Ward Map</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Key jurisdictional statistics governing our 48 wards spanning 420 square kilometers of vibrant urban territory.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;">
+          <div class="counter-box">
+            <div class="counter-value">2.41<span>M</span></div>
+            <div class="counter-label">Total Metropolitan Population</div>
+            <div class="counter-spark" onclick="window.location.href='404error.html';" style="cursor: pointer;">Census 2026 Projections</div>
+          </div>
+
+          <div class="counter-box">
+            <div class="counter-value">48<span> Wards</span></div>
+            <div class="counter-label">Administrative Electoral Wards</div>
+            <div class="counter-spark" onclick="window.location.href='404error.html';" style="cursor: pointer;">5 Distinct Civic Zones</div>
+          </div>
+
+          <div class="counter-box">
+            <div class="counter-value">420<span> km²</span></div>
+            <div class="counter-label">Municipal Geographical Area</div>
+            <div class="counter-spark" onclick="window.location.href='404error.html';" style="cursor: pointer;">38% Dedicated Green Belts</div>
+          </div>
+
+          <div class="counter-box">
+            <div class="counter-value">640k<span> Units</span></div>
+            <div class="counter-label">Assessed Residential Properties</div>
+            <div class="counter-spark" onclick="window.location.href='404error.html';" style="cursor: pointer;">100% GIS Geotagged</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 07: DIGITAL TRANSFORMATION MILESTONES
+         ========================================================================== -->
+    <section id="section-07-digital" class="section-wrapper">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 07/10</span>
+            <span class="section-tag">e-Governance Milestones</span>
+          </div>
+          <h2 class="section-title">The Stackly <span class="highlight">Digital Transformation</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">How our migration to the Stackly civic operating system eliminated paper bureaucracy and accelerated citizen service turnarounds.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+          <div class="civic-card">
+            <h4 style="color: #0a0a0a; font-size: 1.2rem; margin-bottom: 8px;"><i class="fa-solid fa-qrcode" style="color: var(--brand-orange); margin-right: 8px;"></i> Cryptographic QR Certificates</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">All birth, trade, and property title certificates are stamped with SHA-256 digital seals, verifiable by any institution instantly.</p>
+          </div>
+
+          <div class="civic-card">
+            <h4 style="color: #0a0a0a; font-size: 1.2rem; margin-bottom: 8px;"><i class="fa-solid fa-clock-rotate-left" style="color: var(--brand-orange); margin-right: 8px;"></i> 48-Hour Statutory SLA Countdown</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Automated escalation triggers alert Zonal Commissioners if road repair or lighting tickets exceed 48 hours.</p>
+          </div>
+
+          <div class="civic-card">
+            <h4 style="color: #0a0a0a; font-size: 1.2rem; margin-bottom: 8px;"><i class="fa-solid fa-credit-card" style="color: var(--brand-orange); margin-right: 8px;"></i> Zero-Fee Digital Payments</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Payment of municipal taxes, water bills, and trade licenses through netbanking, UPI, or cards with zero gateway surcharges.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 08: ACCREDITATIONS & CIVIC AWARDS
+         ========================================================================== -->
+    <section id="section-08-awards" class="section-wrapper" style="background: #f8fafc;">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 08/10</span>
+            <span class="section-tag">Quality Accreditations</span>
+          </div>
+          <h2 class="section-title">Accreditations & <span class="highlight">National Awards</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Recognized internationally for urban climate resilience, financial transparency, and citizen-first governance.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+          <div class="civic-card" style="text-align: center; padding: 30px;">
+            <div style="font-size: 2.2rem; color: var(--brand-orange); margin-bottom: 12px;"><i class="fa-solid fa-trophy"></i></div>
+            <h4 style="color: #0a0a0a; font-size: 1.15rem; margin-bottom: 6px;">National Smart City Gold Medal</h4>
+            <p style="color: var(--text-muted); font-size: 0.85rem;">Awarded by the Ministry of Housing and Urban Affairs for best IoT solid waste management.</p>
+          </div>
+
+          <div class="civic-card" style="text-align: center; padding: 30px;">
+            <div style="font-size: 2.2rem; color: var(--brand-orange); margin-bottom: 12px;"><i class="fa-solid fa-certificate"></i></div>
+            <h4 style="color: #0a0a0a; font-size: 1.15rem; margin-bottom: 6px;">ISO 9001:2015 Certification</h4>
+            <p style="color: var(--text-muted); font-size: 0.85rem;">Certified Quality Management System covering all citizen grievance redressal and civil works.</p>
+          </div>
+
+          <div class="civic-card" style="text-align: center; padding: 30px;">
+            <div style="font-size: 2.2rem; color: var(--brand-orange); margin-bottom: 12px;"><i class="fa-solid fa-seedling"></i></div>
+            <h4 style="color: #0a0a0a; font-size: 1.15rem; margin-bottom: 6px;">Clean Energy Leadership Prize</h4>
+            <p style="color: var(--text-muted); font-size: 0.85rem;">Global Covenant of Mayors recognition for 450MW rooftop solar and 100% LED streetlights.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 09: ANNUAL TRANSPARENCY & STATUTORY REPORTS
+         ========================================================================== -->
+    <section id="section-09-reports" class="section-wrapper">
+      <div class="civic-container">
+        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;">
+          <div>
+            <div class="section-meta">
+              <span class="section-number">Section 09/10</span>
+              <span class="section-tag">Statutory Disclosures</span>
+            </div>
+            <h2 class="section-title">Open Book <span class="highlight">Public Reporting</span></h2>
+            <p class="section-subtitle" style="margin-bottom: 24px;">
+              Every rupee received from taxpayers is accounted for in audited statutory reports. Inspect our financial balance sheets, environmental impact assessments, and councillor attendance logs.
+            </p>
+            <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 28px;">
+              <li><i class="fa-solid fa-check" style="color: var(--brand-orange); margin-right: 8px;"></i> Quarterly Comptroller & Auditor General Audit Clearance</li>
+              <li><i class="fa-solid fa-check" style="color: var(--brand-orange); margin-right: 8px;"></i> Section 4(1)(b) Proactive RTI Mandate Compliance</li>
+              <li><i class="fa-solid fa-check" style="color: var(--brand-orange); margin-right: 8px;"></i> Real-time e-Procurement Vendor Payment Ledgers</li>
+            </ul>
+          </div>
+
+          <div class="civic-card" style="padding: 36px; text-align: center; border-color: var(--brand-orange-border);">
+            <div style="width: 70px; height: 70px; border-radius: 50%; background: var(--brand-orange-subtle); color: var(--brand-orange); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 18px;">
+              <i class="fa-solid fa-file-pdf"></i>
+            </div>
+            <h3 style="color: #0a0a0a; font-size: 1.3rem; margin-bottom: 8px;">2025-26 Annual Civic Report</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 24px;">64 pages containing audited balance sheets, capital infrastructure progress, and council voting records.</p>
+            <button class="btn-portal-action" style="width: 100%; justify-content: center; cursor: pointer;" onclick="window.location.href='404error.html';">
+              <i class="fa-solid fa-download"></i> Download Statutory PDF (14.2 MB)
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 10: CIVIC LANDMARKS & PUBLIC ARCHITECTURE (BENTO GRID LAYOUT)
+         ========================================================================== -->
+    <section id="section-10-landmarks" class="section-wrapper" style="background: #f8fafc;">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 30px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 10/10</span>
+            <span class="section-tag">Public Architecture</span>
+          </div>
+          <h2 class="section-title">Civic Landmarks & <span class="highlight">Public Spaces Gallery</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto; max-width: 680px;">
+            Explore the architectural tapestry of our municipal corporation, spanning restored 19th-century council chambers, biophilic urban glasshouses, and waterfront amphitheaters.
+          </p>
+        </div>
+
+        <!-- Filter Navigation Pills -->
+        <div class="bento-filter-nav">
+          <button type="button" class="bento-filter-btn active" data-filter="all"><i class="fa-solid fa-shapes"></i> All Public Spaces</button>
+          <button type="button" class="bento-filter-btn" data-filter="civic"><i class="fa-solid fa-building-columns"></i> Civic Assembly</button>
+          <button type="button" class="bento-filter-btn" data-filter="eco"><i class="fa-solid fa-tree"></i> Eco Parks & Waterfront</button>
+          <button type="button" class="bento-filter-btn" data-filter="heritage"><i class="fa-solid fa-monument"></i> Historic Heritage</button>
+        </div>
+
+        <!-- Responsive Bento Grid -->
+        <div class="bento-grid-container">
+          <!-- Item 1: Large Featured Showcase (Span 7 col, 2 rows) -->
+          <div class="bento-box bento-featured" data-category="civic">
+            <img src="images/bento-assembly-plaza.webp" alt="Grand City Hall & Assembly Plaza">
+            <div class="bento-box-badge"><i class="fa-solid fa-star" style="color: var(--brand-orange);"></i> CIVIC CORE</div>
+            <div class="bento-box-overlay">
+              <div class="bento-box-title">Grand City Hall & Assembly Plaza</div>
+              <p class="bento-box-desc">
+                The vibrant heartbeat of municipal governance, featuring open pedestrian amphitheaters, civic fountains, and public council debate stages.
+              </p>
+              <div class="bento-meta-bar">
+                <span><i class="fa-solid fa-users"></i> Capacity: 25,000</span>
+                <span><i class="fa-solid fa-solar-panel"></i> 100% Microgrid Powered</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Eco Botanical Canopy (Span 5 col, 1 row) -->
+          <div class="bento-box bento-half" data-category="eco">
+            <img src="images/bento-botanical-canopy.webp" alt="Civic Botanical Canopy Glasshouse">
+            <div class="bento-box-badge"><i class="fa-solid fa-leaf" style="color: var(--brand-orange);"></i> BOTANICAL BIOME</div>
+            <div class="bento-box-overlay">
+              <div class="bento-box-title">Botanical Canopy Glasshouse</div>
+              <p class="bento-box-desc">
+                Living biodiversity sanctuary nurturing 1,200 native tree species.
+              </p>
+              <div class="bento-meta-bar">
+                <span><i class="fa-solid fa-seedling"></i> 400 Native Floras</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Waterfront Cultural Amphitheater (Span 5 col, 1 row) -->
+          <div class="bento-box bento-half" data-category="eco">
+            <img src="images/bento-amphitheater.webp" alt="Riverfront Cultural Amphitheater">
+            <div class="bento-box-badge"><i class="fa-solid fa-water" style="color: var(--brand-orange);"></i> WATERFRONT</div>
+            <div class="bento-box-overlay">
+              <div class="bento-box-title">Riverfront Amphitheater</div>
+              <p class="bento-box-desc">
+                Acoustic open-air stage for civic symphonies and community arts.
+              </p>
+              <div class="bento-meta-bar">
+                <span><i class="fa-solid fa-music"></i> 3,500 Tiered Seats</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Municipal Innovation Hub (Span 6 col, 1 row) -->
+          <div class="bento-box bento-half" data-category="civic" style="grid-column: span 6;">
+            <img src="images/bento-innovation-hub.webp" alt="Municipal Innovation Atrium">
+            <div class="bento-box-badge"><i class="fa-solid fa-laptop-code" style="color: var(--brand-orange);"></i> TECH INCUBATOR</div>
+            <div class="bento-box-overlay">
+              <div class="bento-box-title">Municipal Innovation Atrium</div>
+              <p class="bento-box-desc">
+                Collaborative maker space for civic tech fellows and urban planners.
+              </p>
+              <div class="bento-meta-bar">
+                <span><i class="fa-solid fa-wifi"></i> 10 Gbps Public Fiber</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5: Historic Council Chamber (Span 6 col, 1 row) -->
+          <div class="bento-box bento-half" data-category="heritage" style="grid-column: span 6;">
+            <img src="images/bento-civic-auditorium.webp" alt="Historic Council Chamber & Auditorium">
+            <div class="bento-box-badge"><i class="fa-solid fa-landmark" style="color: var(--brand-orange);"></i> HISTORIC 1888</div>
+            <div class="bento-box-overlay">
+              <div class="bento-box-title">Historic Council Auditorium</div>
+              <p class="bento-box-desc">
+                Neoclassical council chamber where city charters and bylaws are voted into law.
+              </p>
+              <div class="bento-meta-bar">
+                <span><i class="fa-solid fa-gavel"></i> Broadcast Live in 4K</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (Black, White, Orange) -->
+  <footer class="civic-footer">
+    <div class="civic-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 16px;"><img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="brand-logo-img"></div>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+            Democratically governed civic portal powered by the Stackly civic operating system.
+          </p>
+          <div style="display: flex; gap: 14px; font-size: 1.2rem; color: var(--text-muted);">
+            <a href="404.html" style="color: var(--brand-orange);" title="Stackly on X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" style="color: var(--brand-orange);" title="Stackly on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" style="color: var(--brand-orange);" title="Stackly on YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="404.html" style="color: var(--brand-orange);" title="Stackly on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Citizen Portals</h4>
+          <ul class="footer-links">
+            <li><a href="404.html">Property Tax Portal</a></li>
+            <li><a href="404.html">File a Grievance</a></li>
+            <li><a href="404.html">Track Complaint</a></li>
+            <li><a href="404.html">Citizen Login</a></li>
+            <li><a href="404.html">Create Account</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Stackly Municipal Corporation. All Rights Reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="javascript:void(0)" onclick="showCivicToast('Privacy Charter: Fully compliant with Municipal Data Protection Code 2026', 'fa-shield-halved')">Privacy Charter</a>
+          <a href="javascript:void(0)" onclick="showCivicToast('Terms of e-Service: Standard Digital Citizen Agreement 2026', 'fa-file-contract')">Terms of e-Service</a>
+          <a href="javascript:void(0)" onclick="showCivicToast('Accessibility: WCAG 2.1 AA Standard Enabled Across All Portals', 'fa-universal-access')">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Custom Scripts -->
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

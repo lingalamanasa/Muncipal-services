@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City News & Civic Blog | Stackly Municipal</title>
+  <meta name="description" content="Read official press releases, municipal council gazettes, neighborhood development updates, and civic news articles.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom CSS (Black, White, Orange) -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/page-tracker.js"></script>
+</head>
+<body>
+
+  <!-- Top Alert Marquee -->
+  <div class="civic-alert-ticker">
+    <div class="civic-container-wide">
+      <div class="ticker-content-track">
+        <div class="ticker-item">
+          <span class="ticker-badge"><i class="fa-solid fa-newspaper"></i> PRESS RELEASE</span>
+          <span>Council approves $18M clean solar energy grant for 5,000 residential rooftops.</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-badge outline"><i class="fa-solid fa-camera"></i> PHOTO ESSAY</span>
+          <span>Before & After: The revitalization of North Harbor Eco-Promenade is now complete.</span>
+        </div>
+        <!-- Loop duplicate -->
+        <div class="ticker-item">
+          <span class="ticker-badge"><i class="fa-solid fa-newspaper"></i> PRESS RELEASE</span>
+          <span>Council approves $18M clean solar energy grant for 5,000 residential rooftops.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER WITH STACKLY LOGO -->
+  <header class="civic-navbar">
+    <div class="civic-container nav-container">
+      <a href="index.html" class="brand-logo"><img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="brand-logo-img"></a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="about.html" class="nav-item">About</a>
+        <a href="services.html" class="nav-item">Services</a>
+        <a href="blog.html" class="nav-item active">Blog</a>
+        <a href="contact.html" class="nav-item">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="nav-btn-login">Login</a>
+        <a href="signup.html" class="nav-btn-signup">Sign Up</a>
+        <button class="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <span style="font-weight: 800; color: #0a0a0a; font-size: 1.2rem;">STACKLY MENU</span>
+      <button class="close-drawer-btn" style="background: none; border: none; color: #0a0a0a; font-size: 1.5rem; cursor: pointer;">&times;</button>
+    </div>
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="about.html" class="mobile-nav-link">About City</a>
+    <a href="services.html" class="mobile-nav-link">Citizen Services</a>
+    <a href="blog.html" class="mobile-nav-link active">News & Blog</a>
+    <a href="contact.html" class="mobile-nav-link">Contact & Help</a>
+    <a href="login.html" class="mobile-nav-link"><i class="fa-solid fa-arrow-right-to-bracket" style="color: var(--brand-orange);"></i> Citizen Login</a>
+    <a href="signup.html" class="mobile-nav-link" style="color: var(--brand-orange);"><i class="fa-solid fa-user-plus"></i> Create Account</a>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         SECTION 01: BLOG HERO & SEARCH (Split Screen with Stackly Visual)
+         ========================================================================== -->
+    <section id="section-01-hero" class="section-wrapper" style="padding-top: 60px; padding-bottom: 75px; overflow: hidden; background: #ffffff; position: relative;">
+      <!-- Animated Background Image Slider Reel -->
+      <div class="hero-animated-bg-wrap">
+        <div class="hero-bg-slide-item active" style="background-image: url('images/blog-slide-1.webp');"></div>
+        <div class="hero-bg-slide-item" style="background-image: url('images/blog-slide-2.webp');"></div>
+        <div class="hero-bg-slide-item" style="background-image: url('images/blog-slide-3.webp');"></div>
+        <div class="hero-bg-slide-overlay"></div>
+      </div>
+      <div class="hero-slide-indicators">
+        <span class="hero-slide-dot active"></span>
+        <span class="hero-slide-dot"></span>
+        <span class="hero-slide-dot"></span>
+      </div>
+
+      <div class="civic-container hero-content">
+        <div class="hero-split-grid">
+          
+          <!-- Left Column: Tag, Typewriter Title, Description & Search -->
+          <div class="hero-split-left">
+            <div class="hero-badge-tag" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 102, 0, 0.08); border: 1px solid var(--brand-orange-border); padding: 6px 16px; border-radius: 999px; margin-bottom: 20px;">
+              <span class="section-number">Section 01/10</span>
+              <span class="section-tag" style="color: var(--brand-orange);"><i class="fa-solid fa-newspaper"></i> Municipal Press & Newsroom</span>
+            </div>
+
+            <h1 class="hero-main-title" style="font-family: var(--font-display); font-size: clamp(2.3rem, 4.2vw, 3.6rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 20px; color: #0a0a0a;">
+              Civic Bulletins, Policy & <br>
+              <span class="highlight typewriter-text" data-words='["City Gazette Stories", "Infrastructure Dispatches", "Council Resolutions", "Public Health Advisories"]'>City Gazette Stories</span><span class="typewriter-cursor">|</span>
+            </h1>
+
+            <p class="hero-description" style="color: var(--text-muted); font-size: 1.12rem; line-height: 1.65; margin-bottom: 26px;">
+              The official journalism and dispatch portal of the City Corporation. Transparent reporting on council policies, infrastructure milestones, budget spending, and neighborhood events.
+            </p>
+
+            <div class="civic-search-bar" style="margin-bottom: 20px; max-width: 580px;">
+              <i class="fa-solid fa-magnifying-glass" style="color: var(--brand-orange); margin-right: 12px;"></i>
+              <input type="text" placeholder="Search news articles, council statements, public health advisories..." aria-label="Search Blog Articles">
+              <button type="button" class="btn-magnetic">
+                <span>Search</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Column: 3D Tilt Visual Card with WebP Image -->
+          <div class="hero-split-right card-tilt-wrap">
+            <div class="hero-visual-card card-tilt-inner">
+              <div class="image-reveal-frame">
+                <img src="images/hero-blog.webp" alt="Municipal Journalism Bureau & Civic Press Room" style="width: 100%; height: 400px; object-fit: cover; border-radius: var(--radius-md);">
+              </div>
+
+              <!-- Top Floating Stat Tag -->
+              <div class="hero-stat-floating-tag anim-floating" style="top: -14px; right: -14px;">
+                <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--brand-orange-subtle); display: flex; align-items: center; justify-content: center; color: var(--brand-orange);">
+                  <i class="fa-solid fa-radio"></i>
+                </div>
+                <div>
+                  <div style="font-weight: 800; font-size: 0.88rem; color: #0a0a0a;">Live News Feed</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted);">Verified Municipal Bureau</div>
+                </div>
+              </div>
+
+              <!-- Bottom Floating Stat Tag -->
+              <div class="hero-stat-floating-tag anim-floating-reverse" style="bottom: -18px; left: -14px;">
+                <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--brand-orange-subtle); display: flex; align-items: center; justify-content: center; color: var(--brand-orange);">
+                  <i class="fa-solid fa-file-lines"></i>
+                </div>
+                <div>
+                  <div style="font-weight: 800; font-size: 0.88rem; color: #0a0a0a;">Open Archives</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted);">Council Acts Since 1964</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 02: FEATURED SPOTLIGHT ARTICLE
+         ========================================================================== -->
+    <section id="section-02-spotlight" class="section-wrapper" style="background: #f8fafc;">
+      <div class="civic-container">
+        <div class="section-header" style="margin-bottom: 30px;">
+          <div class="section-meta">
+            <span class="section-number">Section 02/10</span>
+            <span class="section-tag">Lead Editorial</span>
+          </div>
+          <h2 class="section-title" style="font-size: 2.2rem;">Featured <span class="highlight">City Gazette Story</span></h2>
+        </div>
+
+        <div class="civic-card" style="padding: 36px; border-color: var(--brand-orange-border);">
+          <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 36px; align-items: center;">
+            <div>
+              <div style="display: flex; gap: 10px; margin-bottom: 14px;">
+                <span class="badge-status solid" style="color: #ffffff; cursor: pointer;" onclick="window.location.href='404error.html';">BREAKING</span>
+                <span class="badge-status active" style="cursor: pointer;" onclick="window.location.href='404error.html';">Transit 2030</span>
+              </div>
+              <h3 style="font-family: var(--font-display); font-size: clamp(1.5rem, 2.3vw, 2rem); color: #0a0a0a; line-height: 1.25; margin-bottom: 16px;">
+                City Launches 120-Unit Zero-Emission Electric Bus Fleet Powered by Municipal Solar Micro-Grids
+              </h3>
+              <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 20px;">
+                In an extraordinary step towards our 2035 carbon neutrality charter, the Municipal Corporation deployed the initial tranche of 120 fast-charging electric buses across 8 suburban transit routes.
+              </p>
+              <div style="display: flex; align-items: center; gap: 16px; font-size: 0.85rem; color: var(--text-dim); margin-bottom: 24px;">
+                <span><i class="fa-solid fa-user-pen" style="color: var(--brand-orange); margin-right: 6px;"></i> Municipal Press Bureau</span>
+                <span><i class="fa-solid fa-calendar" style="color: var(--brand-orange); margin-right: 6px;"></i> Today • 5 min read</span>
+              </div>
+              <button class="btn-portal-action" style="cursor: pointer;" onclick="window.location.href='404error.html';">
+                <span>Read Full Article</span> <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+
+            <!-- Spotlight Visual Frame with WebP Image -->
+            <div class="image-reveal-frame card-tilt-inner" style="height: 320px; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-medium); position: relative;">
+              <img src="images/blog-transit.webp" alt="Zero Emission Municipal Electric Bus Transit" style="width: 100%; height: 100%; object-fit: cover;">
+              <div style="position: absolute; bottom: 12px; left: 12px; background: rgba(0,0,0,0.75); color: #fff; padding: 6px 14px; border-radius: 8px; font-size: 0.8rem; font-weight: 700;">
+                <i class="fa-solid fa-bolt" style="color: var(--brand-orange);"></i> 100% Electric Fleet
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 03: NEWS CATEGORY FILTERS
+         ========================================================================== -->
+    <section id="section-03-categories" class="section-wrapper">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 30px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 03/10</span>
+            <span class="section-tag">Filter Topics</span>
+          </div>
+          <h2 class="section-title">Explore by <span class="highlight">Department Topic</span></h2>
+        </div>
+
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 12px;">
+          <button class="btn-portal-action" style="padding: 8px 18px; font-size: 0.88rem;">All Updates</button>
+          <button class="btn-outline-white" style="padding: 8px 18px; font-size: 0.88rem;"><i class="fa-solid fa-road"></i> Infrastructure</button>
+          <button class="btn-outline-white" style="padding: 8px 18px; font-size: 0.88rem;"><i class="fa-solid fa-leaf"></i> Environment</button>
+          <button class="btn-outline-white" style="padding: 8px 18px; font-size: 0.88rem;"><i class="fa-solid fa-heart-pulse"></i> Public Health</button>
+          <button class="btn-outline-white" style="padding: 8px 18px; font-size: 0.88rem;"><i class="fa-solid fa-coins"></i> Budget & Taxes</button>
+          <button class="btn-outline-white" style="padding: 8px 18px; font-size: 0.88rem;"><i class="fa-solid fa-masks-theater"></i> Culture & Parks</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 04: ARTICLE GRID (6 ARTICLES)
+         ========================================================================== -->
+    <section id="section-04-grid" class="section-wrapper" style="background: #f8fafc;">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 04/10</span>
+            <span class="section-tag">Recent Dispatches</span>
+          </div>
+          <h2 class="section-title">Latest Municipal <span class="highlight">Gazettes</span></h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px;">
+          <div class="civic-card">
+            <div class="image-reveal-frame" style="height: 180px; margin-bottom: 14px; border-radius: var(--radius-sm); overflow: hidden;">
+              <img src="images/blog-drainage.webp" alt="Stormwater Desilting Canal Clearance" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <span class="badge-status active" style="margin-bottom: 12px;">Public Health</span>
+            <h4 style="color: #0a0a0a; font-size: 1.2rem; margin-bottom: 8px;">Pre-Monsoon Drainage Desilting Reaches 94% Completion Across All 5 Zonal Canals</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px;">Over 180,000 metric tons of silt cleared from primary stormwater pipelines to prevent waterlogging.</p>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--text-dim); border-top: 1px solid var(--border-subtle); padding-top: 12px;">
+              <span>Sep 16, 2026</span>
+              <a href="404error.html" onclick="window.location.href='404error.html';" style="color: var(--brand-orange); font-weight: 700;">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="civic-card">
+            <div class="image-reveal-frame" style="height: 180px; margin-bottom: 14px; border-radius: var(--radius-sm); overflow: hidden;">
+              <img src="images/blog-trade.webp" alt="Merchant Trade Fast-Track Portal" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <span class="badge-status white" style="margin-bottom: 12px;">Commercial Zoning</span>
+            <h4 style="color: #0a0a0a; font-size: 1.2rem; margin-bottom: 8px;">Council Announces 14-Day Fast-Track Window for Merchant Trade License Digital Renewals</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px;">Merchants in designated commercial zones can renew business premises certificates with zero penalty.</p>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--text-dim); border-top: 1px solid var(--border-subtle); padding-top: 12px;">
+              <span>Sep 14, 2026</span>
+              <a href="404error.html" onclick="window.location.href='404error.html';" style="color: var(--brand-orange); font-weight: 700;">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="civic-card">
+            <div class="image-reveal-frame" style="height: 180px; margin-bottom: 14px; border-radius: var(--radius-sm); overflow: hidden;">
+              <img src="images/blog-solar.webp" alt="Municipal Solar Micro-Grid Generation" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <span class="badge-status active" style="margin-bottom: 12px;">Smart City IoT</span>
+            <h4 style="color: #0a0a0a; font-size: 1.2rem; margin-bottom: 8px;">48 New Environmental Sensor Towers Activated with Live Real-Time AQI Public Feeds</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px;">High-precision particulate matter and ozone sensors integrated into the central Stackly dashboard.</p>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--text-dim); border-top: 1px solid var(--border-subtle); padding-top: 12px;">
+              <span>Sep 12, 2026</span>
+              <a href="404error.html" onclick="window.location.href='404error.html';" style="color: var(--brand-orange); font-weight: 700;">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="civic-card">
+            <div class="image-reveal-frame" style="height: 180px; margin-bottom: 14px; border-radius: var(--radius-sm); overflow: hidden;">
+              <img src="images/blog-forest.webp" alt="Urban Miyawaki Micro-Forest Campaign" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <span class="badge-status white" style="margin-bottom: 12px;">Urban Forestry</span>
+            <h4 style="color: #0a0a0a; font-size: 1.2rem; margin-bottom: 8px;">Annual Miyawaki Micro-Forest Campaign Expands to 15 Additional School Campuses</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px;">Over 25,000 indigenous saplings planted with student volunteers and geotagged on public maps.</p>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--text-dim); border-top: 1px solid var(--border-subtle); padding-top: 12px;">
+              <span>Sep 09, 2026</span>
+              <a href="404error.html" onclick="window.location.href='404error.html';" style="color: var(--brand-orange); font-weight: 700;">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="civic-card">
+            <div class="image-reveal-frame" style="height: 180px; margin-bottom: 14px; border-radius: var(--radius-sm); overflow: hidden;">
+              <img src="images/blog-budget.webp" alt="Q2 Municipal Financial Audit Road Outlay" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <span class="badge-status active" style="margin-bottom: 12px;">Civic Budget</span>
+            <h4 style="color: #0a0a0a; font-size: 1.2rem; margin-bottom: 8px;">Q2 Municipal Financial Audit Published: Record $42M Capital Outlay on Road Surfacing</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px;">Auditor General releases quarterly clearance certifying balanced municipal accounts.</p>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--text-dim); border-top: 1px solid var(--border-subtle); padding-top: 12px;">
+              <span>Sep 06, 2026</span>
+              <a href="404error.html" onclick="window.location.href='404error.html';" style="color: var(--brand-orange); font-weight: 700;">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="civic-card">
+            <div class="image-reveal-frame" style="height: 180px; margin-bottom: 14px; border-radius: var(--radius-sm); overflow: hidden;">
+              <img src="images/blog-park.webp" alt="Silverwood Lake Ecological Night Boardwalk" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <span class="badge-status white" style="margin-bottom: 12px;">Recreation</span>
+            <h4 style="color: #0a0a0a; font-size: 1.2rem; margin-bottom: 8px;">Public Inauguration of the Silverwood Lake Night Boardwalk & Solar Amphitheater</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px;">A continuous 4.2 km illuminated waterside walking trail opened for family recreation.</p>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--text-dim); border-top: 1px solid var(--border-subtle); padding-top: 12px;">
+              <span>Sep 02, 2026</span>
+              <a href="404error.html" onclick="window.location.href='404error.html';" style="color: var(--brand-orange); font-weight: 700;">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 05: MAYOR'S PODCAST & AUDIO DIGEST
+         ========================================================================== -->
+    <section id="section-05-podcast" class="section-wrapper">
+      <div class="civic-container">
+        <div class="civic-card" style="padding: 40px; border-color: var(--brand-orange-border);">
+          <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: center;">
+            <div style="text-align: center;">
+              <div style="width: 120px; height: 120px; border-radius: 50%; background: var(--brand-orange-subtle); color: var(--brand-orange); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; overflow: hidden; border: 2px solid var(--brand-orange);">
+                <img src="images/blog-podcast-host.webp" alt="Mayor Elena Rostova Podcast Host" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; border-radius: 50%;">
+              </div>
+              <h3 style="font-family: var(--font-display); font-size: 1.4rem; color: #0a0a0a;">City Hall On Air</h3>
+              <div style="color: var(--brand-orange); font-size: 0.85rem; font-weight: 700;">Episode 42: "Transforming Ward 04"</div>
+            </div>
+
+            <div>
+              <div class="section-meta">
+                <span class="section-number">Section 05/10</span>
+                <span class="section-tag">Audio Briefing</span>
+              </div>
+              <h3 style="font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 12px; color: #0a0a0a;">The Weekly Mayor's Audio Digest</h3>
+              <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+                Listen to a 10-minute weekly conversation with Mayor Elena Rostova discussing transit updates, council votes, and answers to citizen letters.
+              </p>
+
+              <!-- Audio Player Simulator -->
+              <div style="background: #f8fafc; border: 1px solid var(--border-medium); border-radius: var(--radius-full); padding: 10px 20px; display: flex; align-items: center; gap: 16px;">
+                <button type="button" style="width: 42px; height: 42px; border-radius: 50%; background: var(--brand-orange); border: none; color: #000; display: flex; align-items: center; justify-content: center; cursor: pointer;" onclick="window.location.href='404error.html';">
+                  <i class="fa-solid fa-play"></i>
+                </button>
+                <div style="flex: 1; height: 6px; background: rgba(255,255,255,0.15); border-radius: 999px; position: relative;">
+                  <div style="width: 40%; height: 100%; background: var(--brand-orange); border-radius: 999px;"></div>
+                </div>
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">04:18 / 10:45</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 06: SEASONAL HEALTH ADVISORIES
+         ========================================================================== -->
+    <section id="section-06-health" class="section-wrapper" style="background: #f8fafc;">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 06/10</span>
+            <span class="section-tag">Public Health Advisory</span>
+          </div>
+          <h2 class="section-title">Seasonal Health & <span class="highlight">Sanitation Alerts</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Actionable guidelines issued by the Chief Health Officer for family wellness and disease prevention.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+          <div class="civic-card">
+            <h4 style="color: #0a0a0a; font-size: 1.15rem; margin-bottom: 8px;"><i class="fa-solid fa-mosquito" style="color: var(--brand-orange); margin-right: 8px;"></i> Vector & Mosquito Control</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 12px;">Clear standing water from air coolers and plant saucers weekly. Municipal fogging teams active daily.</p>
+            <span class="badge-status active" onclick="window.location.href='404error.html';" style="cursor: pointer;">Ward Inspections Active</span>
+          </div>
+
+          <div class="civic-card">
+            <h4 style="color: #0a0a0a; font-size: 1.15rem; margin-bottom: 8px;"><i class="fa-solid fa-glass-water" style="color: var(--brand-orange); margin-right: 8px;"></i> Safe Drinking Water</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 12px;">Municipal pipeline tests confirm 99.8% potability. Free domestic water testing kits available at zonal clinics.</p>
+            <span class="badge-status solid" style="color: #ffffff; cursor: pointer;" onclick="window.location.href='404error.html';">Potable Standard Pass</span>
+          </div>
+
+          <div class="civic-card">
+            <h4 style="color: #0a0a0a; font-size: 1.15rem; margin-bottom: 8px;"><i class="fa-solid fa-syringe" style="color: var(--brand-orange); margin-right: 8px;"></i> Free Polio & Flu Clinics</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 12px;">All 18 municipal maternity centers provide walk-in immunizations for infants every Saturday morning.</p>
+            <span class="badge-status white" onclick="window.location.href='404error.html';" style="cursor: pointer;">Walk-In Access</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 07: CITIZEN SPOTLIGHT & COMMUNITY HEROES
+         ========================================================================== -->
+    <section id="section-07-heroes" class="section-wrapper">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 07/10</span>
+            <span class="section-tag">Citizen Spotlight</span>
+          </div>
+          <h2 class="section-title">Community Heroes of <span class="highlight">Our Metropolis</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Celebrating extraordinary residents and frontline municipal staff who make our neighborhoods cleaner and safer.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px;">
+          <div class="civic-card" style="padding: 28px;">
+            <span class="badge-status solid" style="color: #ffffff; margin-bottom: 12px; cursor: pointer;" onclick="window.location.href='404error.html';">Sanitation Captain</span>
+            <h4 style="color: #0a0a0a; font-size: 1.2rem; margin-bottom: 6px;">Kavita Narayanan (Ward 02)</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px;">
+              Led an initiative that achieved 100% source waste segregation across 1,800 apartments in North Harbor.
+            </p>
+            <div style="font-size: 0.82rem; color: var(--brand-orange); font-weight: 700;">Recipient: Mayor's Green Trophy 2026</div>
+          </div>
+
+          <div class="civic-card" style="padding: 28px;">
+            <span class="badge-status solid" style="color: #ffffff; margin-bottom: 12px; cursor: pointer;" onclick="window.location.href='404error.html';">Civic Volunteer</span>
+            <h4 style="color: #0a0a0a; font-size: 1.2rem; margin-bottom: 6px;">Carlos Mendoza (Ward 05)</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px;">
+              Spearheaded the weekend youth lake cleanup volunteer force that restored 4 acres of Silverwood wetland.
+            </p>
+            <div style="font-size: 0.82rem; color: var(--brand-orange); font-weight: 700;">Recipient: Community Eco-Shield 2026</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 08: URBAN TRANSFORMATION PHOTO GALLERY
+         ========================================================================== -->
+    <section id="section-08-gallery" class="section-wrapper" style="background: #f8fafc;">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 08/10</span>
+            <span class="section-tag">Visual Transformation</span>
+          </div>
+          <h2 class="section-title">City Renewal <span class="highlight">Photo Showcase</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Documenting the ongoing architectural and environmental modernization of our civic districts.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+          <div class="civic-card" style="text-align: center; padding: 28px;">
+            <div style="font-size: 3rem; color: var(--brand-orange); margin-bottom: 12px;"><i class="fa-solid fa-tree-city"></i></div>
+            <h4 style="color: #0a0a0a; font-size: 1.1rem; margin-bottom: 4px;">Arboretum Promenade</h4>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Transformed from derelict freight yard into public urban park.</div>
+          </div>
+
+          <div class="civic-card" style="text-align: center; padding: 28px;">
+            <div style="font-size: 3rem; color: var(--brand-orange); margin-bottom: 12px;"><i class="fa-solid fa-bridge-water"></i></div>
+            <h4 style="color: #0a0a0a; font-size: 1.1rem; margin-bottom: 4px;">Grand Canal Flyover</h4>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Eliminated 45-minute commuter congestion choke point.</div>
+          </div>
+
+          <div class="civic-card" style="text-align: center; padding: 28px;">
+            <div style="font-size: 3rem; color: var(--brand-orange); margin-bottom: 12px;"><i class="fa-solid fa-solar-panel"></i></div>
+            <h4 style="color: #0a0a0a; font-size: 1.1rem; margin-bottom: 4px;">Municipal Solar Array</h4>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Powers 100% of municipal administrative complexes cleanly.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 09: PRESS KIT & MEDIA ACCREDITATION
+         ========================================================================== -->
+    <section id="section-09-press" class="section-wrapper">
+      <div class="civic-container">
+        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;">
+          <div>
+            <div class="section-meta">
+              <span class="section-number">Section 09/10</span>
+              <span class="section-tag">Media Accreditation</span>
+            </div>
+            <h2 class="section-title">Official Media <span class="highlight">& Press Bureau</span></h2>
+            <p class="section-subtitle" style="margin-bottom: 24px;">
+              Accredited journalists and digital media outlets can download high-resolution city branding assets, request official interviews with the Mayor or Commissioners, and receive embargoed council statements.
+            </p>
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <button class="btn-portal-action" style="cursor: pointer;" onclick="window.location.href='404error.html';">
+                <i class="fa-solid fa-file-zipper"></i> Download Press Kit (ZIP)
+              </button>
+              <a href="404error.html" onclick="window.location.href='404error.html';" class="btn-outline-white" style="cursor: pointer;">
+                <i class="fa-solid fa-microphone-lines"></i> Request Interview
+              </a>
+            </div>
+          </div>
+
+          <div class="civic-card" style="padding: 32px;">
+            <h4 style="font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 14px; color: #0a0a0a;">Press Contact Liaison</h4>
+            <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem; color: var(--text-muted);">
+              <div><strong style="color: #0a0a0a;">Director of Public Information:</strong> Claire Dupont</div>
+              <div><strong style="color: #0a0a0a;">Press Room Hotline:</strong> +1 (800) 555-PRESS</div>
+              <div><strong style="color: #0a0a0a;">Email:</strong> media@stackly.gov</div>
+              <div style="color: var(--brand-orange); font-size: 0.82rem; margin-top: 8px;">24-hour response turnaround for accredited reporters.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 10: WEEKLY GAZETTE NEWSLETTER SUBSCRIPTION
+         ========================================================================== -->
+    <section id="section-10-subscribe" class="section-wrapper" style="background: #f8fafc;">
+      <div class="civic-container" style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <div class="section-meta" style="justify-content: center;">
+          <span class="section-number">Section 10/10</span>
+          <span class="section-tag">Direct Subscription</span>
+        </div>
+        <h2 class="section-title">Subscribe to the <span class="highlight">City Weekly Gazette</span></h2>
+        <p class="section-subtitle" style="margin: 0 auto 32px;">
+          Receive the official weekly digest containing council voting records, neighborhood road closures, and municipal tenders delivered every Friday.
+        </p>
+
+        <form onsubmit="event.preventDefault(); alert('Subscribed successfully to Stackly Weekly Gazette!'); this.reset();" style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+          <input type="email" class="calc-control" style="max-width: 400px; border-radius: var(--radius-full); padding: 14px 22px;" placeholder="Enter your citizen email..." required>
+          <button type="submit" class="btn-portal-action">
+            <i class="fa-solid fa-paper-plane"></i> Subscribe Free
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (Black, White, Orange) -->
+  <footer class="civic-footer">
+    <div class="civic-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 16px;"><img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="brand-logo-img"></div>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+            Independent municipal public reporting ensuring transparent governance.
+          </p>
+          <div style="display: flex; gap: 14px; font-size: 1.2rem; color: var(--text-muted);">
+            <a href="404.html" style="color: var(--brand-orange);" title="Stackly on X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" style="color: var(--brand-orange);" title="Stackly on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" style="color: var(--brand-orange);" title="Stackly on YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="404.html" style="color: var(--brand-orange);" title="Stackly on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Citizen Portals</h4>
+          <ul class="footer-links">
+            <li><a href="404.html">Property Tax Portal</a></li>
+            <li><a href="404.html">File a Grievance</a></li>
+            <li><a href="404.html">Track Complaint</a></li>
+            <li><a href="404.html">Citizen Login</a></li>
+            <li><a href="404.html">Create Account</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Newsroom Desk</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">
+            <a href="contact.html#section-10-directions" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(255,255,255,0.2);">MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, TN 636008</a>
+          </p>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">
+            Press Hotline: 1916 (Toll-Free)
+          </p>
+          <span class="badge-status solid" style="color: #ffffff;">Official Municipal Press</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Stackly Municipal Corporation. All Rights Reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="javascript:void(0)" onclick="showCivicToast('Editorial Policy: Open, fact-verified public municipal publications', 'fa-newspaper')">Editorial Policy</a>
+          <a href="javascript:void(0)" onclick="showCivicToast('Privacy Charter: Fully compliant with Municipal Data Protection Code 2026', 'fa-shield-halved')">Privacy Charter</a>
+          <a href="javascript:void(0)" onclick="showCivicToast('Accessibility: WCAG 2.1 AA Standard Enabled Across All Portals', 'fa-universal-access')">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Custom Scripts -->
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

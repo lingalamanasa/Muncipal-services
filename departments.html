@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Municipal Governance, Wards & Departments | MetroCivic</title>
+  <meta name="description" content="Find your local ward councillor, explore municipal departments, view council resolutions, access RTI disclosures, and review public tender procurement.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/page-tracker.js"></script>
+</head>
+<body>
+
+  <!-- Top Alert Marquee -->
+  <div class="civic-alert-ticker">
+    <div class="civic-container-wide">
+      <div class="ticker-content-track">
+        <div class="ticker-item">
+          <span class="ticker-badge info"><i class="fa-solid fa-microphone"></i> PUBLIC HEARING</span>
+          <span>Municipal Town Hall on FY2027 Urban Transit Policy scheduled for next Thursday at 10:00 AM.</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-badge safe"><i class="fa-solid fa-users"></i> WARD SURGERIES</span>
+          <span>All 48 Ward Councillors holding public citizen consultation surgeries every Saturday 9:00 AM - 1:00 PM.</span>
+        </div>
+        <!-- Loop duplicate -->
+        <div class="ticker-item">
+          <span class="ticker-badge info"><i class="fa-solid fa-microphone"></i> PUBLIC HEARING</span>
+          <span>Municipal Town Hall on FY2027 Urban Transit Policy scheduled for next Thursday at 10:00 AM.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="civic-navbar">
+    <div class="civic-container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon-shield">
+          <i class="fa-solid fa-building-columns"></i>
+        </div>
+        <div class="brand-text">
+          METRO<span>CIVIC</span>
+          <span class="brand-sub">Municipal Smart Services</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="services.html" class="nav-item">Citizen Services</a>
+        <a href="projects.html" class="nav-item">City Projects</a>
+        <a href="departments.html" class="nav-item active">Governance & Wards</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="nav-btn-login">Login</a>
+        <a href="signup.html" class="nav-btn-signup">Sign Up</a>
+        <button class="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <span style="font-weight: 700; color: #fff;">Menu</span>
+      <button class="close-drawer-btn" style="background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer;">&times;</button>
+    </div>
+    <a href="index.html" class="mobile-nav-link">Home Portal</a>
+    <a href="services.html" class="mobile-nav-link">Citizen Services</a>
+    <a href="projects.html" class="mobile-nav-link">Smart City Projects</a>
+    <a href="departments.html" class="mobile-nav-link active">Governance & Wards</a>
+    <a href="services.html#section-03-calculator" class="mobile-nav-link">Property Tax Calculator</a>
+    <a href="tel:1916" class="mobile-nav-link" style="color: #f43f5e;"><i class="fa-solid fa-phone"></i> Emergency 1916</a>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         SECTION 01: CIVIC GOVERNANCE HERO
+         ========================================================================== -->
+    <section id="section-01-hero" class="section-wrapper" style="padding-top: 60px; padding-bottom: 70px;">
+      <div class="civic-container" style="text-align: center;">
+        <div class="section-meta" style="justify-content: center;">
+          <span class="section-number">Section 01/10</span>
+          <span class="section-tag">Elected Governance</span>
+        </div>
+        <h1 class="section-title" style="font-size: clamp(2.4rem, 4.5vw, 4rem); margin-bottom: 16px;">
+          Municipal Leadership & <span class="highlight">Ward Administration</span>
+        </h1>
+        <p class="section-subtitle" style="margin: 0 auto 32px;">
+          Meet your elected city council representatives, discover administrative departments, access open council records, and find your local ward facilitation office.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+          <a href="#section-03-wards" class="btn-portal-action btn-magnetic">
+            <i class="fa-solid fa-location-dot"></i> Find My Ward Councillor
+          </a>
+          <a href="#section-04-departments" class="btn-emergency" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); color: #fff;">
+            <i class="fa-solid fa-sitemap"></i> Department Directory
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 02: CITY MAYOR & COUNCIL LEADERSHIP BOARD
+         ========================================================================== -->
+    <section id="section-02-council" class="section-wrapper" style="background: rgba(11, 21, 45, 0.4);">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 02/10</span>
+            <span class="section-tag">Executive Council</span>
+          </div>
+          <h2 class="section-title">City Executive <span class="highlight">Leadership Board</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Presiding officers responsible for policy enactment, fiscal appropriations, and civic program oversight.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+          <!-- Leader 1 -->
+          <div class="civic-card" style="text-align: center; padding: 32px;">
+            <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, #00d2ff, #0072ff); padding: 3px; margin: 0 auto 16px;">
+              <div style="width: 100%; height: 100%; border-radius: 50%; background: #070d1e; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: var(--brand-cyan);">
+                <i class="fa-solid fa-user-tie"></i>
+              </div>
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: 1.3rem; color: #fff; margin-bottom: 4px;">Hon. Elena Rostova</h3>
+            <div style="font-size: 0.88rem; color: var(--brand-cyan); font-weight: 600; margin-bottom: 12px;">City Mayor & Council President</div>
+            <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px;">
+              Directs overall municipal executive operations, inter-agency coordination, and smart city modernization strategy.
+            </p>
+            <a href="404error.html" class="service-link" style="justify-content: center;"><i class="fa-solid fa-envelope"></i> Contact Office</a>
+          </div>
+
+          <!-- Leader 2 -->
+          <div class="civic-card" style="text-align: center; padding: 32px;">
+            <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, #10b981, #059669); padding: 3px; margin: 0 auto 16px;">
+              <div style="width: 100%; height: 100%; border-radius: 50%; background: #070d1e; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: var(--brand-emerald);">
+                <i class="fa-solid fa-user-shield"></i>
+              </div>
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: 1.3rem; color: #fff; margin-bottom: 4px;">Marcus Vance, IAS</h3>
+            <div style="font-size: 0.88rem; color: var(--brand-emerald); font-weight: 600; margin-bottom: 12px;">Municipal Commissioner</div>
+            <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px;">
+              Chief Executive Officer presiding over 18 statutory departments, statutory budget execution, and civil services.
+            </p>
+            <a href="mailto:commissioner@metrocivic.gov" class="service-link" style="justify-content: center; color: var(--brand-emerald);"><i class="fa-solid fa-envelope"></i> Contact Office</a>
+          </div>
+
+          <!-- Leader 3 -->
+          <div class="civic-card" style="text-align: center; padding: 32px;">
+            <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, #f59e0b, #d97706); padding: 3px; margin: 0 auto 16px;">
+              <div style="width: 100%; height: 100%; border-radius: 50%; background: #070d1e; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: var(--brand-amber);">
+                <i class="fa-solid fa-user-gear"></i>
+              </div>
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: 1.3rem; color: #fff; margin-bottom: 4px;">Dr. Aris Thorne</h3>
+            <div style="font-size: 0.88rem; color: var(--brand-amber); font-weight: 600; margin-bottom: 12px;">Chair, Standing Committee on Works</div>
+            <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px;">
+              Oversees municipal infrastructure contracts, major public works approvals, road safety, and drainage engineering.
+            </p>
+            <a href="mailto:works.chair@metrocivic.gov" class="service-link" style="justify-content: center; color: var(--brand-amber);"><i class="fa-solid fa-envelope"></i> Contact Office</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 03: INTERACTIVE WARD LOCATOR & COUNCILLOR FINDER
+         ========================================================================== -->
+    <section id="section-03-wards" class="section-wrapper">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 03/10</span>
+            <span class="section-tag">Grassroots Representation</span>
+          </div>
+          <h2 class="section-title">Ward Locator & <span class="highlight">Councillor Directory</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Select your ward or locality to find your designated councillor’s office location, phone, and weekly surgery timings.</p>
+        </div>
+
+        <!-- Filter Dropdown -->
+        <div style="max-width: 500px; margin: 0 auto 36px;">
+          <div class="calc-input-group">
+            <label for="wardFilterSelect" style="text-align: center; font-size: 1rem;"><i class="fa-solid fa-filter"></i> Select Ward to Filter Representatives:</label>
+            <select id="wardFilterSelect" class="calc-control" style="font-size: 1.05rem; padding: 14px;">
+              <option value="all">Display All Wards</option>
+              <option value="W01">Ward 01 - Downtown Civic Financial Zone</option>
+              <option value="W02">Ward 02 - North Harbor & Maritime District</option>
+              <option value="W03">Ward 03 - Green Park Ridge & Arboretum</option>
+              <option value="W04">Ward 04 - Tech City & Innovation Corridor</option>
+              <option value="W05">Ward 05 - South Riverside & Historic Quarter</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;" class="directory-grid">
+          <!-- Ward 01 -->
+          <div class="civic-card councillor-card" data-ward="W01">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <span class="badge-status active"><i class="fa-solid fa-map-pin"></i> Ward 01</span>
+              <span style="color: var(--brand-cyan); font-family: var(--font-mono); font-size: 0.82rem;">Downtown</span>
+            </div>
+            <h4 style="color: #fff; font-size: 1.25rem; margin-bottom: 4px;">Councillor Sarah Jenkins</h4>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">Committee on Finance & Commercial Zoning</div>
+            <div style="font-size: 0.85rem; color: var(--text-dim); display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+              <span><i class="fa-solid fa-building" style="color: var(--brand-cyan); width: 20px;"></i> Office: Room 102, City Hall Plaza</span>
+              <span><i class="fa-solid fa-phone" style="color: var(--brand-emerald); width: 20px;"></i> +1 (555) 012-3401</span>
+              <span><i class="fa-solid fa-clock" style="color: var(--brand-amber); width: 20px;"></i> Surgeries: Sat 9:00 AM - 12:00 PM</span>
+            </div>
+            <a href="mailto:ward01@metrocivic.gov" class="btn-emergency" style="width: 100%; justify-content: center; background: rgba(0,210,255,0.1); border-color: rgba(0,210,255,0.3); color: var(--brand-cyan);">
+              <i class="fa-solid fa-paper-plane"></i> Book Appointment
+            </a>
+          </div>
+
+          <!-- Ward 02 -->
+          <div class="civic-card councillor-card" data-ward="W02">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <span class="badge-status active"><i class="fa-solid fa-map-pin"></i> Ward 02</span>
+              <span style="color: var(--brand-cyan); font-family: var(--font-mono); font-size: 0.82rem;">North Harbor</span>
+            </div>
+            <h4 style="color: #fff; font-size: 1.25rem; margin-bottom: 4px;">Councillor Tariq Mansoor</h4>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">Committee on Waterfront & Fisheries Development</div>
+            <div style="font-size: 0.85rem; color: var(--text-dim); display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+              <span><i class="fa-solid fa-building" style="color: var(--brand-cyan); width: 20px;"></i> Office: 44 Maritime Blvd, Pier 4</span>
+              <span><i class="fa-solid fa-phone" style="color: var(--brand-emerald); width: 20px;"></i> +1 (555) 012-3402</span>
+              <span><i class="fa-solid fa-clock" style="color: var(--brand-amber); width: 20px;"></i> Surgeries: Sat 10:00 AM - 1:00 PM</span>
+            </div>
+            <a href="mailto:ward02@metrocivic.gov" class="btn-emergency" style="width: 100%; justify-content: center; background: rgba(0,210,255,0.1); border-color: rgba(0,210,255,0.3); color: var(--brand-cyan);">
+              <i class="fa-solid fa-paper-plane"></i> Book Appointment
+            </a>
+          </div>
+
+          <!-- Ward 03 -->
+          <div class="civic-card councillor-card" data-ward="W03">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <span class="badge-status active"><i class="fa-solid fa-map-pin"></i> Ward 03</span>
+              <span style="color: var(--brand-cyan); font-family: var(--font-mono); font-size: 0.82rem;">Green Ridge</span>
+            </div>
+            <h4 style="color: #fff; font-size: 1.25rem; margin-bottom: 4px;">Councillor Maya Lin</h4>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">Committee on Environment & Biodiversity</div>
+            <div style="font-size: 0.85rem; color: var(--text-dim); display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+              <span><i class="fa-solid fa-building" style="color: var(--brand-cyan); width: 20px;"></i> Office: 12 Botanical Way Community Ctr</span>
+              <span><i class="fa-solid fa-phone" style="color: var(--brand-emerald); width: 20px;"></i> +1 (555) 012-3403</span>
+              <span><i class="fa-solid fa-clock" style="color: var(--brand-amber); width: 20px;"></i> Surgeries: Fri 3:00 PM - 6:00 PM</span>
+            </div>
+            <a href="mailto:ward03@metrocivic.gov" class="btn-emergency" style="width: 100%; justify-content: center; background: rgba(0,210,255,0.1); border-color: rgba(0,210,255,0.3); color: var(--brand-cyan);">
+              <i class="fa-solid fa-paper-plane"></i> Book Appointment
+            </a>
+          </div>
+
+          <!-- Ward 04 -->
+          <div class="civic-card councillor-card" data-ward="W04">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <span class="badge-status active"><i class="fa-solid fa-map-pin"></i> Ward 04</span>
+              <span style="color: var(--brand-cyan); font-family: var(--font-mono); font-size: 0.82rem;">Tech City</span>
+            </div>
+            <h4 style="color: #fff; font-size: 1.25rem; margin-bottom: 4px;">Councillor Dev Patel</h4>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">Committee on Smart Transit & Technology</div>
+            <div style="font-size: 0.85rem; color: var(--text-dim); display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+              <span><i class="fa-solid fa-building" style="color: var(--brand-cyan); width: 20px;"></i> Office: Silicon Gateway Hub, Fl 2</span>
+              <span><i class="fa-solid fa-phone" style="color: var(--brand-emerald); width: 20px;"></i> +1 (555) 012-3404</span>
+              <span><i class="fa-solid fa-clock" style="color: var(--brand-amber); width: 20px;"></i> Surgeries: Sat 9:00 AM - 1:00 PM</span>
+            </div>
+            <a href="mailto:ward04@metrocivic.gov" class="btn-emergency" style="width: 100%; justify-content: center; background: rgba(0,210,255,0.1); border-color: rgba(0,210,255,0.3); color: var(--brand-cyan);">
+              <i class="fa-solid fa-paper-plane"></i> Book Appointment
+            </a>
+          </div>
+
+          <!-- Ward 05 -->
+          <div class="civic-card councillor-card" data-ward="W05">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <span class="badge-status active"><i class="fa-solid fa-map-pin"></i> Ward 05</span>
+              <span style="color: var(--brand-cyan); font-family: var(--font-mono); font-size: 0.82rem;">South Riverside</span>
+            </div>
+            <h4 style="color: #fff; font-size: 1.25rem; margin-bottom: 4px;">Councillor David O'Connor</h4>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">Committee on Heritage & Public Libraries</div>
+            <div style="font-size: 0.85rem; color: var(--text-dim); display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+              <span><i class="fa-solid fa-building" style="color: var(--brand-cyan); width: 20px;"></i> Office: Heritage Townhall Annex</span>
+              <span><i class="fa-solid fa-phone" style="color: var(--brand-emerald); width: 20px;"></i> +1 (555) 012-3405</span>
+              <span><i class="fa-solid fa-clock" style="color: var(--brand-amber); width: 20px;"></i> Surgeries: Mon 4:00 PM - 7:00 PM</span>
+            </div>
+            <a href="mailto:ward05@metrocivic.gov" class="btn-emergency" style="width: 100%; justify-content: center; background: rgba(0,210,255,0.1); border-color: rgba(0,210,255,0.3); color: var(--brand-cyan);">
+              <i class="fa-solid fa-paper-plane"></i> Book Appointment
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 04: MUNICIPAL DEPARTMENT DIRECTORY & SERVICE PORTFOLIOS
+         ========================================================================== -->
+    <section id="section-04-departments" class="section-wrapper" style="background: rgba(11, 21, 45, 0.4);">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 04/10</span>
+            <span class="section-tag">Administrative Organs</span>
+          </div>
+          <h2 class="section-title">Municipal Administrative <span class="highlight">Departments</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Key executive directorates managing essential urban infrastructure, health services, taxation, and town zoning.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px;">
+          <!-- Dept 1 -->
+          <div class="civic-card">
+            <div style="font-size: 2rem; color: var(--brand-cyan); margin-bottom: 12px;"><i class="fa-solid fa-trowel-bricks"></i></div>
+            <h3 style="font-family: var(--font-display); font-size: 1.25rem; color: #fff; margin-bottom: 8px;">Engineering & Public Works</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px;">
+              Responsible for 2,400 km of city roads, stormwater drainage, bridge maintenance, and civil tenders.
+            </p>
+            <div style="font-size: 0.82rem; color: var(--text-dim);">Head: Er. S. Nambiar, Chief Engineer</div>
+          </div>
+
+          <!-- Dept 2 -->
+          <div class="civic-card">
+            <div style="font-size: 2rem; color: var(--brand-emerald); margin-bottom: 12px;"><i class="fa-solid fa-heart-pulse"></i></div>
+            <h3 style="font-family: var(--font-display); font-size: 1.25rem; color: #fff; margin-bottom: 8px;">Public Health & Sanitation</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px;">
+              Oversees solid waste disposal, vector control, food establishment inspections, and vital birth/death records.
+            </p>
+            <div style="font-size: 0.82rem; color: var(--text-dim);">Head: Dr. Rebecca Gomez, Chief Health Officer</div>
+          </div>
+
+          <!-- Dept 3 -->
+          <div class="civic-card">
+            <div style="font-size: 2rem; color: var(--brand-amber); margin-bottom: 12px;"><i class="fa-solid fa-compass-drafting"></i></div>
+            <h3 style="font-family: var(--font-display); font-size: 1.25rem; color: #fff; margin-bottom: 8px;">Town Planning & Building Sanction</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px;">
+              Zoning laws, structural approvals, master plan compliance, architectural permits, and occupancy certificates.
+            </p>
+            <div style="font-size: 0.82rem; color: var(--text-dim);">Head: Ar. Victor Sterling, Chief Town Planner</div>
+          </div>
+
+          <!-- Dept 4 -->
+          <div class="civic-card">
+            <div style="font-size: 2rem; color: var(--brand-purple); margin-bottom: 12px;"><i class="fa-solid fa-cash-register"></i></div>
+            <h3 style="font-family: var(--font-display); font-size: 1.25rem; color: #fff; margin-bottom: 8px;">Revenue & Property Assessment</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px;">
+              Collection of property tax, commercial advertisement licensing, mutation of land titles, and municipal bonds.
+            </p>
+            <div style="font-size: 0.82rem; color: var(--text-dim);">Head: Ronald Hastings, Deputy Commissioner (Rev)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 05: COUNCIL MEETING AGENDAS, MINUTES & RESOLUTIONS
+         ========================================================================== -->
+    <section id="section-05-meetings" class="section-wrapper">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 05/10</span>
+            <span class="section-tag">Public Proceedings</span>
+          </div>
+          <h2 class="section-title">Council Agendas & <span class="highlight">Passed Resolutions</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Official verbatim minutes and legislative decisions published within 48 hours of each general council assembly.</p>
+        </div>
+
+        <div class="civic-card" style="padding: 24px; overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.92rem; text-align: left;">
+            <thead>
+              <tr style="border-bottom: 1px solid var(--border-subtle); color: var(--brand-cyan);">
+                <th style="padding: 12px 16px;">Meeting Date</th>
+                <th style="padding: 12px 16px;">Session Classification</th>
+                <th style="padding: 12px 16px;">Subject Matter / Major Resolution</th>
+                <th style="padding: 12px 16px;">Outcome</th>
+                <th style="padding: 12px 16px;">Document</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <td style="padding: 14px 16px; font-family: var(--font-mono); color: #fff;">Sep 10, 2026</td>
+                <td style="padding: 14px 16px; color: var(--text-muted);">Ordinary General Session #48</td>
+                <td style="padding: 14px 16px; color: #fff; font-weight: 500;">Sanction of $14.2M for automated road patcher machines for monsoon repair</td>
+                <td style="padding: 14px 16px;"><span class="badge-status active">Passed Unanimously</span></td>
+                <td style="padding: 14px 16px;"><a href="#" style="color: var(--brand-cyan);"><i class="fa-solid fa-file-pdf"></i> Minutes (PDF)</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <td style="padding: 14px 16px; font-family: var(--font-mono); color: #fff;">Aug 24, 2026</td>
+                <td style="padding: 14px 16px; color: var(--text-muted);">Special Finance Assembly</td>
+                <td style="padding: 14px 16px; color: #fff; font-weight: 500;">Revision of Single-Use Plastic ban penalties and establishment of flying squads</td>
+                <td style="padding: 14px 16px;"><span class="badge-status active">Passed (42-6)</span></td>
+                <td style="padding: 14px 16px;"><a href="#" style="color: var(--brand-cyan);"><i class="fa-solid fa-file-pdf"></i> Minutes (PDF)</a></td>
+              </tr>
+              <tr>
+                <td style="padding: 14px 16px; font-family: var(--font-mono); color: #fff;">Aug 05, 2026</td>
+                <td style="padding: 14px 16px; color: var(--text-muted);">Zoning & Works Committee</td>
+                <td style="padding: 14px 16px; color: #fff; font-weight: 500;">Approval of 34 km dedicated bicycle lane network connecting public transit</td>
+                <td style="padding: 14px 16px;"><span class="badge-status active">Passed (Standing Com)</span></td>
+                <td style="padding: 14px 16px;"><a href="#" style="color: var(--brand-cyan);"><i class="fa-solid fa-file-pdf"></i> Minutes (PDF)</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 06: TOWN HALL & PUBLIC CONSULTATION CALENDAR
+         ========================================================================== -->
+    <section id="section-06-hearings" class="section-wrapper" style="background: rgba(11, 21, 45, 0.4);">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 06/10</span>
+            <span class="section-tag">Public Hearing</span>
+          </div>
+          <h2 class="section-title">Town Hall & <span class="highlight">Civic Hearings</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Participate in open council consultations where citizens can address council members directly on civic topics.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+          <!-- Hearing 1 -->
+          <div class="civic-card" style="padding: 28px;">
+            <div style="display: inline-block; background: rgba(0,210,255,0.15); color: var(--brand-cyan); font-weight: 700; padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.8rem; margin-bottom: 12px;">
+              Oct 02, 2026 • 10:00 AM
+            </div>
+            <h4 style="color: #fff; font-size: 1.2rem; margin-bottom: 8px;">Public Hearing on 2027 City Bus Route Restructuring</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px;">
+              Citizens can register 3-minute oral presentations regarding suburban commuter bus scheduling.
+            </p>
+            <div style="font-size: 0.82rem; color: var(--text-dim); margin-bottom: 16px;">Location: Council Chambers & Live Webcast</div>
+            <button class="btn-portal-action" style="padding: 8px 16px; font-size: 0.85rem;" onclick="alert('Speaker slot registered for Hearing on Oct 02. Confirmation sent to email.');">
+              <i class="fa-solid fa-microphone"></i> Register Speaker Slot
+            </button>
+          </div>
+
+          <!-- Hearing 2 -->
+          <div class="civic-card" style="padding: 28px;">
+            <div style="display: inline-block; background: rgba(16,185,129,0.15); color: var(--brand-emerald); font-weight: 700; padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.8rem; margin-bottom: 12px;">
+              Oct 14, 2026 • 2:30 PM
+            </div>
+            <h4 style="color: #fff; font-size: 1.2rem; margin-bottom: 8px;">Zonal Master Plan Amendment for Waterfront Mixed-Use</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px;">
+              Review of ecological buffer zones and public promenade regulations along North Harbor.
+            </p>
+            <div style="font-size: 0.82rem; color: var(--text-dim); margin-bottom: 16px;">Location: City Hall Committee Room 3</div>
+            <button class="btn-portal-action" style="padding: 8px 16px; font-size: 0.85rem;" onclick="alert('Speaker slot registered for Hearing on Oct 14.');">
+              <i class="fa-solid fa-microphone"></i> Register Speaker Slot
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 07: RIGHT TO INFORMATION (RTI) & PUBLIC DISCLOSURE
+         ========================================================================== -->
+    <section id="section-07-rti" class="section-wrapper">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 07/10</span>
+            <span class="section-tag">Statutory Freedom of Information</span>
+          </div>
+          <h2 class="section-title">Right to Information <span class="highlight">(RTI Hub)</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Exercise your statutory right to request administrative files, expenditure vouchers, tender logs, and departmental audit records.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center;">
+          <div>
+            <h3 style="font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 16px; color: #fff;">Online RTI Filing in 3 Minutes</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+              Any citizen can submit an RTI query online. The designated Public Information Officer (PIO) is mandated under law to respond with certified copies within 30 calendar days.
+            </p>
+            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 24px;">
+              <li><i class="fa-solid fa-check" style="color: var(--brand-cyan); margin-right: 8px;"></i> Statutory application fee: $1.50 (Waived for BPL card holders)</li>
+              <li><i class="fa-solid fa-check" style="color: var(--brand-cyan); margin-right: 8px;"></i> First Appellate Authority appointed for appeals within 15 days</li>
+              <li><i class="fa-solid fa-check" style="color: var(--brand-cyan); margin-right: 8px;"></i> Proactive Section 4(1)(b) disclosures updated monthly</li>
+            </ul>
+          </div>
+
+          <div class="civic-card" style="padding: 32px;">
+            <h4 style="font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 18px; color: #fff;">Quick RTI Query Submission</h4>
+            <form onsubmit="event.preventDefault(); alert('RTI Application filed! Application ID: RTI-MC-2026-' + Math.floor(1000 + Math.random()*9000) + '. Statutory 30-day response clock initiated.'); this.reset();">
+              <div class="calc-input-group">
+                <label><i class="fa-solid fa-building"></i> Select Target Department</label>
+                <select class="calc-control" required>
+                  <option>Public Works & Civil Tenders</option>
+                  <option>Health & Sanitation Directorate</option>
+                  <option>Town Planning & Building Approvals</option>
+                  <option>Municipal Revenue & Finance</option>
+                </select>
+              </div>
+
+              <div class="calc-input-group">
+                <label><i class="fa-solid fa-question"></i> Specific Information Required</label>
+                <textarea class="calc-control" rows="3" placeholder="Specify dates, project reference, or official files requested..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-portal-action" style="width: 100%; justify-content: center;">
+                <i class="fa-solid fa-gavel"></i> File Official RTI Request
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 08: EMERGENCY OPERATIONS CENTER (EOC)
+         ========================================================================== -->
+    <section id="section-08-eoc" class="section-wrapper" style="background: rgba(11, 21, 45, 0.4);">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 08/10</span>
+            <span class="section-tag" style="color: var(--brand-rose);">Disaster Preparedness</span>
+          </div>
+          <h2 class="section-title">Emergency Operations <span class="highlight">Center (EOC)</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Coordinating urban emergency response, severe storm warnings, civil defense sirens, and designated community shelters.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+          <div class="civic-card" style="border-color: rgba(16, 185, 129, 0.3);">
+            <div style="color: var(--brand-emerald); font-weight: 700; font-size: 0.85rem; margin-bottom: 8px;"><i class="fa-solid fa-shield"></i> CURRENT ALERT LEVEL</div>
+            <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 6px;">CONDITION GREEN</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">No weather warnings or civil disruptions in effect. Regular monitoring in progress.</p>
+          </div>
+
+          <div class="civic-card">
+            <div style="color: var(--brand-cyan); font-weight: 700; font-size: 0.85rem; margin-bottom: 8px;"><i class="fa-solid fa-person-shelter"></i> STORM SHELTERS</div>
+            <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 6px;">36 Active Centers</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Equipped with emergency backup power generators, clean water, and satellite radio.</p>
+          </div>
+
+          <div class="civic-card">
+            <div style="color: var(--brand-amber); font-weight: 700; font-size: 0.85rem; margin-bottom: 8px;"><i class="fa-solid fa-walkie-talkie"></i> HAM RADIO NETWORK</div>
+            <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 6px;">146.520 MHz FM</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Backup civil defense radio frequency in the event of primary cellular tower outage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 09: VENDORS, TENDERS & PROCUREMENT BOARD
+         ========================================================================== -->
+    <section id="section-09-tenders" class="section-wrapper">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 09/10</span>
+            <span class="section-tag">Public Procurement</span>
+          </div>
+          <h2 class="section-title">Active Municipal <span class="highlight">Tenders & RFPs</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Competitive electronic bidding portal for qualified engineering contractors, technology vendors, and service providers.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+          <!-- Tender 1 -->
+          <div class="civic-card" style="padding: 24px;">
+            <div style="font-family: var(--font-mono); color: var(--brand-cyan); font-size: 0.82rem; margin-bottom: 8px;">NIT-MC-PW-2026-91</div>
+            <h4 style="color: #fff; font-size: 1.15rem; margin-bottom: 8px;">Reconstruction of Stormwater Culverts & Micro-Canals in Ward 02 & 05</h4>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">Estimated Value: <strong>$3.8 Million</strong></div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 12px; font-size: 0.85rem;">
+              <span style="color: var(--brand-emerald);">Bid Closes: Oct 12, 2026</span>
+              <a href="#" style="color: var(--brand-cyan); font-weight: 600;">View Tender <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Tender 2 -->
+          <div class="civic-card" style="padding: 24px;">
+            <div style="font-family: var(--font-mono); color: var(--brand-cyan); font-size: 0.82rem; margin-bottom: 8px;">NIT-MC-IT-2026-44</div>
+            <h4 style="color: #fff; font-size: 1.15rem; margin-bottom: 8px;">Comprehensive Cloud Infrastructure & AI Chatbot Support Maintenance</h4>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">Estimated Value: <strong>$1.2 Million / 3yr</strong></div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 12px; font-size: 0.85rem;">
+              <span style="color: var(--brand-emerald);">Bid Closes: Oct 20, 2026</span>
+              <a href="#" style="color: var(--brand-cyan); font-weight: 600;">View Tender <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Tender 3 -->
+          <div class="civic-card" style="padding: 24px;">
+            <div style="font-family: var(--font-mono); color: var(--brand-cyan); font-size: 0.82rem; margin-bottom: 8px;">NIT-MC-HL-2026-19</div>
+            <h4 style="color: #fff; font-size: 1.15rem; margin-bottom: 8px;">Annual Supply of Vector Control Larvicide & Cold-Fogging Chemicals</h4>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">Estimated Value: <strong>$640,000</strong></div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 12px; font-size: 0.85rem;">
+              <span style="color: var(--brand-emerald);">Bid Closes: Nov 02, 2026</span>
+              <a href="#" style="color: var(--brand-cyan); font-weight: 600;">View Tender <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 10: CITIZEN SUPPORT CENTERS & UNIFIED CONTACT INQUIRY
+         ========================================================================== -->
+    <section id="section-10-contact" class="section-wrapper" style="background: rgba(11, 21, 45, 0.4);">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 10/10</span>
+            <span class="section-tag">Direct Citizen Channels</span>
+          </div>
+          <h2 class="section-title">Unified Citizen <span class="highlight">Helpdesk & Contact</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Reach out to the central secretariat for inquiries, appointment bookings, or feedback on municipal services.</p>
+        </div>
+
+        <div class="civic-card" style="max-width: 800px; margin: 0 auto; padding: 40px;">
+          <form onsubmit="event.preventDefault(); alert('Your message has been logged with the Central Secretariat. Response will follow via email within 24 hours.'); this.reset();">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <div class="calc-input-group">
+                <label><i class="fa-solid fa-user"></i> Name</label>
+                <input type="text" class="calc-control" placeholder="Your Name" required>
+              </div>
+              <div class="calc-input-group">
+                <label><i class="fa-solid fa-envelope"></i> Email Address</label>
+                <input type="email" class="calc-control" placeholder="your@email.com" required>
+              </div>
+            </div>
+
+            <div class="calc-input-group">
+              <label><i class="fa-solid fa-tag"></i> Inquiry Classification</label>
+              <select class="calc-control">
+                <option>General Administration Inquiry</option>
+                <option>Mayor / Councillor Appointment</option>
+                <option>Media & Press Accreditation</option>
+                <option>Town Planning / Zoning Clarification</option>
+                <option>Vendor & Billing Inquiry</option>
+              </select>
+            </div>
+
+            <div class="calc-input-group">
+              <label><i class="fa-solid fa-comment-dots"></i> Message Content</label>
+              <textarea class="calc-control" rows="4" placeholder="Detail your query or appointment request..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-portal-action" style="width: 100%; justify-content: center; padding: 14px;">
+              <i class="fa-solid fa-paper-plane"></i> Send Official Inquiry
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="civic-footer">
+    <div class="civic-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="brand-icon-shield">
+              <i class="fa-solid fa-building-columns"></i>
+            </div>
+            <div class="brand-text">
+              METRO<span>CIVIC</span>
+              <span class="brand-sub">Municipal Smart Services</span>
+            </div>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+            Democratically governed civic portal ensuring accessible governance, transparent public funds, and high-quality municipal services.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Council & Governance</h4>
+          <ul class="footer-links">
+            <li><a href="#section-02-council">Council Leadership</a></li>
+            <li><a href="#section-03-wards">Ward Councillors</a></li>
+            <li><a href="#section-05-meetings">Council Minutes & Agendas</a></li>
+            <li><a href="#section-06-hearings">Town Hall Schedule</a></li>
+            <li><a href="#section-07-rti">RTI Applications</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Civic Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">All Online Portals</a></li>
+            <li><a href="services.html#section-03-calculator">Property Tax Calculator</a></li>
+            <li><a href="services.html#section-05-grievance">File a Grievance</a></li>
+            <li><a href="projects.html">Smart Projects</a></li>
+            <li><a href="#section-09-tenders">Procurement & Tenders</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Secretariat Desk</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">
+            <strong style="color: #fff;">City Hall:</strong> 100 Civic Boulevard
+          </p>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">
+            <strong style="color: #fff;">Direct Line:</strong> +1 (800) 555-MUNI
+          </p>
+          <span class="badge-status active"><i class="fa-solid fa-check"></i> Official Government Portal</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 City Municipal Corporation. Democratic Civic Secretariat.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Public Notices</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Custom Scripts -->
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

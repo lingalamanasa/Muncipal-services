@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ward Voting - Citizen Portal | Stackly Municipal Services</title>
+  <meta name="description" content="Participate in direct democracy and ward budget allocation votes. Cast your ballot on local civic infrastructure initiatives.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 (Strictly FA icons, zero emojis) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/page-tracker.js"></script>
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <div>
+        <div class="sidebar-brand">
+          <a href="index.html" class="brand-logo" title="Back to Stackly Homepage">
+            <img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="brand-logo-img" style="height: 32px;">
+          </a>
+          <div>
+            <span class="sidebar-role-badge">
+              <i class="fa-solid fa-id-badge" style="color: var(--brand-orange);"></i> Citizen Portal
+            </span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="sidebar-nav">
+          <a href="citizen-dashboard.html" class="sidebar-link">
+            <i class="fa-solid fa-gauge-high"></i>
+            <span>Overview</span>
+          </a>
+          <a href="citizen-grievances.html" class="sidebar-link">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>My Grievances</span>
+            <span class="sidebar-link-badge">1</span>
+          </a>
+          <a href="citizen-taxes.html" class="sidebar-link">
+            <i class="fa-solid fa-receipt"></i>
+            <span>Taxes & Utilities</span>
+          </a>
+          <a href="citizen-vault.html" class="sidebar-link">
+            <i class="fa-solid fa-folder-closed"></i>
+            <span>Digital Vault</span>
+            <span class="sidebar-link-badge" style="background: #10b981;">4</span>
+          </a>
+          <a href="citizen-voting.html" class="sidebar-link active">
+            <i class="fa-solid fa-check-to-slot"></i>
+            <span>Ward Voting</span>
+          </a>
+          <a href="citizen-services.html" class="sidebar-link">
+            <i class="fa-solid fa-compass"></i>
+            <span>Services Directory</span>
+          </a>
+          <a href="citizen-helpdesk.html" class="sidebar-link">
+            <i class="fa-solid fa-headset"></i>
+            <span>Helpdesk & Support</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Sidebar User Profile Footer -->
+      <div class="sidebar-footer">
+        <div class="sidebar-profile-card">
+          <img src="images/citizen-avatar.webp" alt="Jane Doe - Verified Citizen" class="sidebar-avatar">
+          <div class="sidebar-profile-info">
+            <div class="sidebar-profile-name">Jane Doe</div>
+            <div class="sidebar-profile-desc">Ward 04 • STK-8840-721</div>
+          </div>
+          <a href="login.html" title="Sign Out" style="color: var(--text-muted); font-size: 1.1rem; padding: 4px;" onclick="return confirm('Do you want to log out of your Citizen Account?');">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Dashboard Area -->
+    <main class="dashboard-main">
+      
+      <!-- Topbar Header -->
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button type="button" id="sidebarToggleBtn" class="topbar-icon-btn" aria-label="Toggle Sidebar" style="display: none;">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="topbar-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search ballot title, referendum, initiative..." id="votingSearchInput">
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="dashboard-content">
+        
+        <!-- Welcome Hero Banner -->
+        <div class="dashboard-hero-banner">
+          <div>
+            <div class="hero-banner-title">Ward 04 Participatory Budget & Voting</div>
+            <div class="hero-banner-meta">
+              <span><i class="fa-solid fa-vote-yea" style="color: var(--brand-orange);"></i> Direct Ward Decision-Making Console</span>
+              <span><i class="fa-solid fa-user-check" style="color: #10b981;"></i> Voter Eligibility: <strong>Verified Resident</strong></span>
+            </div>
+          </div>
+          <div class="hero-banner-actions">
+            <button type="button" class="btn-portal-action" onclick="window.location.href='404error.html';">
+              <i class="fa-solid fa-check-to-slot"></i> Cast Active Vote
+            </button>
+          </div>
+        </div>
+
+        <!-- Section 1: Animated Metric Counters HUD -->
+        <div class="counter-hud-grid">
+          
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon purple"><i class="fa-solid fa-person-booth"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-fire"></i> Live Ballot</span>
+            </div>
+            <div class="counter-hud-number" data-counter="1" data-duration="1000">0</div>
+            <div class="counter-hud-label">Active Referendums</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon emerald"><i class="fa-solid fa-chart-simple"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-arrow-trend-up"></i> +4.2%</span>
+            </div>
+            <div class="counter-hud-number" data-counter="74.8" data-decimals="1" data-suffix="%" data-duration="1200">0.0%</div>
+            <div class="counter-hud-label">Ward Voter Turnout</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon orange"><i class="fa-solid fa-coins"></i></div>
+              <span class="counter-hud-delta neutral"><i class="fa-solid fa-wallet"></i> Participatory</span>
+            </div>
+            <div class="counter-hud-number" data-counter="2.5" data-decimals="1" data-prefix="₹" data-suffix=" Cr" data-duration="1200">₹0.0 Cr</div>
+            <div class="counter-hud-label">Budget Allocated to Public Vote</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon sky"><i class="fa-solid fa-users"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-check"></i> Verified</span>
+            </div>
+            <div class="counter-hud-number" data-counter="1840" data-duration="1400">0</div>
+            <div class="counter-hud-label">Verified Citizens Voted</div>
+          </div>
+
+        </div>
+
+        <!-- Section 2 & 3: Interactive Line Chart & Bar Chart -->
+        <div class="dashboard-charts-grid-duo">
+          
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-line" style="color: var(--brand-orange);"></i> Citizen Turnout Progression</div>
+                <div class="chart-card-subtitle">Turnout percentage growth across past 5 participatory ward polls</div>
+              </div>
+              <span class="chart-card-meta">2022 - 2026</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="votingLineChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-column" style="color: var(--brand-orange);"></i> Current Ballot Vote Distribution</div>
+                <div class="chart-card-subtitle">Number of verified resident votes per proposed initiative</div>
+              </div>
+              <span class="chart-card-meta">Ballot #W4-2026</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="votingBarChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section 4: Interactive Doughnut Chart -->
+        <div class="dashboard-charts-grid-split">
+          
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-pie" style="color: var(--brand-orange);"></i> Resident Budget Priority Preferences</div>
+                <div class="chart-card-subtitle">How citizens want participatory funds apportioned</div>
+              </div>
+              <span class="chart-card-meta">Community Survey</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="votingDoughnutChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card" style="justify-content: space-between;">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-bullhorn" style="color: #10b981;"></i> Current Active Ballot</div>
+                <div class="chart-card-subtitle">Voting ends September 30, 2026</div>
+              </div>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid var(--border-medium); border-radius: 12px; padding: 18px; margin: auto 0;">
+              <div style="font-weight: 800; font-size: 0.95rem; color: #0f172a; margin-bottom: 8px;">
+                Ward 04 Participatory Capital Fund (₹2.5 Crore)
+              </div>
+              <div style="font-size: 0.82rem; color: #475569; line-height: 1.5; margin-bottom: 14px;">
+                Choose the primary civic upgrade for Sector 3 & 4. Leading option: <strong>Smart Solar Streetlight Corridor (840 votes)</strong>.
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <button type="button" class="table-action-btn" style="flex: 1; justify-content: center; background: var(--brand-orange); color: #fff; border-color: var(--brand-orange);" onclick="alert('Vote Recorded: Solar Streetlight Expansion. Receipt #VOTE-8840-92.');">
+                  <i class="fa-solid fa-check"></i> Vote Option B
+                </button>
+                <button type="button" class="table-action-btn" style="flex: 1; justify-content: center;" onclick="alert('Viewing Full Participatory Budget Proposal Document.');">
+                  <i class="fa-solid fa-file-lines"></i> View Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section 5: Filterable Referendum Registry Table -->
+        <div class="dashboard-table-card">
+          <div class="dashboard-table-toolbar">
+            <div class="dashboard-section-title">
+              <i class="fa-solid fa-box-archive"></i>
+              Ward 04 Referendum & Poll History
+            </div>
+            <div class="dashboard-table-filters">
+              <button type="button" class="dashboard-filter-chip active" data-filter="all">All Polls (3)</button>
+              <button type="button" class="dashboard-filter-chip" data-filter="active">Active (1)</button>
+              <button type="button" class="dashboard-filter-chip" data-filter="closed">Passed / Closed (2)</button>
+            </div>
+          </div>
+
+          <div class="dashboard-table-wrapper">
+            <table class="dashboard-data-table">
+              <thead>
+                <tr>
+                  <th>Ballot ID</th>
+                  <th>Initiative Title</th>
+                  <th>Allocated Budget</th>
+                  <th>Turnout</th>
+                  <th>Winning Option</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="votingTableBody">
+                <tr data-status="active">
+                  <td><strong>#BAL-2026-04</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">FY 2026-27 Ward Capital Infrastructure Fund</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Solar lighting vs Green parks vs Rainwater culverts</div>
+                  </td>
+                  <td><strong>₹2.50 Crore</strong></td>
+                  <td>74.8% (1,840 votes)</td>
+                  <td>Solar Lighting (Leading)</td>
+                  <td><span class="status-pill warning"><i class="fa-solid fa-fire"></i> Live Voting</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Ballot #BAL-2026-04:\nVoting is open until September 30, 2026.\nYour vote is registered.');">
+                      <i class="fa-solid fa-check-to-slot"></i> Vote Ballot
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="closed">
+                  <td><strong>#BAL-2025-02</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Sector 2 Micro-Drainage & Pumping Upgrade</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Monsoon storm culvert modernization</div>
+                  </td>
+                  <td><strong>₹1.80 Crore</strong></td>
+                  <td>69.4% (1,620 votes)</td>
+                  <td>Approved (88% Yes)</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check-double"></i> Executed</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Execution Audit Report:\nCulverts commissioned in March 2026. Zero waterlogging recorded.');">
+                      <i class="fa-solid fa-file-signature"></i> Audit Report
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="closed">
+                  <td><strong>#BAL-2024-01</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Community Electric Vehicle Charging Kiosks</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Installation of 12 AC Fast EV charging stalls</div>
+                  </td>
+                  <td><strong>₹75.0 Lakh</strong></td>
+                  <td>64.2% (1,410 votes)</td>
+                  <td>Approved (91% Yes)</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check-double"></i> Executed</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Execution Audit Report:\n12 charging stations operational across Ward 04.');">
+                      <i class="fa-solid fa-file-signature"></i> Audit Report
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <footer class="dashboard-footer" style="padding: 24px 32px; border-top: 1px solid var(--border-medium); font-size: 0.8rem; color: var(--text-muted); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; background: #ffffff;">
+        <div>&copy; 2026-2027 Stackly Municipal Corporation. Citizen Participatory Budgeting System.</div>
+        <div style="display: flex; gap: 16px;">
+          <a href="services.html" style="color: var(--brand-orange); text-decoration: none;"><i class="fa-solid fa-gavel"></i> Election Rules</a>
+          <a href="contact.html" style="color: var(--text-muted); text-decoration: none;"><i class="fa-solid fa-headset"></i> Election Cell</a>
+        </div>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // Sidebar Mobile Toggle
+    const toggleBtn = document.getElementById('sidebarToggleBtn');
+    const sidebar = document.getElementById('dashboardSidebar');
+    if (window.innerWidth <= 992 && toggleBtn) {
+      toggleBtn.style.display = 'inline-flex';
+      toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+      });
+    }
+
+    // Search filter
+    document.getElementById('votingSearchInput')?.addEventListener('input', function(e) {
+      const q = e.target.value.toLowerCase();
+      document.querySelectorAll('#votingTableBody tr').forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+  </script>
+
+  <!-- Chart.js & Dashboard Charts Engine -->
+  <script src="js/chart.min.js"></script>
+  <script src="js/dashboard-charts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Line Chart: Turnout Progression
+      buildLineChart(
+        'votingLineChart',
+        ['2022', '2023', '2024', '2025', '2026 (Live)'],
+        [
+          { label: 'Ward Voter Turnout (%)', data: [54.2, 59.8, 64.2, 69.4, 74.8], color: '#ff6600', bgColor: 'rgba(255, 102, 0, 0.08)' }
+        ],
+        'Turnout %'
+      );
+
+      // 2. Bar Chart: Current Ballot Breakdown
+      buildBarChart(
+        'votingBarChart',
+        ['Solar Streetlights', 'Green Corridors', 'Smart CCTV Mesh', 'Storm Drainage'],
+        [
+          {
+            label: 'Resident Votes',
+            data: [840, 520, 310, 170],
+            colors: ['#ff6600', '#10b981', '#0284c7', '#8b5cf6']
+          }
+        ]
+      );
+
+      // 3. Doughnut Chart: Priority Preference
+      buildPieChart(
+        'votingDoughnutChart',
+        ['Solar Infrastructure (45%)', 'Green Spaces & Parks (28%)', 'Public Safety & CCTV (17%)', 'Drainage (10%)'],
+        [45, 28, 17, 10],
+        ['#ff6600', '#10b981', '#0284c7', '#8b5cf6']
+      );
+    });
+  </script>
+
+  <!-- GSAP & Global Unique Effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

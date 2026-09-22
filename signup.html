@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Citizen Registration | Stackly Municipal</title>
+  <meta name="description" content="Create a verified citizen account for online property tax payments, grievance tracking, and digital certificate issuances.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom CSS (Black, White, Orange) -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/page-tracker.js"></script>
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between;">
+
+  <!-- Minimal Header with Stackly Logo -->
+  <header style="padding: 24px 0; border-bottom: 1px solid var(--border-subtle); background: var(--bg-main);">
+    <div class="civic-container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" class="brand-logo"><img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="brand-logo-img"></a>
+      <a href="index.html" class="btn-emergency" style="font-size: 0.85rem;">
+        <i class="fa-solid fa-arrow-left"></i> Return Home
+      </a>
+    </div>
+  </header>
+
+  <!-- Signup Main Container -->
+  <main class="auth-container-wrapper" style="position: relative; overflow: hidden;">
+    <!-- Animated Background Image Slider Reel -->
+    <div class="hero-animated-bg-wrap">
+      <div class="hero-bg-slide-item active" style="background-image: url('images/signup-slide-1.webp');"></div>
+      <div class="hero-bg-slide-item" style="background-image: url('images/signup-slide-2.webp');"></div>
+      <div class="hero-bg-slide-item" style="background-image: url('images/signup-slide-3.webp');"></div>
+      <div class="hero-bg-slide-overlay"></div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); max-width: 1040px; width: 100%; background: #ffffff; border: 1px solid var(--border-medium); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); overflow: hidden; align-items: stretch; position: relative; z-index: 2;">
+      
+      <!-- Left Column: Signup Form -->
+      <div style="padding: 40px; position: relative;">
+        <!-- Orange Accent Stripe -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--brand-orange);"></div>
+
+        <!-- Title -->
+        <div style="text-align: left; margin-bottom: 22px;">
+          <div style="width: 50px; height: 50px; border-radius: 12px; background: var(--brand-orange-subtle); color: var(--brand-orange); display: inline-flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 12px; border: 1px solid var(--brand-orange-border);">
+            <i class="fa-solid fa-user-plus"></i>
+          </div>
+          <h2 style="font-family: var(--font-display); font-size: 1.8rem; color: #0a0a0a; margin-bottom: 4px;">
+            Create <span class="highlight">Account</span>
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.88rem;">Register your municipal profile to access civic services and portals</p>
+        </div>
+
+        <!-- Portal Type Toggle (Citizen Portal vs Staff / Officer) -->
+        <div style="display: flex; background: #f8fafc; border: 1px solid var(--border-medium); border-radius: var(--radius-full); padding: 4px; margin-bottom: 22px;">
+          <button type="button" id="tabCitizenBtn" style="flex: 1; padding: 8px; border-radius: var(--radius-full); border: none; background: var(--brand-orange); color: #000; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.2s ease;" onclick="selectSignupRole('citizen')">
+            <i class="fa-solid fa-house-chimney-user"></i> Citizen Portal
+          </button>
+          <button type="button" id="tabStaffBtn" style="flex: 1; padding: 8px; border-radius: var(--radius-full); border: none; background: transparent; color: #475569; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.2s ease;" onclick="selectSignupRole('staff')">
+            <i class="fa-solid fa-user-shield"></i> Staff / Officer
+          </button>
+        </div>
+
+        <!-- Signup Form with Full Name, Mail ID, Roles, Password, Confirm Password -->
+        <form id="signupForm" onsubmit="handleSignupSubmit(event)">
+          <!-- 1. Full Name -->
+          <div class="calc-input-group">
+            <label><i class="fa-solid fa-user" style="color: var(--brand-orange); margin-right: 6px;"></i> Full Name</label>
+            <input type="text" id="regFullName" class="calc-control" placeholder="Jane Doe" required>
+          </div>
+
+          <!-- 2. Email id -->
+          <div class="calc-input-group">
+            <label id="regEmailLabel"><i class="fa-solid fa-envelope" style="color: var(--brand-orange); margin-right: 6px;"></i> Email id</label>
+            <input type="email" id="regEmail" class="calc-control" placeholder="jane.citizen@example.com" required>
+          </div>
+
+          <!-- 3. Roles (Only Citizen Portal and Staff / Officer) -->
+          <div class="calc-input-group">
+            <label><i class="fa-solid fa-user-gear" style="color: var(--brand-orange); margin-right: 6px;"></i> Role</label>
+            <select id="regRole" class="calc-control" required style="cursor: pointer; font-weight: 600;" onchange="selectSignupRole(this.value)">
+              <option value="citizen" selected>Citizen Portal</option>
+              <option value="staff">Staff / Officer</option>
+            </select>
+          </div>
+
+          <!-- 4. Password & 5. Confirm Password -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px;">
+            <div class="calc-input-group">
+              <label><i class="fa-solid fa-lock" style="color: var(--brand-orange); margin-right: 6px;"></i> Password</label>
+              <input type="password" id="regPassword" class="calc-control" placeholder="••••••••••••" minlength="8" required>
+            </div>
+            <div class="calc-input-group">
+              <label><i class="fa-solid fa-shield-halved" style="color: var(--brand-orange); margin-right: 6px;"></i> Confirm Password</label>
+              <input type="password" id="regConfirmPassword" class="calc-control" placeholder="••••••••••••" minlength="8" required>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 20px; font-size: 0.82rem; color: var(--text-muted);">
+            <label style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer;">
+              <input type="checkbox" style="accent-color: var(--brand-orange); margin-top: 3px;" checked required>
+              <span>I agree to the <a href="#" style="color: var(--brand-orange);">Terms of e-Service</a> & municipal privacy policies.</span>
+            </label>
+          </div>
+
+          <button type="button" id="submitRegBtn" class="btn-portal-action" style="width: 100%; justify-content: center; padding: 13px; font-size: 1rem;" onclick="window.location.href='login.html';">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In
+          </button>
+        </form>
+
+        <!-- Login Link -->
+        <div style="text-align: center; margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border-subtle); font-size: 0.88rem; color: var(--text-muted);">
+          Already have an account? <br>
+          <a href="login.html" style="color: var(--brand-orange); font-weight: 700; display: inline-block; margin-top: 4px;">
+            Log In to Existing Account <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Visual WebP Showcase Card with 3D Tilt & Badges -->
+      <div style="background: #f8fafc; border-left: 1px solid var(--border-medium); padding: 32px; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+        <div>
+          <div class="hero-badge-tag" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 102, 0, 0.08); border: 1px solid var(--brand-orange-border); padding: 4px 12px; border-radius: 999px; margin-bottom: 12px;">
+            <span style="color: var(--brand-orange); font-size: 0.78rem; font-weight: 800;"><i class="fa-solid fa-certificate"></i> Verified Citizen Perks</span>
+          </div>
+          <h3 style="font-family: var(--font-display); font-size: 1.3rem; color: #0a0a0a; margin-bottom: 6px;">
+            Instant Access to <span class="highlight">All Benefits</span>
+          </h3>
+          <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 14px;">
+            Enjoy instant approvals for trade renewals, 10% rebate on early property tax payments, and live municipal council participation.
+          </p>
+        </div>
+
+        <!-- Main Auth Card Image -->
+        <div class="image-reveal-frame card-tilt-inner" style="height: 160px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-subtle); position: relative; margin-bottom: 12px;">
+          <img src="images/hero-signup.webp" alt="Stackly Citizen Digital Registration Hub" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.75); color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 0.72rem; font-weight: 700;">
+            <i class="fa-solid fa-award" style="color: var(--brand-orange);"></i> Instant Citizen Verification
+          </div>
+        </div>
+
+        <!-- Row of Registration Step Badges (WebP, < 100KB) -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px;">
+          <div class="civic-card-img-wrap" style="height: 58px; margin-bottom: 0;">
+            <img src="images/signup-step1.webp" alt="Step 1: Ward Registration" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="civic-card-img-wrap" style="height: 58px; margin-bottom: 0;">
+            <img src="images/signup-step2.webp" alt="Step 2: Instant OTP Authentication" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="civic-card-img-wrap" style="height: 58px; margin-bottom: 0;">
+            <img src="images/signup-step3.webp" alt="Step 3: Digital Citizen Pass" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+        </div>
+
+        <!-- Two Rows of Security Certification Badges (WebP, < 100KB) -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 8px;">
+          <div class="civic-card-img-wrap" style="height: 58px; margin-bottom: 0;">
+            <img src="images/auth-shield.webp" alt="256-Bit SSL Encryption" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="civic-card-img-wrap" style="height: 58px; margin-bottom: 0;">
+            <img src="images/auth-digilocker.webp" alt="DigiLocker Certified Sync" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="civic-card-img-wrap" style="height: 58px; margin-bottom: 0;">
+            <img src="images/auth-iso.webp" alt="ISO 27001 Data Privacy Standard" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+          <div class="civic-card-img-wrap" style="height: 58px; margin-bottom: 0;">
+            <img src="images/auth-sso.webp" alt="Single Sign-On Gateway" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="civic-card-img-wrap" style="height: 58px; margin-bottom: 0;">
+            <img src="images/auth-citizen-pass.webp" alt="Smart Citizen Pass" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="civic-card-img-wrap" style="height: 58px; margin-bottom: 0;">
+            <img src="images/auth-ward-badge.webp" alt="Ward Verified Seal" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer style="padding: 20px 0; border-top: 1px solid var(--border-subtle); text-align: center; font-size: 0.82rem; color: var(--text-dim); background: var(--color-black);">
+    <div class="civic-container" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px;">
+      <span>&copy; 2026 Stackly Municipal Corporation. Certified ISO 27001 Data Privacy Protection.</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/animations.js"></script>
+  <script>
+    try {
+      sessionStorage.setItem('stackly_last_page', window.location.href);
+      localStorage.setItem('stackly_last_page', window.location.href);
+    } catch(e) {}
+
+    let currentRole = 'citizen';
+
+    function selectSignupRole(role) {
+      currentRole = role;
+      const citizenBtn = document.getElementById('tabCitizenBtn');
+      const staffBtn = document.getElementById('tabStaffBtn');
+      const roleSelect = document.getElementById('regRole');
+      const emailLabel = document.getElementById('regEmailLabel');
+      const emailInput = document.getElementById('regEmail');
+      const submitBtn = document.getElementById('submitRegBtn');
+
+      if (roleSelect && roleSelect.value !== role) {
+        roleSelect.value = role;
+      }
+
+      if (role === 'staff') {
+        staffBtn.style.background = 'var(--brand-orange)';
+        staffBtn.style.color = '#000000';
+        citizenBtn.style.background = 'transparent';
+        citizenBtn.style.color = '#475569';
+
+        if (emailLabel) emailLabel.innerHTML = '<i class="fa-solid fa-user-shield" style="color: var(--brand-orange); margin-right: 6px;"></i> Official Staff / Gov Email';
+        if (emailInput) emailInput.placeholder = 'officer.name@stackly.gov';
+        if (submitBtn) submitBtn.innerHTML = '<i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In';
+      } else {
+        citizenBtn.style.background = 'var(--brand-orange)';
+        citizenBtn.style.color = '#000000';
+        staffBtn.style.background = 'transparent';
+        staffBtn.style.color = '#475569';
+
+        if (emailLabel) emailLabel.innerHTML = '<i class="fa-solid fa-envelope" style="color: var(--brand-orange); margin-right: 6px;"></i> Email id';
+        if (emailInput) emailInput.placeholder = 'jane.citizen@example.com';
+        if (submitBtn) submitBtn.innerHTML = '<i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In';
+      }
+    }
+
+    function handleSignupSubmit(event) {
+      event.preventDefault();
+      window.location.href = 'login.html';
+    }
+
+    // Auto-detect ?portal=staff URL query
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('portal') === 'staff') {
+      selectSignupRole('staff');
+    }
+  </script>
+</body>
+</html>

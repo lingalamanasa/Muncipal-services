@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly | Municipal Civic Services Portal</title>
+  <meta name="description" content="Official Stackly Municipal Services Portal. Modern civic administration, online utility payments, citizen grievance redressal, and city telemetry.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom CSS (Black, White, Orange) -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/page-tracker.js"></script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SECTION 01: EMERGENCY BROADCAST & LIVE SENSOR TICKER
+       ========================================================================== -->
+  <section id="section-01-ticker" class="civic-alert-ticker" aria-label="City Alerts and Sensors">
+    <div class="civic-container-wide">
+      <div class="ticker-content-track">
+        <div class="ticker-item">
+          <span class="ticker-badge"><i class="fa-solid fa-bolt"></i> STACKLY SYSTEM ACTIVE</span>
+          <span>Municipal Operations Hub: 98.4% Public Services Fully Operational</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-badge outline"><i class="fa-solid fa-wind"></i> AQI 42 (GOOD)</span>
+          <span>Ambient Air Quality Index across 48 Ward Stations is Optimal</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-badge"><i class="fa-solid fa-bell"></i> NOTICE</span>
+          <span>Property Tax 5% Early-Bird Rebate deadline ending September 30</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-badge outline"><i class="fa-solid fa-droplet"></i> WATER SUPPLY</span>
+          <span>Main Reservoirs at 94% Capacity; Scheduled Supply Active</span>
+        </div>
+        <!-- Infinite marquee loop duplicate -->
+        <div class="ticker-item">
+          <span class="ticker-badge"><i class="fa-solid fa-bolt"></i> STACKLY SYSTEM ACTIVE</span>
+          <span>Municipal Operations Hub: 98.4% Public Services Fully Operational</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-badge outline"><i class="fa-solid fa-wind"></i> AQI 42 (GOOD)</span>
+          <span>Ambient Air Quality Index across 48 Ward Stations is Optimal</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NAVIGATION HEADER WITH STACKLY LOGO -->
+  <header class="civic-navbar">
+    <div class="civic-container nav-container">
+      <a href="index.html" class="brand-logo"><img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="brand-logo-img"></a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-item active">Home</a>
+        <a href="about.html" class="nav-item">About</a>
+        <a href="services.html" class="nav-item">Services</a>
+        <a href="blog.html" class="nav-item">Blog</a>
+        <a href="contact.html" class="nav-item">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="nav-btn-login">Login</a>
+        <a href="signup.html" class="nav-btn-signup">Sign Up</a>
+        <button class="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <span style="font-weight: 800; color: #0a0a0a; font-size: 1.2rem;">STACKLY MENU</span>
+      <button class="close-drawer-btn" style="background: none; border: none; color: #0a0a0a; font-size: 1.5rem; cursor: pointer;">&times;</button>
+    </div>
+    <a href="index.html" class="mobile-nav-link active">Home</a>
+    <a href="about.html" class="mobile-nav-link">About City</a>
+    <a href="services.html" class="mobile-nav-link">Citizen Services</a>
+    <a href="blog.html" class="mobile-nav-link">News & Blog</a>
+    <a href="contact.html" class="mobile-nav-link">Contact & Help</a>
+    <a href="login.html" class="mobile-nav-link"><i class="fa-solid fa-arrow-right-to-bracket" style="color: var(--brand-orange);"></i> Citizen Login</a>
+    <a href="signup.html" class="mobile-nav-link" style="color: var(--brand-orange);"><i class="fa-solid fa-user-plus"></i> Create Account</a>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         SECTION 02: HERO SECTION (Stackly Smart Governance Split Screen)
+         ========================================================================== -->
+    <section id="section-02-hero" class="section-wrapper" style="padding-top: 60px; padding-bottom: 80px; overflow: hidden; background: #ffffff; position: relative;">
+      <!-- Animated Background Image Slider Reel -->
+      <div class="hero-animated-bg-wrap">
+        <div class="hero-bg-slide-item active" style="background-image: url('images/hero-slide-1.webp');"></div>
+        <div class="hero-bg-slide-item" style="background-image: url('images/hero-slide-2.webp');"></div>
+        <div class="hero-bg-slide-item" style="background-image: url('images/hero-slide-3.webp');"></div>
+        <div class="hero-bg-slide-overlay"></div>
+      </div>
+      <div class="hero-slide-indicators">
+        <span class="hero-slide-dot active"></span>
+        <span class="hero-slide-dot"></span>
+        <span class="hero-slide-dot"></span>
+      </div>
+
+      <div class="civic-container hero-content">
+        <div class="hero-split-grid">
+          
+          <!-- Left Column: Civic Tag, Typewriter Title, Description, Search & Quick Links -->
+          <div class="hero-split-left">
+            <div class="hero-badge-tag" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 102, 0, 0.08); border: 1px solid var(--brand-orange-border); padding: 6px 16px; border-radius: 999px; margin-bottom: 20px;">
+              <span class="section-number">Section 01/10</span>
+              <span style="color: var(--brand-orange); font-size: 0.85rem; font-weight: 700;"><i class="fa-solid fa-circle-nodes"></i> Stackly Civic OS v5.0</span>
+            </div>
+
+            <h1 class="hero-main-title" style="font-family: var(--font-display); font-size: clamp(2.4rem, 4.4vw, 3.8rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 20px; color: #0a0a0a;">
+              Next-Gen Municipal Governance with <br>
+              <span class="highlight typewriter-text" data-words='["Smart Civic Services", "Transparent e-Governance", "Rapid 48-Hour SLAs", "Connected Infrastructure"]'>Smart Civic Services</span><span class="typewriter-cursor">|</span>
+            </h1>
+
+            <p class="hero-description" style="color: var(--text-muted); font-size: 1.12rem; line-height: 1.65; margin-bottom: 28px;">
+              Access 120+ digital municipal services, settle property taxes, report neighborhood civic issues with guaranteed 48-hour SLAs, and build a cleaner, smarter city with Stackly.
+            </p>
+
+            <!-- Dynamic Search Bar -->
+            <div class="civic-search-bar" style="margin-bottom: 24px; max-width: 580px;">
+              <i class="fa-solid fa-magnifying-glass" style="color: var(--brand-orange); margin-right: 12px; font-size: 1.1rem;"></i>
+              <input type="text" placeholder="Search: Property Tax, Birth Certificate, Trade License, Water Connection..." aria-label="Search Municipal Services">
+              <button type="button" class="btn-magnetic" onclick="window.location.href='services.html'">
+                <span>Explore</span> <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+
+            <!-- Quick Service Chips -->
+            <div class="hero-action-row" style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+              <span style="color: var(--text-dim); font-size: 0.85rem; font-weight: 600;">Popular:</span>
+              <a href="services.html#section-03-calculator" class="anim-spring" style="font-size: 0.82rem; font-weight: 600; padding: 6px 14px; background: #ffffff; border: 1px solid var(--border-medium); border-radius: 20px; color: #0a0a0a;"><i class="fa-solid fa-calculator" style="color: var(--brand-orange);"></i> Property Tax</a>
+              <a href="services.html#section-06-tracker" class="anim-spring" style="font-size: 0.82rem; font-weight: 600; padding: 6px 14px; background: #ffffff; border: 1px solid var(--border-medium); border-radius: 20px; color: #0a0a0a;"><i class="fa-solid fa-compass" style="color: var(--brand-orange);"></i> Grievance Tracker</a>
+              <a href="services.html#section-07-certificates" class="anim-spring" style="font-size: 0.82rem; font-weight: 600; padding: 6px 14px; background: #ffffff; border: 1px solid var(--border-medium); border-radius: 20px; color: #0a0a0a;"><i class="fa-solid fa-file-contract" style="color: var(--brand-orange);"></i> Trade License</a>
+            </div>
+          </div>
+
+          <!-- Right Column: 3D Tilt Visual Card with WebP Image & Floating Badges -->
+          <div class="hero-split-right card-tilt-wrap">
+            <div class="hero-visual-card card-tilt-inner">
+              <div class="image-reveal-frame">
+                <img src="images/hero-home.webp" alt="Stackly Municipal Smart Operations Center" style="width: 100%; height: 420px; object-fit: cover; border-radius: var(--radius-md);">
+              </div>
+
+              <!-- Top Floating Stat Tag -->
+              <div class="hero-stat-floating-tag anim-floating" style="top: -14px; right: -14px;">
+                <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--brand-orange-subtle); display: flex; align-items: center; justify-content: center; color: var(--brand-orange);">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div>
+                  <div style="font-weight: 800; font-size: 0.88rem; color: #0a0a0a;">100% Digital SLA</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted);">48h Rapid Resolution</div>
+                </div>
+              </div>
+
+              <!-- Bottom Floating Stat Tag -->
+              <div class="hero-stat-floating-tag anim-floating-reverse" style="bottom: -18px; left: -14px;">
+                <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--brand-orange-subtle); display: flex; align-items: center; justify-content: center; color: var(--brand-orange);">
+                  <i class="fa-solid fa-bolt"></i>
+                </div>
+                <div>
+                  <div style="font-weight: 800; font-size: 0.88rem; color: #0a0a0a;">Smart Grid Active</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted);">128k Connected Sensor Nodes</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 03: CORE CITIZEN SERVICES (8 Grid Cards)
+         ========================================================================== -->
+    <section id="section-03-services" class="section-wrapper">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 02/10</span>
+            <span class="section-tag">Citizen Portals</span>
+          </div>
+          <h2 class="section-title">Core Municipal <span class="highlight">e-Services</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Select any service directory to submit documents, self-assess dues, or request municipal utilities.</p>
+        </div>
+
+        <div class="services-grid-8">
+          <div class="service-box" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <div class="civic-card-img-wrap clip-reveal-wrap" style="height: 120px; margin-bottom: 12px;">
+              <div class="clip-reveal-curtain"></div>
+              <img src="images/service-property.webp" alt="Property Tax Assessment" class="clip-reveal-img">
+            </div>
+            <div>
+              <div class="service-icon-wrap"><i class="fa-solid fa-house-chimney-window"></i></div>
+              <h4>Property Tax Assessment</h4>
+              <p>Self-assess property dues, download annual clearance certificates, and claim the 5% early rebate.</p>
+            </div>
+            <a href="404error.html" class="service-link">Compute & Pay <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+
+          <div class="service-box" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <div class="civic-card-img-wrap clip-reveal-wrap" style="height: 120px; margin-bottom: 12px;">
+              <div class="clip-reveal-curtain"></div>
+              <img src="images/home-service-birth.webp" alt="Birth & Death Certificates" class="clip-reveal-img">
+            </div>
+            <div>
+              <div class="service-icon-wrap"><i class="fa-solid fa-id-card"></i></div>
+              <h4>Birth & Death Certificates</h4>
+              <p>Apply for certified vital registration records with cryptographic QR verification within 24 hours.</p>
+            </div>
+            <a href="404error.html" class="service-link">Apply Digitally <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+
+          <div class="service-box" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <div class="civic-card-img-wrap clip-reveal-wrap" style="height: 120px; margin-bottom: 12px;">
+              <div class="clip-reveal-curtain"></div>
+              <img src="images/service-trade.webp" alt="Trade Licenses & Merchant Clearances" class="clip-reveal-img">
+            </div>
+            <div>
+              <div class="service-icon-wrap"><i class="fa-solid fa-briefcase"></i></div>
+              <h4>Trade Licenses & Renewals</h4>
+              <p>Frictionless merchant license issuance, commercial permits, shop renewals, and fire clearance.</p>
+            </div>
+            <a href="404error.html" class="service-link">Renew License <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+
+          <div class="service-box" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <div class="civic-card-img-wrap clip-reveal-wrap" style="height: 120px; margin-bottom: 12px;">
+              <div class="clip-reveal-curtain"></div>
+              <img src="images/home-service-building.webp" alt="Building Plan Approvals" class="clip-reveal-img">
+            </div>
+            <div>
+              <div class="service-icon-wrap"><i class="fa-solid fa-ruler-combined"></i></div>
+              <h4>Building Plan Approvals</h4>
+              <p>Submit architectural blueprints online for automated master-plan zoning and fire safety checks.</p>
+            </div>
+            <a href="404error.html" class="service-link">Submit Plans <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+
+          <div class="service-box" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <div class="civic-card-img-wrap clip-reveal-wrap" style="height: 120px; margin-bottom: 12px;">
+              <div class="clip-reveal-curtain"></div>
+              <img src="images/service-water.webp" alt="Water Supply & Pipeline Hookup" class="clip-reveal-img">
+            </div>
+            <div>
+              <div class="service-icon-wrap"><i class="fa-solid fa-faucet-drip"></i></div>
+              <h4>Water & Drainage Hookup</h4>
+              <p>Request new potable pipeline connections, register pipeline maintenance, and pay digital meter bills.</p>
+            </div>
+            <a href="404error.html" class="service-link">Water Portal <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+
+          <div class="service-box" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <div class="civic-card-img-wrap clip-reveal-wrap" style="height: 120px; margin-bottom: 12px;">
+              <div class="clip-reveal-curtain"></div>
+              <img src="images/service-waste.webp" alt="Solid Waste & Doorstep Recycling" class="clip-reveal-img">
+            </div>
+            <div>
+              <div class="service-icon-wrap"><i class="fa-solid fa-recycle"></i></div>
+              <h4>Solid Waste & Recycling</h4>
+              <p>Schedule doorstep bulky trash pick-ups, order eco-compost bins, and track neighborhood route trucks.</p>
+            </div>
+            <a href="404error.html" class="service-link">Schedule Pickup <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+
+          <div class="service-box" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <div class="civic-card-img-wrap clip-reveal-wrap" style="height: 120px; margin-bottom: 12px;">
+              <div class="clip-reveal-curtain"></div>
+              <img src="images/home-service-pet.webp" alt="Pet Registry & Vaccines" class="clip-reveal-img">
+            </div>
+            <div>
+              <div class="service-icon-wrap"><i class="fa-solid fa-paw"></i></div>
+              <h4>Pet Registry & Vaccines</h4>
+              <p>Register domestic pets, obtain microchip credentials, and book free municipal anti-rabies doses.</p>
+            </div>
+            <a href="404error.html" class="service-link">Register Pet <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+
+          <div class="service-box" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <div class="civic-card-img-wrap clip-reveal-wrap" style="height: 120px; margin-bottom: 12px;">
+              <div class="clip-reveal-curtain"></div>
+              <img src="images/service-card-parking.webp" alt="Smart City Parking Decals" class="clip-reveal-img">
+            </div>
+            <div>
+              <div class="service-icon-wrap"><i class="fa-solid fa-square-parking"></i></div>
+              <h4>Smart City Parking Decals</h4>
+              <p>Reserve residential street permits, renew commercial parking decals, and inspect live stall availability.</p>
+            </div>
+            <a href="404error.html" class="service-link">Check Stalls <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 04: CITY COMMAND VITALS & LIVE TELEMETRY DASHBOARD
+         ========================================================================== -->
+    <section id="section-04-vitals" class="section-wrapper" style="background: #f8fafc;">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 03/10</span>
+            <span class="section-tag">Urban Telemetry</span>
+          </div>
+          <h2 class="section-title">City Vitals & <span class="highlight">Command Dashboard</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Live operational performance data synchronized every 60 seconds from the Central Municipal Control Center.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;" class="cards-grid-4">
+          <div class="counter-box">
+            <div style="font-size: 2rem; color: var(--brand-orange); margin-bottom: 12px;"><i class="fa-solid fa-clipboard-check"></i></div>
+            <div class="counter-value" data-target="98.7" data-suffix="%" data-decimals="1">0<span>%</span></div>
+            <div class="counter-label">Grievance SLA Compliance</div>
+            <div class="counter-spark">▲ +1.4% this quarter</div>
+          </div>
+
+          <div class="counter-box">
+            <div style="font-size: 2rem; color: var(--brand-orange); margin-bottom: 12px;"><i class="fa-solid fa-dumpster"></i></div>
+            <div class="counter-value" data-target="4320" data-suffix=" T" data-decimals="0">0<span> T</span></div>
+            <div class="counter-label">Daily Solid Waste Recycled</div>
+            <div class="counter-spark">92% Segregation Rate</div>
+          </div>
+
+          <div class="counter-box">
+            <div style="font-size: 2rem; color: var(--brand-orange); margin-bottom: 12px;"><i class="fa-solid fa-road"></i></div>
+            <div class="counter-value" data-target="18450" data-suffix="+" data-decimals="0">0<span>+</span></div>
+            <div class="counter-label">Potholes Repaired (YTD)</div>
+            <div class="counter-spark">Avg 32hr turnaround</div>
+          </div>
+
+          <div class="counter-box">
+            <div style="font-size: 2rem; color: var(--brand-orange); margin-bottom: 12px;"><i class="fa-solid fa-lightbulb"></i></div>
+            <div class="counter-value" data-target="128500" data-suffix=" LED" data-decimals="0">0<span> LED</span></div>
+            <div class="counter-label">Automated Smart Streetlights</div>
+            <div class="counter-spark">38% Grid Energy Saved</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 05: SMART CITY INNOVATION PILLARS (STATIC CARDS - NO ANIMATION)
+         ========================================================================== -->
+    <section id="section-05-pillars" class="section-wrapper">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 44px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 04/10</span>
+            <span class="section-tag">Urban Innovations</span>
+          </div>
+          <h2 class="section-title">Smart City <span class="highlight">Innovation Pillars</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto; max-width: 680px;">
+            Continuous real-time IoT monitoring across municipal smart grids, computer vision corridors, acoustic hydrology sensors, and emergency response fleets.
+          </p>
+        </div>
+
+        <div class="pillar-static-grid">
+          <!-- Pillar Card 1: Clean Energy -->
+          <div class="pillar-static-card">
+            <div class="pillar-media-header">
+              <img src="images/pillar-smart-grid.webp" alt="Clean Energy Microgrid">
+              <div class="pillar-badge-tag">
+                <i class="fa-solid fa-solar-panel" style="color: var(--brand-orange);"></i> 32MW ACTIVE
+              </div>
+            </div>
+            <div class="pillar-body">
+              <div>
+                <h3>Microgrid & Solar Power</h3>
+                <p>Municipal clean generation network with automated load-balancing and 2,500 household rooftop feeds.</p>
+                <div class="pillar-metrics-row">
+                  <div class="pillar-metric-cell">
+                    <div class="val">99.98%</div>
+                    <div class="lbl">Grid Uptime</div>
+                  </div>
+                  <div class="pillar-metric-cell">
+                    <div class="val">32.4 MW</div>
+                    <div class="lbl">Peak Output</div>
+                  </div>
+                </div>
+              </div>
+              <div class="pillar-status-footer">
+                <span style="display: flex; align-items: center; gap: 6px;"><span class="pulse-dot"></span> SCADA Telemetry Synced</span>
+                <span style="color: #64748b;">Live Feed</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pillar Card 2: AI Traffic & Mobility -->
+          <div class="pillar-static-card">
+            <div class="pillar-media-header">
+              <img src="images/pillar-traffic-ai.webp" alt="Intelligent Traffic & Mobility">
+              <div class="pillar-badge-tag">
+                <i class="fa-solid fa-traffic-light" style="color: var(--brand-orange);"></i> 140 INTERSECTIONS
+              </div>
+            </div>
+            <div class="pillar-body">
+              <div>
+                <h3>AI Traffic & Mobility</h3>
+                <p>Computer vision corridor management optimizing light cycles and clearing priority lanes for emergency units.</p>
+                <div class="pillar-metrics-row">
+                  <div class="pillar-metric-cell">
+                    <div class="val">-28%</div>
+                    <div class="lbl">Congestion</div>
+                  </div>
+                  <div class="pillar-metric-cell">
+                    <div class="val">98.4%</div>
+                    <div class="lbl">EV On-Time</div>
+                  </div>
+                </div>
+              </div>
+              <div class="pillar-status-footer">
+                <span style="display: flex; align-items: center; gap: 6px;"><span class="pulse-dot"></span> 140 Active Nodes</span>
+                <span style="color: #64748b;">Live Grid</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pillar Card 3: IoT Water Network (Clean real water plant photo, no 404!) -->
+          <div class="pillar-static-card">
+            <div class="pillar-media-header">
+              <img src="images/service-water.webp" alt="Automated Water Network">
+              <div class="pillar-badge-tag">
+                <i class="fa-solid fa-faucet-drip" style="color: var(--brand-orange);"></i> 94% PURITY
+              </div>
+            </div>
+            <div class="pillar-body">
+              <div>
+                <h3>Automated Water Grid</h3>
+                <p>Subterranean acoustic sensors detecting pressure fluctuations and pipeline pinholes before disruptions occur.</p>
+                <div class="pillar-metrics-row">
+                  <div class="pillar-metric-cell">
+                    <div class="val">94.8%</div>
+                    <div class="lbl">Purity Index</div>
+                  </div>
+                  <div class="pillar-metric-cell">
+                    <div class="val">1,850</div>
+                    <div class="lbl">Sensors</div>
+                  </div>
+                </div>
+              </div>
+              <div class="pillar-status-footer">
+                <span style="display: flex; align-items: center; gap: 6px;"><span class="pulse-dot"></span> Hydraulic Acoustic Live</span>
+                <span style="color: #64748b;">60s Cycle</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pillar Card 4: Rapid Emergency Dispatch -->
+          <div class="pillar-static-card">
+            <div class="pillar-media-header">
+              <img src="images/pillar-emergency-dispatch.webp" alt="Emergency Rapid Dispatch">
+              <div class="pillar-badge-tag">
+                <i class="fa-solid fa-truck-medical" style="color: var(--brand-orange);"></i> 4.8 MIN SLA
+              </div>
+            </div>
+            <div class="pillar-body">
+              <div>
+                <h3>Rapid Emergency Ops</h3>
+                <p>Integrated civic command center routing municipal fire, cardiac paramedic, and civil defense rescue squads.</p>
+                <div class="pillar-metrics-row">
+                  <div class="pillar-metric-cell">
+                    <div class="val">4.8 min</div>
+                    <div class="lbl">Mean Arrival</div>
+                  </div>
+                  <div class="pillar-metric-cell">
+                    <div class="val">64 Units</div>
+                    <div class="lbl">Active Crews</div>
+                  </div>
+                </div>
+              </div>
+              <div class="pillar-status-footer">
+                <span style="display: flex; align-items: center; gap: 6px;"><span class="pulse-dot"></span> 24/7 GIS Dispatch</span>
+                <span style="color: #64748b;">Zero Delay</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 06: ONGOING SMART INFRASTRUCTURE PROJECTS
+         ========================================================================== -->
+    <section id="section-06-projects" class="section-wrapper" style="background: #f8fafc;">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 05/10</span>
+            <span class="section-tag">Capital Works</span>
+          </div>
+          <h2 class="section-title">Major City <span class="highlight">Infrastructure Works</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Transparent public tracking of flagship capital infrastructure projects funded by municipal municipal bonds and tax revenue.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px;" class="cards-grid-3">
+          <div class="civic-card">
+            <div class="civic-card-img-wrap" style="height: 160px; margin-bottom: 14px;">
+              <img src="images/home-infra.webp" alt="Metro Blue Line Transit Expansion">
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="badge-status active"><i class="fa-solid fa-spinner fa-spin"></i> In Progress</span>
+              <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">CIP-2026-08</span>
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 8px;">Metro Blue Line Phase III</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.5; margin-bottom: 20px;">
+              14.2 km elevated transit extension connecting Tech Ridge to Central Civic Plaza with 8 electric stations.
+            </p>
+            <div style="margin-bottom: 12px;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 6px;">
+                <span style="color: var(--text-muted);">Completion Progress</span>
+                <strong style="color: var(--brand-orange);">78%</strong>
+              </div>
+              <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 999px; overflow: hidden;">
+                <div class="progress-fill" data-percent="78" style="height: 100%; width: 0%; background: var(--brand-orange);"></div>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--text-dim); padding-top: 14px; border-top: 1px solid var(--border-subtle);">
+              <span>Budget: <strong>$148.5M</strong></span>
+              <span>Est. Launch: <strong>Nov 2026</strong></span>
+            </div>
+          </div>
+
+          <div class="civic-card">
+            <div class="civic-card-img-wrap" style="height: 160px; margin-bottom: 14px;">
+              <img src="images/home-news-waterfront.webp" alt="Riverfront Eco-Promenade & Boardwalk">
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="badge-status active"><i class="fa-solid fa-spinner fa-spin"></i> In Progress</span>
+              <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">CIP-2026-14</span>
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 8px;">Riverfront Eco-Promenade</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.5; margin-bottom: 20px;">
+              Rejuvenation of 6.5 km industrial riverbank into continuous pedestrian boardwalk and cycling tracks.
+            </p>
+            <div style="margin-bottom: 12px;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 6px;">
+                <span style="color: var(--text-muted);">Completion Progress</span>
+                <strong style="color: var(--brand-orange);">62%</strong>
+              </div>
+              <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 999px; overflow: hidden;">
+                <div class="progress-fill" data-percent="62" style="height: 100%; width: 0%; background: var(--brand-orange);"></div>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--text-dim); padding-top: 14px; border-top: 1px solid var(--border-subtle);">
+              <span>Budget: <strong>$42.0M</strong></span>
+              <span>Est. Launch: <strong>Jan 2027</strong></span>
+            </div>
+          </div>
+
+          <div class="civic-card">
+            <div class="civic-card-img-wrap" style="height: 160px; margin-bottom: 14px;">
+              <img src="images/home-news-energy.webp" alt="Waste-To-Energy Clean Power Facility">
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="badge-status white"><i class="fa-solid fa-clock"></i> Tendering Phase</span>
+              <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">CIP-2026-22</span>
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 8px;">Waste-To-Energy Facility</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.5; margin-bottom: 20px;">
+              Advanced refuse-derived fuel plant converting 1,200 metric tons of municipal waste into 32MW clean power.
+            </p>
+            <div style="margin-bottom: 12px;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 6px;">
+                <span style="color: var(--text-muted);">Completion Progress</span>
+                <strong style="color: var(--brand-orange);">35%</strong>
+              </div>
+              <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 999px; overflow: hidden;">
+                <div class="progress-fill" data-percent="35" style="height: 100%; width: 0%; background: var(--brand-orange);"></div>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--text-dim); padding-top: 14px; border-top: 1px solid var(--border-subtle);">
+              <span>Budget: <strong>$89.2M</strong></span>
+              <span>Est. Launch: <strong>Aug 2027</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 07: EMERGENCY SERVICES & 24/7 HELPLINES
+         ========================================================================== -->
+    <section id="section-07-emergency" class="section-wrapper">
+      <div class="civic-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <div class="section-meta" style="justify-content: center;">
+            <span class="section-number">Section 06/10</span>
+            <span class="section-tag" style="color: var(--brand-orange);">Public Safety First</span>
+          </div>
+          <h2 class="section-title">24/7 Emergency & <span class="highlight">Disaster Helplines</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Direct one-touch toll-free lines for immediate municipal response, emergency fire units, medical dispatch, and disaster relief.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;" class="emergency-cards-grid">
+          <a href="tel:911" class="civic-card emergency-card" style="text-align: center; border-color: var(--brand-orange-border);">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--brand-orange-subtle); color: var(--brand-orange); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 16px;">
+              <i class="fa-solid fa-truck-medical"></i>
+            </div>
+            <h4 style="color: #0a0a0a; font-size: 1.2rem; margin-bottom: 4px;">City Ambulance</h4>
+            <div style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--brand-orange);">102 / 911</div>
+            <span style="font-size: 0.78rem; color: var(--text-muted);">Avg. Arrival: 7.2 mins</span>
+          </a>
+
+          <a href="tel:101" class="civic-card emergency-card" style="text-align: center; border-color: var(--brand-orange-border);">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--brand-orange-subtle); color: var(--brand-orange); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 16px;">
+              <i class="fa-solid fa-fire-extinguisher"></i>
+            </div>
+            <h4 style="color: #0a0a0a; font-size: 1.2rem; margin-bottom: 4px;">Fire & Rescue</h4>
+            <div style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--brand-orange);">101</div>
+            <span style="font-size: 0.78rem; color: var(--text-muted);">18 Stations Citywide</span>
+          </a>
+
+          <a href="tel:100" class="civic-card emergency-card" style="text-align: center; border-color: var(--brand-orange-border);">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--brand-orange-subtle); color: var(--brand-orange); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 16px;">
+              <i class="fa-solid fa-shield-cat"></i>
+            </div>
+            <h4 style="color: #0a0a0a; font-size: 1.2rem; margin-bottom: 4px;">Police Control</h4>
+            <div style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--brand-orange);">100</div>
+            <span style="font-size: 0.78rem; color: var(--text-muted);">Smart Patrol Fleet</span>
+          </a>
+
+          <a href="tel:1916" class="civic-card emergency-card" style="text-align: center; border-color: var(--brand-orange-border);">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--brand-orange-subtle); color: var(--brand-orange); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 16px;">
+              <i class="fa-solid fa-headset"></i>
+            </div>
+            <h4 style="color: #0a0a0a; font-size: 1.2rem; margin-bottom: 4px;">Civic Helpdesk</h4>
+            <div style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--brand-orange);">1916</div>
+            <span style="font-size: 0.78rem; color: var(--text-muted);">24/7 Citizen Care</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 08: PUBLIC GAZETTES, NOTICES & TENDERS
+         ========================================================================== -->
+    <section id="section-08-notices" class="section-wrapper" style="background: #f8fafc;">
+      <div class="civic-container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 36px; flex-wrap: wrap; gap: 20px;">
+          <div>
+            <div class="section-meta">
+              <span class="section-number">Section 07/10</span>
+              <span class="section-tag">Public Transparency</span>
+            </div>
+            <h2 class="section-title" style="margin-bottom: 0;">Gazette Notices & <span class="highlight">Active Tenders</span></h2>
+          </div>
+          <a href="blog.html" class="service-link" style="font-size: 1rem;">
+            View All Press Bulletins <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;" class="notice-cards">
+          <div class="civic-card" style="padding: 24px;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 12px;">
+              <span style="color: var(--brand-orange); font-family: var(--font-mono); font-weight: 700;">STK/TEND/2026/049</span>
+              <span style="color: var(--text-dim);">Due: Oct 04, 2026</span>
+            </div>
+            <h4 style="color: #0a0a0a; font-size: 1.1rem; margin-bottom: 8px;">Supply and Maintenance of 5,000 IoT Smart Water Flow Meters</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px;">
+              Public procurement open for registered Class-A municipal hardware vendors.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 12px;">
+              <a href="404error.html" class="badge-status active" style="text-decoration: none;"><i class="fa-solid fa-file-pdf"></i> E-Bid Open</a>
+              <a href="404error.html" style="color: var(--brand-orange); font-size: 0.85rem; font-weight: 700; cursor: pointer;">Download RFP <i class="fa-solid fa-download"></i></a>
+            </div>
+          </div>
+
+          <div class="civic-card" style="padding: 24px;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 12px;">
+              <span style="color: var(--brand-orange); font-family: var(--font-mono); font-weight: 700;">STK/PUB/2026/112</span>
+              <span style="color: var(--text-dim);">Published: Sep 15, 2026</span>
+            </div>
+            <h4 style="color: #0a0a0a; font-size: 1.1rem; margin-bottom: 8px;">Notification of Ward 07 Street Paving and Temporary Traffic Diversions</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px;">
+              Resurfacing operations on Grand Avenue scheduled between 10:00 PM and 5:00 AM.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 12px;">
+              <a href="404error.html" class="badge-status white" style="text-decoration: none;"><i class="fa-solid fa-triangle-exclamation"></i> Advisory</a>
+              <a href="404error.html" style="color: var(--brand-orange); font-size: 0.85rem; font-weight: 700;">Route Map <i class="fa-solid fa-map"></i></a>
+            </div>
+          </div>
+
+          <div class="civic-card" style="padding: 24px;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 12px;">
+              <span style="color: var(--brand-orange); font-family: var(--font-mono); font-weight: 700;">STK/HR/2026/028</span>
+              <span style="color: var(--text-dim);">Deadline: Sep 28, 2026</span>
+            </div>
+            <h4 style="color: #0a0a0a; font-size: 1.1rem; margin-bottom: 8px;">Direct Recruitment: Junior Environmental Engineers & Health Inspectors</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px;">
+              64 vacancies in the Municipal Sanitation Directorate. Apply via Central Portal.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 12px;">
+              <a href="404error.html" class="badge-status active" style="text-decoration: none;"><i class="fa-solid fa-briefcase"></i> Careers</a>
+              <a href="404error.html" style="color: var(--brand-orange); font-size: 0.85rem; font-weight: 700;">Eligibility <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 09: MAYOR'S LEADERSHIP SPOTLIGHT
+         ========================================================================== -->
+    <section id="section-09-leadership" class="section-wrapper">
+      <div class="civic-container">
+        <div class="civic-card" style="padding: 48px; border-color: var(--brand-orange-border);">
+          <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center;">
+            <div style="text-align: center;">
+              <div style="width: 180px; height: 180px; border-radius: 50%; margin: 0 auto 20px; background: var(--brand-orange); padding: 4px; box-shadow: var(--brand-orange-glow); overflow: hidden;">
+                <img src="images/home-mayor.webp" alt="Hon. Elena Rostova, City Mayor" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; border-radius: 50%;">
+              </div>
+              <h3 style="font-family: var(--font-display); font-size: 1.4rem; color: #0a0a0a; margin-bottom: 4px;">Hon. Elena Rostova</h3>
+              <div style="font-size: 0.9rem; color: var(--brand-orange); font-weight: 700;">City Mayor & Council President</div>
+              <div style="font-size: 0.8rem; color: var(--text-dim); margin-top: 4px;">Term: 2024 — 2028</div>
+            </div>
+
+            <div>
+              <div class="section-meta">
+                <span class="section-number">Section 08/10</span>
+                <span class="section-tag">Executive Message</span>
+              </div>
+              <h2 class="section-title" style="font-size: 2.2rem; margin-bottom: 16px;">
+                "A Sustainable, Resilient, & <span class="highlight">Inclusive City For All</span>"
+              </h2>
+              <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px;">
+                "With Stackly, we are modernizing our city's public digital infrastructure. From instant grievance redressal with guaranteed 48-hour SLAs to expanding our urban solar canopy, our administration ensures every civic dollar delivers measurable value."
+              </p>
+              
+              <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                <a href="404error.html" class="btn-portal-action btn-magnetic">
+                  <i class="fa-solid fa-users"></i> Meet the Council
+                </a>
+                <a href="404error.html" class="btn-outline-white">
+                  <i class="fa-solid fa-envelope"></i> Contact Office
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 10: CIVIC LIFE & METROPOLIS PHOTOSTREAM (HORIZONTAL SCROLLING MARQUEE)
+         ========================================================================== -->
+    <section id="section-10-photostream" class="marquee-stream-section">
+      <div class="civic-container" style="margin-bottom: 24px;">
+        <div class="marquee-controls-bar">
+          <div>
+            <div class="section-meta">
+              <span class="section-number">Section 09/10</span>
+              <span class="section-tag">Continuous Stream</span>
+            </div>
+            <h2 class="section-title" style="margin-bottom: 8px;">Civic Life & <span class="highlight">Metropolis Photostream</span></h2>
+            <p class="section-subtitle" style="margin: 0; max-width: 650px;">
+              Continuous horizontal visual reel showcasing municipal public spaces, zero-emission transit, civic architecture, and active ward communities.
+            </p>
+          </div>
+          <div>
+            <button type="button" id="marqueeTogglePlay" class="btn-portal-action" onclick="window.location.href='404error.html';" style="padding: 10px 18px; font-size: 0.85rem; cursor: pointer;">
+              <i class="fa-solid fa-pause"></i> Pause Stream
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Infinite Dual-Row Horizontal Marquee Reel -->
+      <div class="marquee-stream-track-wrap">
+        <!-- Row 1: Flowing Left -->
+        <div class="marquee-row marquee-row-left">
+          <!-- Card 1 -->
+          <div class="marquee-item-card" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <img src="images/stream-city-skyline.webp" alt="Downtown Metropolis Sunset">
+            <div class="marquee-card-overlay">
+              <span class="marquee-card-badge" onclick="event.stopPropagation(); window.location.href='404error.html';"><i class="fa-solid fa-camera"></i> WARD 01</span>
+              <div class="marquee-card-title">Downtown Civic Skyline</div>
+              <div class="marquee-card-subtitle"><i class="fa-solid fa-location-dot"></i> Central Administrative District</div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="marquee-item-card" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <img src="images/stream-eco-park.webp" alt="Green Ridge Canopy Reserve">
+            <div class="marquee-card-overlay">
+              <span class="marquee-card-badge" onclick="event.stopPropagation(); window.location.href='404error.html';"><i class="fa-solid fa-tree"></i> ECO PARK</span>
+              <div class="marquee-card-title">Green Ridge Canopy Reserve</div>
+              <div class="marquee-card-subtitle"><i class="fa-solid fa-leaf"></i> 400 Hectares Urban Forest</div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="marquee-item-card" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <img src="images/stream-night-festival.webp" alt="Lantern Night Art Festival">
+            <div class="marquee-card-overlay">
+              <span class="marquee-card-badge" onclick="event.stopPropagation(); window.location.href='404error.html';"><i class="fa-solid fa-sparkles"></i> COMMUNITY</span>
+              <div class="marquee-card-title">Civic Plaza Night Festival</div>
+              <div class="marquee-card-subtitle"><i class="fa-solid fa-people-group"></i> Annual Cultural Gathering</div>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="marquee-item-card" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <img src="images/stream-clean-metro.webp" alt="Zero-Emission Transit Corridor">
+            <div class="marquee-card-overlay">
+              <span class="marquee-card-badge" onclick="event.stopPropagation(); window.location.href='404error.html';"><i class="fa-solid fa-train-subway"></i> TRANSIT</span>
+              <div class="marquee-card-title">Electric Rapid Transit</div>
+              <div class="marquee-card-subtitle"><i class="fa-solid fa-bolt"></i> 100% Clean Energy Powered</div>
+            </div>
+          </div>
+
+          <!-- Duplicate Set for Seamless Loop -->
+          <div class="marquee-item-card" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <img src="images/stream-city-skyline.webp" alt="Downtown Metropolis Sunset">
+            <div class="marquee-card-overlay">
+              <span class="marquee-card-badge" onclick="event.stopPropagation(); window.location.href='404error.html';"><i class="fa-solid fa-camera"></i> WARD 01</span>
+              <div class="marquee-card-title">Downtown Civic Skyline</div>
+              <div class="marquee-card-subtitle"><i class="fa-solid fa-location-dot"></i> Central Administrative District</div>
+            </div>
+          </div>
+          <div class="marquee-item-card" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <img src="images/stream-eco-park.webp" alt="Green Ridge Canopy Reserve">
+            <div class="marquee-card-overlay">
+              <span class="marquee-card-badge" onclick="event.stopPropagation(); window.location.href='404error.html';"><i class="fa-solid fa-tree"></i> ECO PARK</span>
+              <div class="marquee-card-title">Green Ridge Canopy Reserve</div>
+              <div class="marquee-card-subtitle"><i class="fa-solid fa-leaf"></i> 400 Hectares Urban Forest</div>
+            </div>
+          </div>
+          <div class="marquee-item-card" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <img src="images/stream-night-festival.webp" alt="Lantern Night Art Festival">
+            <div class="marquee-card-overlay">
+              <span class="marquee-card-badge" onclick="event.stopPropagation(); window.location.href='404error.html';"><i class="fa-solid fa-sparkles"></i> COMMUNITY</span>
+              <div class="marquee-card-title">Civic Plaza Night Festival</div>
+              <div class="marquee-card-subtitle"><i class="fa-solid fa-people-group"></i> Annual Cultural Gathering</div>
+            </div>
+          </div>
+          <div class="marquee-item-card" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <img src="images/stream-clean-metro.webp" alt="Zero-Emission Transit Corridor">
+            <div class="marquee-card-overlay">
+              <span class="marquee-card-badge" onclick="event.stopPropagation(); window.location.href='404error.html';"><i class="fa-solid fa-train-subway"></i> TRANSIT</span>
+              <div class="marquee-card-title">Electric Rapid Transit</div>
+              <div class="marquee-card-subtitle"><i class="fa-solid fa-bolt"></i> 100% Clean Energy Powered</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2: Flowing Right -->
+        <div class="marquee-row marquee-row-right">
+          <!-- Card 5 -->
+          <div class="marquee-item-card" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <img src="images/stream-public-library.webp" alt="Central Public Library Atrium">
+            <div class="marquee-card-overlay">
+              <span class="marquee-card-badge" onclick="event.stopPropagation(); window.location.href='404error.html';"><i class="fa-solid fa-book-open"></i> LEARNING</span>
+              <div class="marquee-card-title">Central Public Library</div>
+              <div class="marquee-card-subtitle"><i class="fa-solid fa-landmark"></i> Free Digital Maker Studio</div>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div class="marquee-item-card" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <img src="images/stream-sports-complex.webp" alt="Municipal Olympic Sports Arena">
+            <div class="marquee-card-overlay">
+              <span class="marquee-card-badge" onclick="event.stopPropagation(); window.location.href='404error.html';"><i class="fa-solid fa-medal"></i> ATHLETICS</span>
+              <div class="marquee-card-title">Ward 04 Sports Arena</div>
+              <div class="marquee-card-subtitle"><i class="fa-solid fa-dumbbell"></i> Public Track & Aquatics</div>
+            </div>
+          </div>
+          <!-- Card 7 -->
+          <div class="marquee-item-card" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <img src="images/stream-riverwalk.webp" alt="Silverwood Riverwalk Promenade">
+            <div class="marquee-card-overlay">
+              <span class="marquee-card-badge" onclick="event.stopPropagation(); window.location.href='404error.html';"><i class="fa-solid fa-water"></i> WATERFRONT</span>
+              <div class="marquee-card-title">Riverwalk Promenade</div>
+              <div class="marquee-card-subtitle"><i class="fa-solid fa-bicycle"></i> 6.5 km Continuous Trail</div>
+            </div>
+          </div>
+          <!-- Card 8 -->
+          <div class="marquee-item-card" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <img src="images/stream-green-building.webp" alt="Biophilic Civic Headquarters">
+            <div class="marquee-card-overlay">
+              <span class="marquee-card-badge" onclick="event.stopPropagation(); window.location.href='404error.html';"><i class="fa-solid fa-seedling"></i> BIOPHILIC</span>
+              <div class="marquee-card-title">Civic Innovation Tower</div>
+              <div class="marquee-card-subtitle"><i class="fa-solid fa-building"></i> Net-Zero LEED Platinum</div>
+            </div>
+          </div>
+
+          <!-- Duplicate Set for Seamless Loop -->
+          <div class="marquee-item-card" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <img src="images/stream-public-library.webp" alt="Central Public Library Atrium">
+            <div class="marquee-card-overlay">
+              <span class="marquee-card-badge" onclick="event.stopPropagation(); window.location.href='404error.html';"><i class="fa-solid fa-book-open"></i> LEARNING</span>
+              <div class="marquee-card-title">Central Public Library</div>
+              <div class="marquee-card-subtitle"><i class="fa-solid fa-landmark"></i> Free Digital Maker Studio</div>
+            </div>
+          </div>
+          <div class="marquee-item-card" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <img src="images/stream-sports-complex.webp" alt="Municipal Olympic Sports Arena">
+            <div class="marquee-card-overlay">
+              <span class="marquee-card-badge" onclick="event.stopPropagation(); window.location.href='404error.html';"><i class="fa-solid fa-medal"></i> ATHLETICS</span>
+              <div class="marquee-card-title">Ward 04 Sports Arena</div>
+              <div class="marquee-card-subtitle"><i class="fa-solid fa-dumbbell"></i> Public Track & Aquatics</div>
+            </div>
+          </div>
+          <div class="marquee-item-card" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <img src="images/stream-riverwalk.webp" alt="Silverwood Riverwalk Promenade">
+            <div class="marquee-card-overlay">
+              <span class="marquee-card-badge" onclick="event.stopPropagation(); window.location.href='404error.html';"><i class="fa-solid fa-water"></i> WATERFRONT</span>
+              <div class="marquee-card-title">Riverwalk Promenade</div>
+              <div class="marquee-card-subtitle"><i class="fa-solid fa-bicycle"></i> 6.5 km Continuous Trail</div>
+            </div>
+          </div>
+          <div class="marquee-item-card" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+            <img src="images/stream-green-building.webp" alt="Biophilic Civic Headquarters">
+            <div class="marquee-card-overlay">
+              <span class="marquee-card-badge" onclick="event.stopPropagation(); window.location.href='404error.html';"><i class="fa-solid fa-seedling"></i> BIOPHILIC</span>
+              <div class="marquee-card-title">Civic Innovation Tower</div>
+              <div class="marquee-card-subtitle"><i class="fa-solid fa-building"></i> Net-Zero LEED Platinum</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 11: CIVIC AI ASSISTANT & ANIMATED CHARACTER MASCOT (STACKY)
+         ========================================================================== -->
+    <section id="section-11-character-assistant" class="civic-character-section">
+      <!-- Background City Skyline & Promenade Silhouette -->
+      <div class="character-promenade-backdrop"></div>
+
+      <div class="civic-container">
+        <div class="character-grid">
+          
+          <!-- Column 1: Interactive Dialogue & Quick Assistance Card -->
+          <div class="character-dialogue-col">
+            <div class="character-badge-wrap">
+              <span class="character-badge-dot"></span>
+              <span style="font-size: 0.82rem; font-weight: 700; color: var(--brand-orange);"><i class="fa-solid fa-sparkles"></i> Interactive Character Animation</span>
+            </div>
+
+            <h2 class="character-title">
+              Meet <span class="highlight">Stacky</span>, Your Smart Civic Guide!
+            </h2>
+            <p class="character-desc">
+              Interact with our animated municipal assistant. Click on Stacky to trigger cheerful reactions, hear helpful civic tips, or explore municipal portals with zero hassle.
+            </p>
+
+            <!-- Dynamic Interactive Speech Bubble Card -->
+            <div class="character-speech-card">
+              <div class="speech-card-header">
+                <div class="speech-sender">
+                  <i class="fa-solid fa-robot"></i>
+                  <span>Stacky (Civic Mascot)</span>
+                </div>
+                <div class="speech-status-tag">
+                  <span class="character-badge-dot" style="width: 6px; height: 6px;"></span> Active & Online
+                </div>
+              </div>
+
+              <!-- Animated Speech Content -->
+              <div id="stackySpeechText" class="speech-content-text">
+                "👋 Hello Citizen! I'm <strong>Stacky</strong>, your 24/7 AI civic companion. How can I assist you with city services today?"
+              </div>
+
+              <!-- Action Link (Dynamically updated) -->
+              <div id="stackyDynamicActionWrap" style="margin-bottom: 14px;">
+                <a id="stackyDynamicLink" href="404error.html" class="speech-portal-btn">
+                  <i class="fa-solid fa-compass"></i> Explore All Services
+                </a>
+              </div>
+
+              <!-- Dialogue Prompts / Chips -->
+              <div class="speech-actions-row">
+                <button type="button" class="speech-action-chip active" data-topic="welcome" onclick="window.location.href='404error.html';">
+                  <i class="fa-solid fa-hand-wave"></i> Say Hello
+                </button>
+                <button type="button" class="speech-action-chip" data-topic="taxes" onclick="window.location.href='404error.html';">
+                  <i class="fa-solid fa-receipt"></i> Pay Taxes
+                </button>
+                <button type="button" class="speech-action-chip" data-topic="grievance" onclick="window.location.href='404error.html';">
+                  <i class="fa-solid fa-bullhorn"></i> File Grievance
+                </button>
+                <button type="button" class="speech-action-chip" data-topic="cityhall" onclick="window.location.href='404error.html';">
+                  <i class="fa-solid fa-location-dot"></i> Salem HQ
+                </button>
+                <button type="button" class="speech-action-chip" data-topic="green" onclick="window.location.href='404error.html';">
+                  <i class="fa-solid fa-leaf"></i> Green City
+                </button>
+              </div>
+            </div>
+
+            <!-- Quick Control Toolbar (Wave, Dance, Walk, Fact) -->
+            <div class="character-controls-toolbar">
+              <span style="font-size: 0.8rem; font-weight: 700; color: #64748b; margin-right: 4px;">Animations:</span>
+              <button type="button" id="btnCharWave" class="char-ctl-btn" onclick="window.location.href='404error.html';">
+                <i class="fa-solid fa-hand"></i> Wave
+              </button>
+              <button type="button" id="btnCharDance" class="char-ctl-btn" onclick="window.location.href='404error.html';">
+                <i class="fa-solid fa-music"></i> Dance & Celebrate
+              </button>
+              <button type="button" id="btnCharPatrol" class="char-ctl-btn" onclick="window.location.href='404error.html';">
+                <i class="fa-solid fa-person-walking"></i> Stroll Promenade
+              </button>
+              <button type="button" id="btnCharSound" class="char-ctl-btn" onclick="window.location.href='404error.html';">
+                <i class="fa-solid fa-volume-high"></i> Play Chime
+              </button>
+            </div>
+          </div>
+
+          <!-- Column 2: Animated Character Stage & Canvas -->
+          <div class="character-visual-col">
+            <div id="characterStageArena" class="character-stage-arena">
+              
+              <!-- Street Lamp Decor -->
+              <div class="stage-street-lamp">
+                <div class="stage-lamp-post"></div>
+                <div class="stage-lamp-arm"></div>
+                <div class="stage-lamp-head"></div>
+                <div class="stage-lamp-glow-cone"></div>
+              </div>
+
+              <!-- Orbiting Civic Badges -->
+              <div class="stage-orbit-badge badge-float-1">
+                <i class="fa-solid fa-shield-halved" style="color: var(--brand-orange);"></i> 99.4% SLA Resolved
+              </div>
+              <div class="stage-orbit-badge badge-float-2">
+                <i class="fa-solid fa-leaf" style="color: #10b981;"></i> Zero-Carbon Transit
+              </div>
+
+              <!-- Interactive Stacky Vector SVG Mascot -->
+              <div id="stackyMascot" class="stacky-interactive-wrap" title="Click me to celebrate!">
+                <svg class="stacky-svg-canvas" viewBox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <!-- Linear Gradients -->
+                    <linearGradient id="stackyWhiteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#ffffff" />
+                      <stop offset="60%" stop-color="#f8fafc" />
+                      <stop offset="100%" stop-color="#e2e8f0" />
+                    </linearGradient>
+
+                    <linearGradient id="stackyOrangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#ff7b00" />
+                      <stop offset="100%" stop-color="#e05500" />
+                    </linearGradient>
+
+                    <linearGradient id="stackyVisorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#0f172a" />
+                      <stop offset="100%" stop-color="#1e293b" />
+                    </linearGradient>
+
+                    <linearGradient id="stackyHoloGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+                      <stop offset="0%" stop-color="rgba(56, 189, 248, 0.65)" />
+                      <stop offset="100%" stop-color="rgba(56, 189, 248, 0.05)" />
+                    </linearGradient>
+
+                    <linearGradient id="stackyFlameGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#fde047" />
+                      <stop offset="50%" stop-color="#ff6600" />
+                      <stop offset="100%" stop-color="rgba(255, 102, 0, 0)" />
+                    </linearGradient>
+
+                    <!-- Glow Filters -->
+                    <filter id="cyanGlow" x="-30%" y="-30%" width="160%" height="160%">
+                      <feGaussianBlur stdDeviation="3.5" result="blur" />
+                      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
+                    <filter id="orangeGlow" x="-30%" y="-30%" width="160%" height="160%">
+                      <feGaussianBlur stdDeviation="4.5" result="blur" />
+                      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
+                  </defs>
+
+                  <!-- Ground Shadow -->
+                  <ellipse cx="160" cy="355" rx="72" ry="12" fill="rgba(15, 23, 42, 0.14)" class="stacky-ground-shadow" />
+
+                  <!-- Main Character Floating Group -->
+                  <g class="stacky-body-group">
+                    
+                    <!-- Thruster Flame / Hover Propulsion -->
+                    <path class="stacky-thruster" d="M142 312 Q160 348 178 312 Q160 326 142 312 Z" fill="url(#stackyFlameGrad)" />
+
+                    <!-- Hover Propulsion Pad / Feet -->
+                    <rect x="130" y="292" width="60" height="22" rx="10" fill="#334155" />
+                    <rect x="136" y="286" width="48" height="12" rx="6" fill="url(#stackyOrangeGrad)" />
+
+                    <!-- Torso -->
+                    <rect x="110" y="165" width="100" height="122" rx="28" fill="url(#stackyWhiteGrad)" stroke="#cbd5e1" stroke-width="2.5" />
+                    
+                    <!-- Chest Belt & Trim -->
+                    <path d="M112 215 Q160 228 208 215" stroke="#e2e8f0" stroke-width="3" fill="none" />
+                    <rect x="132" y="270" width="56" height="8" rx="4" fill="#64748b" />
+
+                    <!-- Chest Glowing Emblem (Stackly Civic Shield) -->
+                    <circle cx="160" cy="226" r="21" fill="#0f172a" stroke="#ff6600" stroke-width="3" />
+                    <path d="M152 217 Q165 214 167 221 Q169 228 156 230 Q152 234 167 236" stroke="#ff6600" stroke-width="3.5" stroke-linecap="round" fill="none" filter="url(#orangeGlow)" />
+
+                    <!-- Municipal Mini LED Indicators -->
+                    <circle cx="134" cy="254" r="3.5" fill="#10b981" />
+                    <circle cx="146" cy="254" r="3.5" fill="#38bdf8" />
+                    <circle cx="158" cy="254" r="3.5" fill="#ff6600" />
+
+                    <!-- Left Arm: Holding Holographic Tablet -->
+                    <g class="stacky-arm-left">
+                      <path d="M115 185 Q82 205 75 238" stroke="#cbd5e1" stroke-width="16" stroke-linecap="round" fill="none" />
+                      <!-- Hand -->
+                      <circle cx="74" cy="242" r="10" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2" />
+                      <!-- Civic Tablet -->
+                      <rect x="44" y="222" width="46" height="34" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="2" />
+                      <line x1="50" y1="234" x2="84" y2="234" stroke="#38bdf8" stroke-width="1.5" />
+                      <line x1="50" y1="242" x2="72" y2="242" stroke="#10b981" stroke-width="1.5" />
+                      <!-- Hologram Beam radiating upwards -->
+                      <polygon points="46,222 88,222 108,162 26,162" fill="url(#stackyHoloGrad)" class="stacky-holo-beam" />
+                      <!-- Hologram Civic Icon -->
+                      <circle cx="67" cy="180" r="12" fill="none" stroke="#38bdf8" stroke-width="2" />
+                      <path d="M61 180 L65 184 L73 176" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                    </g>
+
+                    <!-- Right Arm: Articulated & Continuous Wave Animation -->
+                    <g class="stacky-arm-right">
+                      <path d="M205 185 Q242 175 258 142" stroke="#cbd5e1" stroke-width="16" stroke-linecap="round" fill="none" />
+                      <!-- Right Hand Palm & Waving Fingers -->
+                      <circle cx="262" cy="135" r="11" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2" />
+                      <ellipse cx="268" cy="122" rx="4" ry="7" fill="#e2e8f0" transform="rotate(15 268 122)" />
+                      <ellipse cx="260" cy="120" rx="4" ry="8" fill="#e2e8f0" />
+                      <ellipse cx="252" cy="123" rx="4" ry="7" fill="#e2e8f0" transform="rotate(-15 252 123)" />
+                    </g>
+
+                    <!-- Neck Joint -->
+                    <rect x="145" y="150" width="30" height="18" rx="5" fill="#475569" />
+
+                    <!-- Head & Helmet Group -->
+                    <g class="stacky-head-group">
+                      
+                      <!-- Antenna Rod -->
+                      <line x1="160" y1="72" x2="160" y2="34" stroke="#94a3b8" stroke-width="4.5" stroke-linecap="round" />
+                      <!-- Pulsing Antenna Beacon Light -->
+                      <circle cx="160" cy="32" r="9" fill="#ff6600" filter="url(#orangeGlow)" />
+                      <!-- Expanding Concentric Radio Wave Rings -->
+                      <circle cx="160" cy="32" r="14" fill="none" stroke="#ff6600" stroke-width="2.5" class="stacky-antenna-ring" />
+                      <circle cx="160" cy="32" r="22" fill="none" stroke="#ff6600" stroke-width="1.8" class="stacky-antenna-ring ring-delay" />
+
+                      <!-- Head Chassis -->
+                      <rect x="100" y="68" width="120" height="92" rx="36" fill="url(#stackyWhiteGrad)" stroke="#cbd5e1" stroke-width="2.5" />
+
+                      <!-- Municipal Orange Visor Cap / Crown -->
+                      <path d="M96 82 Q160 56 224 82 L220 68 Q160 48 100 68 Z" fill="url(#stackyOrangeGrad)" />
+                      <!-- Cap Emblem Badge -->
+                      <circle cx="160" cy="70" r="7.5" fill="#ffffff" />
+                      <text x="160" y="73" font-size="7.5" font-weight="900" fill="#ff6600" text-anchor="middle" font-family="sans-serif">S</text>
+
+                      <!-- Face Visor Screen (Glossy Dark Glass) -->
+                      <rect x="112" y="88" width="96" height="58" rx="18" fill="url(#stackyVisorGrad)" stroke="#334155" stroke-width="2" />
+                      <!-- Gloss Glass Reflection Highlight -->
+                      <path d="M116 93 Q160 84 200 95 A 16 16 0 0 0 185 91 Q150 84 122 91 Z" fill="rgba(255,255,255,0.22)" />
+
+                      <!-- Glowing Electric Cyan Digital Eyes -->
+                      <g class="stacky-eyes-group">
+                        <ellipse cx="138" cy="114" rx="9" ry="12" fill="#38bdf8" class="stacky-eye" filter="url(#cyanGlow)" />
+                        <circle cx="140" cy="111" r="3.2" fill="#ffffff" />
+
+                        <ellipse cx="182" cy="114" rx="9" ry="12" fill="#38bdf8" class="stacky-eye" filter="url(#cyanGlow)" />
+                        <circle cx="184" cy="111" r="3.2" fill="#ffffff" />
+                      </g>
+
+                      <!-- Warm Orange LED Blush Dots -->
+                      <circle cx="125" cy="130" r="6" fill="#ff6600" opacity="0.45" />
+                      <circle cx="195" cy="130" r="6" fill="#ff6600" opacity="0.45" />
+
+                      <!-- Digital Smile Curve -->
+                      <path d="M149 131 Q160 140 171 131" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" fill="none" class="stacky-mouth" filter="url(#cyanGlow)" />
+                    </g>
+
+                    <!-- Companion Flying Eco-Drone "Sparky" -->
+                    <g class="sparky-drone">
+                      <!-- Spinning Twin Propellers -->
+                      <line x1="260" y1="184" x2="292" y2="184" stroke="#64748b" stroke-width="2.5" class="sparky-propeller" />
+                      <!-- Drone Chassis -->
+                      <circle cx="276" cy="198" r="15" fill="#0f172a" stroke="#ff6600" stroke-width="2.5" />
+                      <!-- Drone Glowing Camera Eye -->
+                      <circle cx="276" cy="198" r="6.5" fill="#10b981" filter="url(#cyanGlow)" />
+                      <!-- Drone Mini Beacon -->
+                      <circle cx="276" cy="184" r="3" fill="#ff6600" />
+                      <!-- Drone Landing Skids -->
+                      <path d="M266 211 L262 218 M286 211 L290 218" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round" />
+                    </g>
+
+                  </g>
+                </svg>
+
+                <!-- Click Hint Tooltip -->
+                <div class="char-click-hint" onclick="event.stopPropagation(); window.location.href='404error.html';" style="cursor: pointer;">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i> Click me to play!
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (Black, White, Orange) -->
+  <footer class="civic-footer">
+    <div class="civic-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 16px;"><img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="brand-logo-img"></div>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+            The official e-Governance portal of the City Municipal Corporation. Powered by the Stackly civic operating framework.
+          </p>
+          <div style="display: flex; gap: 14px; font-size: 1.2rem; color: var(--text-muted);">
+            <a href="404.html" style="color: var(--brand-orange);" title="Stackly on X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" style="color: var(--brand-orange);" title="Stackly on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" style="color: var(--brand-orange);" title="Stackly on YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="404.html" style="color: var(--brand-orange);" title="Stackly on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Citizen Portals</h4>
+          <ul class="footer-links">
+            <li><a href="404.html">Property Tax Portal</a></li>
+            <li><a href="404.html">File a Grievance</a></li>
+            <li><a href="404.html">Track Complaint</a></li>
+            <li><a href="404.html">Citizen Login</a></li>
+            <li><a href="404.html">Create Account</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Stackly Municipal Corporation. All Rights Reserved.</div>
+        <div class="footer-legal-links">
+          <a href="javascript:void(0)" onclick="showCivicToast('Privacy Charter: Fully compliant with Municipal Data Protection Code 2026', 'fa-shield-halved')">Privacy Charter</a>
+          <a href="javascript:void(0)" onclick="showCivicToast('Terms of e-Service: Standard Digital Citizen Agreement 2026', 'fa-file-contract')">Terms of e-Service</a>
+          <a href="javascript:void(0)" onclick="showCivicToast('Accessibility: WCAG 2.1 AA Standard Enabled Across All Portals', 'fa-universal-access')">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Custom Scripts -->
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

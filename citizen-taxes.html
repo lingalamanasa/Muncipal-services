@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taxes & Utilities - Citizen Portal | Stackly Municipal Services</title>
+  <meta name="description" content="View property tax assessments, pay water and civic utility bills, analyze historical payments, and download certified tax clearance receipts.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 (Strictly FA icons, zero emojis) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/page-tracker.js"></script>
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <div>
+        <div class="sidebar-brand">
+          <a href="index.html" class="brand-logo" title="Back to Stackly Homepage">
+            <img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="brand-logo-img" style="height: 32px;">
+          </a>
+          <div>
+            <span class="sidebar-role-badge">
+              <i class="fa-solid fa-id-badge" style="color: var(--brand-orange);"></i> Citizen Portal
+            </span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="sidebar-nav">
+          <a href="citizen-dashboard.html" class="sidebar-link">
+            <i class="fa-solid fa-gauge-high"></i>
+            <span>Overview</span>
+          </a>
+          <a href="citizen-grievances.html" class="sidebar-link">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>My Grievances</span>
+            <span class="sidebar-link-badge">1</span>
+          </a>
+          <a href="citizen-taxes.html" class="sidebar-link active">
+            <i class="fa-solid fa-receipt"></i>
+            <span>Taxes & Utilities</span>
+          </a>
+          <a href="citizen-vault.html" class="sidebar-link">
+            <i class="fa-solid fa-folder-closed"></i>
+            <span>Digital Vault</span>
+            <span class="sidebar-link-badge" style="background: #10b981;">4</span>
+          </a>
+          <a href="citizen-voting.html" class="sidebar-link">
+            <i class="fa-solid fa-check-to-slot"></i>
+            <span>Ward Voting</span>
+          </a>
+          <a href="citizen-services.html" class="sidebar-link">
+            <i class="fa-solid fa-compass"></i>
+            <span>Services Directory</span>
+          </a>
+          <a href="citizen-helpdesk.html" class="sidebar-link">
+            <i class="fa-solid fa-headset"></i>
+            <span>Helpdesk & Support</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Sidebar User Profile Footer -->
+      <div class="sidebar-footer">
+        <div class="sidebar-profile-card">
+          <img src="images/citizen-avatar.webp" alt="Jane Doe - Verified Citizen" class="sidebar-avatar">
+          <div class="sidebar-profile-info">
+            <div class="sidebar-profile-name">Jane Doe</div>
+            <div class="sidebar-profile-desc">Ward 04 • STK-8840-721</div>
+          </div>
+          <a href="login.html" title="Sign Out" style="color: var(--text-muted); font-size: 1.1rem; padding: 4px;" onclick="return confirm('Do you want to log out of your Citizen Account?');">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Dashboard Area -->
+    <main class="dashboard-main">
+      
+      <!-- Topbar Header -->
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button type="button" id="sidebarToggleBtn" class="topbar-icon-btn" aria-label="Toggle Sidebar" style="display: none;">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="topbar-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search bill assessment, receipt #, tax year..." id="taxSearchInput">
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="dashboard-content">
+        
+        <!-- Welcome Hero Banner -->
+        <div class="dashboard-hero-banner">
+          <div>
+            <div class="hero-banner-title">Municipal Property Tax & Utilities Ledger</div>
+            <div class="hero-banner-meta">
+              <span><i class="fa-solid fa-house-chimney" style="color: var(--brand-orange);"></i> Assessment Unit: <strong>#BLR-2026-8942</strong></span>
+              <span><i class="fa-solid fa-certificate" style="color: #10b981;"></i> FY 2026-27 Certified No-Dues Issued</span>
+            </div>
+          </div>
+          <div class="hero-banner-actions">
+            <button type="button" class="btn-portal-action" onclick="window.location.href='404error.html';">
+              <i class="fa-solid fa-file-pdf"></i> Download Tax Certificate
+            </button>
+            <button type="button" class="btn-emergency" onclick="window.location.href='404error.html';">
+              <i class="fa-solid fa-credit-card"></i> Pay New Assessment
+            </button>
+          </div>
+        </div>
+
+        <!-- Section 1: Animated Metric Counters HUD -->
+        <div class="counter-hud-grid">
+          
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon emerald"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-check"></i> Zero Dues</span>
+            </div>
+            <div class="counter-hud-number" data-counter="0" data-prefix="₹" data-decimals="2" data-duration="800">₹0.00</div>
+            <div class="counter-hud-label">Current Outstanding Balance</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon orange"><i class="fa-solid fa-building-shield"></i></div>
+              <span class="counter-hud-delta neutral"><i class="fa-solid fa-calendar-check"></i> FY 26-27</span>
+            </div>
+            <div class="counter-hud-number" data-counter="12450" data-prefix="₹" data-duration="1400">₹0</div>
+            <div class="counter-hud-label">Annual Assessment Paid</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon sky"><i class="fa-solid fa-piggy-bank"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-percent"></i> 10% Saved</span>
+            </div>
+            <div class="counter-hud-number" data-counter="1245" data-prefix="₹" data-duration="1200">₹0</div>
+            <div class="counter-hud-label">Early-Bird Digital Rebate</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon purple"><i class="fa-solid fa-faucet-drip"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-gauge"></i> Smart Meter</span>
+            </div>
+            <div class="counter-hud-number" data-counter="18.4" data-decimals="1" data-suffix=" kL" data-duration="1200">0.0 kL</div>
+            <div class="counter-hud-label">Monthly Water Consumed</div>
+          </div>
+
+        </div>
+
+        <!-- Section 2 & 3: Interactive Line Chart & Bar Chart -->
+        <div class="dashboard-charts-grid-duo">
+          
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-line" style="color: var(--brand-orange);"></i> 5-Year Property Tax Assessment & Payment History</div>
+                <div class="chart-card-subtitle">Annual tax paid against unit rate revisions (₹ thousands)</div>
+              </div>
+              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">2022 - 2026</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="taxLineChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-column" style="color: var(--brand-orange);"></i> Bi-Monthly Water & Sewerage Usage</div>
+                <div class="chart-card-subtitle">Volume consumed in kiloliters (kL) recorded by telemetry meter</div>
+              </div>
+              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">Meter #WTR-9941</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="utilityBarChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section 4: Interactive Doughnut Chart -->
+        <div class="dashboard-charts-grid-split">
+          
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-pie" style="color: var(--brand-orange);"></i> Municipal Expenditure of Your Taxes</div>
+                <div class="chart-card-subtitle">Civic services funded through residential tax contributions</div>
+              </div>
+              <span class="chart-card-meta">Fiscal Transparency</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="taxDoughnutChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card" style="justify-content: space-between;">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-house" style="color: #10b981;"></i> Assessed Property Registry</div>
+                <div class="chart-card-subtitle">Title information and GIS geo-coordinates</div>
+              </div>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid var(--border-medium); border-radius: 12px; padding: 18px; margin: auto 0;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);">Property Address:</span>
+                <strong>42 Maple Crescent, Ward 04</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);">Built-up Area:</span>
+                <strong>2,400 sq.ft (Residential)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);">Valuation Band:</span>
+                <strong>Zone A (High Civic Index)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border-medium); padding-top: 10px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);">Next Assessment:</span>
+                <strong style="color: var(--brand-orange);">April 01, 2027</strong>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section 5: Filterable Receipts Registry Table -->
+        <div class="dashboard-table-card">
+          <div class="dashboard-table-toolbar">
+            <div class="dashboard-section-title">
+              <i class="fa-solid fa-receipt"></i>
+              Tax & Utility Transaction History
+            </div>
+            <div class="dashboard-table-filters">
+              <button type="button" class="dashboard-filter-chip active" data-filter="all">All Invoices (4)</button>
+              <button type="button" class="dashboard-filter-chip" data-filter="tax">Property Tax</button>
+              <button type="button" class="dashboard-filter-chip" data-filter="water">Water & Sewerage</button>
+            </div>
+          </div>
+
+          <div class="dashboard-table-wrapper">
+            <table class="dashboard-data-table">
+              <thead>
+                <tr>
+                  <th>Receipt / Bill #</th>
+                  <th>Category</th>
+                  <th>Billing Period</th>
+                  <th>Amount Paid</th>
+                  <th>Payment Date</th>
+                  <th>Payment Mode</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="taxTableBody">
+                <tr data-status="tax">
+                  <td><strong>#TX-2026-9812</strong></td>
+                  <td>Property Tax Assessment</td>
+                  <td>FY 2026 - 2027</td>
+                  <td><strong>₹12,450.00</strong></td>
+                  <td>Apr 14, 2026</td>
+                  <td>UPI Autopay</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Paid</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';">
+                      <i class="fa-solid fa-download"></i> Receipt PDF
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="water">
+                  <td><strong>#WTR-AUG-4412</strong></td>
+                  <td>Smart Water Consumption</td>
+                  <td>Jul 01 - Aug 31, 2026</td>
+                  <td><strong>₹740.00</strong></td>
+                  <td>Sep 02, 2026</td>
+                  <td>NetBanking</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Paid</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';">
+                      <i class="fa-solid fa-download"></i> Receipt PDF
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="water">
+                  <td><strong>#WTR-JUN-3981</strong></td>
+                  <td>Smart Water Consumption</td>
+                  <td>May 01 - Jun 30, 2026</td>
+                  <td><strong>₹680.00</strong></td>
+                  <td>Jul 04, 2026</td>
+                  <td>UPI</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Paid</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';">
+                      <i class="fa-solid fa-download"></i> Receipt PDF
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="tax">
+                  <td><strong>#TX-2025-7814</strong></td>
+                  <td>Property Tax Assessment</td>
+                  <td>FY 2025 - 2026</td>
+                  <td><strong>₹11,800.00</strong></td>
+                  <td>Apr 18, 2025</td>
+                  <td>Debit Card</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Paid</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';">
+                      <i class="fa-solid fa-download"></i> Receipt PDF
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <footer class="dashboard-footer" style="padding: 24px 32px; border-top: 1px solid var(--border-medium); font-size: 0.8rem; color: var(--text-muted); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; background: #ffffff;">
+        <div>&copy; 2026-2027 Stackly Municipal Corporation. Department of Revenue & Public Finance.</div>
+        <div style="display: flex; gap: 16px;">
+          <a href="services.html" style="color: var(--brand-orange); text-decoration: none;"><i class="fa-solid fa-file-invoice-dollar"></i> Tax Bylaws</a>
+          <a href="contact.html" style="color: var(--text-muted); text-decoration: none;"><i class="fa-solid fa-headset"></i> Finance Helpdesk</a>
+        </div>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // Sidebar Mobile Toggle
+    const toggleBtn = document.getElementById('sidebarToggleBtn');
+    const sidebar = document.getElementById('dashboardSidebar');
+    if (window.innerWidth <= 992 && toggleBtn) {
+      toggleBtn.style.display = 'inline-flex';
+      toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+      });
+    }
+
+    // Search filter
+    document.getElementById('taxSearchInput')?.addEventListener('input', function(e) {
+      const q = e.target.value.toLowerCase();
+      document.querySelectorAll('#taxTableBody tr').forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+  </script>
+
+  <!-- Chart.js & Dashboard Charts Engine -->
+  <script src="js/chart.min.js"></script>
+  <script src="js/dashboard-charts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Line Chart: 5-Year Historical Tax Payments
+      buildLineChart(
+        'taxLineChart',
+        ['2022-23', '2023-24', '2024-25', '2025-26', '2026-27'],
+        [
+          { label: 'Property Tax (₹)', data: [10200, 10800, 11400, 11800, 12450], color: '#ff6600', bgColor: 'rgba(255, 102, 0, 0.08)' },
+          { label: 'Rebates Availed (₹)', data: [1020, 1080, 1140, 1180, 1245], color: '#10b981', bgColor: 'rgba(16, 185, 129, 0.05)' }
+        ],
+        'Amount in INR'
+      );
+
+      // 2. Bar Chart: Water & Sewerage Usage
+      buildBarChart(
+        'utilityBarChart',
+        ['Oct 26', 'Nov 26', 'Dec 26', 'Jan 27', 'Feb 27', 'Mar 27'],
+        [
+          {
+            label: 'Water Consumption (kL)',
+            data: [19.2, 17.8, 16.5, 18.0, 18.4, 19.1],
+            colors: ['#0284c7', '#0284c7', '#0284c7', '#0284c7', '#ff6600', '#0284c7']
+          }
+        ]
+      );
+
+      // 3. Doughnut Chart: Tax Allocation
+      buildPieChart(
+        'taxDoughnutChart',
+        ['Roads & Drainage (40%)', 'Solid Waste & Health (25%)', 'Water Pipeline & SCADA (20%)', 'Parks & Solar Lighting (15%)'],
+        [40, 25, 20, 15],
+        ['#ff6600', '#10b981', '#0284c7', '#f59e0b']
+      );
+    });
+  </script>
+
+  <!-- GSAP & Global Unique Effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

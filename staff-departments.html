@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Departments Hierarchy - Officer Portal | Stackly Municipal Services</title>
+  <meta name="description" content="Review organizational hierarchy across 8 municipal wings, workforce headcounts, capital budget execution rates, and departmental leadership.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 (Strictly FA icons, zero emojis) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/page-tracker.js"></script>
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <div>
+        <div class="sidebar-brand">
+          <a href="index.html" class="brand-logo" title="Back to Stackly Homepage">
+            <img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="brand-logo-img" style="height: 32px;">
+          </a>
+          <div>
+            <span class="sidebar-role-badge" style="background: #000; color: #fff; border-color: #000;">
+              <i class="fa-solid fa-user-shield" style="color: var(--brand-orange);"></i> Officer Portal (Tier 2)
+            </span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="sidebar-nav">
+          <a href="staff-dashboard.html" class="sidebar-link">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span>Operations Console</span>
+          </a>
+          <a href="staff-dispatch.html" class="sidebar-link">
+            <i class="fa-solid fa-list-check"></i>
+            <span>Grievance Dispatch</span>
+            <span class="sidebar-link-badge" style="background: var(--brand-orange); color: #000;">24 New</span>
+          </a>
+          <a href="staff-fleet.html" class="sidebar-link">
+            <i class="fa-solid fa-truck-fast"></i>
+            <span>Field Crew Tracker</span>
+            <span class="sidebar-link-badge">18</span>
+          </a>
+          <a href="staff-scada.html" class="sidebar-link">
+            <i class="fa-solid fa-tower-broadcast"></i>
+            <span>IoT SCADA Network</span>
+            <span class="sidebar-link-badge" style="background: #ef4444; color: #fff;">3 Alerts</span>
+          </a>
+          <a href="staff-broadcasts.html" class="sidebar-link">
+            <i class="fa-solid fa-bullhorn"></i>
+            <span>Civic Broadcasts</span>
+          </a>
+          <a href="staff-sla.html" class="sidebar-link">
+            <i class="fa-solid fa-clipboard-check"></i>
+            <span>SLA Audit Logs</span>
+          </a>
+          <a href="staff-departments.html" class="sidebar-link active">
+            <i class="fa-solid fa-sitemap"></i>
+            <span>Departments Hierarchy</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Sidebar User Profile Footer -->
+      <div class="sidebar-footer">
+        <div class="sidebar-profile-card">
+          <img src="images/officer-avatar.webp" alt="Eng. Rajesh Varma - Senior Executive" class="sidebar-avatar">
+          <div class="sidebar-profile-info">
+            <div class="sidebar-profile-name">Eng. Rajesh Varma</div>
+            <div class="sidebar-profile-desc">Sr. Ward Executive • ID: 4491</div>
+          </div>
+          <a href="login.html" title="Sign Out" style="color: var(--text-muted); font-size: 1.1rem; padding: 4px;" onclick="return confirm('Confirm departure from Officer Command Station?');">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Dashboard Area -->
+    <main class="dashboard-main">
+      
+      <!-- Topbar Header -->
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button type="button" id="sidebarToggleBtn" class="topbar-icon-btn" aria-label="Toggle Sidebar" style="display: none;">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted);"><i class="fa-solid fa-sitemap" style="color: var(--brand-orange);"></i> Civil Administration:</span>
+            <span class="status-pill success"><i class="fa-solid fa-check"></i> 8 Wings Synchronized</span>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <a href="departments.html" class="table-action-btn">
+            <i class="fa-solid fa-globe"></i> Public Hierarchy View
+          </a>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="dashboard-content">
+        
+        <!-- Welcome Hero Banner -->
+        <div class="dashboard-hero-banner">
+          <div>
+            <div class="hero-banner-title">Municipal Administrative Hierarchy & Wing Directory</div>
+            <div class="hero-banner-meta">
+              <span><i class="fa-solid fa-landmark" style="color: var(--brand-orange);"></i> Municipal Corporation Secretariat</span>
+              <span><i class="fa-solid fa-users" style="color: #10b981;"></i> Total Civil Personnel: <strong>2,840 Officers & Crews</strong></span>
+            </div>
+          </div>
+          <div class="hero-banner-actions">
+            <button type="button" class="btn-portal-action" onclick="alert('Viewing Municipal Corporation Organizational Chart [High-Resolution PDF].');">
+              <i class="fa-solid fa-diagram-project"></i> Org Hierarchy PDF
+            </button>
+          </div>
+        </div>
+
+        <!-- Section 1: Animated Metric Counters HUD -->
+        <div class="counter-hud-grid">
+          
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon orange"><i class="fa-solid fa-sitemap"></i></div>
+              <span class="counter-hud-delta neutral"><i class="fa-solid fa-building"></i> Wings</span>
+            </div>
+            <div class="counter-hud-number" data-counter="8" data-duration="800">0</div>
+            <div class="counter-hud-label">Principal Departments</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon emerald"><i class="fa-solid fa-user-group"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-shield"></i> Active</span>
+            </div>
+            <div class="counter-hud-number" data-counter="2840" data-duration="1200">0</div>
+            <div class="counter-hud-label">Full-Time Civil Workforce</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon sky"><i class="fa-solid fa-wallet"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-chart-line"></i> FY 26-27</span>
+            </div>
+            <div class="counter-hud-number" data-counter="480" data-prefix="₹" data-suffix=" Cr" data-duration="1200">₹0 Cr</div>
+            <div class="counter-hud-label">Annual Capital Budget</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon purple"><i class="fa-solid fa-helmet-safety"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-wrench"></i> Underway</span>
+            </div>
+            <div class="counter-hud-number" data-counter="34" data-duration="1000">0</div>
+            <div class="counter-hud-label">Active Capital Works Projects</div>
+          </div>
+
+        </div>
+
+        <!-- Section 2 & 3: Interactive Line Chart & Bar Chart -->
+        <div class="dashboard-charts-grid-duo">
+          
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-line" style="color: var(--brand-orange);"></i> Capital Expenditure Execution (₹ Crores)</div>
+                <div class="chart-card-subtitle">Quarterly budget utilization across urban infrastructure projects</div>
+              </div>
+              <span class="chart-card-meta">FY 2026-27</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="deptLineChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-column" style="color: var(--brand-orange);"></i> Workforce Headcount Distribution</div>
+                <div class="chart-card-subtitle">Engineers, inspectors, and response personnel per department</div>
+              </div>
+              <span class="chart-card-meta">Workforce Roster</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="deptBarChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section 4: Interactive Doughnut Chart -->
+        <div class="dashboard-charts-grid-split">
+          
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-pie" style="color: var(--brand-orange);"></i> Municipal Budget Allocation Breakdown</div>
+                <div class="chart-card-subtitle">Share of ₹480 Crore capital and operations budget</div>
+              </div>
+              <span class="chart-card-meta">Fiscal Split</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="deptDoughnutChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card" style="justify-content: space-between;">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-building-columns" style="color: #10b981;"></i> Executive Leadership Console</div>
+                <div class="chart-card-subtitle">Office of the Municipal Commissioner</div>
+              </div>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid var(--border-medium); border-radius: 12px; padding: 18px; margin: auto 0;">
+              <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 12px;">
+                <div style="width: 48px; height: 48px; border-radius: 50%; background: #0f172a; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+                  <i class="fa-solid fa-user-tie" style="color: var(--brand-orange);"></i>
+                </div>
+                <div>
+                  <div style="font-weight: 800; color: #0f172a;">Dr. Anand K. Rao, IAS</div>
+                  <div style="font-size: 0.78rem; color: var(--text-muted);">Municipal Commissioner & CEO</div>
+                </div>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 8px;">
+                <span style="color: var(--text-muted);">Secretariat Office:</span>
+                <strong>Civic Center HQ, Floor 5</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.82rem;">
+                <span style="color: var(--text-muted);">Council Oversight:</span>
+                <strong style="color: #10b981;">48 Wards Active</strong>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section 5: Filterable Departments Hierarchy Table -->
+        <div class="dashboard-table-card">
+          <div class="dashboard-table-toolbar">
+            <div class="dashboard-section-title">
+              <i class="fa-solid fa-sitemap"></i>
+              Principal Departments Directory
+            </div>
+            <div class="dashboard-table-filters">
+              <button type="button" class="dashboard-filter-chip active" data-filter="all">All Departments (5)</button>
+              <button type="button" class="dashboard-filter-chip" data-filter="infra">Infrastructure</button>
+              <button type="button" class="dashboard-filter-chip" data-filter="civic">Civic Services</button>
+            </div>
+          </div>
+
+          <div class="dashboard-table-wrapper">
+            <table class="dashboard-data-table">
+              <thead>
+                <tr>
+                  <th>Dept Code</th>
+                  <th>Department Name & Responsibility</th>
+                  <th>Chief Executive</th>
+                  <th>Workforce</th>
+                  <th>Annual Budget</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="deptTableBody">
+                <tr data-status="infra">
+                  <td><strong>#DEPT-PWD</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Public Works & Road Infrastructure</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Asphalt arterial roads, flyovers, storm culverts, pedestrian plazas</div>
+                  </td>
+                  <td>Chief Eng. V. Sundaram</td>
+                  <td><strong>680 Staff</strong></td>
+                  <td>₹168.0 Crore</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Operational</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Viewing Public Works Division Staff Roster & Projects.');">
+                      <i class="fa-solid fa-users-viewfinder"></i> Staff Roster
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="civic">
+                  <td><strong>#DEPT-HLTH</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Public Health & Solid Waste Management</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Door-to-door green waste, composting, vector control, vital records</div>
+                  </td>
+                  <td>Dr. Meera Kulkarni</td>
+                  <td><strong>940 Staff</strong></td>
+                  <td>₹120.0 Crore</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Operational</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Viewing Public Health Division Staff Roster.');">
+                      <i class="fa-solid fa-users-viewfinder"></i> Staff Roster
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="infra">
+                  <td><strong>#DEPT-HYD</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Hydrology & Water Supply Board</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Drinking water distribution, IoT SCADA pipelines, sewage treatment</div>
+                  </td>
+                  <td>Chief Eng. R. Deshmukh</td>
+                  <td><strong>460 Staff</strong></td>
+                  <td>₹96.0 Crore</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Operational</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Viewing Hydrology Division Staff Roster.');">
+                      <i class="fa-solid fa-users-viewfinder"></i> Staff Roster
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="civic">
+                  <td><strong>#DEPT-REV</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Revenue, Taxation & Land Records</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Property tax assessment, Khata issuance, municipal trade licenses</div>
+                  </td>
+                  <td>Deputy Comm. S. Roy</td>
+                  <td><strong>380 Staff</strong></td>
+                  <td>₹36.0 Crore</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Operational</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Viewing Revenue Division Staff Roster.');">
+                      <i class="fa-solid fa-users-viewfinder"></i> Staff Roster
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="infra">
+                  <td><strong>#DEPT-TECH</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Urban Technology & Smart City Center</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">LoRaWAN SCADA telemetry, GIS mapping, citizen portals, cloud servers</div>
+                  </td>
+                  <td>Chief Tech Officer K. Nair</td>
+                  <td><strong>380 Staff</strong></td>
+                  <td>₹60.0 Crore</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Operational</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Viewing Urban Technology Division Staff Roster.');">
+                      <i class="fa-solid fa-users-viewfinder"></i> Staff Roster
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <footer class="dashboard-footer" style="padding: 24px 32px; border-top: 1px solid var(--border-medium); font-size: 0.8rem; color: var(--text-muted); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; background: #ffffff;">
+        <div>&copy; 2026-2027 Stackly Municipal Corporation. Secretariat Administrative Council.</div>
+        <div style="display: flex; gap: 16px;">
+          <a href="staff-dashboard.html" style="color: var(--brand-orange); text-decoration: none;"><i class="fa-solid fa-gauge-high"></i> Ops Console</a>
+          <a href="departments.html" style="color: var(--text-muted); text-decoration: none;"><i class="fa-solid fa-sitemap"></i> Public Directory</a>
+        </div>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // Sidebar Mobile Toggle
+    const toggleBtn = document.getElementById('sidebarToggleBtn');
+    const sidebar = document.getElementById('dashboardSidebar');
+    if (window.innerWidth <= 992 && toggleBtn) {
+      toggleBtn.style.display = 'inline-flex';
+      toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+      });
+    }
+  </script>
+
+  <!-- Chart.js & Dashboard Charts Engine -->
+  <script src="js/chart.min.js"></script>
+  <script src="js/dashboard-charts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Line Chart: Capital Expenditure Execution
+      buildLineChart(
+        'deptLineChart',
+        ['Q1 (Apr-Jun)', 'Q2 (Jul-Sep)', 'Q3 (Oct-Dec)', 'Q4 (Jan-Mar)'],
+        [
+          { label: 'Budget Allocated (₹ Cr)', data: [120, 120, 120, 120], color: '#64748b', bgColor: 'transparent', fill: false },
+          { label: 'Expenditure Executed (₹ Cr)', data: [98, 114, 118, 126], color: '#ff6600', bgColor: 'rgba(255, 102, 0, 0.08)' }
+        ],
+        'INR Crores'
+      );
+
+      // 2. Bar Chart: Workforce Headcount Distribution
+      buildBarChart(
+        'deptBarChart',
+        ['Public Health (940)', 'Public Works (680)', 'Hydrology (460)', 'Revenue (380)', 'Smart Tech (380)'],
+        [
+          {
+            label: 'Personnel Count',
+            data: [940, 680, 460, 380, 380],
+            colors: ['#10b981', '#ff6600', '#0284c7', '#f59e0b', '#8b5cf6']
+          }
+        ]
+      );
+
+      // 3. Doughnut Chart: Budget Allocation Breakdown
+      buildPieChart(
+        'deptDoughnutChart',
+        ['Public Works (35%)', 'Public Health (25%)', 'Hydrology & Water (20%)', 'Urban Tech & Smart City (12%)', 'Revenue & Admin (8%)'],
+        [35, 25, 20, 12, 8],
+        ['#ff6600', '#10b981', '#0284c7', '#8b5cf6', '#f59e0b']
+      );
+    });
+  </script>
+
+  <!-- GSAP & Global Unique Effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

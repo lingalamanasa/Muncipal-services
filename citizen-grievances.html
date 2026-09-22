@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Grievances - Citizen Portal | Stackly Municipal Services</title>
+  <meta name="description" content="Track your civic complaints, view SLA resolution countdowns, and inspect municipal field engineer dispatch logs in real-time.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 (Strictly FA icons, zero emojis) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/page-tracker.js"></script>
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <div>
+        <div class="sidebar-brand">
+          <a href="index.html" class="brand-logo" title="Back to Stackly Homepage">
+            <img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="brand-logo-img" style="height: 32px;">
+          </a>
+          <div>
+            <span class="sidebar-role-badge">
+              <i class="fa-solid fa-id-badge" style="color: var(--brand-orange);"></i> Citizen Portal
+            </span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="sidebar-nav">
+          <a href="citizen-dashboard.html" class="sidebar-link">
+            <i class="fa-solid fa-gauge-high"></i>
+            <span>Overview</span>
+          </a>
+          <a href="citizen-grievances.html" class="sidebar-link active">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>My Grievances</span>
+            <span class="sidebar-link-badge">1</span>
+          </a>
+          <a href="citizen-taxes.html" class="sidebar-link">
+            <i class="fa-solid fa-receipt"></i>
+            <span>Taxes & Utilities</span>
+          </a>
+          <a href="citizen-vault.html" class="sidebar-link">
+            <i class="fa-solid fa-folder-closed"></i>
+            <span>Digital Vault</span>
+            <span class="sidebar-link-badge" style="background: #10b981;">4</span>
+          </a>
+          <a href="citizen-voting.html" class="sidebar-link">
+            <i class="fa-solid fa-check-to-slot"></i>
+            <span>Ward Voting</span>
+          </a>
+          <a href="citizen-services.html" class="sidebar-link">
+            <i class="fa-solid fa-compass"></i>
+            <span>Services Directory</span>
+          </a>
+          <a href="citizen-helpdesk.html" class="sidebar-link">
+            <i class="fa-solid fa-headset"></i>
+            <span>Helpdesk & Support</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Sidebar User Profile Footer -->
+      <div class="sidebar-footer">
+        <div class="sidebar-profile-card">
+          <img src="images/citizen-avatar.webp" alt="Jane Doe - Verified Citizen" class="sidebar-avatar">
+          <div class="sidebar-profile-info">
+            <div class="sidebar-profile-name">Jane Doe</div>
+            <div class="sidebar-profile-desc">Ward 04 • STK-8840-721</div>
+          </div>
+          <a href="login.html" title="Sign Out" style="color: var(--text-muted); font-size: 1.1rem; padding: 4px;" onclick="return confirm('Do you want to log out of your Citizen Account?');">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Dashboard Area -->
+    <main class="dashboard-main">
+      
+      <!-- Topbar Header -->
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button type="button" id="sidebarToggleBtn" class="topbar-icon-btn" aria-label="Toggle Sidebar" style="display: none;">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="topbar-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search grievance ID, defect, street..." id="grievanceSearchInput">
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="dashboard-content">
+        
+        <!-- Welcome Hero Banner -->
+        <div class="dashboard-hero-banner">
+          <div>
+            <div class="hero-banner-title">My Grievances & Service Tickets</div>
+            <div class="hero-banner-meta">
+              <span><i class="fa-solid fa-circle-check" style="color: #10b981;"></i> 48-Hour Statutory SLA Guarantee</span>
+              <span><i class="fa-solid fa-location-dot" style="color: var(--brand-orange);"></i> Primary Ward: <strong>Ward 04 (Downtown)</strong></span>
+            </div>
+          </div>
+          <div class="hero-banner-actions">
+            <button type="button" class="btn-portal-action" onclick="window.location.href='404error.html';">
+              <i class="fa-solid fa-plus"></i> File New Grievance
+            </button>
+          </div>
+        </div>
+
+        <!-- Section 1: Animated Metric Counters HUD -->
+        <div class="counter-hud-grid">
+          
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon orange"><i class="fa-solid fa-ticket"></i></div>
+              <span class="counter-hud-delta neutral"><i class="fa-solid fa-database"></i> Total</span>
+            </div>
+            <div class="counter-hud-number" data-counter="14" data-duration="1200">0</div>
+            <div class="counter-hud-label">Lifetime Tickets Lodged</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon emerald"><i class="fa-solid fa-circle-check"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-check-double"></i> 92.8%</span>
+            </div>
+            <div class="counter-hud-number" data-counter="13" data-duration="1200">0</div>
+            <div class="counter-hud-label">Resolved & Closed</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon sky"><i class="fa-solid fa-clock-rotate-left"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-wrench"></i> Live Crew</span>
+            </div>
+            <div class="counter-hud-number" data-counter="1" data-duration="800">0</div>
+            <div class="counter-hud-label">Under Active Rectification</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon purple"><i class="fa-solid fa-stopwatch"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-shield-halved"></i> SLA Met</span>
+            </div>
+            <div class="counter-hud-number" data-counter="4.2" data-decimals="1" data-suffix=" hrs" data-duration="1200">0.0 hrs</div>
+            <div class="counter-hud-label">Average Resolution Time</div>
+          </div>
+
+        </div>
+
+        <!-- Section 2 & 3: Interactive Line Chart & Bar Chart -->
+        <div class="dashboard-charts-grid-duo">
+          
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-line" style="color: var(--brand-orange);"></i> Grievance Filing vs Resolution Velocity</div>
+                <div class="chart-card-subtitle">Monthly comparison of tickets reported vs resolved within statutory SLA</div>
+              </div>
+              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">Past 6 Months</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="grievanceLineChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-column" style="color: var(--brand-orange);"></i> Reported Defects by Category</div>
+                <div class="chart-card-subtitle">Volume of community complaints segmented by municipal division</div>
+              </div>
+              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">Division Split</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="grievanceBarChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section 4: Interactive Doughnut Chart -->
+        <div class="dashboard-charts-grid-split">
+          
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-pie" style="color: var(--brand-orange);"></i> Grievance Status & SLA Distribution</div>
+                <div class="chart-card-subtitle">Breakdown of resolution status and compliance verification</div>
+              </div>
+              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">All-Time Status</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="grievancePieChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card" style="justify-content: space-between;">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-user-gear" style="color: #10b981;"></i> Assigned Field Crew Status</div>
+                <div class="chart-card-subtitle">Engineer details for current active ticket</div>
+              </div>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid var(--border-medium); border-radius: 12px; padding: 18px; margin: auto 0;">
+              <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+                <img src="images/officer-avatar.webp" alt="Field Engineer" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--brand-orange);">
+                <div>
+                  <div style="font-weight: 800; color: #0f172a; font-size: 0.95rem;">Eng. Rajesh Varma</div>
+                  <div style="font-size: 0.78rem; color: var(--text-muted);"><i class="fa-solid fa-id-card"></i> Officer ID: #4491 • Ward 04 Public Works</div>
+                </div>
+              </div>
+              <div style="font-size: 0.82rem; color: #475569; line-height: 1.5; margin-bottom: 12px;">
+                Currently deployed with Asphalt Crew #2 at <strong>4th Main Road, Sector 3</strong>. Cold-mix patch repair in progress under Ticket #STK-8492.
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-medium); padding-top: 10px;">
+                <span style="font-size: 0.76rem; color: var(--text-muted);"><i class="fa-solid fa-clock"></i> ETA Clearance: 3h 48m</span>
+                <span class="status-pill warning" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-truck-fast"></i> En Route</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section 5: Filterable Grievances Registry Table -->
+        <div class="dashboard-table-card">
+          <div class="dashboard-table-toolbar">
+            <div class="dashboard-section-title">
+              <i class="fa-solid fa-list-check"></i>
+              Citizen Service Ticket Registry
+            </div>
+            <div class="dashboard-table-filters">
+              <button type="button" class="dashboard-filter-chip active" data-filter="all">All Tickets (5)</button>
+              <button type="button" class="dashboard-filter-chip" data-filter="progress">Under Repair (1)</button>
+              <button type="button" class="dashboard-filter-chip" data-filter="resolved">Resolved (4)</button>
+            </div>
+          </div>
+
+          <div class="dashboard-table-wrapper">
+            <table class="dashboard-data-table">
+              <thead>
+                <tr>
+                  <th>Ticket ID</th>
+                  <th>Category & Defect</th>
+                  <th>Location</th>
+                  <th>Status</th>
+                  <th>SLA Window</th>
+                  <th>Assigned Officer</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="grievanceTableBody">
+                <tr data-status="progress">
+                  <td><strong>#STK-8492</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Road Surface Pothole Hazard</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Asphalt depression near Sector 3 junction</div>
+                  </td>
+                  <td>4th Main Road, Sector 3</td>
+                  <td><span class="status-pill warning"><i class="fa-solid fa-wrench"></i> In Progress</span></td>
+                  <td><span style="color: #d97706; font-weight: 700;"><i class="fa-solid fa-hourglass-half"></i> 3h 48m left</span></td>
+                  <td>Eng. Rajesh Varma</td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';">
+                      <i class="fa-solid fa-location-crosshairs"></i> Track Live
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="resolved">
+                  <td><strong>#STK-8114</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Streetlight Illuminance Failure</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">LED driver burn-out on pole #W4-L092</div>
+                  </td>
+                  <td>12th Cross, Park Avenue</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Resolved</span></td>
+                  <td>Resolved in 3h 12m</td>
+                  <td>Electrical Crew 1</td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';">
+                      <i class="fa-solid fa-file-invoice"></i> Inspection Report
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="resolved">
+                  <td><strong>#STK-7920</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Stormwater Culvert Blockage</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Debris accumulation causing drain overflow</div>
+                  </td>
+                  <td>Corner of 5th Ave & 2nd St</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Resolved</span></td>
+                  <td>Resolved in 4h 05m</td>
+                  <td>Drainage Wing Team</td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';">
+                      <i class="fa-solid fa-file-invoice"></i> Inspection Report
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="resolved">
+                  <td><strong>#STK-7561</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Uncollected Green Waste Pile</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Pruned tree branches obstructing sidewalk</div>
+                  </td>
+                  <td>Opposite Community Hall</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Resolved</span></td>
+                  <td>Resolved in 2h 45m</td>
+                  <td>Solid Waste Rapid Van</td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="window.location.href='404error.html';">
+                      <i class="fa-solid fa-file-invoice"></i> Inspection Report
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="resolved">
+                  <td><strong>#STK-7208</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Drinking Water Pipeline Leak</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Low pressure on municipal branch line</div>
+                  </td>
+                  <td>42 Maple Crescent</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Resolved</span></td>
+                  <td>Resolved in 5h 10m</td>
+                  <td>Hydrology Team</td>
+                  <td>
+                    <button type="button" class="table-action-btn" onclick="alert('Gasket replaced on 150mm DI pipeline. Water supply pressure restored to 2.8 Bar.');">
+                      <i class="fa-solid fa-file-invoice"></i> Inspection Report
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <footer class="dashboard-footer" style="padding: 24px 32px; border-top: 1px solid var(--border-medium); font-size: 0.8rem; color: var(--text-muted); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; background: #ffffff;">
+        <div>&copy; 2026-2027 Stackly Municipal Corporation. Citizen Grievance Redressal Mechanism.</div>
+        <div style="display: flex; gap: 16px;">
+          <a href="services.html" style="color: var(--brand-orange); text-decoration: none;"><i class="fa-solid fa-scale-balanced"></i> Citizen Charter</a>
+          <a href="contact.html" style="color: var(--text-muted); text-decoration: none;"><i class="fa-solid fa-headset"></i> Helpdesk</a>
+        </div>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    function openGrievanceModal() {
+      const issue = prompt("Enter the civic defect or emergency (e.g. Pothole, Streetlight, Garbage):", "Streetlight Blackout on 7th Cross");
+      if (issue) {
+        const newTicket = 'STK-' + Math.floor(8000 + Math.random() * 1999);
+        alert(`Grievance Logged Successfully!\nTicket ID: #${newTicket}\nPriority: Medium\nAssigned to: Ward 04 Rapid Crew\nUpdates will be sent to your registered mobile.`);
+      }
+    }
+
+    // Sidebar Mobile Toggle
+    const toggleBtn = document.getElementById('sidebarToggleBtn');
+    const sidebar = document.getElementById('dashboardSidebar');
+    if (window.innerWidth <= 992 && toggleBtn) {
+      toggleBtn.style.display = 'inline-flex';
+      toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+      });
+    }
+
+    // Search filter
+    document.getElementById('grievanceSearchInput')?.addEventListener('input', function(e) {
+      const q = e.target.value.toLowerCase();
+      document.querySelectorAll('#grievanceTableBody tr').forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+  </script>
+
+  <!-- Chart.js & Dashboard Charts Engine -->
+  <script src="js/chart.min.js"></script>
+  <script src="js/dashboard-charts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Line Chart: Grievance Inflow vs Resolution Trends
+      buildLineChart(
+        'grievanceLineChart',
+        ['Oct 2026', 'Nov 2026', 'Dec 2026', 'Jan 2027', 'Feb 2027', 'Mar 2027'],
+        [
+          { label: 'Grievances Filed', data: [4, 6, 3, 8, 5, 2], color: '#ef4444', bgColor: 'rgba(239, 68, 68, 0.06)' },
+          { label: 'Successfully Resolved', data: [4, 5, 3, 8, 5, 1], color: '#10b981', bgColor: 'rgba(16, 185, 129, 0.08)' }
+        ],
+        'Tickets Count'
+      );
+
+      // 2. Bar Chart: Defects by Category
+      buildBarChart(
+        'grievanceBarChart',
+        ['Roads & Potholes', 'Streetlights', 'Storm Drainage', 'Solid Waste', 'Water Supply'],
+        [
+          {
+            label: 'Reported Incidents',
+            data: [5, 4, 2, 2, 1],
+            colors: ['#ff6600', '#f59e0b', '#0284c7', '#10b981', '#8b5cf6']
+          }
+        ]
+      );
+
+      // 3. Doughnut Chart: Status Breakdown
+      buildPieChart(
+        'grievancePieChart',
+        ['Resolved within SLA (86%)', 'In Active Rectification (7%)', 'Under Field Inspection (7%)'],
+        [86, 7, 7],
+        ['#10b981', '#f59e0b', '#0284c7']
+      );
+    });
+  </script>
+
+  <!-- GSAP & Global Unique Effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

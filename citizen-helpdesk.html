@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helpdesk & Support - Citizen Portal | Stackly Municipal Services</title>
+  <meta name="description" content="Access 24/7 citizen support, query live ticket resolutions, chat with ward ombudsman officers, and track technical assistance inquiries.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 (Strictly FA icons, zero emojis) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/page-tracker.js"></script>
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <div>
+        <div class="sidebar-brand">
+          <a href="index.html" class="brand-logo" title="Back to Stackly Homepage">
+            <img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="brand-logo-img" style="height: 32px;">
+          </a>
+          <div>
+            <span class="sidebar-role-badge">
+              <i class="fa-solid fa-id-badge" style="color: var(--brand-orange);"></i> Citizen Portal
+            </span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="sidebar-nav">
+          <a href="citizen-dashboard.html" class="sidebar-link">
+            <i class="fa-solid fa-gauge-high"></i>
+            <span>Overview</span>
+          </a>
+          <a href="citizen-grievances.html" class="sidebar-link">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>My Grievances</span>
+            <span class="sidebar-link-badge">1</span>
+          </a>
+          <a href="citizen-taxes.html" class="sidebar-link">
+            <i class="fa-solid fa-receipt"></i>
+            <span>Taxes & Utilities</span>
+          </a>
+          <a href="citizen-vault.html" class="sidebar-link">
+            <i class="fa-solid fa-folder-closed"></i>
+            <span>Digital Vault</span>
+            <span class="sidebar-link-badge" style="background: #10b981;">4</span>
+          </a>
+          <a href="citizen-voting.html" class="sidebar-link">
+            <i class="fa-solid fa-check-to-slot"></i>
+            <span>Ward Voting</span>
+          </a>
+          <a href="citizen-services.html" class="sidebar-link">
+            <i class="fa-solid fa-compass"></i>
+            <span>Services Directory</span>
+          </a>
+          <a href="citizen-helpdesk.html" class="sidebar-link active">
+            <i class="fa-solid fa-headset"></i>
+            <span>Helpdesk & Support</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Sidebar User Profile Footer -->
+      <div class="sidebar-footer">
+        <div class="sidebar-profile-card">
+          <img src="images/citizen-avatar.webp" alt="Jane Doe - Verified Citizen" class="sidebar-avatar">
+          <div class="sidebar-profile-info">
+            <div class="sidebar-profile-name">Jane Doe</div>
+            <div class="sidebar-profile-desc">Ward 04 • STK-8840-721</div>
+          </div>
+          <a href="login.html" title="Sign Out" style="color: var(--text-muted); font-size: 1.1rem; padding: 4px;" onclick="return confirm('Do you want to log out of your Citizen Account?');">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Dashboard Area -->
+    <main class="dashboard-main">
+      
+      <!-- Topbar Header -->
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button type="button" id="sidebarToggleBtn" class="topbar-icon-btn" aria-label="Toggle Sidebar" style="display: none;">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="topbar-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search inquiry ticket, issue, rep name..." id="helpdeskSearchInput">
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="dashboard-content">
+        
+        <!-- Welcome Hero Banner -->
+        <div class="dashboard-hero-banner">
+          <div>
+            <div class="hero-banner-title">24/7 Citizen Helpdesk & Support Station</div>
+            <div class="hero-banner-meta">
+              <span><i class="fa-solid fa-headset" style="color: var(--brand-orange);"></i> Toll-Free Municipal Helpline: <strong>1800-425-0011</strong></span>
+              <span><i class="fa-solid fa-circle-check" style="color: #10b981;"></i> Average Response SLA: <strong>&lt; 3 Minutes</strong></span>
+            </div>
+          </div>
+          <div class="hero-banner-actions">
+            <button type="button" class="btn-portal-action" style="cursor: pointer;" onclick="window.location.href='contact.html';">
+              <i class="fa-solid fa-comments"></i> Start Live Chat
+            </button>
+            <a href="contact.html" class="btn-emergency" style="cursor: pointer;">
+              <i class="fa-solid fa-phone-volume"></i> Emergency Contacts
+            </a>
+          </div>
+        </div>
+
+        <!-- Section 1: Animated Metric Counters HUD -->
+        <div class="counter-hud-grid">
+          
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon emerald"><i class="fa-solid fa-bolt"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-check"></i> Ultra Fast</span>
+            </div>
+            <div class="counter-hud-number" data-counter="2.4" data-decimals="1" data-suffix="m" data-duration="1000">0.0m</div>
+            <div class="counter-hud-label">Avg First Response Time</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon orange"><i class="fa-solid fa-face-smile"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-star"></i> Verified</span>
+            </div>
+            <div class="counter-hud-number" data-counter="98.4" data-decimals="1" data-suffix="%" data-duration="1200">0.0%</div>
+            <div class="counter-hud-label">Citizen Satisfaction (CSAT)</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon sky"><i class="fa-solid fa-circle-check"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-arrow-trend-up"></i> Month</span>
+            </div>
+            <div class="counter-hud-number" data-counter="1280" data-duration="1200">0</div>
+            <div class="counter-hud-label">Inquiries Resolved This Month</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon purple"><i class="fa-solid fa-users-gear"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-signal"></i> Active</span>
+            </div>
+            <div class="counter-hud-number" data-counter="14" data-duration="800">0</div>
+            <div class="counter-hud-label">Ward 04 Agents On Duty</div>
+          </div>
+
+        </div>
+
+        <!-- Section 2 & 3: Interactive Line Chart & Bar Chart -->
+        <div class="dashboard-charts-grid-duo">
+          
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-line" style="color: var(--brand-orange);"></i> Weekly Helpdesk Inquiry Resolution Velocity</div>
+                <div class="chart-card-subtitle">Total received inquiries vs first-contact resolutions (FCR)</div>
+              </div>
+              <span class="chart-card-meta" onclick="window.location.href='citizen-grievances.html';" style="cursor: pointer;">Past 7 Days</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="helpdeskLineChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-column" style="color: var(--brand-orange);"></i> Inquiries by Communication Channel</div>
+                <div class="chart-card-subtitle">Citizen preference across digital and telephone helpdesk media</div>
+              </div>
+              <span class="chart-card-meta" onclick="window.location.href='contact.html';" style="cursor: pointer;">Channel Distribution</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="helpdeskBarChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section 4: Interactive Doughnut Chart -->
+        <div class="dashboard-charts-grid-split">
+          
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-pie" style="color: var(--brand-orange);"></i> Inquiry Subject Classification</div>
+                <div class="chart-card-subtitle">Categorization of citizen requests and assistance calls</div>
+              </div>
+              <span class="chart-card-meta" onclick="window.location.href='citizen-services.html';" style="cursor: pointer;">Subject Split</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="helpdeskDoughnutChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card" style="justify-content: space-between;">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-triangle-exclamation" style="color: #ef4444;"></i> Rapid Civic Emergency Dispatch</div>
+                <div class="chart-card-subtitle">Dedicated 24/7 Ward 04 hotlines</div>
+              </div>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid var(--border-medium); border-radius: 12px; padding: 18px; margin: auto 0;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);"><i class="fa-solid fa-phone" style="color: #ef4444;"></i> Ward Control Room:</span>
+                <strong>080-2266-0044</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);"><i class="fa-solid fa-faucet-drip" style="color: #0284c7;"></i> Water Burst Emergency:</span>
+                <strong>1916 (Toll Free)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);"><i class="fa-solid fa-bolt" style="color: #f59e0b;"></i> Power Feeder Grid:</span>
+                <strong>1912 (24/7 Grid)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border-medium); padding-top: 10px; font-size: 0.84rem;">
+                <span style="color: var(--text-muted);"><i class="fa-solid fa-envelope" style="color: var(--brand-orange);"></i> Ombudsman Mail:</span>
+                <strong>ombudsman@stacklycivic.org</strong>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section 5: Filterable Support Tickets Table -->
+        <div class="dashboard-table-card">
+          <div class="dashboard-table-toolbar">
+            <div class="dashboard-section-title">
+              <i class="fa-solid fa-ticket-simple"></i>
+              My Support Ticket History
+            </div>
+            <div class="dashboard-table-filters">
+              <button type="button" class="dashboard-filter-chip active" data-filter="all">All Inquiries (3)</button>
+              <button type="button" class="dashboard-filter-chip" data-filter="closed">Closed (2)</button>
+              <button type="button" class="dashboard-filter-chip" data-filter="active">Active (1)</button>
+            </div>
+          </div>
+
+          <div class="dashboard-table-wrapper">
+            <table class="dashboard-data-table">
+              <thead>
+                <tr>
+                  <th>Ticket #</th>
+                  <th>Inquiry Subject</th>
+                  <th>Contact Channel</th>
+                  <th>Logged Date</th>
+                  <th>Assigned Agent</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="helpdeskTableBody">
+                <tr data-status="active">
+                  <td><strong>#HD-4819</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Clarification on Solar Rooftop Subsidy Guidelines</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Municipal Net-Metering scheme for residential properties</div>
+                  </td>
+                  <td>Web Chat</td>
+                  <td>Today, 14:15</td>
+                  <td>Priya Sharma (Helpdesk)</td>
+                  <td><span class="status-pill warning"><i class="fa-solid fa-comment-dots"></i> In Progress</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" style="cursor: pointer;" onclick="window.location.href='contact.html';">
+                      <i class="fa-solid fa-comments"></i> Resume Chat
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="closed">
+                  <td><strong>#HD-4210</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Assistance with DigiLocker Certificate QR Verification</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">QR scanner error on older PDF viewer version</div>
+                  </td>
+                  <td>Phone Helpline</td>
+                  <td>Aug 29, 2026</td>
+                  <td>Karthik M. (Tech Support)</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Resolved</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" style="cursor: pointer;" onclick="window.location.href='citizen-vault.html';">
+                      <i class="fa-solid fa-file-lines"></i> View Log
+                    </button>
+                  </td>
+                </tr>
+                <tr data-status="closed">
+                  <td><strong>#HD-3980</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Property Tax Auto-Debit Confirmation Query</div>
+                    <div style="font-size: 0.76rem; color: var(--text-muted);">Inquiry regarding 10% early rebate calculation verification</div>
+                  </td>
+                  <td>Email Desk</td>
+                  <td>Apr 15, 2026</td>
+                  <td>Arun Kumar (Finance Desk)</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Resolved</span></td>
+                  <td>
+                    <button type="button" class="table-action-btn" style="cursor: pointer;" onclick="window.location.href='citizen-taxes.html';">
+                      <i class="fa-solid fa-file-lines"></i> View Log
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <footer class="dashboard-footer" style="padding: 24px 32px; border-top: 1px solid var(--border-medium); font-size: 0.8rem; color: var(--text-muted); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; background: #ffffff;">
+        <div>&copy; 2026-2027 Stackly Municipal Corporation. 24/7 Citizen Care Center.</div>
+        <div style="display: flex; gap: 16px;">
+          <a href="services.html" style="color: var(--brand-orange); text-decoration: none;"><i class="fa-solid fa-shield"></i> Ombudsman Charter</a>
+          <a href="contact.html" style="color: var(--text-muted); text-decoration: none;"><i class="fa-solid fa-location-dot"></i> Ward Center</a>
+        </div>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // Sidebar Mobile Toggle
+    const toggleBtn = document.getElementById('sidebarToggleBtn');
+    const sidebar = document.getElementById('dashboardSidebar');
+    if (window.innerWidth <= 992 && toggleBtn) {
+      toggleBtn.style.display = 'inline-flex';
+      toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+      });
+    }
+
+    // Search filter
+    document.getElementById('helpdeskSearchInput')?.addEventListener('input', function(e) {
+      const q = e.target.value.toLowerCase();
+      document.querySelectorAll('#helpdeskTableBody tr').forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+  </script>
+
+  <!-- Chart.js & Dashboard Charts Engine -->
+  <script src="js/chart.min.js"></script>
+  <script src="js/dashboard-charts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Line Chart: Weekly Helpdesk Velocity
+      buildLineChart(
+        'helpdeskLineChart',
+        ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        [
+          { label: 'Inquiries Received', data: [180, 210, 195, 230, 245, 120, 100], color: '#ff6600', bgColor: 'rgba(255, 102, 0, 0.08)' },
+          { label: 'First-Contact Resolved', data: [172, 202, 190, 222, 238, 116, 98], color: '#10b981', bgColor: 'rgba(16, 185, 129, 0.05)' }
+        ],
+        'Inquiries'
+      );
+
+      // 2. Bar Chart: Volume by Channel
+      buildBarChart(
+        'helpdeskBarChart',
+        ['Web Live Chat', 'WhatsApp Bot', 'IVR Helpline 1800', 'Citizen Kiosks'],
+        [
+          {
+            label: 'Volume Handled',
+            data: [540, 420, 220, 100],
+            colors: ['#ff6600', '#10b981', '#0284c7', '#8b5cf6']
+          }
+        ]
+      );
+
+      // 3. Doughnut Chart: Subject Classification
+      buildPieChart(
+        'helpdeskDoughnutChart',
+        ['Property Tax & Bills (35%)', 'Grievance Status Updates (30%)', 'E-Services & NOCs (20%)', 'Technical & Login (15%)'],
+        [35, 30, 20, 15],
+        ['#ff6600', '#10b981', '#0284c7', '#f59e0b']
+      );
+    });
+  </script>
+
+  <!-- GSAP & Global Unique Effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

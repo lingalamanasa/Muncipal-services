@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrative Staff & Officer Command Center | Stackly Municipal</title>
+  <meta name="description" content="Municipal Staff and Executive Officer Operations Dashboard: Dispatch field crews, monitor real-time grievances, inspect GIS fleet telemetry, and issue emergency broadcasts.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/page-tracker.js"></script>
+</head>
+<body class="portal-dashboard-body">
+
+  <div class="dashboard-layout">
+    
+    <!-- Left Sidebar Navigation -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <div>
+        <!-- Sidebar Header -->
+        <div class="sidebar-header">
+          <a href="index.html" class="brand-logo">
+            <img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="brand-logo-img" style="height: 32px;">
+          </a>
+          <div>
+            <span class="sidebar-role-badge" style="background: #000; color: #fff; border-color: #000;">
+              <i class="fa-solid fa-user-shield" style="color: var(--brand-orange);"></i> Officer Portal (Tier 2)
+            </span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="sidebar-nav">
+          <a href="staff-dashboard.html" class="sidebar-link active">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span>Operations Console</span>
+          </a>
+          <a href="staff-dispatch.html" class="sidebar-link">
+            <i class="fa-solid fa-list-check"></i>
+            <span>Grievance Dispatch</span>
+            <span class="sidebar-link-badge" style="background: var(--brand-orange); color: #000;">24 New</span>
+          </a>
+          <a href="staff-fleet.html" class="sidebar-link">
+            <i class="fa-solid fa-truck-fast"></i>
+            <span>Field Crew Tracker</span>
+            <span class="sidebar-link-badge">18</span>
+          </a>
+          <a href="staff-scada.html" class="sidebar-link">
+            <i class="fa-solid fa-tower-broadcast"></i>
+            <span>IoT SCADA Network</span>
+            <span class="sidebar-link-badge" style="background: #ef4444; color: #fff;">3 Alerts</span>
+          </a>
+          <a href="staff-broadcasts.html" class="sidebar-link">
+            <i class="fa-solid fa-bullhorn"></i>
+            <span>Civic Broadcasts</span>
+          </a>
+          <a href="staff-sla.html" class="sidebar-link">
+            <i class="fa-solid fa-clipboard-check"></i>
+            <span>SLA Audit Logs</span>
+          </a>
+          <a href="staff-departments.html" class="sidebar-link">
+            <i class="fa-solid fa-sitemap"></i>
+            <span>Departments Hierarchy</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Sidebar User Profile Footer -->
+      <div class="sidebar-footer">
+        <div class="sidebar-profile-card">
+          <img src="images/officer-avatar.webp" alt="Eng. Rajesh Varma - Senior Executive" class="sidebar-avatar">
+          <div class="sidebar-profile-info">
+            <div class="sidebar-profile-name">Eng. Rajesh Varma</div>
+            <div class="sidebar-profile-desc">Sr. Ward Executive • ID: 4491</div>
+          </div>
+          <a href="login.html" title="Sign Out" style="color: var(--text-muted); font-size: 1.1rem; padding: 4px;" onclick="return confirm('Confirm departure from Officer Command Station?');">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Dashboard Area -->
+    <main class="dashboard-main">
+      
+      <!-- Topbar Header -->
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button type="button" id="sidebarToggleBtn" class="topbar-icon-btn" aria-label="Toggle Sidebar" style="display: none;">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          
+          <!-- Ward Selector Dropdown -->
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted);"><i class="fa-solid fa-filter" style="color: var(--brand-orange);"></i> Jurisdiction:</span>
+            <select id="officerWardSelect" class="calc-control" style="padding: 6px 12px; font-size: 0.82rem; width: auto; font-weight: 700;">
+              <option value="all">All 48 Municipal Wards</option>
+              <option value="w04" selected>Ward 04 - Downtown Civic (Primary)</option>
+              <option value="w01">Ward 01 - Metro Central</option>
+              <option value="w02">Ward 02 - North Harbor Logistics</option>
+              <option value="w03">Ward 03 - Tech Innovation Corridor</option>
+              <option value="w05">Ward 05 - Riverside Historic</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Switch to Citizen Portal -->
+          <a href="citizen-dashboard.html" class="btn-portal-switch" title="View Citizen Experience Portal">
+            <i class="fa-solid fa-user" style="color: var(--brand-orange);"></i>
+            <span>Switch to Citizen Portal</span>
+          </a>
+
+          <!-- Duty Shift Status -->
+          <div style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; background: #ecfdf5; color: #065f46; font-size: 0.78rem; font-weight: 700; border: 1px solid #a7f3d0;">
+            <span class="pulse-dot"></span> Shift 01 (08:00 - 16:00) Active
+          </div>
+
+          <!-- Rapid Dispatch Notification -->
+          <button type="button" class="topbar-icon-btn" title="Pending Incident Dispatches" onclick="alert('Officer Priority Alerts:\n1. Critical water pressure drop in Sector 2 culvert.\n2. Streetlight feeder #04 outage auto-assigned to Electrical Crew 2.\n3. Pothole defect #STK-8492 SLA clock at 3h 48m.');">
+            <i class="fa-solid fa-bell"></i>
+            <span class="badge-count" style="background: #ef4444;">5</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Dashboard Body Content -->
+      <div class="dashboard-content">
+        
+        <!-- Welcome Executive Banner -->
+        <div class="dashboard-hero-banner" id="ops-overview">
+          <div>
+            <div class="hero-banner-title">Administrative Operations Console</div>
+            <div class="hero-banner-meta">
+              <span><i class="fa-solid fa-user-shield" style="color: var(--brand-orange);"></i> Officer: <strong>Eng. Rajesh Varma (Executive Engineer)</strong></span>
+              <span><i class="fa-solid fa-network-wired" style="color: var(--brand-orange);"></i> Dispatch Terminal: <strong>HQ-CONSOLE-04</strong></span>
+              <span><i class="fa-solid fa-shield-halved" style="color: #10b981;"></i> Security Cleared: <strong>Level 2 Restricted</strong></span>
+            </div>
+          </div>
+          <div class="hero-banner-actions">
+            <button type="button" class="btn-portal-action" onclick="dispatchEmergencyCrew()">
+              <i class="fa-solid fa-truck-medical"></i> + Dispatch Rapid Crew
+            </button>
+            <button type="button" class="btn-emergency" onclick="openBroadcastComposer()">
+              <i class="fa-solid fa-tower-cell"></i> Issue Ward Advisory
+            </button>
+          </div>
+        </div>
+
+        <!-- Section 1: Animated Metric Counters HUD -->
+        <div class="counter-hud-grid">
+          
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon emerald"><i class="fa-solid fa-inbox"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-arrow-up"></i> 83.1% SLA</span>
+            </div>
+            <div class="counter-hud-number" data-counter="142" data-duration="1200">0</div>
+            <div class="counter-hud-label">Incidents Logged Today</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon sky"><i class="fa-solid fa-truck-fast"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-signal"></i> 100% GPS</span>
+            </div>
+            <div class="counter-hud-number" data-counter="18" data-duration="1000">0</div>
+            <div class="counter-hud-label">Field Crews Deployed</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon orange"><i class="fa-solid fa-coins"></i></div>
+              <span class="counter-hud-delta positive"><i class="fa-solid fa-arrow-trend-up"></i> 112% Goal</span>
+            </div>
+            <div class="counter-hud-number" data-counter="14.85" data-decimals="2" data-prefix="₹" data-suffix=" L" data-duration="1400">₹0.00 L</div>
+            <div class="counter-hud-label">Civic Revenue Collected Today</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon purple"><i class="fa-solid fa-triangle-exclamation"></i></div>
+              <span class="counter-hud-delta negative"><i class="fa-solid fa-circle-exclamation"></i> Action Req</span>
+            </div>
+            <div class="counter-hud-number" data-counter="3" data-duration="800">0</div>
+            <div class="counter-hud-label">Subterranean IoT Alerts</div>
+          </div>
+
+        </div>
+
+        <!-- Section 2 & 3: Interactive Line Chart & Bar Chart -->
+        <div class="dashboard-charts-grid-duo">
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-line" style="color: var(--brand-orange);"></i> 24-Hour Municipal Incident Inflow vs Clearance</div>
+                <div class="chart-card-subtitle">Real-time hourly incident dispatch and clearance cadence</div>
+              </div>
+              <span class="chart-card-meta">Live 24h</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="staffOverviewLineChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-column" style="color: var(--brand-orange);"></i> Ward-Wise Incident Distribution</div>
+                <div class="chart-card-subtitle">Open vs dispatched incident volume across 6 key sectors</div>
+              </div>
+              <span class="chart-card-meta">All Wards</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="staffOverviewBarChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4: Interactive Doughnut Chart -->
+        <div class="dashboard-charts-grid-split">
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-pie" style="color: var(--brand-orange);"></i> Priority & Severity Breakdown</div>
+                <div class="chart-card-subtitle">Incident classification across emergency tiers</div>
+              </div>
+              <span class="chart-card-meta">Active Queue</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="staffOverviewPieChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card" style="justify-content: space-between;">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-tower-broadcast" style="color: #10b981;"></i> Ward Command Telemetry Status</div>
+                <div class="chart-card-subtitle">Real-time status of civic monitoring sub-systems</div>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 14px; margin: auto 0;">
+              <div style="background: #f8fafc; border: 1px solid var(--border-medium); border-radius: 10px; padding: 14px;">
+                <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 6px; font-size: 0.85rem;">
+                  <span>SCADA Water Flow Telemetry</span>
+                  <span style="color: #10b981;"><i class="fa-solid fa-circle-check"></i> 99.8% Online</span>
+                </div>
+                <div style="height: 6px; background: #e2e8f0; border-radius: 999px; overflow: hidden;">
+                  <div style="width: 99.8%; height: 100%; background: #10b981;"></div>
+                </div>
+              </div>
+              <div style="background: #f8fafc; border: 1px solid var(--border-medium); border-radius: 10px; padding: 14px;">
+                <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 6px; font-size: 0.85rem;">
+                  <span>GPS Field Crew Connectivity</span>
+                  <span style="color: var(--brand-orange);"><i class="fa-solid fa-truck"></i> 18 / 18 Active</span>
+                </div>
+                <div style="height: 6px; background: #e2e8f0; border-radius: 999px; overflow: hidden;">
+                  <div style="width: 100%; height: 100%; background: var(--brand-orange);"></div>
+                </div>
+              </div>
+              <div style="background: #f8fafc; border: 1px solid var(--border-medium); border-radius: 10px; padding: 14px;">
+                <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 6px; font-size: 0.85rem;">
+                  <span>Emergency Alert Feeder Mesh</span>
+                  <span style="color: #0284c7;"><i class="fa-solid fa-shield"></i> Synced</span>
+                </div>
+                <div style="height: 6px; background: #e2e8f0; border-radius: 999px; overflow: hidden;">
+                  <div style="width: 94%; height: 100%; background: #0284c7;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section: Live Incident & Grievance Dispatch Queue -->
+        <div class="dash-panel" id="dispatch-queue">
+          <div class="dash-panel-header">
+            <div class="dash-panel-title">
+              <i class="fa-solid fa-list-check" style="color: var(--brand-orange);"></i>
+              Live Grievance Dispatch Queue
+            </div>
+            <div class="filter-pills-bar">
+              <button type="button" class="filter-pill-tab active" onclick="filterOfficerQueue('all', this)">All Incidents (4)</button>
+              <button type="button" class="filter-pill-tab" onclick="filterOfficerQueue('emergency', this)">Emergency / P1 (1)</button>
+              <button type="button" class="filter-pill-tab" onclick="filterOfficerQueue('progress', this)">Assigned / In Progress (2)</button>
+              <button type="button" class="filter-pill-tab" onclick="filterOfficerQueue('pending', this)">Unassigned (1)</button>
+            </div>
+          </div>
+
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Incident #</th>
+                  <th>Defect Classification</th>
+                  <th>Ward Sector</th>
+                  <th>Severity</th>
+                  <th>Assigned Crew</th>
+                  <th>SLA Countdown</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="officerQueueTableBody">
+                <tr data-level="emergency">
+                  <td><strong>#STK-8495</strong></td>
+                  <td>
+                    <div>
+                      <strong style="color: #b91c1c;"><i class="fa-solid fa-burst"></i> Main Water Line Pipe Rupture</strong>
+                      <div style="font-size: 0.76rem; color: var(--text-muted);">Acoustic IoT telemetry detected 38 PSI pressure drop</div>
+                    </div>
+                  </td>
+                  <td>Ward 02 • Harbor Pier 3</td>
+                  <td><span class="status-pill emergency"><i class="fa-solid fa-triangle-exclamation"></i> Critical P1</span></td>
+                  <td>Hydrology Rapid Squad 4</td>
+                  <td><strong style="color: #b91c1c;"><i class="fa-solid fa-stopwatch"></i> 48 min remaining</strong></td>
+                  <td>
+                    <button type="button" class="btn-portal-action" style="padding: 6px 12px; font-size: 0.78rem;" onclick="alert('Priority Override: Telemetry confirms valve #V-402 isolated remotely. Ground squad ETA: 6 minutes.');">
+                      Manage Crew
+                    </button>
+                  </td>
+                </tr>
+
+                <tr data-level="progress">
+                  <td><strong>#STK-8492</strong></td>
+                  <td>
+                    <div>
+                      <strong>Asphalt Pothole & Road Edge Hazard</strong>
+                      <div style="font-size: 0.76rem; color: var(--text-muted);">Citizen uploaded photo evidence verified via AI</div>
+                    </div>
+                  </td>
+                  <td>Ward 04 • 4th Main Road</td>
+                  <td><span class="status-pill progress">High P2</span></td>
+                  <td>Asphalt Crew Alpha-3</td>
+                  <td><strong style="color: #ea580c;"><i class="fa-regular fa-clock"></i> 3h 48m remaining</strong></td>
+                  <td>
+                    <button type="button" class="btn-emergency" style="padding: 6px 12px; font-size: 0.78rem;" onclick="markIncidentResolved('STK-8492')">
+                      Mark Resolved
+                    </button>
+                  </td>
+                </tr>
+
+                <tr data-level="progress">
+                  <td><strong>#STK-8488</strong></td>
+                  <td>
+                    <div>
+                      <strong>Solid Waste Overflow & Blockage</strong>
+                      <div style="font-size: 0.76rem; color: var(--text-muted);">Commercial market dumpster reached 100% capacity</div>
+                    </div>
+                  </td>
+                  <td>Ward 01 • Metro Plaza Gate 2</td>
+                  <td><span class="status-pill progress">Normal P3</span></td>
+                  <td>Sanitation Unit 12</td>
+                  <td><span><i class="fa-regular fa-clock"></i> 5h 10m remaining</span></td>
+                  <td>
+                    <button type="button" class="btn-emergency" style="padding: 6px 12px; font-size: 0.78rem;" onclick="markIncidentResolved('STK-8488')">
+                      Mark Resolved
+                    </button>
+                  </td>
+                </tr>
+
+                <tr data-level="pending">
+                  <td><strong>#STK-8501</strong></td>
+                  <td>
+                    <div>
+                      <strong>Streetlight Circuit Blackout</strong>
+                      <div style="font-size: 0.76rem; color: var(--text-muted);">6 LED luminaires unlit along pedestrian corridor</div>
+                    </div>
+                  </td>
+                  <td>Ward 05 • Riverside Walk</td>
+                  <td><span class="status-pill pending">Unassigned</span></td>
+                  <td><em style="color: #ef4444;">Unassigned</em></td>
+                  <td><span><i class="fa-regular fa-clock"></i> 7h 20m remaining</span></td>
+                  <td>
+                    <button type="button" class="btn-portal-action" style="padding: 6px 12px; font-size: 0.78rem;" onclick="assignOfficerCrew('STK-8501')">
+                      Assign Crew
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Section: Fleet Telemetry & Inspection Sites -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 24px; margin-bottom: 28px;" id="fleet-map">
+          
+          <!-- GIS Fleet Dispatch Map -->
+          <div class="dash-panel" style="margin-bottom: 0;">
+            <div class="dash-panel-header">
+              <div class="dash-panel-title">
+                <i class="fa-solid fa-map-location-dot" style="color: var(--brand-orange);"></i>
+                Real-Time GIS Fleet Tracking
+              </div>
+              <span class="status-pill resolved"><span class="pulse-dot"></span> 18 GPS Units Online</span>
+            </div>
+
+            <div class="mini-visual-card" style="margin-bottom: 16px;">
+              <div class="mini-visual-media" style="height: 180px;">
+                <img src="images/officer-dispatch-map.webp" alt="Real-time GIS Fleet Dispatch System">
+                <div style="position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.8); color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 0.72rem; font-weight: 700;">
+                  <i class="fa-solid fa-crosshairs" style="color: var(--brand-orange);"></i> GIS Triangulation Active
+                </div>
+              </div>
+              <div class="mini-visual-body">
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 8px;">
+                  <span>Downtown Ward 04 Sector:</span>
+                  <strong style="color: #0a0a0a;">5 Squads Deployed</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-muted);">
+                  <span>Mean Fleet Arrival Time:</span>
+                  <strong style="color: #10b981;">6.4 Minutes</strong>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="btn-emergency" style="width: 100%; justify-content: center; font-size: 0.85rem;" onclick="alert('Opening Fullscreen Telemetry Mapping Layer for all 48 Wards...');">
+              <i class="fa-solid fa-expand"></i> Launch Full Fleet GIS Display
+            </button>
+          </div>
+
+          <!-- Field Inspection & Infrastructure Site -->
+          <div class="dash-panel" style="margin-bottom: 0;" id="iot-scada">
+            <div class="dash-panel-header">
+              <div class="dash-panel-title">
+                <i class="fa-solid fa-hard-hat" style="color: var(--brand-orange);"></i>
+                Active Field Inspection Sites
+              </div>
+              <span class="status-pill progress">Phase 2 Ongoing</span>
+            </div>
+
+            <div class="mini-visual-card" style="margin-bottom: 16px;">
+              <div class="mini-visual-media" style="height: 180px;">
+                <img src="images/officer-inspection-site.webp" alt="Stormwater Culvert Engineering Inspection">
+                <div style="position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.8); color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 0.72rem; font-weight: 700;">
+                  <i class="fa-solid fa-ruler-combined" style="color: var(--brand-orange);"></i> Culvert #CW-89 Reinforcement
+                </div>
+              </div>
+              <div class="mini-visual-body">
+                <div style="font-weight: 700; color: #0a0a0a; margin-bottom: 4px;">Stormwater Culvert Structural Check</div>
+                <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 8px;">
+                  Ward Executive Engineering division inspecting concrete culvert linings before monsoon surge.
+                </p>
+                <div style="display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 8px;">
+                  <span>Lead Inspector: Er. M. Saxena</span>
+                  <span style="color: #10b981; font-weight: 700;">Pass Score: 94%</span>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="btn-portal-action" style="width: 100%; justify-content: center; font-size: 0.85rem;" onclick="alert('Uploading signed structural engineering compliance report to municipal archives.');">
+              <i class="fa-solid fa-file-signature"></i> Sign Inspection Protocol
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Section: SCADA Control Room & Emergency Citizen Broadcast -->
+        <div class="dash-panel" id="broadcast-center">
+          <div class="dash-panel-header">
+            <div class="dash-panel-title">
+              <i class="fa-solid fa-tower-broadcast" style="color: var(--brand-orange);"></i>
+              Civic Emergency Broadcast & IoT Telemetry Center
+            </div>
+            <span class="status-pill resolved"><i class="fa-solid fa-wifi"></i> All Nodes Connected</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; align-items: stretch;">
+            <div class="mini-visual-card">
+              <div class="mini-visual-media" style="height: 190px;">
+                <img src="images/officer-control-room.webp" alt="Municipal SCADA Automation Control Room">
+                <div style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.85); color: #fff; padding: 4px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 800;">
+                  <span class="pulse-dot"></span> SCADA HUB ONLINE
+                </div>
+              </div>
+              <div class="mini-visual-body">
+                <h4 style="font-family: var(--font-display); font-size: 1.1rem; color: #0a0a0a; margin-bottom: 6px;">
+                  Automated Water & Grid SCADA
+                </h4>
+                <p style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px;">
+                  1,850 subterranean hydrology pressure sensors and 140 adaptive traffic transponders reporting status every 10 seconds.
+                </p>
+                <div style="display: flex; gap: 8px;">
+                  <span style="font-size: 0.76rem; background: #f1f5f9; padding: 4px 8px; border-radius: 4px;">Purity: 99.4%</span>
+                  <span style="font-size: 0.76rem; background: #f1f5f9; padding: 4px 8px; border-radius: 4px;">Grid Uptime: 99.98%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Emergency Broadcast Composer Form -->
+            <div style="background: #f8fafc; border: 1px solid var(--border-medium); border-radius: var(--radius-md); padding: 22px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="font-size: 0.78rem; font-weight: 800; color: var(--brand-orange); text-transform: uppercase; margin-bottom: 4px;">
+                  Official Public Broadcast Console
+                </div>
+                <h4 style="font-family: var(--font-display); font-size: 1.15rem; color: #0a0a0a; margin-bottom: 12px;">
+                  Send Instant Alert to Ward Citizens
+                </h4>
+
+                <div class="calc-input-group" style="margin-bottom: 12px;">
+                  <label style="font-size: 0.82rem; margin-bottom: 4px;">Broadcast Channel & Target</label>
+                  <select class="calc-control" style="padding: 8px 12px; font-size: 0.85rem;" id="broadcastChannel">
+                    <option>Ward 04 Residents • SMS & Citizen App Push (42,000 Users)</option>
+                    <option>All 48 Wards • Emergency Heavy Rain Red Alert</option>
+                    <option>Ward 02 Harbor Zone • Water Pipe Maintenance Advisory</option>
+                  </select>
+                </div>
+
+                <div class="calc-input-group" style="margin-bottom: 14px;">
+                  <label style="font-size: 0.82rem; margin-bottom: 4px;">Alert Message Content</label>
+                  <textarea class="calc-control" rows="3" style="font-size: 0.85rem;" id="broadcastMsg">Water supply line maintenance scheduled tonight 11:00 PM to 04:00 AM on 4th Main Road. Alternate reservoir pressure will remain active.</textarea>
+                </div>
+              </div>
+
+              <button type="button" class="btn-portal-action" style="width: 100%; justify-content: center;" onclick="sendCitizenBroadcast()">
+                <i class="fa-solid fa-paper-plane"></i> Transmit Authorized Broadcast
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Minimal Dashboard Footer -->
+      <footer style="padding: 20px 32px; border-top: 1px solid var(--border-medium); background: #ffffff; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.82rem; color: var(--text-muted);">
+        <div>&copy; 2026 Stackly Municipal Administrative Command. Restricted Executive Terminal.</div>
+        <div style="display: flex; gap: 16px;">
+          <a href="services.html" style="color: var(--brand-orange);">Public Directory</a>
+          <a href="departments.html" style="color: var(--brand-orange);">Council Bylaws</a>
+          <a href="index.html" style="color: var(--brand-orange);">Municipal Home</a>
+        </div>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    function filterOfficerQueue(level, btn) {
+      document.querySelectorAll('.filter-pill-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const rows = document.querySelectorAll('#officerQueueTableBody tr');
+      rows.forEach(row => {
+        const lvl = row.getAttribute('data-level');
+        if (level === 'all' || lvl === level) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    function dispatchEmergencyCrew() {
+      const ward = prompt("Select Ward Sector for Rapid Field Crew Deployment (e.g. Ward 04, Ward 02):", "Ward 04");
+      if (ward) {
+        const crewId = "ALPHA-" + Math.floor(10 + Math.random() * 90);
+        alert(`Rapid Response Crew ${crewId} Dispatched to ${ward}!\nTelemetry GPS: Locked\nEstimated Arrival: 5.2 Minutes\nWard Engineer notified.`);
+      }
+    }
+
+    function assignOfficerCrew(ticketId) {
+      alert(`Incident #${ticketId} assigned to Electrical Rapid Squad 2. SLA countdown timer activated.`);
+      location.reload();
+    }
+
+    function markIncidentResolved(ticketId) {
+      alert(`Incident #${ticketId} marked as RESOLVED by Senior Executive Rajesh Varma.\nResolution timestamp and digital certificate recorded.`);
+    }
+
+    function sendCitizenBroadcast() {
+      const msg = document.getElementById('broadcastMsg').value;
+      alert(`Broadcast Dispatched via Stackly Cloud!\n\n"${msg}"\n\nEstimated reach: 42,000 citizens across Ward 04.`);
+    }
+
+    // Sidebar Mobile Toggle
+    const toggleBtn = document.getElementById('sidebarToggleBtn');
+    const sidebar = document.getElementById('dashboardSidebar');
+    if (window.innerWidth <= 992 && toggleBtn) {
+      toggleBtn.style.display = 'inline-flex';
+      toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+      });
+    }
+  </script>
+
+  <!-- Chart.js & Dashboard Charts Engine -->
+  <script src="js/chart.min.js"></script>
+  <script src="js/dashboard-charts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Line Chart: 24-Hour Inflow vs Clearance
+      buildLineChart(
+        'staffOverviewLineChart',
+        ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00', '24:00'],
+        [
+          { label: 'Incoming Incidents', data: [8, 5, 24, 42, 38, 18, 7], color: '#ef4444', bgColor: 'rgba(239, 68, 68, 0.08)' },
+          { label: 'Dispatched & Cleared', data: [7, 6, 20, 39, 36, 17, 7], color: '#10b981', bgColor: 'rgba(16, 185, 129, 0.05)' }
+        ],
+        'Incident Count'
+      );
+
+      // 2. Bar Chart: Ward-Wise Distribution
+      buildBarChart(
+        'staffOverviewBarChart',
+        ['Ward 01 (Metro)', 'Ward 02 (Harbor)', 'Ward 03 (Tech)', 'Ward 04 (Civic)', 'Ward 05 (Riverside)'],
+        [
+          {
+            label: 'Active Dispatches',
+            data: [14, 22, 18, 24, 12],
+            colors: ['#0284c7', '#f59e0b', '#8b5cf6', '#ff6600', '#10b981']
+          }
+        ]
+      );
+
+      // 3. Doughnut Chart: Priority & Severity Breakdown
+      buildPieChart(
+        'staffOverviewPieChart',
+        ['P1 - Critical Emergency (8%)', 'P2 - High Priority (22%)', 'P3 - Standard SLA (45%)', 'P4 - Scheduled Maintenance (25%)'],
+        [8, 22, 45, 25],
+        ['#ef4444', '#f59e0b', '#0284c7', '#10b981']
+      );
+    });
+  </script>
+
+  <!-- GSAP & Global Unique Effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Citizen Civic Portal & Dashboard | Stackly Municipal</title>
+  <meta name="description" content="Personalized municipal dashboard for citizens: track real-time grievances, view property tax receipts, verify DigiLocker certificates, and participate in ward voting.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/page-tracker.js"></script>
+</head>
+<body class="portal-dashboard-body">
+
+  <div class="dashboard-layout">
+    
+    <!-- Left Sidebar Navigation -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <div>
+        <!-- Sidebar Header -->
+        <div class="sidebar-header">
+          <a href="index.html" class="brand-logo">
+            <img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="brand-logo-img" style="height: 32px;">
+          </a>
+          <div>
+            <span class="sidebar-role-badge">
+              <i class="fa-solid fa-house-chimney-user"></i> Citizen Portal
+            </span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="sidebar-nav">
+          <a href="citizen-dashboard.html" class="sidebar-link active">
+            <i class="fa-solid fa-gauge-high"></i>
+            <span>Overview</span>
+          </a>
+          <a href="citizen-grievances.html" class="sidebar-link">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>My Grievances</span>
+            <span class="sidebar-link-badge">1</span>
+          </a>
+          <a href="citizen-taxes.html" class="sidebar-link">
+            <i class="fa-solid fa-receipt"></i>
+            <span>Taxes & Utilities</span>
+          </a>
+          <a href="citizen-vault.html" class="sidebar-link">
+            <i class="fa-solid fa-folder-closed"></i>
+            <span>Digital Vault</span>
+            <span class="sidebar-link-badge" style="background: #10b981;">4</span>
+          </a>
+          <a href="citizen-voting.html" class="sidebar-link">
+            <i class="fa-solid fa-check-to-slot"></i>
+            <span>Ward Voting</span>
+          </a>
+          <a href="citizen-services.html" class="sidebar-link">
+            <i class="fa-solid fa-compass"></i>
+            <span>Services Directory</span>
+          </a>
+          <a href="citizen-helpdesk.html" class="sidebar-link">
+            <i class="fa-solid fa-headset"></i>
+            <span>Helpdesk & Support</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Sidebar User Profile Footer -->
+      <div class="sidebar-footer">
+        <div class="sidebar-profile-card">
+          <img src="images/citizen-avatar.webp" alt="Jane Doe - Verified Citizen" class="sidebar-avatar">
+          <div class="sidebar-profile-info">
+            <div class="sidebar-profile-name">Jane Doe</div>
+            <div class="sidebar-profile-desc">Ward 04 • STK-8840-721</div>
+          </div>
+          <a href="login.html" title="Sign Out" style="color: var(--text-muted); font-size: 1.1rem; padding: 4px;" onclick="return confirm('Do you want to log out of your Citizen Account?');">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Dashboard Area -->
+    <main class="dashboard-main">
+      
+      <!-- Topbar Header -->
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button type="button" id="sidebarToggleBtn" class="topbar-icon-btn" aria-label="Toggle Sidebar" style="display: none;">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="topbar-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search service, ticket #, or bill..." id="citizenSearchInput">
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Body Content -->
+      <div class="dashboard-content">
+        
+        <!-- Welcome Hero Banner -->
+        <div class="dashboard-hero-banner" id="overview">
+          <div>
+            <div class="hero-banner-title">Welcome back, Jane Doe</div>
+            <div class="hero-banner-meta">
+              <span><i class="fa-solid fa-id-card" style="color: var(--brand-orange);"></i> Citizen ID: <strong>STK-8840-721</strong></span>
+              <span><i class="fa-solid fa-location-dot" style="color: var(--brand-orange);"></i> Sector: <strong>Downtown Civic (Ward 04)</strong></span>
+              <span><i class="fa-solid fa-shield-check" style="color: #10b981;"></i> <strong>DigiLocker Verified</strong></span>
+            </div>
+          </div>
+          <div class="hero-banner-actions">
+            <button type="button" class="btn-portal-action" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+              <i class="fa-solid fa-plus"></i> File New Grievance
+            </button>
+            <button type="button" class="btn-emergency" onclick="window.location.href='404error.html';" style="cursor: pointer;">
+              <i class="fa-solid fa-credit-card"></i> Pay Utility Bill
+            </button>
+          </div>
+        </div>
+
+        <!-- Section 1: Animated Metric Counters HUD -->
+        <div class="counter-hud-grid">
+          
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon orange"><i class="fa-solid fa-clipboard-list"></i></div>
+              <span class="counter-hud-delta positive" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-bolt"></i> SLA Active</span>
+            </div>
+            <div class="counter-hud-number" data-counter="1" data-duration="1000">0</div>
+            <div class="counter-hud-label">Active Grievance Ticket</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon emerald"><i class="fa-solid fa-receipt"></i></div>
+              <span class="counter-hud-delta positive" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-circle-check"></i> Zero Dues</span>
+            </div>
+            <div class="counter-hud-number" data-counter="0" data-prefix="₹" data-decimals="2" data-duration="1000">₹0.00</div>
+            <div class="counter-hud-label">Municipal Tax Balance</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon sky"><i class="fa-solid fa-file-shield"></i></div>
+              <span class="counter-hud-delta positive" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-cloud-arrow-down"></i> Synced</span>
+            </div>
+            <div class="counter-hud-number" data-counter="4" data-duration="1200">0</div>
+            <div class="counter-hud-label">Digital Vault Certificates</div>
+          </div>
+
+          <div class="counter-hud-card">
+            <div class="counter-hud-top">
+              <div class="counter-hud-icon purple"><i class="fa-solid fa-vote-yea"></i></div>
+              <span class="counter-hud-delta positive" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-fire"></i> Live Ballot</span>
+            </div>
+            <div class="counter-hud-number" data-counter="1" data-duration="1000">0</div>
+            <div class="counter-hud-label">Direct Ward Budget Poll</div>
+          </div>
+
+        </div>
+
+        <!-- Section 2 & 3: Interactive Line Chart & Bar Chart -->
+        <div class="dashboard-charts-grid-duo">
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-line" style="color: var(--brand-orange);"></i> Civic Service Velocity & Response Trends</div>
+                <div class="chart-card-subtitle">Monthly resolved requests vs average resolution hours</div>
+              </div>
+              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">FY 2026-27</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="citizenOverviewLineChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-column" style="color: var(--brand-orange);"></i> Ward 04 Service Satisfaction</div>
+                <div class="chart-card-subtitle">Satisfaction rating (%) across primary civic wings</div>
+              </div>
+              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">Ward 04 Survey</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="citizenOverviewBarChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4: Interactive Doughnut Chart -->
+        <div class="dashboard-charts-grid-split">
+          <div class="dashboard-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-chart-pie" style="color: var(--brand-orange);"></i> Municipal Tax Utilization Breakdown</div>
+                <div class="chart-card-subtitle">How your local taxes fund neighborhood improvements</div>
+              </div>
+              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">Budget Allocation</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="citizenOverviewPieChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-chart-card" style="justify-content: space-between;">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title"><i class="fa-solid fa-shield-halved" style="color: #10b981;"></i> Citizen Trust & SLA Guarantee</div>
+                <div class="chart-card-subtitle">Statutory guarantee under Public Service Charter</div>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 14px; margin: auto 0;">
+              <div style="background: #f8fafc; border: 1px solid var(--border-medium); border-radius: 10px; padding: 14px;">
+                <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 6px; font-size: 0.85rem;">
+                  <span>Grievance SLA Compliance</span>
+                  <span style="color: #10b981;">98.2%</span>
+                </div>
+                <div style="height: 6px; background: #e2e8f0; border-radius: 999px; overflow: hidden;">
+                  <div style="width: 98.2%; height: 100%; background: #10b981;"></div>
+                </div>
+              </div>
+              <div style="background: #f8fafc; border: 1px solid var(--border-medium); border-radius: 10px; padding: 14px;">
+                <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 6px; font-size: 0.85rem;">
+                  <span>Digital Vault Authenticity</span>
+                  <span style="color: var(--brand-orange);">100%</span>
+                </div>
+                <div style="height: 6px; background: #e2e8f0; border-radius: 999px; overflow: hidden;">
+                  <div style="width: 100%; height: 100%; background: var(--brand-orange);"></div>
+                </div>
+              </div>
+              <div style="background: #f8fafc; border: 1px solid var(--border-medium); border-radius: 10px; padding: 14px;">
+                <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 6px; font-size: 0.85rem;">
+                  <span>Ward Budget Participatory Vote</span>
+                  <span style="color: #0284c7;">Active</span>
+                </div>
+                <div style="height: 6px; background: #e2e8f0; border-radius: 999px; overflow: hidden;">
+                  <div style="width: 75%; height: 100%; background: #0284c7;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section: Active Grievances & Service Applications -->
+        <div class="dash-panel" id="grievances">
+          <div class="dash-panel-header">
+            <div class="dash-panel-title">
+              <i class="fa-solid fa-screwdriver-wrench" style="color: var(--brand-orange);"></i>
+              My Service Tickets & Grievances
+            </div>
+            <div class="filter-pills-bar">
+              <button type="button" class="filter-pill-tab active" onclick="filterCitizenTickets('all', this)">All (3)</button>
+              <button type="button" class="filter-pill-tab" onclick="filterCitizenTickets('progress', this)">In Progress (1)</button>
+              <button type="button" class="filter-pill-tab" onclick="filterCitizenTickets('resolved', this)">Resolved (2)</button>
+            </div>
+          </div>
+
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Ticket ID</th>
+                  <th>Category & Description</th>
+                  <th>Location</th>
+                  <th>Status</th>
+                  <th>SLA / Resolution</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="citizenTicketTableBody">
+                <tr data-status="progress">
+                  <td><strong>#STK-8492</strong></td>
+                  <td>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                      <img src="images/citizen-grievance-proof.webp" alt="Pothole Photo Proof" style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover; border: 1px solid var(--border-subtle);">
+                      <div>
+                        <div style="font-weight: 700; color: #0a0a0a;">Road Surface Pothole Hazard</div>
+                        <div style="font-size: 0.78rem; color: var(--text-muted);">Photo verified • Assigned to Ward Eng. Rajesh V.</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>4th Main Road, Sector 3</td>
+                  <td><span class="status-pill progress"><span class="pulse-dot"></span> In Progress</span></td>
+                  <td><span style="font-weight: 700; color: #ea580c;"><i class="fa-regular fa-clock"></i> 3h 48m left</span></td>
+                  <td>
+                    <button type="button" class="btn-emergency" style="padding: 6px 12px; font-size: 0.78rem; cursor: pointer;" onclick="window.location.href='citizen-grievances.html';">
+                      Track Live
+                    </button>
+                  </td>
+                </tr>
+
+                <tr data-status="resolved">
+                  <td><strong>#APP-1029</strong></td>
+                  <td>
+                    <div>
+                      <div style="font-weight: 700; color: #0a0a0a;">Rooftop Solar Rebate Subsidy</div>
+                      <div style="font-size: 0.78rem; color: var(--text-muted);">Capacity: 3.5 kW Grid-Tied Inverter</div>
+                    </div>
+                  </td>
+                  <td>42 Maple Crescent</td>
+                  <td><span class="status-pill resolved"><i class="fa-solid fa-check"></i> Approved</span></td>
+                  <td>Completed Sep 12, 2026</td>
+                  <td>
+                    <button type="button" class="btn-emergency" style="padding: 6px 12px; font-size: 0.78rem; cursor: pointer;" onclick="window.location.href='citizen-vault.html';">
+                      View Sanction
+                    </button>
+                  </td>
+                </tr>
+
+                <tr data-status="resolved">
+                  <td><strong>#NOC-5501</strong></td>
+                  <td>
+                    <div>
+                      <div style="font-weight: 700; color: #0a0a0a;">Smart IoT Water Meter NOC</div>
+                      <div style="font-size: 0.78rem; color: var(--text-muted);">Meter SN: WTR-9941-BLR</div>
+                    </div>
+                  </td>
+                  <td>42 Maple Crescent</td>
+                  <td><span class="status-pill resolved"><i class="fa-solid fa-check"></i> Activated</span></td>
+                  <td>Completed Aug 28, 2026</td>
+                  <td>
+                    <button type="button" class="btn-emergency" style="padding: 6px 12px; font-size: 0.78rem; cursor: pointer;" onclick="window.location.href='citizen-vault.html';">
+                      View NOC
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Section: Registered Property & Digital Vault -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 24px; margin-bottom: 28px;" id="payments">
+          
+          <!-- Property & Taxes -->
+          <div class="dash-panel" style="margin-bottom: 0;">
+            <div class="dash-panel-header">
+              <div class="dash-panel-title">
+                <i class="fa-solid fa-house-laptop" style="color: var(--brand-orange);"></i>
+                My Registered Property
+              </div>
+              <span class="status-pill resolved" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-shield"></i> Title Clear</span>
+            </div>
+
+            <div class="mini-visual-card" style="margin-bottom: 16px;">
+              <div class="mini-visual-media">
+                <img src="images/citizen-property-preview.webp" alt="Jane Doe Registered House">
+                <div style="position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.75); color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700;">
+                  <i class="fa-solid fa-location-dot" style="color: var(--brand-orange);"></i> 42 Maple Crescent
+                </div>
+              </div>
+              <div class="mini-visual-body">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                  <strong style="color: #0a0a0a;">Assessment #BLR-2026-8942</strong>
+                  <span style="font-size: 0.8rem; color: var(--text-muted);">Residential 2,400 sq.ft</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 10px;">
+                  <span>Property Tax FY 26-27:</span>
+                  <strong style="color: #10b981;">PAID (₹12,450)</strong>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 10px;">
+              <button type="button" class="btn-emergency" style="flex: 1; justify-content: center; font-size: 0.82rem; cursor: pointer;" onclick="window.location.href='citizen-taxes.html';">
+                <i class="fa-solid fa-file-pdf"></i> Download Receipt
+              </button>
+              <button type="button" class="btn-portal-action" style="flex: 1; justify-content: center; font-size: 0.82rem; cursor: pointer;" onclick="window.location.href='citizen-taxes.html';">
+                <i class="fa-solid fa-circle-info"></i> Tax Ledger
+              </button>
+            </div>
+          </div>
+
+          <!-- Digital Vault (DigiLocker Synced) -->
+          <div class="dash-panel" style="margin-bottom: 0;" id="vault">
+            <div class="dash-panel-header">
+              <div class="dash-panel-title">
+                <i class="fa-solid fa-lock" style="color: var(--brand-orange);"></i>
+                DigiLocker Digital Vault
+              </div>
+              <span class="status-pill pending" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-arrows-rotate"></i> Auto-Synced</span>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; background: #f8fafc; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <i class="fa-solid fa-file-lines" style="color: var(--brand-orange); font-size: 1.2rem;"></i>
+                  <div>
+                    <div style="font-weight: 700; font-size: 0.88rem; color: #0a0a0a;">Birth Certificate (DigiLocker Verified)</div>
+                    <div style="font-size: 0.74rem; color: var(--text-muted);">Doc ID: REG-2018-0924 • Issued by Registrar</div>
+                  </div>
+                </div>
+                <button type="button" class="btn-emergency" style="padding: 5px 10px; font-size: 0.75rem; cursor: pointer;" onclick="window.location.href='citizen-vault.html';">
+                  <i class="fa-solid fa-download"></i>
+                </button>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; background: #f8fafc; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <i class="fa-solid fa-stamp" style="color: var(--brand-orange); font-size: 1.2rem;"></i>
+                  <div>
+                    <div style="font-weight: 700; font-size: 0.88rem; color: #0a0a0a;">Municipal Khata / Title Extract</div>
+                    <div style="font-size: 0.74rem; color: var(--text-muted);">Doc ID: KHT-2024-8840 • e-Signed Certificate</div>
+                  </div>
+                </div>
+                <button type="button" class="btn-emergency" style="padding: 5px 10px; font-size: 0.75rem; cursor: pointer;" onclick="window.location.href='citizen-vault.html';">
+                  <i class="fa-solid fa-download"></i>
+                </button>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; background: #f8fafc; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <i class="fa-solid fa-faucet-drip" style="color: var(--brand-orange); font-size: 1.2rem;"></i>
+                  <div>
+                    <div style="font-weight: 700; font-size: 0.88rem; color: #0a0a0a;">Water & Sewerage NOC</div>
+                    <div style="font-size: 0.74rem; color: var(--text-muted);">Doc ID: NOC-WTR-5501 • Hydrology Division</div>
+                  </div>
+                </div>
+                <button type="button" class="btn-emergency" style="padding: 5px 10px; font-size: 0.75rem; cursor: pointer;" onclick="window.location.href='citizen-vault.html';">
+                  <i class="fa-solid fa-download"></i>
+                </button>
+              </div>
+            </div>
+
+            <button type="button" class="btn-portal-action" style="width: 100%; justify-content: center; font-size: 0.86rem; cursor: pointer;" onclick="window.location.href='citizen-vault.html';">
+              <i class="fa-solid fa-arrows-rotate"></i> Sync Recent Gov Documents
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Section: Ward 04 Community & Active Direct Democracy Ballot -->
+        <div class="dash-panel" id="voting">
+          <div class="dash-panel-header">
+            <div class="dash-panel-title">
+              <i class="fa-solid fa-users" style="color: var(--brand-orange);"></i>
+              Ward 04 Civic Consultation & Direct Democracy
+            </div>
+            <span class="status-pill emergency" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-bullhorn"></i> Voting Closes in 48h</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; align-items: center;">
+            <div class="mini-visual-card">
+              <div class="mini-visual-media" style="height: 190px;">
+                <img src="images/citizen-community-meet.webp" alt="Ward 04 Public Meeting">
+                <div style="position: absolute; top: 10px; left: 10px; background: var(--brand-orange); color: #000; padding: 4px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 800;">
+                  <i class="fa-solid fa-calendar"></i> SATURDAY 10:00 AM
+                </div>
+              </div>
+              <div class="mini-visual-body">
+                <h4 style="font-family: var(--font-display); font-size: 1.1rem; color: #0a0a0a; margin-bottom: 6px;">Quarterly Ward 04 Civic Council</h4>
+                <p style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px;">
+                  Join Ward Executive Engineers and Council Members in reviewing the 2026-27 local road repaving and rainwater harvesting proposals.
+                </p>
+                <a href="404error.html" onclick="window.location.href='404error.html';" class="btn-emergency" style="font-size: 0.8rem; cursor: pointer;">
+                  <i class="fa-solid fa-video"></i> RSVP for Livestream
+                </a>
+              </div>
+            </div>
+
+            <!-- Interactive Direct Poll -->
+            <div style="background: #f8fafc; border: 1px solid var(--border-medium); border-radius: var(--radius-md); padding: 22px;">
+              <div style="font-size: 0.78rem; font-weight: 800; color: var(--brand-orange); text-transform: uppercase; margin-bottom: 4px;">
+                Official Municipal Ballot #Q3-W04
+              </div>
+              <h4 style="font-family: var(--font-display); font-size: 1.15rem; color: #0a0a0a; margin-bottom: 14px;">
+                Which priority should the Ward 04 ₹4.5 Crore surplus fund execute first?
+              </h4>
+
+              <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px;">
+                <label style="display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: #ffffff; border: 1px solid var(--border-medium); border-radius: var(--radius-sm); cursor: pointer;">
+                  <span style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 600;">
+                    <input type="radio" name="ballotOption" value="1" checked style="accent-color: var(--brand-orange);">
+                    10 New Micro-Forests & Children's Play Corridors
+                  </span>
+                  <span style="font-size: 0.8rem; font-weight: 700; color: var(--brand-orange);">48%</span>
+                </label>
+
+                <label style="display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: #ffffff; border: 1px solid var(--border-medium); border-radius: var(--radius-sm); cursor: pointer;">
+                  <span style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 600;">
+                    <input type="radio" name="ballotOption" value="2" style="accent-color: var(--brand-orange);">
+                    Dedicated Protected Bicycle Lanes on 5th Cross
+                  </span>
+                  <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">32%</span>
+                </label>
+
+                <label style="display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: #ffffff; border: 1px solid var(--border-medium); border-radius: var(--radius-sm); cursor: pointer;">
+                  <span style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 600;">
+                    <input type="radio" name="ballotOption" value="3" style="accent-color: var(--brand-orange);">
+                    Rooftop Rainwater Filtration Rebates for Homes
+                  </span>
+                  <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">20%</span>
+                </label>
+              </div>
+
+              <button type="button" class="btn-portal-action" style="width: 100%; justify-content: center; cursor: pointer;" onclick="window.location.href='404error.html';">
+                <i class="fa-solid fa-paper-plane"></i> Submit Official Ward Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Minimal Dashboard Footer -->
+      <footer style="padding: 20px 32px; border-top: 1px solid var(--border-medium); background: #ffffff; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.82rem; color: var(--text-muted);">
+        <div>&copy; 2026 Stackly Municipal Corporation. Authorized Citizen Civic Gateway.</div>
+        <div style="display: flex; gap: 16px;">
+          <a href="services.html" style="color: var(--brand-orange);">Grievance SLA</a>
+          <a href="contact.html" style="color: var(--brand-orange);">Citizen Charter</a>
+          <a href="index.html" style="color: var(--brand-orange);">Back to Home</a>
+        </div>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    function filterCitizenTickets(type, btn) {
+      document.querySelectorAll('.filter-pill-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const rows = document.querySelectorAll('#citizenTicketTableBody tr');
+      rows.forEach(row => {
+        const st = row.getAttribute('data-status');
+        if (type === 'all' || st === type) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    function openGrievanceModal() {
+      const issue = prompt("Enter the civic defect or emergency (e.g. Pothole, Streetlight, Garbage):", "Streetlight Blackout on 7th Cross");
+      if (issue) {
+        const newTicket = 'STK-' + Math.floor(8000 + Math.random() * 1999);
+        alert(`Grievance Logged Successfully!\nTicket ID: #${newTicket}\nPriority: Medium\nAssigned to: Ward 04 Rapid Crew\nUpdates will be sent to your registered mobile.`);
+      }
+    }
+
+    function quickPayTax() {
+      alert("All municipal property and sanitation taxes are up to date! Next assessment cycle begins April 2027.");
+    }
+
+    // Sidebar Mobile Toggle
+    const toggleBtn = document.getElementById('sidebarToggleBtn');
+    const sidebar = document.getElementById('dashboardSidebar');
+    if (window.innerWidth <= 992 && toggleBtn) {
+      toggleBtn.style.display = 'inline-flex';
+      toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+      });
+    }
+
+    // Search filter
+    document.getElementById('citizenSearchInput')?.addEventListener('input', function(e) {
+      const q = e.target.value.toLowerCase();
+      document.querySelectorAll('#citizenTicketTableBody tr').forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+  </script>
+
+  <!-- Chart.js & Dashboard Charts Engine -->
+  <script src="js/chart.min.js"></script>
+  <script src="js/dashboard-charts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Line Chart: Service Velocity Trends
+      buildLineChart(
+        'citizenOverviewLineChart',
+        ['Oct 2026', 'Nov 2026', 'Dec 2026', 'Jan 2027', 'Feb 2027', 'Mar 2027'],
+        [
+          { label: 'Citizen Requests Resolved', data: [12, 19, 14, 25, 22, 30], color: '#ff6600', bgColor: 'rgba(255, 102, 0, 0.08)' },
+          { label: 'Avg Resolution SLA (Hours)', data: [6.4, 5.8, 5.1, 4.6, 4.2, 3.8], color: '#0f172a', bgColor: 'rgba(15, 23, 42, 0.04)' }
+        ],
+        'Volume / Hours'
+      );
+
+      // 2. Bar Chart: Service Satisfaction by Wing
+      buildBarChart(
+        'citizenOverviewBarChart',
+        ['Roads', 'Water NOC', 'Sanitation', 'Streetlights', 'Town Planning'],
+        [
+          {
+            label: 'Satisfaction Index (%)',
+            data: [94, 98, 91, 96, 89],
+            colors: ['#ff6600', '#10b981', '#0284c7', '#f59e0b', '#8b5cf6']
+          }
+        ]
+      );
+
+      // 3. Doughnut Chart: Tax Utilization Breakdown
+      buildPieChart(
+        'citizenOverviewPieChart',
+        ['Ward Roads & Bridges (35%)', 'Cleanliness & Solid Waste (25%)', 'Clean Drinking Water (20%)', 'Parks & Greenery (12%)', 'Digital Services (8%)'],
+        [35, 25, 20, 12, 8],
+        ['#ff6600', '#0f172a', '#10b981', '#0284c7', '#f59e0b']
+      );
+    });
+  </script>
+
+  <!-- GSAP & Global Unique Effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>
