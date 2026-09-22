@@ -93,9 +93,12 @@
       <!-- Topbar Header -->
       <header class="dashboard-topbar">
         <div class="topbar-left">
-          <button type="button" id="sidebarToggleBtn" class="topbar-icon-btn" aria-label="Toggle Sidebar" style="display: none;">
+          <button type="button" id="sidebarToggleBtn" class="topbar-icon-btn mobile-dashboard-toggle" aria-label="Toggle Navigation Menu">
             <i class="fa-solid fa-bars"></i>
           </button>
+          <a href="staff-dashboard.html" class="dashboard-brand-logo" title="Stackly Municipal Services">
+            <img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="dashboard-logo-img">
+          </a>
           
           <div style="display: flex; align-items: center; gap: 8px;">
             <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted);"><i class="fa-solid fa-satellite-dish" style="color: var(--brand-orange);"></i> Fleet GIS:</span>
@@ -359,10 +362,21 @@
     // Sidebar Mobile Toggle
     const toggleBtn = document.getElementById('sidebarToggleBtn');
     const sidebar = document.getElementById('dashboardSidebar');
-    if (window.innerWidth <= 992 && toggleBtn) {
-      toggleBtn.style.display = 'inline-flex';
-      toggleBtn.addEventListener('click', () => {
+    if (toggleBtn && sidebar) {
+      let backdrop = document.querySelector('.dashboard-backdrop');
+      if (!backdrop) {
+        backdrop = document.createElement('div');
+        backdrop.className = 'dashboard-backdrop';
+        document.body.appendChild(backdrop);
+      }
+      toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         sidebar.classList.toggle('open');
+        document.body.classList.toggle('sidebar-open', sidebar.classList.contains('open'));
+      });
+      backdrop.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        document.body.classList.remove('sidebar-open');
       });
     }
   </script>

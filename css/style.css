@@ -3018,18 +3018,101 @@ body.mobile-nav-active {
   color: #000000;
 }
 
-/* Responsive Styles */
+/* Responsive Dashboard Styles */
+.dashboard-brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.dashboard-logo-img {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+}
+
+.mobile-dashboard-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1.5px solid var(--border-medium);
+  color: #0a0a0a;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mobile-dashboard-toggle:hover {
+  background: var(--brand-orange-subtle);
+  border-color: var(--brand-orange);
+  color: var(--brand-orange);
+}
+
+.dashboard-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 15, 30, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+}
+
+body.sidebar-open .dashboard-backdrop {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+body.sidebar-open {
+  overflow: hidden !important;
+}
+
 @media (max-width: 992px) {
   .dashboard-sidebar {
     position: fixed;
-    transform: translateX(-100%);
-    box-shadow: var(--shadow-lg);
+    top: 0;
+    left: 0;
+    width: min(300px, 85vw);
+    height: 100vh;
+    height: 100dvh;
+    z-index: 9999;
+    transform: translateX(-105%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 12px 0 45px rgba(0, 0, 0, 0.2);
   }
   .dashboard-sidebar.open {
     transform: translateX(0);
   }
   .dashboard-topbar {
     padding: 0 16px;
+    height: 64px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+  .topbar-left {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    flex: 1;
+  }
+  .mobile-dashboard-toggle,
+  #sidebarToggleBtn {
+    display: inline-flex !important;
+  }
+  .dashboard-brand-logo {
+    display: flex !important;
+  }
+  .dashboard-logo-img {
+    height: 30px;
   }
   .dashboard-content {
     padding: 20px 16px;
