@@ -252,12 +252,12 @@ function buildPieChart(canvasId, labels, data, bgColors) {
       cutout: '68%',
       plugins: {
         legend: {
-          position: 'right',
+          position: window.innerWidth <= 600 ? 'bottom' : 'right',
           labels: {
-            boxWidth: 12,
+            boxWidth: window.innerWidth <= 600 ? 10 : 12,
             usePointStyle: true,
-            padding: 14,
-            font: { weight: 600 }
+            padding: window.innerWidth <= 600 ? 8 : 14,
+            font: { weight: 600, size: window.innerWidth <= 600 ? 11 : 12 }
           }
         }
       }
