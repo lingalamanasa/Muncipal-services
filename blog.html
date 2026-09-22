@@ -17,6 +17,28 @@
   <!-- Custom CSS (Black, White, Orange) -->
   <link rel="stylesheet" href="css/style.css">
   <script src="js/page-tracker.js"></script>
+  <style>
+    .topic-card {
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s ease, opacity 0.25s ease;
+    }
+    .topic-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--brand-orange) !important;
+      box-shadow: 0 16px 36px rgba(255, 102, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    .filter-pill-btn {
+      transition: all 0.22s ease;
+      cursor: pointer;
+    }
+    .filter-pill-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    }
+    .topic-card.active-topic {
+      border-color: var(--brand-orange) !important;
+      box-shadow: 0 0 0 2px var(--brand-orange), 0 12px 28px rgba(255, 102, 0, 0.15);
+    }
+  </style>
 </head>
 <body>
 
@@ -210,7 +232,7 @@
     <!-- ==========================================================================
          SECTION 03: NEWS CATEGORY FILTERS
          ========================================================================== -->
-    <section id="section-03-categories" class="section-wrapper">
+    <section id="section-03-categories" class="section-wrapper" style="padding-top: 50px; padding-bottom: 70px;">
       <div class="civic-container">
         <div class="section-header" style="text-align: center; margin-bottom: 30px;">
           <div class="section-meta" style="justify-content: center;">
@@ -218,15 +240,134 @@
             <span class="section-tag">Filter Topics</span>
           </div>
           <h2 class="section-title">Explore by <span class="highlight">Department Topic</span></h2>
+          <p class="section-subtitle" style="max-width: 680px; margin: 12px auto 0; font-size: 0.95rem; color: var(--text-muted);">
+            Browse municipal bulletins, gazettes, infrastructure roadmaps, and neighborhood notices classified across 5 core civic departments.
+          </p>
         </div>
 
-        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 12px;">
-          <button class="btn-portal-action" style="padding: 8px 18px; font-size: 0.88rem;">All Updates</button>
-          <button class="btn-outline-white" style="padding: 8px 18px; font-size: 0.88rem;"><i class="fa-solid fa-road"></i> Infrastructure</button>
-          <button class="btn-outline-white" style="padding: 8px 18px; font-size: 0.88rem;"><i class="fa-solid fa-leaf"></i> Environment</button>
-          <button class="btn-outline-white" style="padding: 8px 18px; font-size: 0.88rem;"><i class="fa-solid fa-heart-pulse"></i> Public Health</button>
-          <button class="btn-outline-white" style="padding: 8px 18px; font-size: 0.88rem;"><i class="fa-solid fa-coins"></i> Budget & Taxes</button>
-          <button class="btn-outline-white" style="padding: 8px 18px; font-size: 0.88rem;"><i class="fa-solid fa-masks-theater"></i> Culture & Parks</button>
+        <!-- Filter Pill Buttons -->
+        <div id="categoryFilterGroup" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 36px;">
+          <button type="button" class="btn-portal-action filter-pill-btn" data-topic="all" onclick="filterDepartmentTopic('all', this)" style="padding: 8px 18px; font-size: 0.88rem;">All Updates (81)</button>
+          <button type="button" class="btn-outline-white filter-pill-btn" data-topic="infrastructure" onclick="filterDepartmentTopic('infrastructure', this)" style="padding: 8px 18px; font-size: 0.88rem;"><i class="fa-solid fa-road" style="color: var(--brand-orange);"></i> Infrastructure (18)</button>
+          <button type="button" class="btn-outline-white filter-pill-btn" data-topic="environment" onclick="filterDepartmentTopic('environment', this)" style="padding: 8px 18px; font-size: 0.88rem;"><i class="fa-solid fa-leaf" style="color: #059669;"></i> Environment (14)</button>
+          <button type="button" class="btn-outline-white filter-pill-btn" data-topic="health" onclick="filterDepartmentTopic('health', this)" style="padding: 8px 18px; font-size: 0.88rem;"><i class="fa-solid fa-heart-pulse" style="color: #dc2626;"></i> Public Health (22)</button>
+          <button type="button" class="btn-outline-white filter-pill-btn" data-topic="budget" onclick="filterDepartmentTopic('budget', this)" style="padding: 8px 18px; font-size: 0.88rem;"><i class="fa-solid fa-coins" style="color: #d97706;"></i> Budget & Taxes (11)</button>
+          <button type="button" class="btn-outline-white filter-pill-btn" data-topic="culture" onclick="filterDepartmentTopic('culture', this)" style="padding: 8px 18px; font-size: 0.88rem;"><i class="fa-solid fa-masks-theater" style="color: #9333ea;"></i> Culture & Parks (16)</button>
+        </div>
+
+        <!-- Department Topic Cards Grid (5 Topics) -->
+        <div id="departmentTopicCards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+          
+          <!-- Card 1: Infrastructure -->
+          <div class="topic-card civic-card" data-category="infrastructure" onclick="filterDepartmentTopic('infrastructure')" style="cursor: pointer; border-radius: var(--radius-md); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border: 1.5px solid var(--border-subtle); background: #ffffff;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(255, 102, 0, 0.1); color: var(--brand-orange); display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+                  <i class="fa-solid fa-road"></i>
+                </div>
+                <span style="background: #f1f5f9; color: #475569; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 20px;">18 Gazettes</span>
+              </div>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: #0a0a0a; margin-bottom: 8px;">Infrastructure & Works</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+                Road surfacing, bridge engineering, smart transit grids, and civil conduits.
+              </p>
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 14px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.78rem; font-weight: 600; color: #64748b;">42 Active Works</span>
+              <span style="font-size: 0.82rem; font-weight: 700; color: var(--brand-orange); display: flex; align-items: center; gap: 4px;">
+                Explore <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 2: Environment -->
+          <div class="topic-card civic-card" data-category="environment" onclick="filterDepartmentTopic('environment')" style="cursor: pointer; border-radius: var(--radius-md); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border: 1.5px solid var(--border-subtle); background: #ffffff;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(16, 185, 129, 0.1); color: #059669; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+                  <i class="fa-solid fa-leaf"></i>
+                </div>
+                <span style="background: #f1f5f9; color: #475569; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 20px;">14 Gazettes</span>
+              </div>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: #0a0a0a; margin-bottom: 8px;">Environment & Ecology</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+                AQI telemetry, urban Miyawaki forests, clean solar subsidies, and lake ecology.
+              </p>
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 14px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.78rem; font-weight: 600; color: #64748b;">AQI 48 (Good)</span>
+              <span style="font-size: 0.82rem; font-weight: 700; color: var(--brand-orange); display: flex; align-items: center; gap: 4px;">
+                Explore <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 3: Public Health -->
+          <div class="topic-card civic-card" data-category="health" onclick="filterDepartmentTopic('health')" style="cursor: pointer; border-radius: var(--radius-md); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border: 1.5px solid var(--border-subtle); background: #ffffff;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(239, 68, 68, 0.1); color: #dc2626; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+                  <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+                <span style="background: #f1f5f9; color: #475569; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 20px;">22 Gazettes</span>
+              </div>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: #0a0a0a; margin-bottom: 8px;">Public Health & Safety</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+                Canal desilting, vector abatement, drinking water tests, and mobile clinics.
+              </p>
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 14px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.78rem; font-weight: 600; color: #64748b;">94% Canal Desilted</span>
+              <span style="font-size: 0.82rem; font-weight: 700; color: var(--brand-orange); display: flex; align-items: center; gap: 4px;">
+                Explore <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 4: Budget & Taxes -->
+          <div class="topic-card civic-card" data-category="budget" onclick="filterDepartmentTopic('budget')" style="cursor: pointer; border-radius: var(--radius-md); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border: 1.5px solid var(--border-subtle); background: #ffffff;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(245, 158, 11, 0.1); color: #d97706; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+                  <i class="fa-solid fa-coins"></i>
+                </div>
+                <span style="background: #f1f5f9; color: #475569; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 20px;">11 Gazettes</span>
+              </div>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: #0a0a0a; margin-bottom: 8px;">Budget & Finance</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+                Quarterly municipal audits, trade permits, property tax rebates, and fiscal tenders.
+              </p>
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 14px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.78rem; font-weight: 600; color: #64748b;">$42M Outlay Q2</span>
+              <span style="font-size: 0.82rem; font-weight: 700; color: var(--brand-orange); display: flex; align-items: center; gap: 4px;">
+                Explore <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 5: Culture & Parks -->
+          <div class="topic-card civic-card" data-category="culture" onclick="filterDepartmentTopic('culture')" style="cursor: pointer; border-radius: var(--radius-md); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border: 1.5px solid var(--border-subtle); background: #ffffff;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(168, 85, 247, 0.1); color: #9333ea; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+                  <i class="fa-solid fa-masks-theater"></i>
+                </div>
+                <span style="background: #f1f5f9; color: #475569; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 20px;">16 Gazettes</span>
+              </div>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: #0a0a0a; margin-bottom: 8px;">Culture & Parks</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+                Lake boardwalks, civic amphitheater performances, sports hubs, and public libraries.
+              </p>
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 14px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.78rem; font-weight: 600; color: #64748b;">58 Public Parks</span>
+              <span style="font-size: 0.82rem; font-weight: 700; color: var(--brand-orange); display: flex; align-items: center; gap: 4px;">
+                Explore <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
+              </span>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -244,8 +385,8 @@
           <h2 class="section-title">Latest Municipal <span class="highlight">Gazettes</span></h2>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px;">
-          <div class="civic-card">
+        <div id="gazetteGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px;">
+          <div class="civic-card" data-category="health infrastructure">
             <div class="image-reveal-frame" style="height: 180px; margin-bottom: 14px; border-radius: var(--radius-sm); overflow: hidden;">
               <img src="images/blog-drainage.webp" alt="Stormwater Desilting Canal Clearance" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
@@ -258,7 +399,7 @@
             </div>
           </div>
 
-          <div class="civic-card">
+          <div class="civic-card" data-category="budget">
             <div class="image-reveal-frame" style="height: 180px; margin-bottom: 14px; border-radius: var(--radius-sm); overflow: hidden;">
               <img src="images/blog-trade.webp" alt="Merchant Trade Fast-Track Portal" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
@@ -271,7 +412,7 @@
             </div>
           </div>
 
-          <div class="civic-card">
+          <div class="civic-card" data-category="environment infrastructure">
             <div class="image-reveal-frame" style="height: 180px; margin-bottom: 14px; border-radius: var(--radius-sm); overflow: hidden;">
               <img src="images/blog-solar.webp" alt="Municipal Solar Micro-Grid Generation" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
@@ -284,7 +425,7 @@
             </div>
           </div>
 
-          <div class="civic-card">
+          <div class="civic-card" data-category="environment culture">
             <div class="image-reveal-frame" style="height: 180px; margin-bottom: 14px; border-radius: var(--radius-sm); overflow: hidden;">
               <img src="images/blog-forest.webp" alt="Urban Miyawaki Micro-Forest Campaign" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
@@ -297,7 +438,7 @@
             </div>
           </div>
 
-          <div class="civic-card">
+          <div class="civic-card" data-category="budget infrastructure">
             <div class="image-reveal-frame" style="height: 180px; margin-bottom: 14px; border-radius: var(--radius-sm); overflow: hidden;">
               <img src="images/blog-budget.webp" alt="Q2 Municipal Financial Audit Road Outlay" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
@@ -310,7 +451,7 @@
             </div>
           </div>
 
-          <div class="civic-card">
+          <div class="civic-card" data-category="culture environment">
             <div class="image-reveal-frame" style="height: 180px; margin-bottom: 14px; border-radius: var(--radius-sm); overflow: hidden;">
               <img src="images/blog-park.webp" alt="Silverwood Lake Ecological Night Boardwalk" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
@@ -595,5 +736,71 @@
   <!-- Custom Scripts -->
   <script src="js/animations.js"></script>
   <script src="js/main.js"></script>
+
+  <!-- Department Topic Interactive Filtering Script -->
+  <script>
+    function filterDepartmentTopic(category, btnElement) {
+      // 1. Update filter pill buttons
+      const buttons = document.querySelectorAll('#categoryFilterGroup button');
+      buttons.forEach(btn => {
+        btn.classList.remove('btn-portal-action');
+        btn.classList.add('btn-outline-white');
+        btn.style.background = '#ffffff';
+        btn.style.color = '#0a0a0a';
+        btn.style.borderColor = 'var(--border-subtle)';
+      });
+
+      let activeBtn = btnElement;
+      if (!activeBtn) {
+        activeBtn = document.querySelector(`#categoryFilterGroup button[data-topic="${category}"]`);
+      }
+      if (activeBtn) {
+        activeBtn.classList.remove('btn-outline-white');
+        activeBtn.classList.add('btn-portal-action');
+        activeBtn.style.background = '';
+        activeBtn.style.color = '';
+        activeBtn.style.borderColor = '';
+      }
+
+      // 2. Filter gazette cards in Section 04
+      const gazetteCards = document.querySelectorAll('#gazetteGrid .civic-card');
+      gazetteCards.forEach(card => {
+        const cardCats = card.getAttribute('data-category') || '';
+        if (category === 'all' || cardCats.includes(category)) {
+          card.style.display = 'flex';
+          card.style.opacity = '1';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // 3. Highlight/dim topic cards in Section 03
+      const topicCards = document.querySelectorAll('#departmentTopicCards .topic-card');
+      topicCards.forEach(card => {
+        const cardTopic = card.getAttribute('data-category');
+        if (category === 'all') {
+          card.style.opacity = '1';
+          card.classList.remove('active-topic');
+          card.style.borderColor = 'var(--border-subtle)';
+        } else if (cardTopic === category) {
+          card.style.opacity = '1';
+          card.classList.add('active-topic');
+          card.style.borderColor = 'var(--brand-orange)';
+        } else {
+          card.style.opacity = '0.45';
+          card.classList.remove('active-topic');
+          card.style.borderColor = 'var(--border-subtle)';
+        }
+      });
+
+      // 4. Smooth scroll to gazettes if triggered from topic card
+      if (!btnElement && category !== 'all') {
+        const sec4 = document.getElementById('section-04-grid');
+        if (sec4) {
+          sec4.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    }
+  </script>
 </body>
 </html>
