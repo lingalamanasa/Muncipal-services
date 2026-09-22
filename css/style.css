@@ -5431,4 +5431,111 @@ img, video, svg, canvas {
     align-items: stretch !important;
     gap: 12px !important;
   }
+
+  /* Blog featured article card: 1.1fr 1fr grid */
+  [style*="grid-template-columns: 1.1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  /* Blog/About: image in card goes below text */
+  .image-reveal-frame.card-tilt-inner {
+    height: 220px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. MOBILE FIXES — Timeline Stepper & SLA/Inline Tables
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+
+  /* Timeline stepper: make scrollable horizontally on mobile */
+  .timeline-stepper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 12px;
+    gap: 0;
+    justify-content: flex-start;
+    min-width: 100%;
+    scrollbar-width: thin;
+  }
+  .timeline-stepper::before {
+    left: 26px;
+    right: 26px;
+  }
+  .step-node {
+    min-width: 120px;
+    flex-shrink: 0;
+    padding: 0 8px;
+  }
+  .step-title {
+    font-size: 0.8rem;
+  }
+  .step-desc {
+    font-size: 0.72rem;
+  }
+  .timeline-progress-bar {
+    left: 26px;
+  }
+
+  /* SLA table and Directorate table inside .civic-card → card rows */
+  .civic-card > table,
+  .civic-card > div > table {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
+  .civic-card > table thead,
+  .civic-card > div > table thead {
+    display: none;
+  }
+  .civic-card > table tbody,
+  .civic-card > div > table tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .civic-card > table tbody tr,
+  .civic-card > div > table tbody tr {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px;
+    border: 1px solid var(--border-medium) !important;
+    border-radius: 10px;
+    background: #fff;
+  }
+  .civic-card > table tbody td,
+  .civic-card > div > table tbody td {
+    padding: 2px 0 !important;
+    font-size: 0.83rem !important;
+    border: none !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .civic-card > table tbody td:first-child,
+  .civic-card > div > table tbody td:first-child {
+    font-weight: 700;
+    font-size: 0.92rem !important;
+    color: #0a0a0a !important;
+    margin-bottom: 4px;
+  }
+
+  /* General civic-card overflow protection */
+  .civic-card {
+    overflow: hidden;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* calculator card responsive  */
+  .calculator-card {
+    padding: 20px 16px !important;
+  }
+  .calc-result-display {
+    padding: 24px 16px !important;
+  }
+  .calc-result-number {
+    font-size: 2.5rem !important;
+  }
 }
