@@ -41,17 +41,61 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* 2. Mobile Menu Toggle */
+  /* 2. Spring-Board Mobile Menu Navigation Controller */
   const mobileToggle = document.querySelector('.mobile-menu-toggle');
   const mobileDrawer = document.querySelector('.mobile-nav-drawer');
   const closeDrawer = document.querySelector('.close-drawer-btn');
 
-  mobileToggle?.addEventListener('click', () => {
-    mobileDrawer?.classList.toggle('open');
+  // Ensure backdrop element exists
+  let mobileBackdrop = document.querySelector('.mobile-drawer-backdrop');
+  if (!mobileBackdrop) {
+    mobileBackdrop = document.createElement('div');
+    mobileBackdrop.className = 'mobile-drawer-backdrop';
+    document.body.appendChild(mobileBackdrop);
+  }
+
+  function openMobileNav() {
+    if (!mobileDrawer) return;
+    mobileDrawer.classList.add('open');
+    document.body.classList.add('mobile-nav-active');
+    mobileBackdrop.classList.add('active');
+  }
+
+  function closeMobileNav() {
+    if (!mobileDrawer) return;
+    mobileDrawer.classList.remove('open');
+    document.body.classList.remove('mobile-nav-active');
+    mobileBackdrop.classList.remove('active');
+  }
+
+  mobileToggle?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (mobileDrawer?.classList.contains('open')) {
+      closeMobileNav();
+    } else {
+      openMobileNav();
+    }
   });
 
-  closeDrawer?.addEventListener('click', () => {
-    mobileDrawer?.classList.remove('open');
+  closeDrawer?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeMobileNav();
+  });
+
+  mobileBackdrop?.addEventListener('click', closeMobileNav);
+
+  // Close drawer on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileDrawer?.classList.contains('open')) {
+      closeMobileNav();
+    }
+  });
+
+  // Close on navigation click
+  mobileDrawer?.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      setTimeout(closeMobileNav, 150);
+    });
   });
 
   /* 3. FAQ Accordion Interaction */
@@ -431,37 +475,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const dialogues = {
     welcome: {
-      text: `"👋 Hello Citizen! I'm <strong>Stacky</strong>, your 24/7 AI civic companion. How can I assist you with city services today?"`,
+      text: `"<i class=\"fa-solid fa-hand-wave\" style=\"color: var(--brand-orange);\"></i> Hello Citizen! I'm <strong>Stacky</strong>, your 24/7 AI civic companion. How can I assist you with city services today?"`,
       href: 'services.html',
       label: '<i class="fa-solid fa-compass"></i> Explore All Services'
     },
     taxes: {
-      text: `"🏠 Property taxes fund our smart roads, solar lighting, and public libraries! Pay your assessment online in 60 seconds with instant e-Receipt."`,
+      text: `"<i class=\"fa-solid fa-house-chimney\" style=\"color: var(--brand-orange);\"></i> Property taxes fund our smart roads, solar lighting, and public libraries! Pay your assessment online in 60 seconds with instant e-Receipt."`,
       href: 'services.html#section-03-calculator',
       label: '<i class="fa-solid fa-receipt"></i> Open Property Tax Portal'
     },
     grievance: {
-      text: `"🛠️ Spotted a civic issue? Log potholes, broken street lights, or water leakages with GPS accuracy. Guaranteed 48-hr officer dispatch!"`,
+      text: `"<i class=\"fa-solid fa-screwdriver-wrench\" style=\"color: var(--brand-orange);\"></i> Spotted a civic issue? Log potholes, broken street lights, or water leakages with GPS accuracy. Guaranteed 48-hr officer dispatch!"`,
       href: 'services.html#section-05-stations',
       label: '<i class="fa-solid fa-bullhorn"></i> File Citizen Grievance'
     },
     cityhall: {
-      text: `"🏢 Stackly Civic HQ is located at <strong>MMR Complex, Periyakollappatty, Salem, TN 636008</strong> (4.7★ rated). 24/7 Helpline: 1916 (Toll-Free)!"`,
+      text: `"<i class=\"fa-solid fa-building-columns\" style=\"color: var(--brand-orange);\"></i> Stackly Civic HQ is located at <strong>MMR Complex, Periyakollappatty, Salem, TN 636008</strong> (4.7 Rating). 24/7 Helpline: 1916 (Toll-Free)!"`,
       href: 'contact.html#section-10-stackly-map',
       label: '<i class="fa-solid fa-location-dot"></i> View Salem HQ on Map'
     },
     green: {
-      text: `"🌿 Did you know? Our electric transit corridors and 400-hectare Green Ridge canopy have offset over 4,200 metric tons of CO2 this year alone!"`,
+      text: `"<i class=\"fa-solid fa-leaf\" style=\"color: var(--brand-orange);\"></i> Did you know? Our electric transit corridors and 400-hectare Green Ridge canopy have offset over 4,200 metric tons of CO2 this year alone!"`,
       href: 'projects.html',
       label: '<i class="fa-solid fa-leaf"></i> Inspect Green Projects'
     }
   };
 
   const randomFacts = [
-    `"✨ Stackly has processed 99.4% of citizen complaints within 48 hours this quarter!"`,
-    `"🚴 Over 6.5 km of scenic, car-free cycling trail is open at Silverwood Riverwalk!"`,
-    `"☀️ 100% of municipal administrative buildings run on rooftop solar micro-grids."`,
-    `"💧 Smart SCADA water monitoring has reduced municipal pipeline losses by 28%!"`
+    `"<i class=\"fa-solid fa-sparkles\" style=\"color: var(--brand-orange);\"></i> Stackly has processed 99.4% of citizen complaints within 48 hours this quarter!"`,
+    `"<i class=\"fa-solid fa-person-biking\" style=\"color: var(--brand-orange);\"></i> Over 6.5 km of scenic, car-free cycling trail is open at Silverwood Riverwalk!"`,
+    `"<i class=\"fa-solid fa-solar-panel\" style=\"color: var(--brand-orange);\"></i> 100% of municipal administrative buildings run on rooftop solar micro-grids."`,
+    `"<i class=\"fa-solid fa-droplet\" style=\"color: var(--brand-orange);\"></i> Smart SCADA water monitoring has reduced municipal pipeline losses by 28%!"`
   ];
 
   // Synthesize pleasant futuristic chimes using Web Audio API
@@ -577,5 +621,57 @@ document.addEventListener('DOMContentLoaded', () => {
   btnSound?.addEventListener('click', () => {
     window.location.href = '404error.html';
   });
+
+  /* 17. Tasteful Wobble Card Enter Animation (IntersectionObserver + Stagger) */
+  function initWobbleCardEnter() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const targetSelectors = [
+      '.service-box',
+      '.pillar-static-card',
+      '.flip-card-3d',
+      '#section-06-projects .civic-card',
+      '.emergency-card',
+      '#section-08-notices .civic-card',
+      '.counter-box',
+      '.topic-card',
+      '.directory-card',
+      '.project-card',
+      '.department-card'
+    ];
+
+    const cards = document.querySelectorAll(targetSelectors.join(', '));
+    if (!cards.length || !('IntersectionObserver' in window)) return;
+
+    const cardObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const card = entry.target;
+          const parent = card.parentElement;
+          let idx = 0;
+          if (parent) {
+            const siblings = Array.from(parent.children).filter(el => {
+              return targetSelectors.some(sel => el.matches(sel));
+            });
+            idx = siblings.indexOf(card);
+            if (idx === -1) idx = 0;
+          }
+          const delayClass = `wobble-delay-${idx % 4}`;
+          card.classList.add('wobble-card-enter', delayClass);
+          card.classList.remove('wobble-card-ready');
+          observer.unobserve(card);
+        }
+      });
+    }, {
+      rootMargin: '0px 0px -50px 0px',
+      threshold: 0.1
+    });
+
+    cards.forEach(card => {
+      card.classList.add('wobble-card-ready');
+      cardObserver.observe(card);
+    });
+  }
+  initWobbleCardEnter();
 });
 

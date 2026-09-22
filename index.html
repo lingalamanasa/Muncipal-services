@@ -80,17 +80,21 @@
 
   <!-- Mobile Drawer -->
   <div class="mobile-nav-drawer">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-      <span style="font-weight: 800; color: #0a0a0a; font-size: 1.2rem;">STACKLY MENU</span>
-      <button class="close-drawer-btn" style="background: none; border: none; color: #0a0a0a; font-size: 1.5rem; cursor: pointer;">&times;</button>
+    <div class="mobile-nav-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1.5px solid var(--border-subtle);">
+      <span style="font-weight: 800; color: #0a0a0a; font-size: 1.15rem; display: flex; align-items: center; gap: 8px;">
+        <i class="fa-solid fa-city" style="color: var(--brand-orange);"></i> STACKLY MENU
+      </span>
+      <button class="close-drawer-btn" aria-label="Close Navigation Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
     </div>
-    <a href="index.html" class="mobile-nav-link active">Home</a>
-    <a href="about.html" class="mobile-nav-link">About City</a>
-    <a href="services.html" class="mobile-nav-link">Citizen Services</a>
-    <a href="blog.html" class="mobile-nav-link">News & Blog</a>
-    <a href="contact.html" class="mobile-nav-link">Contact & Help</a>
+    <a href="index.html" class="mobile-nav-link active"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="about.html" class="mobile-nav-link"><i class="fa-solid fa-circle-info"></i> About City</a>
+    <a href="services.html" class="mobile-nav-link"><i class="fa-solid fa-layer-group"></i> Citizen Services</a>
+    <a href="blog.html" class="mobile-nav-link"><i class="fa-solid fa-newspaper"></i> News & Blog</a>
+    <a href="contact.html" class="mobile-nav-link"><i class="fa-solid fa-headset"></i> Contact & Help</a>
     <a href="login.html" class="mobile-nav-link"><i class="fa-solid fa-arrow-right-to-bracket" style="color: var(--brand-orange);"></i> Citizen Login</a>
-    <a href="signup.html" class="mobile-nav-link" style="color: var(--brand-orange);"><i class="fa-solid fa-user-plus"></i> Create Account</a>
+    <a href="signup.html" class="mobile-nav-link btn-cta-signup"><i class="fa-solid fa-user-plus"></i> Create Account</a>
   </div>
 
   <main>
@@ -315,7 +319,7 @@
             <div style="font-size: 2rem; color: var(--brand-orange); margin-bottom: 12px;"><i class="fa-solid fa-clipboard-check"></i></div>
             <div class="counter-value" data-target="98.7" data-suffix="%" data-decimals="1">0<span>%</span></div>
             <div class="counter-label">Grievance SLA Compliance</div>
-            <div class="counter-spark">▲ +1.4% this quarter</div>
+            <div class="counter-spark"><i class="fa-solid fa-arrow-trend-up"></i> +1.4% this quarter</div>
           </div>
 
           <div class="counter-box">
@@ -958,7 +962,7 @@
 
               <!-- Animated Speech Content -->
               <div id="stackySpeechText" class="speech-content-text">
-                "👋 Hello Citizen! I'm <strong>Stacky</strong>, your 24/7 AI civic companion. How can I assist you with city services today?"
+                "<i class="fa-solid fa-hand-wave" style="color: var(--brand-orange);"></i> Hello Citizen! I'm <strong>Stacky</strong>, your 24/7 AI civic companion. How can I assist you with city services today?"
               </div>
 
               <!-- Action Link (Dynamically updated) -->

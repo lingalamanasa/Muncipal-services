@@ -796,23 +796,42 @@ document.addEventListener('DOMContentLoaded', () => {
   /* --------------------------------------------------------------------------
      22. UNIQUE JS EFFECT: LIVE CIVIC CLOCK & TELEMETRY HUD
      -------------------------------------------------------------------------- */
-  const tickerWrap = document.querySelector('.ticker-content, .hero-badge-tag');
-  if (tickerWrap && !document.getElementById('liveCivicClock')) {
-    const clockBadge = document.createElement('span');
-    clockBadge.id = 'liveCivicClock';
-    clockBadge.className = 'ticker-badge outline';
-    clockBadge.style.marginRight = '8px';
-    clockBadge.innerHTML = `<i class="fa-regular fa-clock" style="color: var(--brand-orange);"></i> <span id="civicClockVal">--:--:--</span>`;
-    tickerWrap.prepend(clockBadge);
+  const tickerTrack = document.querySelector('.ticker-content-track, .ticker-content');
+  if (tickerTrack && !document.getElementById('liveCivicClock')) {
+    const clockItem = document.createElement('div');
+    clockItem.id = 'liveCivicClock';
+    clockItem.className = 'ticker-item';
+    clockItem.innerHTML = `<span class="ticker-badge outline"><i class="fa-regular fa-clock" style="color: var(--brand-orange);"></i> <span id="civicClockVal">--:--:--</span></span><span>Municipal Civic Time (Synced)</span>`;
+    tickerTrack.prepend(clockItem);
 
     const updateClock = () => {
       const now = new Date();
       const timeStr = now.toLocaleTimeString('en-US', { hour12: true });
       const clockEl = document.getElementById('civicClockVal');
-      if (clockEl) clockEl.textContent = `${timeStr} Civic Time`;
+      if (clockEl) clockEl.textContent = `${timeStr}`;
     };
     setInterval(updateClock, 1000);
     updateClock();
+  } else if (!document.getElementById('liveCivicClock')) {
+    const heroTag = document.querySelector('.hero-badge-tag');
+    if (heroTag) {
+      const clockBadge = document.createElement('span');
+      clockBadge.id = 'liveCivicClock';
+      clockBadge.className = 'ticker-badge outline';
+      clockBadge.style.marginRight = '8px';
+      clockBadge.style.whiteSpace = 'nowrap';
+      clockBadge.innerHTML = `<i class="fa-regular fa-clock" style="color: var(--brand-orange);"></i> <span id="civicClockVal">--:--:--</span>`;
+      heroTag.prepend(clockBadge);
+
+      const updateClock = () => {
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString('en-US', { hour12: true });
+        const clockEl = document.getElementById('civicClockVal');
+        if (clockEl) clockEl.textContent = `${timeStr} Civic Time`;
+      };
+      setInterval(updateClock, 1000);
+      updateClock();
+    }
   }
 
   /* --------------------------------------------------------------------------

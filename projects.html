@@ -73,50 +73,22 @@
 
   <!-- Mobile Drawer -->
   <div class="mobile-nav-drawer">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-      <span style="font-weight: 700; color: #fff;">Menu</span>
-      <button class="close-drawer-btn" style="background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer;">&times;</button>
+    <div class="mobile-nav-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1.5px solid var(--border-subtle);">
+      <span style="font-weight: 800; color: #0a0a0a; font-size: 1.15rem; display: flex; align-items: center; gap: 8px;">
+        <i class="fa-solid fa-city" style="color: var(--brand-orange);"></i> STACKLY MENU
+      </span>
+      <button class="close-drawer-btn" aria-label="Close Navigation Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
     </div>
-    <a href="index.html" class="mobile-nav-link">Home Portal</a>
-    <a href="services.html" class="mobile-nav-link">Citizen Services</a>
-    <a href="projects.html" class="mobile-nav-link active">Smart City Projects</a>
-    <a href="departments.html" class="mobile-nav-link">Governance & Wards</a>
-    <a href="services.html#section-03-calculator" class="mobile-nav-link">Property Tax Calculator</a>
-    <a href="tel:1916" class="mobile-nav-link" style="color: #f43f5e;"><i class="fa-solid fa-phone"></i> Emergency 1916</a>
+    <a href="index.html" class="mobile-nav-link"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="about.html" class="mobile-nav-link active"><i class="fa-solid fa-circle-info"></i> About City</a>
+    <a href="services.html" class="mobile-nav-link"><i class="fa-solid fa-layer-group"></i> Citizen Services</a>
+    <a href="blog.html" class="mobile-nav-link"><i class="fa-solid fa-newspaper"></i> News & Blog</a>
+    <a href="contact.html" class="mobile-nav-link"><i class="fa-solid fa-headset"></i> Contact & Help</a>
+    <a href="login.html" class="mobile-nav-link"><i class="fa-solid fa-arrow-right-to-bracket" style="color: var(--brand-orange);"></i> Citizen Login</a>
+    <a href="signup.html" class="mobile-nav-link btn-cta-signup"><i class="fa-solid fa-user-plus"></i> Create Account</a>
   </div>
-
-  <main>
-    <!-- ==========================================================================
-         SECTION 01: SMART CITY PROJECTS HERO
-         ========================================================================== -->
-    <section id="section-01-hero" class="section-wrapper" style="padding-top: 60px; padding-bottom: 80px; position: relative; overflow: hidden;">
-      <div class="hero-glow-orb glow-cyan"></div>
-      <div class="hero-glow-orb glow-purple"></div>
-
-      <div class="civic-container hero-content" style="text-align: center;">
-        <div class="hero-badge-tag" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 6px 16px; border-radius: 999px; margin-bottom: 24px;">
-          <span class="section-number">Section 01/10</span>
-          <span style="color: var(--brand-emerald); font-size: 0.85rem; font-weight: 600;"><i class="fa-solid fa-leaf"></i> Sustainable Urban Mission 2035</span>
-        </div>
-
-        <h1 class="hero-main-title" style="font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 20px;">
-          Engineering Tomorrow's <br>
-          <span class="highlight">Smart & Resilient Metropolis</span>
-        </h1>
-
-        <p class="hero-description" style="color: var(--text-muted); font-size: 1.15rem; max-width: 720px; margin: 0 auto 36px; line-height: 1.65;">
-          From zero-emission rapid transit corridors and automated waste-to-energy facilities to intelligent flood alleviation canals, inspect every civic infrastructure investment with real-time public milestones.
-        </p>
-
-        <div class="hero-action-row" style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-          <a href="#section-03-showcase" class="btn-portal-action btn-magnetic">
-            <i class="fa-solid fa-layer-group"></i> Active Public Works
-          </a>
-          <a href="#section-07-budget" class="btn-emergency" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); color: #fff;">
-            <i class="fa-solid fa-coins"></i> Fiscal Expenditure
-          </a>
-        </div>
-      </div>
     </section>
 
     <!-- ==========================================================================
@@ -759,7 +731,7 @@
 
               <!-- Animated Speech Content -->
               <div id="stackySpeechText" class="speech-content-text">
-                "👋 Hello Citizen! I'm <strong>Stacky</strong>, your 24/7 AI civic companion. How can I assist you with city services today?"
+                "<i class="fa-solid fa-hand-wave" style="color: var(--brand-orange);"></i> Hello Citizen! I'm <strong>Stacky</strong>, your 24/7 AI civic companion. How can I assist you with city services today?"
               </div>
 
               <!-- Action Link (Dynamically updated) -->
