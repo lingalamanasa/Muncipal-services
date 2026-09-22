@@ -86,7 +86,7 @@
     <main class="dashboard-main">
       
       <!-- Topbar Header -->
-      <header class="dashboard-topbar">
+      <header class="dashboard-topbar dashboard-topbar-minimal">
         <div class="topbar-left">
           <button type="button" id="sidebarToggleBtn" class="topbar-icon-btn mobile-dashboard-toggle" aria-label="Toggle Navigation Menu">
             <i class="fa-solid fa-bars"></i>
@@ -94,12 +94,15 @@
           <a href="staff-dashboard.html" class="dashboard-brand-logo" title="Stackly Municipal Services">
             <img src="images/stackly-logo-orange.png" alt="Stackly Municipal Services" class="dashboard-logo-img">
           </a>
-          <div style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: #1e293b; font-weight: 600;" class="topbar-welcome-user">
-            <i class="fa-solid fa-circle-user" style="color: var(--brand-orange);"></i>
-            <span>Welcome back, <strong id="topbarUserEmail" style="color: var(--brand-orange);">officer.varma@stacklycivic.org</strong></span>
-          </div>
         </div>
       </header>
+      <style>
+        @media (min-width: 993px) {
+          .dashboard-topbar-minimal {
+            display: none !important;
+          }
+        }
+      </style>
 
       <!-- Dashboard Body Content -->
       <div class="dashboard-content">
@@ -128,8 +131,6 @@
               if (savedEmail) {
                 const el1 = document.getElementById('particularUserEmail');
                 if (el1) el1.textContent = savedEmail;
-                const el2 = document.getElementById('topbarUserEmail');
-                if (el2) el2.textContent = savedEmail;
               }
             } catch (e) {}
           })();

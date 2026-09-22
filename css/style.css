@@ -3020,7 +3020,7 @@ body.mobile-nav-active {
 
 /* Responsive Dashboard Styles */
 .dashboard-brand-logo {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 8px;
   text-decoration: none;
