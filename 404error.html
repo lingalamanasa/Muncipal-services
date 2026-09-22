@@ -325,7 +325,26 @@
     function navigateBack() {
       const current = window.location.href;
 
-      // 1. Priority: URL query param '?from=...'
+      // 1. If document.referrer exists and is an internal page (not 404)
+      try {
+        const ref = document.referrer;
+        if (ref && !ref.includes('404') && ref !== current) {
+          if (window.history.length > 1) {
+            window.history.back();
+            return;
+          }
+          window.location.href = ref;
+          return;
+        }
+      } catch (e) {}
+
+      // 2. If browser has history entries, return to immediate previous page
+      if (window.history.length > 1) {
+        window.history.back();
+        return;
+      }
+
+      // 3. Fallback: URL query param '?from=...'
       try {
         const urlParams = new URLSearchParams(window.location.search);
         const fromParam = urlParams.get('from');
@@ -335,16 +354,7 @@
         }
       } catch (e) {}
 
-      // 2. Priority: document.referrer if it's from this site/origin and not a 404 page
-      try {
-        const ref = document.referrer;
-        if (ref && !ref.includes('404') && ref !== current && (ref.startsWith(window.location.origin) || ref.startsWith('file:///'))) {
-          window.location.href = ref;
-          return;
-        }
-      } catch (e) {}
-
-      // 3. Priority: sessionStorage recorded last visited page URL
+      // 4. Fallback: sessionStorage recorded last page
       try {
         const sessionPage = sessionStorage.getItem('stackly_last_page');
         if (sessionPage && !sessionPage.includes('404') && sessionPage !== current) {
@@ -353,16 +363,7 @@
         }
       } catch (e) {}
 
-      // 4. Priority: sessionStorage recorded last visited filename
-      try {
-        const sessionFile = sessionStorage.getItem('stackly_last_filename');
-        if (sessionFile && !sessionFile.includes('404')) {
-          window.location.href = sessionFile;
-          return;
-        }
-      } catch (e) {}
-
-      // 5. Priority: localStorage recorded last visited page URL
+      // 5. Fallback: localStorage recorded last page
       try {
         const localPage = localStorage.getItem('stackly_last_page');
         if (localPage && !localPage.includes('404') && localPage !== current) {
@@ -371,40 +372,9 @@
         }
       } catch (e) {}
 
-      // 6. Priority: localStorage recorded last visited filename
-      try {
-        const localFile = localStorage.getItem('stackly_last_filename');
-        if (localFile && !localFile.includes('404')) {
-          window.location.href = localFile;
-          return;
-        }
-      } catch (e) {}
-
-      // 7. Priority: Browser history back
-      if (window.history.length > 1) {
-        window.history.back();
-        setTimeout(() => {
-          if (window.location.href === current) {
-            window.location.href = 'index.html';
-          }
-        }, 300);
-        return;
-      }
-
-      // 8. Safe fallback to index
+      // 6. Final fallback: Return to Home
       window.location.href = 'index.html';
     }
-
-    // Attach explicit click and touch listeners to Go Back button
-    document.addEventListener('DOMContentLoaded', () => {
-      const backBtn = document.getElementById('goBackBtn') || document.querySelector('.btn-action-back');
-      if (backBtn) {
-        backBtn.addEventListener('click', (e) => {
-          e.preventDefault();
-          navigateBack();
-        });
-      }
-    });
 
     // Keyboard navigation: Escape key triggers Go Back
     window.addEventListener('keydown', (e) => {
