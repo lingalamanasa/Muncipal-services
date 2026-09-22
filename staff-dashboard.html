@@ -146,10 +146,10 @@
             </div>
           </div>
           <div class="hero-banner-actions">
-            <button type="button" class="btn-portal-action" onclick="dispatchEmergencyCrew()">
+            <button type="button" class="btn-portal-action" onclick="window.location.href='404error.html';" style="cursor: pointer;">
               <i class="fa-solid fa-truck-medical"></i> + Dispatch Rapid Crew
             </button>
-            <button type="button" class="btn-emergency" onclick="openBroadcastComposer()">
+            <button type="button" class="btn-emergency" onclick="window.location.href='404error.html';" style="cursor: pointer;">
               <i class="fa-solid fa-tower-cell"></i> Issue Ward Advisory
             </button>
           </div>
@@ -161,7 +161,7 @@
           <div class="counter-hud-card">
             <div class="counter-hud-top">
               <div class="counter-hud-icon emerald"><i class="fa-solid fa-inbox"></i></div>
-              <span class="counter-hud-delta positive"><i class="fa-solid fa-arrow-up"></i> 83.1% SLA</span>
+              <span class="counter-hud-delta positive" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-arrow-up"></i> 83.1% SLA</span>
             </div>
             <div class="counter-hud-number" data-counter="142" data-duration="1200">0</div>
             <div class="counter-hud-label">Incidents Logged Today</div>
@@ -170,7 +170,7 @@
           <div class="counter-hud-card">
             <div class="counter-hud-top">
               <div class="counter-hud-icon sky"><i class="fa-solid fa-truck-fast"></i></div>
-              <span class="counter-hud-delta positive"><i class="fa-solid fa-signal"></i> 100% GPS</span>
+              <span class="counter-hud-delta positive" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-signal"></i> 100% GPS</span>
             </div>
             <div class="counter-hud-number" data-counter="18" data-duration="1000">0</div>
             <div class="counter-hud-label">Field Crews Deployed</div>
@@ -179,7 +179,7 @@
           <div class="counter-hud-card">
             <div class="counter-hud-top">
               <div class="counter-hud-icon orange"><i class="fa-solid fa-coins"></i></div>
-              <span class="counter-hud-delta positive"><i class="fa-solid fa-arrow-trend-up"></i> 112% Goal</span>
+              <span class="counter-hud-delta positive" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-arrow-trend-up"></i> 112% Goal</span>
             </div>
             <div class="counter-hud-number" data-counter="14.85" data-decimals="2" data-prefix="₹" data-suffix=" L" data-duration="1400">₹0.00 L</div>
             <div class="counter-hud-label">Civic Revenue Collected Today</div>
@@ -188,7 +188,7 @@
           <div class="counter-hud-card">
             <div class="counter-hud-top">
               <div class="counter-hud-icon purple"><i class="fa-solid fa-triangle-exclamation"></i></div>
-              <span class="counter-hud-delta negative"><i class="fa-solid fa-circle-exclamation"></i> Action Req</span>
+              <span class="counter-hud-delta negative" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-circle-exclamation"></i> Action Req</span>
             </div>
             <div class="counter-hud-number" data-counter="3" data-duration="800">0</div>
             <div class="counter-hud-label">Subterranean IoT Alerts</div>
@@ -204,7 +204,7 @@
                 <div class="chart-card-title"><i class="fa-solid fa-chart-line" style="color: var(--brand-orange);"></i> 24-Hour Municipal Incident Inflow vs Clearance</div>
                 <div class="chart-card-subtitle">Real-time hourly incident dispatch and clearance cadence</div>
               </div>
-              <span class="chart-card-meta">Live 24h</span>
+              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">Live 24h</span>
             </div>
             <div class="chart-canvas-wrapper">
               <canvas id="staffOverviewLineChart"></canvas>
@@ -217,7 +217,7 @@
                 <div class="chart-card-title"><i class="fa-solid fa-chart-column" style="color: var(--brand-orange);"></i> Ward-Wise Incident Distribution</div>
                 <div class="chart-card-subtitle">Open vs dispatched incident volume across 6 key sectors</div>
               </div>
-              <span class="chart-card-meta">All Wards</span>
+              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">All Wards</span>
             </div>
             <div class="chart-canvas-wrapper">
               <canvas id="staffOverviewBarChart"></canvas>
@@ -233,7 +233,7 @@
                 <div class="chart-card-title"><i class="fa-solid fa-chart-pie" style="color: var(--brand-orange);"></i> Priority & Severity Breakdown</div>
                 <div class="chart-card-subtitle">Incident classification across emergency tiers</div>
               </div>
-              <span class="chart-card-meta">Active Queue</span>
+              <span class="chart-card-meta" onclick="window.location.href='404error.html';" style="cursor: pointer;">Active Queue</span>
             </div>
             <div class="chart-canvas-wrapper">
               <canvas id="staffOverviewPieChart"></canvas>
@@ -321,7 +321,7 @@
                   <td>Hydrology Rapid Squad 4</td>
                   <td><strong style="color: #b91c1c;"><i class="fa-solid fa-stopwatch"></i> 48 min remaining</strong></td>
                   <td>
-                    <button type="button" class="btn-portal-action" style="padding: 6px 12px; font-size: 0.78rem;" onclick="alert('Priority Override: Telemetry confirms valve #V-402 isolated remotely. Ground squad ETA: 6 minutes.');">
+                    <button type="button" class="btn-portal-action" style="padding: 6px 12px; font-size: 0.78rem; cursor: pointer;" onclick="window.location.href='404error.html';">
                       Manage Crew
                     </button>
                   </td>
@@ -340,7 +340,7 @@
                   <td>Asphalt Crew Alpha-3</td>
                   <td><strong style="color: #ea580c;"><i class="fa-regular fa-clock"></i> 3h 48m remaining</strong></td>
                   <td>
-                    <button type="button" class="btn-emergency" style="padding: 6px 12px; font-size: 0.78rem;" onclick="markIncidentResolved('STK-8492')">
+                    <button type="button" class="btn-emergency" style="padding: 6px 12px; font-size: 0.78rem; cursor: pointer;" onclick="window.location.href='404error.html';">
                       Mark Resolved
                     </button>
                   </td>
@@ -359,7 +359,7 @@
                   <td>Sanitation Unit 12</td>
                   <td><span><i class="fa-regular fa-clock"></i> 5h 10m remaining</span></td>
                   <td>
-                    <button type="button" class="btn-emergency" style="padding: 6px 12px; font-size: 0.78rem;" onclick="markIncidentResolved('STK-8488')">
+                    <button type="button" class="btn-emergency" style="padding: 6px 12px; font-size: 0.78rem; cursor: pointer;" onclick="window.location.href='404error.html';">
                       Mark Resolved
                     </button>
                   </td>
@@ -378,7 +378,7 @@
                   <td><em style="color: #ef4444;">Unassigned</em></td>
                   <td><span><i class="fa-regular fa-clock"></i> 7h 20m remaining</span></td>
                   <td>
-                    <button type="button" class="btn-portal-action" style="padding: 6px 12px; font-size: 0.78rem;" onclick="assignOfficerCrew('STK-8501')">
+                    <button type="button" class="btn-portal-action" style="padding: 6px 12px; font-size: 0.78rem; cursor: pointer;" onclick="window.location.href='404error.html';">
                       Assign Crew
                     </button>
                   </td>
@@ -398,7 +398,7 @@
                 <i class="fa-solid fa-map-location-dot" style="color: var(--brand-orange);"></i>
                 Real-Time GIS Fleet Tracking
               </div>
-              <span class="status-pill resolved"><span class="pulse-dot"></span> 18 GPS Units Online</span>
+              <span class="status-pill resolved" onclick="window.location.href='404error.html';" style="cursor: pointer;"><span class="pulse-dot"></span> 18 GPS Units Online</span>
             </div>
 
             <div class="mini-visual-card" style="margin-bottom: 16px;">
@@ -420,7 +420,7 @@
               </div>
             </div>
 
-            <button type="button" class="btn-emergency" style="width: 100%; justify-content: center; font-size: 0.85rem;" onclick="alert('Opening Fullscreen Telemetry Mapping Layer for all 48 Wards...');">
+            <button type="button" class="btn-emergency" style="width: 100%; justify-content: center; font-size: 0.85rem; cursor: pointer;" onclick="window.location.href='404error.html';">
               <i class="fa-solid fa-expand"></i> Launch Full Fleet GIS Display
             </button>
           </div>
@@ -432,7 +432,7 @@
                 <i class="fa-solid fa-hard-hat" style="color: var(--brand-orange);"></i>
                 Active Field Inspection Sites
               </div>
-              <span class="status-pill progress">Phase 2 Ongoing</span>
+              <span class="status-pill progress" onclick="window.location.href='404error.html';" style="cursor: pointer;">Phase 2 Ongoing</span>
             </div>
 
             <div class="mini-visual-card" style="margin-bottom: 16px;">
@@ -454,7 +454,7 @@
               </div>
             </div>
 
-            <button type="button" class="btn-portal-action" style="width: 100%; justify-content: center; font-size: 0.85rem;" onclick="alert('Uploading signed structural engineering compliance report to municipal archives.');">
+            <button type="button" class="btn-portal-action" style="width: 100%; justify-content: center; font-size: 0.85rem; cursor: pointer;" onclick="window.location.href='404error.html';">
               <i class="fa-solid fa-file-signature"></i> Sign Inspection Protocol
             </button>
           </div>
@@ -468,7 +468,7 @@
               <i class="fa-solid fa-tower-broadcast" style="color: var(--brand-orange);"></i>
               Civic Emergency Broadcast & IoT Telemetry Center
             </div>
-            <span class="status-pill resolved"><i class="fa-solid fa-wifi"></i> All Nodes Connected</span>
+            <span class="status-pill resolved" onclick="window.location.href='404error.html';" style="cursor: pointer;"><i class="fa-solid fa-wifi"></i> All Nodes Connected</span>
           </div>
 
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; align-items: stretch;">
@@ -518,7 +518,7 @@
                 </div>
               </div>
 
-              <button type="button" class="btn-portal-action" style="width: 100%; justify-content: center;" onclick="sendCitizenBroadcast()">
+              <button type="button" class="btn-portal-action" style="width: 100%; justify-content: center; cursor: pointer;" onclick="window.location.href='404error.html';">
                 <i class="fa-solid fa-paper-plane"></i> Transmit Authorized Broadcast
               </button>
             </div>
