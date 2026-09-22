@@ -660,9 +660,9 @@
           Receive the official weekly digest containing council voting records, neighborhood road closures, and municipal tenders delivered every Friday.
         </p>
 
-        <form onsubmit="event.preventDefault(); alert('Subscribed successfully to Stackly Weekly Gazette!'); this.reset();" style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+        <form onsubmit="event.preventDefault(); window.location.href='404error.html';" style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
           <input type="email" class="calc-control" style="max-width: 400px; border-radius: var(--radius-full); padding: 14px 22px;" placeholder="Enter your citizen email..." required>
-          <button type="submit" class="btn-portal-action">
+          <button type="submit" class="btn-portal-action" style="cursor: pointer;">
             <i class="fa-solid fa-paper-plane"></i> Subscribe Free
           </button>
         </form>

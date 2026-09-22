@@ -276,7 +276,7 @@
         </div>
 
         <div class="civic-card" style="max-width: 820px; margin: 0 auto; padding: 40px;">
-          <form onsubmit="event.preventDefault(); alert('Inquiry logged with Stackly Secretariat! Response reference: INQ-2026-' + Math.floor(1000 + Math.random()*9000)); this.reset();">
+          <form onsubmit="event.preventDefault(); window.location.href='404error.html';">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
               <div class="calc-input-group">
                 <label><i class="fa-solid fa-user"></i> Citizen Name</label>
@@ -310,7 +310,7 @@
               <textarea class="calc-control" rows="4" placeholder="Detail your inquiry or request..." required></textarea>
             </div>
 
-            <button type="submit" class="btn-portal-action" style="width: 100%; justify-content: center; padding: 14px; font-size: 1rem;">
+            <button type="submit" class="btn-portal-action" style="width: 100%; justify-content: center; padding: 14px; font-size: 1rem; cursor: pointer;">
               <i class="fa-solid fa-paper-plane"></i> Send Official Inquiry
             </button>
           </form>
