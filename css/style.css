@@ -5315,7 +5315,120 @@ img, video, svg, canvas {
   box-sizing: border-box;
 }
 
+/* --------------------------------------------------------------------------
+   6. GLOBAL MOBILE RESPONSIVE FIX — Section Split Layouts
+   Targets all inline-style 2-column grids (RTI, Media, Audio, Calculator, etc.)
+   that overflow on mobile phones. Collapses them to single column on ≤768px.
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
 
+  /* Universal: collapse any fixed 2-col inline grid to single column */
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns: 1.2fr 1fr"],
+  [style*="grid-template-columns: 1fr 1.5fr"],
+  [style*="grid-template-columns: 1.5fr 1fr"],
+  [style*="grid-template-columns: 1fr 2fr"],
+  [style*="grid-template-columns: 2fr 1fr"],
+  [style*="grid-template-columns: 1.6fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
 
+  /* Contact page table — convert to card rows on mobile */
+  .civic-card table {
+    display: block;
+    width: 100%;
+  }
+  .civic-card table thead {
+    display: none;
+  }
+  .civic-card table tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .civic-card table tbody tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 12px;
+    background: #fff;
+    border: 1px solid var(--border-medium);
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .civic-card table tbody td {
+    padding: 4px 0 !important;
+    font-size: 0.83rem !important;
+    border: none !important;
+    line-height: 1.5;
+  }
+  .civic-card table tbody td:first-child {
+    grid-column: 1 / -1;
+    font-weight: 700;
+    color: #0a0a0a !important;
+    font-size: 0.9rem !important;
+  }
 
+  /* Fix section-meta overflowing (section number pill + tag) */
+  .section-meta {
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
 
+  /* Fix calc-result-display and calculator card */
+  .calculator-card,
+  .calc-result-display {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Blog audio card — ensure circle image centers */
+  #section-05-podcast .civic-card > div > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* RTI civic-card action — center on mobile */
+  #section-08-rti .civic-card {
+    text-align: center;
+  }
+
+  /* Ensure all section wrappers don't overflow */
+  .section-wrapper {
+    overflow-x: hidden;
+  }
+
+  /* civic-container: prevent any horizontal bleed */
+  .civic-container,
+  .civic-container-wide {
+    overflow-x: hidden;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Section title size on mobile */
+  .section-title {
+    font-size: clamp(1.5rem, 5vw, 2rem) !important;
+  }
+
+  /* Hero split: always single column on mobile */
+  .hero-split-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  /* Ensure btn-portal-action buttons stack and don't overflow */
+  .btn-portal-action,
+  .btn-outline-white {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: center;
+  }
+  [style*="display: flex"][style*="gap: 14px"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+}
